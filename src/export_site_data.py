@@ -384,7 +384,21 @@ def google_row(rec, mean):
         # 'place_id' means a human pinned it; 'textsearch' means it was
         # accepted on coordinates, which the UI should not overstate.
         "basis": rec.get("source") or "textsearch",
-        "closed": m.get("business_status") not in (None, "OPERATIONAL"),
+        # What Google actually said, verbatim, so the page can quote it rather
+        # than paraphrase it. `closed` used to be
+        # `business_status not in (None, "OPERATIONAL")`, which collapsed three
+        # different statements into one boolean: CLOSED_PERMANENTLY,
+        # CLOSED_TEMPORARILY, and Google not saying anything at all. The row
+        # then rendered a red "permanently closed" pill titled "Google reports
+        # this location as permanently closed" -- for Antica Pesa, whose record
+        # says CLOSED_TEMPORARILY. The site stated the opposite of its own
+        # cited source about a named restaurant, in the one way that stops
+        # somebody booking.
+        "status": m.get("business_status"),
+        # Permanent only. An absent status is UNKNOWN, which is null here as it
+        # is everywhere else in this payload -- never false.
+        "closed": (None if m.get("business_status") is None
+                   else m.get("business_status") == "CLOSED_PERMANENTLY"),
     }
 
 

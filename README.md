@@ -968,6 +968,17 @@ the issue was then attributed to a pull request whose own text says it did not d
 the work. Say `Closes #2` to close one and `issue 2` to mention one;
 `.github/pull_request_template.md` carries the rule where it will be read.
 
+**A closure has two kinds and the page says which.** Google answers
+`OPERATIONAL`, `CLOSED_TEMPORARILY`, `CLOSED_PERMANENTLY`, or nothing at all.
+`google.closed` means **permanently** closed and nothing else; `google.status`
+carries the verbatim answer so the page quotes the source instead of
+paraphrasing it, and an absent answer is `null`, not `false`. Collapsing all
+four into one boolean had the dashboard render a red *"permanently closed"*
+pill, titled *"Google reports this location as permanently closed"*, over a
+record that says `CLOSED_TEMPORARILY`. On the roster a temporary closure keeps
+the closed pill's colour but loses the line-through, which is that page's mark
+for gone for good.
+
 **ToS enforcement is in code, not convention.** `assert_tos_clean()` fails the
 export rather than publish a banned field. Menu text may leave only as dish-tag
 snippets, and the rule is: **at most 5% of a menu's extracted text, or 40
