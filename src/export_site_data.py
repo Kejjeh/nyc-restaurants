@@ -469,10 +469,25 @@ def rubric_for(r, cfg, today):
     # about the MTA, not about the restaurant. Use the subway facet if you need
     # the line as a hard requirement -- a filter beats a weighting for that.
     c = cfg["lex"]
+    neutral = float(c["no_lex_score"])
     lex = [r["subway"].get(k) for k in ("4", "5", "6") if r.get("subway")]
     lex = [x for x in lex if x is not None]
-    parts["lex"] = (_ramp(min(lex), c["worst_minutes"], c["best_minutes"])
-                    if lex else float(c["no_lex_score"]))
+    if not lex:
+        parts["lex"] = neutral
+    else:
+        # The ramp is a BONUS ABOVE NEUTRAL, which is what this component has
+        # claimed to be since the fixed-tax problem was found -- and it was
+        # only half fixed. The no-line case was moved to neutral (50) but the
+        # ramp still ran from 0, so a restaurant twelve minutes from the 6
+        # scored 0.0 while one with no 4/5/6 within walking distance scored 50.
+        # 129 restaurants scored BELOW the no-line neutral for being NEAR the
+        # line, 24 of them at exactly zero. Scaling the bonus into
+        # [neutral, 100] makes "distance costs nothing" literally true and
+        # closes the discontinuity at the 12-minute walk cap: at the far end of
+        # the ramp a restaurant now scores exactly what having no line scores,
+        # which is the same thing MAX_WALK_MIN already says about it.
+        parts["lex"] = neutral + (100.0 - neutral) * _ramp(
+            min(lex), c["worst_minutes"], c["best_minutes"]) / 100.0
 
     # value — gap PERCENT (comparable across the price tiers), then shrunk
     # toward neutral by how much that figure actually rests on. Evidence used

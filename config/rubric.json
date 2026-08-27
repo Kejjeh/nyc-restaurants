@@ -33,7 +33,7 @@
   }
  },
  "lex": {
-  "_doc": "Walk to the 4/5/6. Not being near it now scores NEUTRAL, not 0. The 4/5/6 runs Manhattan and the Bronx only, so a 0 was a fixed 15-point tax on 100% of Queens and Staten Island and 78% of Brooklyn -- a fact about the MTA, not about the restaurant. Proximity is now a bonus above neutral and distance costs nothing. If you need the Lex line as a hard requirement, the subway facet already does that exactly, and a filter beats a weighting for a constraint.",
+  "_doc": "Walk to the 4/5/6. Not being near it scores NEUTRAL (no_lex_score), not 0: the 4/5/6 runs Manhattan and the Bronx only, so a 0 was a fixed 15-point tax on 100% of Queens and Staten Island and 78% of Brooklyn -- a fact about the MTA, not about the restaurant. Proximity is a BONUS ABOVE that neutral and distance costs nothing: the ramp runs from no_lex_score at worst_minutes to 100 at best_minutes, so the worst walk scores exactly what having no line scores. That is deliberate -- subway_for drops anything past MAX_WALK_MIN, so a restaurant at the cap and one past it are the same restaurant as far as this data goes. Scoring the ramp from 0 instead put 129 restaurants BELOW the no-line neutral for being near the line. If you need the Lex line as a hard requirement, the subway facet does that exactly, and a filter beats a weighting for a constraint.",
   "best_minutes": 2,
   "worst_minutes": 12,
   "no_lex_score": 50
