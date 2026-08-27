@@ -968,6 +968,18 @@ the issue was then attributed to a pull request whose own text says it did not d
 the work. Say `Closes #2` to close one and `issue 2` to mention one;
 `.github/pull_request_template.md` carries the rule where it will be read.
 
+**Sunday and Sunday dinner are different facts, and the listing carries both.**
+Its whole meal-type vocabulary is four strings — `$N Dinner Price`, `$N Lunch
+Price`, `$N Sunday Dinner Price`, `$N Sunday Lunch/Brunch Price` — so it already
+says, per restaurant, whether Sunday is dinner or only brunch. 24 carry a Sunday
+lunch/brunch price and no Sunday dinner price. `sunday_dinner` is derived from
+that (`true` / `false` / `null`, where null means there is no Sunday
+participation to describe), and the planner reads it. It used to read a hand-set
+`no_sunday_dinner` flag that exactly one restaurant carries — and that one's
+`sunday` is false, so the line above it returns first and the branch had never
+run for anybody, while the other 23 were offered a Sunday with no qualification.
+The flag still wins where it is set.
+
 **A closure has two kinds and the page says which.** Google answers
 `OPERATIONAL`, `CLOSED_TEMPORARILY`, `CLOSED_PERMANENTLY`, or nothing at all.
 `google.closed` means **permanently** closed and nothing else; `google.status`

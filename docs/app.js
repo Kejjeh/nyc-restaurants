@@ -1870,7 +1870,14 @@ function dateIssue(r, iso) {
   }
   if (dow === 0) {
     if (r.sunday !== true) return 'no Sunday service';
-    if ((r.flags || []).includes('no_sunday_dinner')) return 'Sunday brunch only, no dinner';
+    /* The listing distinguishes "$N Sunday Dinner Price" from "$N Sunday
+       Lunch/Brunch Price", so it says this for every restaurant. This branch
+       used to fire only on a hand-set `no_sunday_dinner` flag, which exactly
+       one restaurant carries — and that one's `sunday` is false, so the line
+       above returns first and the branch had never run for anybody. The other
+       23 brunch-only restaurants were offered a Sunday with no qualification.
+       The flag still wins where it is set; `sunday_dinner` folds it in. */
+    if (r.sunday_dinner === false) return 'Sunday brunch only, no dinner';
   }
   return null;
 }
