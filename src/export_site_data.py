@@ -488,14 +488,24 @@ def rubric_for(r, cfg, today):
         parts["value"] = k * v + (1 - k) * float(c["neutral"])
 
     # window — days left to book. Flexibility, not urgency.
+    #
+    # INCLUSIVE of the end date, because every other date test on this site is
+    # and this one alone was not. A restaurant whose window ends today has not
+    # ended (hasEnded), still counts as urgent (isUrgent), is still offered a
+    # date by the planner (dateIssue/validDates), and the countdown tile says
+    # "1 day left". The rubric scored it 0.0 on a component the row detail
+    # labels "Days left to book" — the same number it gives a restaurant that
+    # closed three weeks ago, printed beside a page saying you can still book.
+    # 191 restaurants read that way on 16 August; 401 do on the last day of the
+    # season.
     if r.get("end_date"):
         try:
             left = (date.fromisoformat(r["end_date"]) - today).days
         except ValueError:
             left = None
         c = cfg["window"]
-        parts["window"] = _ramp(max(0, left), c["zero_at_days"], c["full_at_days"]) \
-            if left is not None else None
+        parts["window"] = _ramp(max(0, left + 1), c["zero_at_days"],
+                                c["full_at_days"]) if left is not None else None
     else:
         parts["window"] = None
 
