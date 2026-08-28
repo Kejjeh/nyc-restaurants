@@ -1,0 +1,19 @@
+{
+ "slug": "maison-premiere",
+ "query_name": "Maison Premiere",
+ "matched": {
+  "place_id": "ChIJW_WGT2BZwokRNpvZ4k3lVcs",
+  "name": "Maison Premiere",
+  "address": "298 Bedford Ave, Brooklyn, NY 11249, USA",
+  "rating": 4.6,
+  "user_ratings_total": 2139,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7142687,
+  "lng": -73.96166459999999
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

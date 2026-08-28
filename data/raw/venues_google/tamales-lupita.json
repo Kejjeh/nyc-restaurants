@@ -1,0 +1,19 @@
+{
+ "slug": "tamales-lupita",
+ "query_name": "Tamales Lupita",
+ "matched": {
+  "place_id": "ChIJl54iOAT2wokR_rtLj-eKUnc",
+  "name": "Tamales Lupita",
+  "address": "154 E 112th St, New York, NY 10029, USA",
+  "rating": 4.7,
+  "user_ratings_total": 67,
+  "business_status": "OPERATIONAL",
+  "lat": 40.79570469999999,
+  "lng": -73.943237
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

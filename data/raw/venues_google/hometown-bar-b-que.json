@@ -1,0 +1,19 @@
+{
+ "slug": "hometown-bar-b-que",
+ "query_name": "Hometown Bar B Que New York",
+ "matched": {
+  "place_id": "ChIJ0VWwJI9awokRoiFWFqYZMQ8",
+  "name": "Hometown Bar-B-Que",
+  "address": "454 Van Brunt St, Brooklyn, NY 11231, USA",
+  "rating": 4.5,
+  "user_ratings_total": 4516,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6749167,
+  "lng": -74.0161583
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "454 Van Brunt St., Brooklyn, NY 11231"
+}

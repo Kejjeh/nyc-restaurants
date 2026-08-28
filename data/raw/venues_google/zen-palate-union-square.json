@@ -1,0 +1,19 @@
+{
+ "slug": "zen-palate-union-square",
+ "query_name": "Zen Palate Union Square",
+ "matched": {
+  "place_id": "ChIJjSj86KFZwokRIlIQ-QRty70",
+  "name": "Zen Palate",
+  "address": "115 E 18th St, New York, NY 10003, USA",
+  "rating": 3.2,
+  "user_ratings_total": 19,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.73687779999999,
+  "lng": -73.98764
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

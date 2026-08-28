@@ -1,0 +1,19 @@
+{
+ "slug": "dame",
+ "query_name": "Dame",
+ "matched": {
+  "place_id": "ChIJU3gRuXpZwokRihNyTYLnc1g",
+  "name": "Dame",
+  "address": "87 MacDougal St, New York, NY 10012, USA",
+  "rating": 4.6,
+  "user_ratings_total": 409,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7289458,
+  "lng": -74.0015062
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "87 MacDougal St., New York, NY 10012"
+}

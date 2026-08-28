@@ -1,0 +1,19 @@
+{
+ "slug": "pierogi-boys",
+ "query_name": "Pierogi Boys",
+ "matched": {
+  "place_id": "ChIJq7o2K2ddwokRhRr1xhbv5_Q",
+  "name": "Pierogi Boys",
+  "address": "57-34 Catalpa Ave, Ridgewood, NY 11385, USA",
+  "rating": 4.7,
+  "user_ratings_total": 192,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7012439,
+  "lng": -73.9029836
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "57-34 Catalpa Ave., Ridgewood, NY 11385"
+}

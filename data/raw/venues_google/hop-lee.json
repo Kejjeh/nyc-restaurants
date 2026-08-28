@@ -1,0 +1,19 @@
+{
+ "slug": "hop-lee",
+ "query_name": "Hop Lee",
+ "matched": {
+  "place_id": "ChIJ4xlG7CZawokRCHn1c3MJlc0",
+  "name": "Hop Lee",
+  "address": "16 Mott St, New York, NY 10013, USA",
+  "rating": 4.3,
+  "user_ratings_total": 696,
+  "business_status": "OPERATIONAL",
+  "lat": 40.714271,
+  "lng": -73.9986282
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

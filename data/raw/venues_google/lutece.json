@@ -1,0 +1,19 @@
+{
+ "slug": "lutece",
+ "query_name": "Lutece",
+ "matched": {
+  "place_id": "ChIJA2aF_OJYwokR5-ZUq_SHUZU",
+  "name": "Lutece",
+  "address": "249 E 50th St, New York, NY 10022, USA",
+  "rating": null,
+  "user_ratings_total": null,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7552873,
+  "lng": -73.9689186
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "alto",
+ "query_name": "Alto",
+ "matched": {
+  "place_id": "ChIJY50xHxP2wokR7WhhDNRmgRU",
+  "name": "Upper Manhattan",
+  "address": "Upper Manhattan, New York, NY, USA",
+  "rating": null,
+  "user_ratings_total": null,
+  "business_status": null,
+  "lat": 40.8240478,
+  "lng": -73.9447643
+ },
+ "accepted": false,
+ "reason": "name similarity 0.00 is too low to identify on its own",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

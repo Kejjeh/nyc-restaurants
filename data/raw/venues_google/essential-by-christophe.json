@@ -1,0 +1,19 @@
+{
+ "slug": "essential-by-christophe",
+ "query_name": "Essential by Christophe",
+ "matched": {
+  "place_id": "ChIJw6JyhoxZwokR3mKl4FLg5rM",
+  "name": "Essential by Christophe",
+  "address": "103 W 77th St, New York, NY 10024, USA",
+  "rating": 4.8,
+  "user_ratings_total": 454,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7809576,
+  "lng": -73.9766017
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "103 W. 77th St., New York, NY 10024"
+}

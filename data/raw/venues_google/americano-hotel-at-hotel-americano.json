@@ -1,0 +1,19 @@
+{
+ "slug": "americano-hotel-at-hotel-americano",
+ "query_name": "The Americano Hotel at Hotel Americano",
+ "matched": {
+  "place_id": "ChIJnZMMbqpZwokR24YkG4iAQUo",
+  "name": "The Americana Inn",
+  "address": "69 W 38th St, New York, NY 10018, USA",
+  "rating": 3.6,
+  "user_ratings_total": 800,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7522927,
+  "lng": -73.9855489
+ },
+ "accepted": false,
+ "reason": "name similarity 0.17 is too low to identify on its own",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

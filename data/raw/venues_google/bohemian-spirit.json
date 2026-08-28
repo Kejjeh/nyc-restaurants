@@ -1,0 +1,19 @@
+{
+ "slug": "bohemian-spirit",
+ "query_name": "Bohemian Spirit",
+ "matched": {
+  "place_id": "ChIJZd1h-MBYwokR0Ek-F4_Sep8",
+  "name": "Bohemian Spirit",
+  "address": "321 E 73rd St, New York, NY 10021, USA",
+  "rating": 4.5,
+  "user_ratings_total": 712,
+  "business_status": "OPERATIONAL",
+  "lat": 40.769081,
+  "lng": -73.95648
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "321 E. 73rd St., New York, NY 10021"
+}

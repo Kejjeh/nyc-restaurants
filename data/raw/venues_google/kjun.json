@@ -1,0 +1,19 @@
+{
+ "slug": "kjun",
+ "query_name": "Kjun",
+ "matched": {
+  "place_id": "ChIJ7xJ4Rw9ZwokRhQQ-WKtoJFg",
+  "name": "KJUN",
+  "address": "334 Lexington Ave, New York, NY 10016, USA",
+  "rating": 4.8,
+  "user_ratings_total": 2437,
+  "business_status": "OPERATIONAL",
+  "lat": 40.749723,
+  "lng": -73.9775349
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "334 Lexington Ave., New York, NY 10016"
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "dining-room-at-rh-guesthouse",
+ "query_name": "The Dining Room at RH Guesthouse",
+ "matched": {
+  "place_id": "ChIJZdCkqrpZwokRFHIxSGlgMjc",
+  "name": "The Dining Room at RH Guesthouse New York",
+  "address": "55 Gansevoort St, New York, NY 10014, USA",
+  "rating": 4.2,
+  "user_ratings_total": 190,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7394841,
+  "lng": -74.00699139999999
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "55 Gansevoort St., New York, NY 10014"
+}

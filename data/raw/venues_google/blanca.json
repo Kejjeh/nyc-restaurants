@@ -1,0 +1,19 @@
+{
+ "slug": "blanca",
+ "query_name": "Blanca",
+ "matched": {
+  "place_id": "ChIJrSjk6QBcwokRJ12Xetu0rX4",
+  "name": "Blanca",
+  "address": "261 Moore St, Brooklyn, NY 11206, USA",
+  "rating": 4.6,
+  "user_ratings_total": 178,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.705065,
+  "lng": -73.9335919
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

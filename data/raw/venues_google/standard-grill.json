@@ -1,0 +1,19 @@
+{
+ "slug": "standard-grill",
+ "query_name": "The Standard Grill",
+ "matched": {
+  "place_id": "ChIJN-93ZsBZwokRonoT5y_yB1c",
+  "name": "The Standard Grill",
+  "address": "The Standard, High Line, 848 Washington St, New York, NY 10014, USA",
+  "rating": 4.2,
+  "user_ratings_total": 1713,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7406769,
+  "lng": -74.00787629999999
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

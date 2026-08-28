@@ -1,0 +1,19 @@
+{
+ "slug": "accra-express",
+ "query_name": "Accra Express",
+ "matched": {
+  "place_id": "ChIJDQWflBL2wokRiLXCawXJJdU",
+  "name": "Accra Express Restaurant",
+  "address": "63 E 125th St, New York, NY 10035, USA",
+  "rating": 4.4,
+  "user_ratings_total": 1343,
+  "business_status": "OPERATIONAL",
+  "lat": 40.8057139,
+  "lng": -73.9398894
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

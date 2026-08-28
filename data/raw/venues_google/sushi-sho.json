@@ -1,0 +1,19 @@
+{
+ "slug": "sushi-sho",
+ "query_name": "Sushi Sho",
+ "matched": {
+  "place_id": "ChIJT_JHTgFZwokRXleXHadsVaE",
+  "name": "Sushi Sho",
+  "address": "3 E 41st St, New York, NY 10017, USA",
+  "rating": 4.6,
+  "user_ratings_total": 105,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7526643,
+  "lng": -73.9807136
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "3 E. 41st St., New York, NY 10017"
+}

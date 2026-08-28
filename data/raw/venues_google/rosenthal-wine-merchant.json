@@ -1,0 +1,19 @@
+{
+ "slug": "rosenthal-wine-merchant",
+ "query_name": "Rosenthal Wine Merchant",
+ "matched": {
+  "place_id": "ChIJBxgL8adYwokRUmPzvITwin4",
+  "name": "Rosenthal Wine Merchant",
+  "address": "1590 Lexington Ave, New York, NY 10029, USA",
+  "rating": 5,
+  "user_ratings_total": 22,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7892525,
+  "lng": -73.94882750000001
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

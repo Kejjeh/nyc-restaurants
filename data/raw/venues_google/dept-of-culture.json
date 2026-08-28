@@ -1,0 +1,19 @@
+{
+ "slug": "dept-of-culture",
+ "query_name": "Dept of Culture",
+ "matched": {
+  "place_id": "ChIJ86cwNj5bwokRrn8VpEBI5jw",
+  "name": "Dept. of Culture",
+  "address": "327 Nostrand Ave, Brooklyn, NY 11216, USA",
+  "rating": 4.7,
+  "user_ratings_total": 148,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6871918,
+  "lng": -73.9507828
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

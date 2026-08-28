@@ -1,0 +1,19 @@
+{
+ "slug": "east-harbor-seafood-palace",
+ "query_name": "East Harbor Seafood Palace",
+ "matched": {
+  "place_id": "ChIJZVJwHU9FwokRBuD4swvPWjY",
+  "name": "East Harbor Seafood Palace",
+  "address": "714 65th St, Brooklyn, NY 11220, USA",
+  "rating": 4.3,
+  "user_ratings_total": 2220,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6335359,
+  "lng": -74.0143293
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "714 65th St., Brooklyn, NY 11220"
+}

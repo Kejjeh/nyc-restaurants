@@ -1,0 +1,19 @@
+{
+ "slug": "insa",
+ "query_name": "Insa",
+ "matched": {
+  "place_id": "ChIJo-EvNqtbwokRjZnXUY-cyCk",
+  "name": "Insa",
+  "address": "328 Douglass St, Brooklyn, NY 11217, USA",
+  "rating": 4.3,
+  "user_ratings_total": 1014,
+  "business_status": "OPERATIONAL",
+  "lat": 40.679547,
+  "lng": -73.982591
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

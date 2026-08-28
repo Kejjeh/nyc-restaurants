@@ -1,0 +1,19 @@
+{
+ "slug": "untable",
+ "query_name": "Untable",
+ "matched": {
+  "place_id": "ChIJ_zbudV1bwokRyxgi4zQEn0Y",
+  "name": "Untable",
+  "address": "529 Henry St, Brooklyn, NY 11231, USA",
+  "rating": 4.8,
+  "user_ratings_total": 226,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6835757,
+  "lng": -73.9994403
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "529 Henry St., Brooklyn, NY 11231"
+}

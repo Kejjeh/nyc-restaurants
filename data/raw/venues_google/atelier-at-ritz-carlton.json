@@ -1,0 +1,19 @@
+{
+ "slug": "atelier-at-ritz-carlton",
+ "query_name": "Atelier at The Ritz-Carlton",
+ "matched": {
+  "place_id": "ChIJZSWtT1NZwokRHh_3WWnggZE",
+  "name": "The Ritz-Carlton New York, NoMad",
+  "address": "25 W 28th St, New York, NY 10001, USA",
+  "rating": 4.4,
+  "user_ratings_total": 654,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7455355,
+  "lng": -73.9888447
+ },
+ "accepted": false,
+ "reason": "name similarity 0.38 is too low to identify on its own",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

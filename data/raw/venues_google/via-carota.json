@@ -1,0 +1,19 @@
+{
+ "slug": "via-carota",
+ "query_name": "Via Carota",
+ "matched": {
+  "place_id": "ChIJr7FOf5NZwokRu3CDYtzVmuQ",
+  "name": "Via Carota",
+  "address": "51 Grove St, New York, NY 10014, USA",
+  "rating": 4.4,
+  "user_ratings_total": 3367,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7331959,
+  "lng": -74.00364940000001
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "51 Grove St., New York, NY 10014"
+}

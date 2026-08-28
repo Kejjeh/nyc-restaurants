@@ -1,0 +1,19 @@
+{
+ "slug": "lakruwana",
+ "query_name": "Lakruwana",
+ "matched": {
+  "place_id": "ChIJ03HMlbRPwokR4dG6Dhon-A4",
+  "name": "Lakruwana Restaurant",
+  "address": "668 Bay St, Staten Island, NY 10304, USA",
+  "rating": 4.5,
+  "user_ratings_total": 1126,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6257501,
+  "lng": -74.0753052
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "668 Bay St., Staten Island, NY 10304"
+}

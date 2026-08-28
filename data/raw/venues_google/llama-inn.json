@@ -1,0 +1,19 @@
+{
+ "slug": "llama-inn",
+ "query_name": "Llama Inn",
+ "matched": {
+  "place_id": "ChIJD6vUMlpZwokRSFeGSBW_gvU",
+  "name": "Llama Inn",
+  "address": "50 Withers St, Brooklyn, NY 11211, USA",
+  "rating": 4.3,
+  "user_ratings_total": 1715,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.7166429,
+  "lng": -73.9505713
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

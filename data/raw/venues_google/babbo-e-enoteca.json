@@ -1,0 +1,19 @@
+{
+ "slug": "babbo-e-enoteca",
+ "query_name": "Babbo Ristorante e Enoteca",
+ "matched": {
+  "place_id": "ChIJ0cr5SZFZwokRqThsmC5Caes",
+  "name": "Babbo",
+  "address": "110 Waverly Pl, New York, NY 10011, USA",
+  "rating": 4.3,
+  "user_ratings_total": 1822,
+  "business_status": "OPERATIONAL",
+  "lat": 40.732296,
+  "lng": -73.9992785
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

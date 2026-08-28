@@ -1,0 +1,19 @@
+{
+ "slug": "fauchon",
+ "query_name": "Fauchon",
+ "matched": {
+  "place_id": "ChIJVV4YAQBZwokR1ZC5xa2uTeo",
+  "name": "Fauchon Paris NYC",
+  "address": "Two Bryant Park, New York, NY 10036, USA",
+  "rating": 4.2,
+  "user_ratings_total": 78,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7546681,
+  "lng": -73.9833096
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

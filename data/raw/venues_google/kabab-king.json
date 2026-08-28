@@ -1,0 +1,19 @@
+{
+ "slug": "kabab-king",
+ "query_name": "Kabab King",
+ "matched": {
+  "place_id": "ChIJo35TUaZZwokRXC5TaMTpPBM",
+  "name": "Kabab King",
+  "address": "73-01 37th Rd, Jackson Heights, NY 11372, USA",
+  "rating": 3.6,
+  "user_ratings_total": 4032,
+  "business_status": "OPERATIONAL",
+  "lat": 40.747332,
+  "lng": -73.8922146
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

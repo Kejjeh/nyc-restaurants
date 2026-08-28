@@ -1,0 +1,19 @@
+{
+ "slug": "shaw-naes-house",
+ "query_name": "Shaw-naé's House",
+ "matched": {
+  "place_id": "ChIJZ5_CZk5PwokR0BV6d5x9DLU",
+  "name": "Shaw-nae’s House",
+  "address": "379 Van Duzer St, Staten Island, NY 10304, USA",
+  "rating": 4.8,
+  "user_ratings_total": 567,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6287204,
+  "lng": -74.0796945
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "j-g-melon",
+ "query_name": "J.G. Melon",
+ "matched": {
+  "place_id": "ChIJORutA8BYwokR6obC5YpaamM",
+  "name": "JG Melon",
+  "address": "1291 3rd Ave, New York, NY 10021, USA",
+  "rating": 4.2,
+  "user_ratings_total": 4051,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7710738,
+  "lng": -73.9593297
+ },
+ "accepted": true,
+ "reason": "name 0.25, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "1291 Third Ave., New York, NY 10021"
+}

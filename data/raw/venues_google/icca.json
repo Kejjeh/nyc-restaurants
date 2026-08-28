@@ -1,0 +1,19 @@
+{
+ "slug": "icca",
+ "query_name": "Icca",
+ "matched": {
+  "place_id": "ChIJyRIhC_dbwokRqGoh89KPQME",
+  "name": "icca",
+  "address": "20 Warren St, New York, NY 10007, USA",
+  "rating": 4.5,
+  "user_ratings_total": 142,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7143008,
+  "lng": -74.0076845
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "20 Warren St., New York, NY 10007"
+}

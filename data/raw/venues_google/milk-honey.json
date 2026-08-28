@@ -1,0 +1,19 @@
+{
+ "slug": "milk-honey",
+ "query_name": "Milk & Honey",
+ "matched": {
+  "place_id": "ChIJf1MYtv9YwokRWpMQlbMfU_g",
+  "name": "Milk N' Honey",
+  "address": "12 E 46th St, New York, NY 10017, USA",
+  "rating": 3.9,
+  "user_ratings_total": 890,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7554338,
+  "lng": -73.9782713
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

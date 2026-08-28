@@ -1,0 +1,19 @@
+{
+ "slug": "whoopsie-daisy",
+ "query_name": "Whoopsie Daisy",
+ "matched": {
+  "place_id": "ChIJjXV-dblbwokRhbvL8k8r8M4",
+  "name": "Whoopsie Daisy",
+  "address": "225 Rogers Ave, Brooklyn, NY 11225, USA",
+  "rating": 4.6,
+  "user_ratings_total": 85,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6686983,
+  "lng": -73.9531789
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

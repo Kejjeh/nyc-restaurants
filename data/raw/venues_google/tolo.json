@@ -1,0 +1,19 @@
+{
+ "slug": "tolo",
+ "query_name": "Tolo",
+ "matched": {
+  "place_id": "ChIJQSKt-VdbwokRRPjIjPe6XEA",
+  "name": "Tolo",
+  "address": "28 Canal St, New York, NY 10002, USA",
+  "rating": 4.1,
+  "user_ratings_total": 215,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7143377,
+  "lng": -73.99050989999999
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "28 Canal St., New York, NY 10002"
+}

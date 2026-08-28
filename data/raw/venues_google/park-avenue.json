@@ -1,0 +1,19 @@
+{
+ "slug": "park-avenue",
+ "query_name": "Park Avenue",
+ "matched": {
+  "place_id": "ChIJ1Z8UJGS3wokR2Z0U1MllYB4",
+  "name": "Park Avenue",
+  "address": "Park Ave, United States",
+  "rating": null,
+  "user_ratings_total": null,
+  "business_status": null,
+  "lat": 41.3991995,
+  "lng": 2.1457012
+ },
+ "accepted": false,
+ "reason": "result is outside New York City",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

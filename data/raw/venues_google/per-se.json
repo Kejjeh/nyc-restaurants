@@ -1,0 +1,19 @@
+{
+ "slug": "per-se",
+ "query_name": "Per Se",
+ "matched": {
+  "place_id": "ChIJp3PsL_ZYwokRZYqs_40RJF4",
+  "name": "Per Se",
+  "address": "10 Columbus Cir, New York, NY 10019, USA",
+  "rating": 4.5,
+  "user_ratings_total": 2141,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7682178,
+  "lng": -73.9828988
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "10 Columbus Circle, New York, NY 10019"
+}

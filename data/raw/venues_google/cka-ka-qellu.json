@@ -1,0 +1,19 @@
+{
+ "slug": "cka-ka-qellu",
+ "query_name": "Çka Ka Qëllu",
+ "matched": {
+  "place_id": "ChIJddi0Qof0wokRQGSTDJMZzHc",
+  "name": "Çka Ka Qëllu",
+  "address": "2321 Hughes Ave, Bronx, NY 10458, USA",
+  "rating": 4.8,
+  "user_ratings_total": 1513,
+  "business_status": "OPERATIONAL",
+  "lat": 40.8539343,
+  "lng": -73.88821159999999
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "2321 Hughes Ave., Bronx, NY 10458"
+}

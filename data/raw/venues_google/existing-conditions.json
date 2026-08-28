@@ -1,0 +1,19 @@
+{
+ "slug": "existing-conditions",
+ "query_name": "Existing Conditions",
+ "matched": {
+  "place_id": "ChIJcaHQbgBZwokR4J57HASEsDk",
+  "name": "Experimental Cocktail Club",
+  "address": "6 W 24th St, New York, NY 10010, USA",
+  "rating": 4.5,
+  "user_ratings_total": 133,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7425357,
+  "lng": -73.9903322
+ },
+ "accepted": false,
+ "reason": "name similarity 0.00 is too low to identify on its own",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

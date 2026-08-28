@@ -1,0 +1,19 @@
+{
+ "slug": "sawa",
+ "query_name": "Sawa",
+ "matched": {
+  "place_id": "ChIJD87O1YJbwokR6lRmQ6nsIfU",
+  "name": "Sawa",
+  "address": "75 5th Ave, Brooklyn, NY 11217, USA",
+  "rating": 4.5,
+  "user_ratings_total": 326,
+  "business_status": "OPERATIONAL",
+  "lat": 40.680412,
+  "lng": -73.97750479999999
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "75 5th Ave., Brooklyn, NY 11217"
+}

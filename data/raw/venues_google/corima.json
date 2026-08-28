@@ -1,0 +1,19 @@
+{
+ "slug": "corima",
+ "query_name": "Corima",
+ "matched": {
+  "place_id": "ChIJgaiXlpNbwokRN0vlYTshs-c",
+  "name": "Corima",
+  "address": "3 Allen St, New York, NY 10002, USA",
+  "rating": 4.4,
+  "user_ratings_total": 312,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7146783,
+  "lng": -73.9931228
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "3 Allen St., New York, NY 10002"
+}

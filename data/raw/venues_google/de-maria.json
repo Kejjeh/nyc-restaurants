@@ -1,0 +1,19 @@
+{
+ "slug": "de-maria",
+ "query_name": "De Maria",
+ "matched": {
+  "place_id": "ChIJT8_gIIZZwokRkqvJl7UBTLw",
+  "name": "De Maria",
+  "address": "19 Kenmare St, New York, NY 10012, USA",
+  "rating": 4.2,
+  "user_ratings_total": 125,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.7206739,
+  "lng": -73.9947071
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

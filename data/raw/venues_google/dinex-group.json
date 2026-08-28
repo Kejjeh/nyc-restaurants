@@ -1,0 +1,19 @@
+{
+ "slug": "dinex-group",
+ "query_name": "The Dinex Group",
+ "matched": {
+  "place_id": "ChIJXQHw7gBZwokRk05Hqp_U0-c",
+  "name": "The Dinex Group",
+  "address": "420 Lexington Ave #1800, New York, NY 10170, USA",
+  "rating": 5,
+  "user_ratings_total": 4,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7527814,
+  "lng": -73.9759322
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

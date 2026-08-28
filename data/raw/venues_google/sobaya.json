@@ -1,0 +1,19 @@
+{
+ "slug": "sobaya",
+ "query_name": "Sobaya",
+ "matched": {
+  "place_id": "ChIJVUXabZxZwokRh-_g7s0HxVI",
+  "name": "Sobaya",
+  "address": "229 E 9th St, New York, NY 10003, USA",
+  "rating": 4.2,
+  "user_ratings_total": 1248,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7296064,
+  "lng": -73.9879383
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "229 E. 9th St., New York, NY 10003"
+}

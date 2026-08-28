@@ -1,0 +1,19 @@
+{
+ "slug": "chuan-tian-xia",
+ "query_name": "Chuan Tian Xia",
+ "matched": {
+  "place_id": "ChIJrwxm-gpFwokR9f10RT15Ni8",
+  "name": "Chuan Tian Xia",
+  "address": "5502 7th Ave, Brooklyn, NY 11220, USA",
+  "rating": 4.2,
+  "user_ratings_total": 615,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6396357,
+  "lng": -74.0091003
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "5502 Seventh Ave., Brooklyn, NY 11220"
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "eulalie",
+ "query_name": "Eulalie",
+ "matched": {
+  "place_id": "ChIJNUy-BJpZwokReQu-xGJe9lI",
+  "name": "Eulalie",
+  "address": "239 W Broadway, New York, NY 10013, USA",
+  "rating": 4.9,
+  "user_ratings_total": 122,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7195945,
+  "lng": -74.0058452
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "239 West Broadway, New York, NY 10013"
+}

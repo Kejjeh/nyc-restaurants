@@ -1,0 +1,19 @@
+{
+ "slug": "le-bernardin",
+ "query_name": "Le Bernardin",
+ "matched": {
+  "place_id": "ChIJV7QQ6kdZwokRax4615zpSGU",
+  "name": "Le Bernardin",
+  "address": "155 W 51st St, New York, NY 10019, USA",
+  "rating": 4.6,
+  "user_ratings_total": 4636,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7614218,
+  "lng": -73.9817558
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "155 W. 51st St., New York, NY 10019"
+}

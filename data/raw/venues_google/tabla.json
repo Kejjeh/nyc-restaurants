@@ -1,0 +1,19 @@
+{
+ "slug": "tabla",
+ "query_name": "Tabla",
+ "matched": {
+  "place_id": "ChIJU73v6aZZwokRC7DJsruf3Mo",
+  "name": "Bread Bar at Tabla",
+  "address": "11 Madison Ave, New York, NY 10010, USA",
+  "rating": 3.3,
+  "user_ratings_total": 15,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.7415343,
+  "lng": -73.9870352
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

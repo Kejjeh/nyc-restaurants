@@ -1,0 +1,19 @@
+{
+ "slug": "bayon",
+ "query_name": "Bayon",
+ "matched": {
+  "place_id": "ChIJ_xTxLRpZwokRCIo4c-DuKMA",
+  "name": "Bayon",
+  "address": "408 E 64th St, New York, NY 10065, USA",
+  "rating": 4.8,
+  "user_ratings_total": 224,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.76229980000001,
+  "lng": -73.9591276
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "408 E. 64th St., New York, NY 10065"
+}

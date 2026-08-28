@@ -1,0 +1,19 @@
+{
+ "slug": "enoteca-maria",
+ "query_name": "Enoteca Maria",
+ "matched": {
+  "place_id": "ChIJ4aU3LC1OwokR44RNlSuxCjM",
+  "name": "Nonnas of the World Community",
+  "address": "27 Hyatt St, Staten Island, NY 10301, USA",
+  "rating": 4.7,
+  "user_ratings_total": 1663,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6420631,
+  "lng": -74.0773315
+ },
+ "accepted": true,
+ "reason": "name 0.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "27 Hyatt St., Staten Island, NY 10301"
+}

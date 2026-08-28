@@ -1,0 +1,19 @@
+{
+ "slug": "aldo-sohm-wine-bar",
+ "query_name": "Aldo Sohm Wine Bar",
+ "matched": {
+  "place_id": "ChIJFbIdkvhYwokRAicwcVjJ2io",
+  "name": "Aldo Sohm Wine Bar",
+  "address": "151 W 51st St, New York, NY 10019, USA",
+  "rating": 4.5,
+  "user_ratings_total": 611,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7616018,
+  "lng": -73.9813963
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

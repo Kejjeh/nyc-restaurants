@@ -1,0 +1,19 @@
+{
+ "slug": "sofreh",
+ "query_name": "Sofreh",
+ "matched": {
+  "place_id": "ChIJK9DnCNlbwokR499xR5NXZII",
+  "name": "Sofreh",
+  "address": "75 St Marks Ave, Brooklyn, NY 11217, USA",
+  "rating": 4.3,
+  "user_ratings_total": 1154,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6799152,
+  "lng": -73.97397080000002
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "75 St. Marks Ave., Brooklyn, NY 11217"
+}

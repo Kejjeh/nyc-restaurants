@@ -1,0 +1,19 @@
+{
+ "slug": "laghman-express",
+ "query_name": "Laghman Express",
+ "matched": {
+  "place_id": "ChIJD7HsKKtFwokRwCejsnrSyXw",
+  "name": "Laghman Express",
+  "address": "6201 20th Ave, Brooklyn, NY 11204, USA",
+  "rating": 4.9,
+  "user_ratings_total": 3165,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6181101,
+  "lng": -73.9840389
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

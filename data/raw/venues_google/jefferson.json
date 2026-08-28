@@ -1,0 +1,10 @@
+{
+ "slug": "jefferson",
+ "query_name": "Jefferson",
+ "matched": null,
+ "accepted": false,
+ "reason": "hand ruling: Text Search returned Jefferson Street, a street, not a venue. A neighbourhood or street has no premises to be open.",
+ "source": "hand",
+ "error": null,
+ "query_address": null
+}

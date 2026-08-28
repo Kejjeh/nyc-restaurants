@@ -1,0 +1,19 @@
+{
+ "slug": "taco-mix",
+ "query_name": "Taco Mix",
+ "matched": {
+  "place_id": "ChIJ2RB8ywf2wokRO5NQU16lvzY",
+  "name": "Taco Mix",
+  "address": "234 E 116th St #1, New York, NY 10029, USA",
+  "rating": 4.2,
+  "user_ratings_total": 1908,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7972067,
+  "lng": -73.9386762
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

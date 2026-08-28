@@ -1,0 +1,19 @@
+{
+ "slug": "locanda-verde",
+ "query_name": "Locanda Verde",
+ "matched": {
+  "place_id": "ChIJV09-awBZwokROld1G3kx0e4",
+  "name": "Locanda Verde Hudson Yards",
+  "address": "50 Hudson Yards, New York, NY 10001, USA",
+  "rating": 4.6,
+  "user_ratings_total": 272,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7549509,
+  "lng": -74.0004388
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

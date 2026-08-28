@@ -1,0 +1,10 @@
+{
+ "slug": "base-design",
+ "query_name": "Base Design",
+ "matched": null,
+ "accepted": false,
+ "reason": "hand ruling: Text Search returned the restaurant Base, when this record is the design firm Base Design, a different business. name_sim() scores a token subset 1.00, so a short name reads as a perfect match against any longer name that contains it.",
+ "source": "hand",
+ "error": null,
+ "query_address": null
+}

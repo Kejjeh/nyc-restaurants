@@ -1,0 +1,19 @@
+{
+ "slug": "altro-paradiso",
+ "query_name": "Altro Paradiso",
+ "matched": {
+  "place_id": "ChIJm3rL5YxZwokRWk_MgQ_fuAk",
+  "name": "Altro Paradiso",
+  "address": "234 Spring St, New York, NY 10013, USA",
+  "rating": 4.4,
+  "user_ratings_total": 954,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7254266,
+  "lng": -74.0046926
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "234 Spring St., New York, NY 10013"
+}

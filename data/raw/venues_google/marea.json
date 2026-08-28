@@ -1,0 +1,19 @@
+{
+ "slug": "marea",
+ "query_name": "Marea",
+ "matched": {
+  "place_id": "ChIJvWSDS_ZYwokRiG9D395loxo",
+  "name": "Marea",
+  "address": "240 Central Park S, New York, NY 10019, USA",
+  "rating": 4.5,
+  "user_ratings_total": 3109,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7674251,
+  "lng": -73.9811137
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "240 Central Park South, New York, NY 10019"
+}

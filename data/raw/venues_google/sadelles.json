@@ -1,0 +1,19 @@
+{
+ "slug": "sadelles",
+ "query_name": "Sadelle's",
+ "matched": {
+  "place_id": "ChIJP8URcY5ZwokRhFpdfNcK-FI",
+  "name": "Sadelle's New York",
+  "address": "463 W Broadway, New York, NY 10012, USA",
+  "rating": 4.2,
+  "user_ratings_total": 2280,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7262701,
+  "lng": -74.0001695
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

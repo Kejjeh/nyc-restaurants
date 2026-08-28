@@ -1,0 +1,19 @@
+{
+ "slug": "double-chicken-please",
+ "query_name": "Double Chicken Please",
+ "matched": {
+  "place_id": "ChIJI25hF09ZwokRnmmiXXONRf4",
+  "name": "Double Chicken Please",
+  "address": "115 Allen St, New York, NY 10002, USA",
+  "rating": 4.4,
+  "user_ratings_total": 2430,
+  "business_status": "OPERATIONAL",
+  "lat": 40.719592,
+  "lng": -73.9904612
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

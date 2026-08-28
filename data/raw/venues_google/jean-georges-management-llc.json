@@ -1,0 +1,10 @@
+{
+ "slug": "jean-georges-management-llc",
+ "query_name": "Jean-Georges Management LLC",
+ "matched": null,
+ "accepted": false,
+ "reason": "hand ruling: Text Search returned the restaurant Jean-Georges, which is already resolved under the venue slug \"jean-georges\". One place_id cannot be two venues.",
+ "source": "hand",
+ "error": null,
+ "query_address": null
+}

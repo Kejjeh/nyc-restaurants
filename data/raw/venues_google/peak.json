@@ -1,0 +1,19 @@
+{
+ "slug": "peak",
+ "query_name": "Peak",
+ "matched": {
+  "place_id": "ChIJ9-oPPZNZwokR9XwT635xClU",
+  "name": "Peak with Priceless Restaurant & Bar",
+  "address": "30 Hudson Yards 101 Floor, New York, NY 10001, USA",
+  "rating": 4.4,
+  "user_ratings_total": 2761,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7548096,
+  "lng": -74.0001452
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "30 Hudson Yards, New York, NY 10001"
+}

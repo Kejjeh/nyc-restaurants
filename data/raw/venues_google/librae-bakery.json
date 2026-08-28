@@ -1,0 +1,19 @@
+{
+ "slug": "librae-bakery",
+ "query_name": "Librae Bakery",
+ "matched": {
+  "place_id": "ChIJDyCs8UNZwokRaNcdvn_c6jU",
+  "name": "Librae Bakery",
+  "address": "35 Cooper Sq, New York, NY 10003, USA",
+  "rating": 4.5,
+  "user_ratings_total": 1322,
+  "business_status": "OPERATIONAL",
+  "lat": 40.72811859999999,
+  "lng": -73.99075239999999
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

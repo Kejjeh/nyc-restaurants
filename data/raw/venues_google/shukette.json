@@ -1,0 +1,19 @@
+{
+ "slug": "shukette",
+ "query_name": "Shukette",
+ "matched": {
+  "place_id": "ChIJuabZo6hZwokRhGPoGjo0H6k",
+  "name": "Shukette",
+  "address": "230 9th Ave, New York, NY 10001, USA",
+  "rating": 4.8,
+  "user_ratings_total": 4722,
+  "business_status": "OPERATIONAL",
+  "lat": 40.74715459999999,
+  "lng": -74.0005218
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

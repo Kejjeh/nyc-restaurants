@@ -1,0 +1,19 @@
+{
+ "slug": "harlem-hops",
+ "query_name": "Harlem Hops",
+ "matched": {
+  "place_id": "ChIJCRrEeXH2wokRU6mKA0g8Aic",
+  "name": "Harlem Hops",
+  "address": "2268 Adam Clayton Powell Jr Blvd, New York, NY 10030, USA",
+  "rating": 4.7,
+  "user_ratings_total": 569,
+  "business_status": "OPERATIONAL",
+  "lat": 40.8144444,
+  "lng": -73.9447222
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

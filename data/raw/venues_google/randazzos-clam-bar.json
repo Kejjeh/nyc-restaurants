@@ -1,0 +1,19 @@
+{
+ "slug": "randazzos-clam-bar",
+ "query_name": "Randazzo's Clam Bar",
+ "matched": {
+  "place_id": "ChIJU-MJFmVEwokRAbOSlHM0eRI",
+  "name": "Randazzo's Clam Bar",
+  "address": "2017 Emmons Ave, Brooklyn, NY 11235, USA",
+  "rating": 4.3,
+  "user_ratings_total": 2955,
+  "business_status": "OPERATIONAL",
+  "lat": 40.5839855,
+  "lng": -73.94763400000001
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "balaboosta",
+ "query_name": "Balaboosta",
+ "matched": {
+  "place_id": "ChIJ63HXyYhZwokRHzL3PhUfs8s",
+  "name": "Balaboosta",
+  "address": "611 Hudson St, New York, NY 10014, USA",
+  "rating": 4.3,
+  "user_ratings_total": 1020,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7376733,
+  "lng": -74.00588929999999
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

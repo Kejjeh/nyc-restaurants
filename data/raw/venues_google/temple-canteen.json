@@ -1,0 +1,19 @@
+{
+ "slug": "temple-canteen",
+ "query_name": "Temple Canteen",
+ "matched": {
+  "place_id": "ChIJK2i9vj9gwokRmSSSQPoeGb8",
+  "name": "Hindu Temple Canteen",
+  "address": "143-09 Holly Ave, Flushing, NY 11355, USA",
+  "rating": 4.6,
+  "user_ratings_total": 2105,
+  "business_status": "OPERATIONAL",
+  "lat": 40.75262,
+  "lng": -73.81651099999999
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

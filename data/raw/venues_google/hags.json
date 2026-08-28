@@ -1,0 +1,19 @@
+{
+ "slug": "hags",
+ "query_name": "HAGS",
+ "matched": {
+  "place_id": "ChIJp0ha1dFZwokRK9WxgN9HVuY",
+  "name": "HAGS",
+  "address": "163 1st Ave, New York, NY 10003, USA",
+  "rating": 4.7,
+  "user_ratings_total": 152,
+  "business_status": "OPERATIONAL",
+  "lat": 40.729021,
+  "lng": -73.9845095
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "163 First Ave., New York, NY 10003"
+}

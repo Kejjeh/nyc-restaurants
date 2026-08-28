@@ -1,0 +1,10 @@
+{
+ "slug": "montrachet",
+ "query_name": "Montrachet",
+ "matched": null,
+ "accepted": false,
+ "reason": "hand ruling: Text Search returned Montrachet in Bayonne, NJ, outside New York City. NYC_BOUNDS is a rectangle that reaches far enough west for Staten Island, so it also contains north-east New Jersey, and in_nyc() passed it.",
+ "source": "hand",
+ "error": null,
+ "query_address": null
+}

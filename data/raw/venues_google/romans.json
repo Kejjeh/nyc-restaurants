@@ -1,0 +1,19 @@
+{
+ "slug": "romans",
+ "query_name": "Roman's",
+ "matched": {
+  "place_id": "ChIJZXYSkrlbwokRpzfP73Xu0Bw",
+  "name": "Roman's",
+  "address": "243 Dekalb Ave, Brooklyn, NY 11205, USA",
+  "rating": 4.6,
+  "user_ratings_total": 498,
+  "business_status": "OPERATIONAL",
+  "lat": 40.689633,
+  "lng": -73.96953979999999
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

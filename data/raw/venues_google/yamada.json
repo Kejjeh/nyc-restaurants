@@ -1,0 +1,19 @@
+{
+ "slug": "yamada",
+ "query_name": "Yamada",
+ "matched": {
+  "place_id": "ChIJSdFphJdbwokRG3R5uMCxFt4",
+  "name": "Yamada",
+  "address": "16 Elizabeth St, New York, NY 10013, USA",
+  "rating": 4.9,
+  "user_ratings_total": 60,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7159317,
+  "lng": -73.9972602
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "16 Elizabeth St., New York, NY 10013"
+}

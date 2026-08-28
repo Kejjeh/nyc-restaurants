@@ -1,0 +1,19 @@
+{
+ "slug": "spirits-educator",
+ "query_name": "Spirits Educator",
+ "matched": {
+  "place_id": "ChIJk1ij-qhZwokRtsmqbn-bcAQ",
+  "name": "Wine & Spirits Magazine",
+  "address": "2 W 32nd St #601, New York, NY 10001, USA",
+  "rating": 5,
+  "user_ratings_total": 6,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7472532,
+  "lng": -73.9861784
+ },
+ "accepted": false,
+ "reason": "name similarity 0.25 is too low to identify on its own",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

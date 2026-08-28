@@ -1,0 +1,19 @@
+{
+ "slug": "verbena",
+ "query_name": "Verbena",
+ "matched": {
+  "place_id": "ChIJbaYusd6AwokRC8xyV0fywgE",
+  "name": "Verbena Designs Inc",
+  "address": "347 W John St, Hicksville, NY 11801, USA",
+  "rating": 4.9,
+  "user_ratings_total": 76,
+  "business_status": "OPERATIONAL",
+  "lat": 40.766447,
+  "lng": -73.539361
+ },
+ "accepted": false,
+ "reason": "result is outside New York City",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "boulud-sud",
+ "query_name": "Boulud Sud",
+ "matched": {
+  "place_id": "ChIJWRBYpPVYwokRCRyrdmCyf_w",
+  "name": "Boulud Sud",
+  "address": "20 W 64th St, New York, NY 10023, USA",
+  "rating": 4.5,
+  "user_ratings_total": 679,
+  "business_status": "CLOSED_TEMPORARILY",
+  "lat": 40.7717888,
+  "lng": -73.9814454
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

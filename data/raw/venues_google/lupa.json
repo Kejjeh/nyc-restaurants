@@ -1,0 +1,19 @@
+{
+ "slug": "lupa",
+ "query_name": "Lupa",
+ "matched": {
+  "place_id": "ChIJcWrDA45ZwokRZnC4PCcrgPI",
+  "name": "Lupa",
+  "address": "170 Thompson St, New York, NY 10012, USA",
+  "rating": 4.3,
+  "user_ratings_total": 1256,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.7276467,
+  "lng": -74.0002058
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

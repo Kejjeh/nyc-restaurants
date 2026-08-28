@@ -1,0 +1,19 @@
+{
+ "slug": "bartolo",
+ "query_name": "Bartolo",
+ "matched": {
+  "place_id": "ChIJh6WuOgBZwokR8Lm6IOFKk7A",
+  "name": "Bartolo",
+  "address": "310-312 W 4th St, New York, NY 10014, USA",
+  "rating": 4.3,
+  "user_ratings_total": 124,
+  "business_status": "OPERATIONAL",
+  "lat": 40.737252,
+  "lng": -74.0040071
+ },
+ "accepted": true,
+ "reason": "name 1.00, postal code agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "310 W. 4th St., New York, NY 10014"
+}

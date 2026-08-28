@@ -1,0 +1,19 @@
+{
+ "slug": "p-ong",
+ "query_name": "P*ong",
+ "matched": {
+  "place_id": "ChIJ-f2BI5RZwokRYsOTNRGl_zU",
+  "name": "P*ong",
+  "address": "150 W 10th St, New York, NY 10014, USA",
+  "rating": null,
+  "user_ratings_total": null,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.7343432,
+  "lng": -74.0010957
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "pastis",
+ "query_name": "Pastis",
+ "matched": {
+  "place_id": "ChIJ8U_F9b9ZwokRTaHyDKWRNSg",
+  "name": "Pastis",
+  "address": "52 Gansevoort St, New York, NY 10014, USA",
+  "rating": 4.6,
+  "user_ratings_total": 3280,
+  "business_status": "OPERATIONAL",
+  "lat": 40.73924179999999,
+  "lng": -74.007014
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "keens-steakhouse",
+ "query_name": "Keens Steakhouse",
+ "matched": {
+  "place_id": "ChIJ5804KalZwokRzGll2Rm7nag",
+  "name": "Keens Steakhouse",
+  "address": "72 W 36th St., New York, NY 10018, USA",
+  "rating": 4.6,
+  "user_ratings_total": 9907,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7507861,
+  "lng": -73.9864611
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

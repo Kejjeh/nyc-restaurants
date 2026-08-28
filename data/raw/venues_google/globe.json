@@ -1,0 +1,19 @@
+{
+ "slug": "globe",
+ "query_name": "The Globe",
+ "matched": {
+  "place_id": "ChIJiUxll6BZwokRgDgDzwAscN0",
+  "name": "The Globe Bar",
+  "address": "158 E 23rd St, New York, NY 10010, USA",
+  "rating": 4.3,
+  "user_ratings_total": 662,
+  "business_status": "OPERATIONAL",
+  "lat": 40.738842,
+  "lng": -73.983778
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "levant",
+ "query_name": "Levant",
+ "matched": {
+  "place_id": "ChIJy2zqfWJfwokRskbl93Mhi0M",
+  "name": "Levant",
+  "address": "25-64 Steinway St, Astoria, NY 11103, USA",
+  "rating": 4.5,
+  "user_ratings_total": 467,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7664874,
+  "lng": -73.9131079
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "rosella",
+ "query_name": "Rosella",
+ "matched": {
+  "place_id": "ChIJj_wLYalZwokRULTcqVFlZlg",
+  "name": "Rosella",
+  "address": "137 Avenue A, New York, NY 10009, USA",
+  "rating": 4.7,
+  "user_ratings_total": 425,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7270945,
+  "lng": -73.9830259
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "137 Avenue A, New York, NY 10009"
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "mayree",
+ "query_name": "MayRee",
+ "matched": {
+  "place_id": "ChIJjw0jcKJZwokRrqj91_P25w8",
+  "name": "MayRee",
+  "address": "58 E 1st St, New York, NY 10003, USA",
+  "rating": 4.7,
+  "user_ratings_total": 480,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7238424,
+  "lng": -73.9892241
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "58 E. 1st St., New York, NY 10003"
+}

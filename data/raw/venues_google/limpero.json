@@ -1,0 +1,19 @@
+{
+ "slug": "limpero",
+ "query_name": "L'Impero",
+ "matched": {
+  "place_id": "ChIJwa3tb6VZwokREZGBnAuq_18",
+  "name": "Impero Caffè",
+  "address": "INNSIDE New York, 132 W 27th St, New York, NY 10001, USA",
+  "rating": 3.9,
+  "user_ratings_total": 15,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.7459181,
+  "lng": -73.9926305
+ },
+ "accepted": false,
+ "reason": "name similarity 0.33 is too low to identify on its own",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "shota-omakase",
+ "query_name": "Shota Omakase",
+ "matched": {
+  "place_id": "ChIJ34eY6E5ZwokRvof_huM7t3U",
+  "name": "Shota omakase",
+  "address": "50 S 3rd St, Brooklyn, NY 11249, USA",
+  "rating": 4.6,
+  "user_ratings_total": 184,
+  "business_status": "OPERATIONAL",
+  "lat": 40.71352,
+  "lng": -73.96615729999999
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "50 S. 3rd St., Brooklyn, NY 11249"
+}

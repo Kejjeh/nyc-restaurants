@@ -1,0 +1,19 @@
+{
+ "slug": "myriad-group",
+ "query_name": "Myriad Restaurant Group",
+ "matched": {
+  "place_id": "ChIJCbqVxpyDXjkRl4zDfHxKx7M",
+  "name": "Myriad Restaurant & Banquets",
+  "address": "NISHAN PRIDE, GST Rd, opp. S.V. Square, New Ranip, Ahmedabad, Gujarat 382470, India",
+  "rating": 4,
+  "user_ratings_total": 1247,
+  "business_status": "OPERATIONAL",
+  "lat": 23.0900162,
+  "lng": 72.5649566
+ },
+ "accepted": false,
+ "reason": "result is outside New York City",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

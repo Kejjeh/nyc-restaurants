@@ -1,0 +1,19 @@
+{
+ "slug": "casa-mono-and-bar-jamon",
+ "query_name": "Casa Mono and Bar Jamón",
+ "matched": {
+  "place_id": "ChIJUd1sYJ9ZwokRRkqniQdJ144",
+  "name": "Casa Mono",
+  "address": "52 Irving Pl, New York, NY 10003, USA",
+  "rating": 4.3,
+  "user_ratings_total": 2001,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7358936,
+  "lng": -73.9871361
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

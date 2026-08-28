@@ -1,0 +1,10 @@
+{
+ "slug": "village",
+ "query_name": "Village",
+ "matched": null,
+ "accepted": false,
+ "reason": "hand ruling: Text Search returned the Greenwich Village neighbourhood, not a venue. A neighbourhood or street has no premises to be open.",
+ "source": "hand",
+ "error": null,
+ "query_address": null
+}

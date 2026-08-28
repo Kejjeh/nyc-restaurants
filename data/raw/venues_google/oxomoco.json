@@ -1,0 +1,19 @@
+{
+ "slug": "oxomoco",
+ "query_name": "Oxomoco",
+ "matched": {
+  "place_id": "ChIJ__-z7kBZwokRezHqB39zBLI",
+  "name": "Oxomoco",
+  "address": "128 Greenpoint Ave, Brooklyn, NY 11222, USA",
+  "rating": 4.5,
+  "user_ratings_total": 2510,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7298214,
+  "lng": -73.95547599999999
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "128 Greenpoint Ave., Brooklyn, NY 11222"
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "butter",
+ "query_name": "Butter Restaurant",
+ "matched": {
+  "place_id": "ChIJC5JFjf9YwokREzJa0siEb8c",
+  "name": "Butter",
+  "address": "70 W 45th St, New York, NY 10036, USA",
+  "rating": 4.3,
+  "user_ratings_total": 1566,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7563483,
+  "lng": -73.982205
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

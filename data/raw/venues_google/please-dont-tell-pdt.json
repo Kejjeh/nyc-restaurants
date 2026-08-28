@@ -1,0 +1,19 @@
+{
+ "slug": "please-dont-tell-pdt",
+ "query_name": "Please Don't Tell (PDT)",
+ "matched": {
+  "place_id": "ChIJb67-ZZ1ZwokRRxBYr3GlFp0",
+  "name": "Please Don't Tell",
+  "address": "113 St Marks Pl, New York, NY 10009, USA",
+  "rating": 4.3,
+  "user_ratings_total": 2471,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7271371,
+  "lng": -73.98374110000002
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

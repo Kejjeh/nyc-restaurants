@@ -1,0 +1,19 @@
+{
+ "slug": "cocina-consuelo",
+ "query_name": "Cocina Consuelo",
+ "matched": {
+  "place_id": "ChIJEyoj-4f3wokRYFZu3Lywqd8",
+  "name": "Cocina Consuelo",
+  "address": "130 Hamilton Pl, New York, NY 10031, USA",
+  "rating": 4.6,
+  "user_ratings_total": 356,
+  "business_status": "OPERATIONAL",
+  "lat": 40.824042,
+  "lng": -73.9492303
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

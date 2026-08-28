@@ -1,0 +1,19 @@
+{
+ "slug": "casa-ora",
+ "query_name": "Casa Ora",
+ "matched": {
+  "place_id": "ChIJqRe1FMpbwokRQqWHvCtpSO8",
+  "name": "Casa Ora",
+  "address": "148 Meserole St, Brooklyn, NY 11206, USA",
+  "rating": 4.5,
+  "user_ratings_total": 1246,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7079427,
+  "lng": -73.9437667
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "148 Meserole St., Brooklyn, NY 11206"
+}

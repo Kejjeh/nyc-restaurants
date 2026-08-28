@@ -1,0 +1,19 @@
+{
+ "slug": "gordos-cantina",
+ "query_name": "Gordo's Cantina",
+ "matched": {
+  "place_id": "ChIJ4ahOydVYwokR7cBu4R_8BXo",
+  "name": "Gordo's Cantina",
+  "address": "140 St Nicholas Ave, Brooklyn, NY 11237, USA",
+  "rating": 4.5,
+  "user_ratings_total": 692,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7049645,
+  "lng": -73.91757179999999
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "140 St. Nicholas Ave., Brooklyn, NY 11237"
+}

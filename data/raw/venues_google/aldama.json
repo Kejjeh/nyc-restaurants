@@ -1,0 +1,19 @@
+{
+ "slug": "aldama",
+ "query_name": "Aldama",
+ "matched": {
+  "place_id": "ChIJxRmE4UhbwokR8u43ucFxTCU",
+  "name": "Aldama",
+  "address": "91 S 6th St, Brooklyn, NY 11249, USA",
+  "rating": 4.3,
+  "user_ratings_total": 277,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.7109997,
+  "lng": -73.9648964
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

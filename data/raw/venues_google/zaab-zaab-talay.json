@@ -1,0 +1,19 @@
+{
+ "slug": "zaab-zaab-talay",
+ "query_name": "Zaab Zaab Talay",
+ "matched": {
+  "place_id": "ChIJGbAPj3hZwokRSkjQQcDAE_A",
+  "name": "Zaab Zaab",
+  "address": "208 Grand St, Brooklyn, NY 11211, USA",
+  "rating": 4.2,
+  "user_ratings_total": 254,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7138577,
+  "lng": -73.960393
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

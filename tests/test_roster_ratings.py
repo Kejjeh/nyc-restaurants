@@ -18,6 +18,7 @@ dashboard does. On this data that reorders 452 of the 629 rated rows.
 import json
 import sqlite3
 from pathlib import Path
+from statistics import fmean
 
 import pytest
 
@@ -27,6 +28,7 @@ import resolve_venues
 ROOT = Path(__file__).resolve().parents[1]
 JS = (ROOT / "docs" / "venues.js").read_text(encoding="utf-8")
 PAYLOAD = ROOT / "docs" / "data" / "venues.json"
+DB = resolve_venues.DB
 
 
 @pytest.fixture(scope="module")
@@ -167,11 +169,38 @@ def test_one_home_for_the_prior():
             is config.GOOGLE_PRIOR)
 
 
-def test_the_roster_and_the_dashboard_agree_on_the_mean(payload):
-    """Same corpus of rated restaurants, so the same mean to shrink toward."""
+def test_the_roster_and_the_dashboard_shrink_toward_their_own_corpus(payload):
+    """One prior, but no longer one mean.
+
+    These two agreed while `venues.rating` was NULL for every award venue: the
+    roster's rated corpus was then exactly the 629 Restaurant Week
+    participants the dashboard covers, so both means were the same number.
+    The Places run (src/resolve_venues.py --fetch) rated the award roster too,
+    and the roster now shrinks toward the mean of all 1,182 rated venues while
+    the dashboard shrinks toward the mean of the participants alone. Asserting
+    they are equal would now only be satisfiable by one of them shrinking
+    toward a corpus it does not publish.
+
+    The prior is still shared -- that one IS a single constant -- and each mean
+    must still be the mean of the rows its own payload rates."""
     dash = ROOT / "docs" / "data" / "restaurants.json"
     if not dash.exists():
         pytest.skip("dashboard payload not built")
     d = json.loads(dash.read_text(encoding="utf-8"))
     assert d["google_prior"] == payload["google_prior"]
-    assert abs(d["google_mean"] - payload["google_mean"]) < 0.01
+
+    con = sqlite3.connect(f"file:{DB}?mode=ro", uri=True)
+    try:
+        roster = [r[0] for r in con.execute(
+            "SELECT rating FROM venues WHERE rating IS NOT NULL")]
+        participants = [r[0] for r in con.execute(
+            "SELECT rating FROM venues"
+            " WHERE rating IS NOT NULL AND rw_slug IS NOT NULL")]
+    finally:
+        con.close()
+
+    assert payload["google_rated"] == len(roster)
+    assert abs(payload["google_mean"] - fmean(roster)) < 0.01
+    assert abs(d["google_mean"] - fmean(participants)) < 0.01
+    # The reason they differ: the roster rates strictly more than the dashboard.
+    assert len(roster) > len(participants)

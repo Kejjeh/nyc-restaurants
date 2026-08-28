@@ -1,0 +1,19 @@
+{
+ "slug": "degustation",
+ "query_name": "Degustation",
+ "matched": {
+  "place_id": "ChIJV7QQ6kdZwokRax4615zpSGU",
+  "name": "Le Bernardin",
+  "address": "155 W 51st St, New York, NY 10019, USA",
+  "rating": 4.6,
+  "user_ratings_total": 4636,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7614218,
+  "lng": -73.9817558
+ },
+ "accepted": false,
+ "reason": "name similarity 0.00 is too low to identify on its own",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

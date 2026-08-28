@@ -1,0 +1,19 @@
+{
+ "slug": "semilla",
+ "query_name": "Semilla",
+ "matched": {
+  "place_id": "ChIJlY3sIuBbwokRjPPKyOXw6-0",
+  "name": "Semilla",
+  "address": "160 Havemeyer St #5, Brooklyn, NY 11211, USA",
+  "rating": 4.4,
+  "user_ratings_total": 36,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.7114602,
+  "lng": -73.95783159999999
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

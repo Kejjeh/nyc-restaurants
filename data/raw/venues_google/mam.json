@@ -1,0 +1,19 @@
+{
+ "slug": "mam",
+ "query_name": "Mắm",
+ "matched": {
+  "place_id": "ChIJnbRm-4pZwokR7Mj1KC0tlxA",
+  "name": "Mắm",
+  "address": "70 Forsyth St, New York, NY 10002, USA",
+  "rating": 4.2,
+  "user_ratings_total": 593,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7170509,
+  "lng": -73.9932757
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

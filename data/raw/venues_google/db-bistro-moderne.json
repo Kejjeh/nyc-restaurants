@@ -1,0 +1,19 @@
+{
+ "slug": "db-bistro-moderne",
+ "query_name": "DB Bistro Moderne",
+ "matched": {
+  "place_id": "ChIJDSknJzGBwokRtoJorJYEtXY",
+  "name": "Sage Bistro Moderne",
+  "address": "7955 Jericho Tpke, Woodbury, NY 11797, USA",
+  "rating": 4.4,
+  "user_ratings_total": 309,
+  "business_status": "OPERATIONAL",
+  "lat": 40.815896,
+  "lng": -73.4764874
+ },
+ "accepted": false,
+ "reason": "result is outside New York City",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "tom-cat-bakery",
+ "query_name": "Tom Cat Bakery",
+ "matched": {
+  "place_id": "ChIJqb9jWQBZwokRmTSyEiXNE7k",
+  "name": "Tom Cat Bakery",
+  "address": "43-05 10th St, Long Island City, NY 11101, USA",
+  "rating": 5,
+  "user_ratings_total": 1,
+  "business_status": "OPERATIONAL",
+  "lat": 40.75173059999999,
+  "lng": -73.9489309
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

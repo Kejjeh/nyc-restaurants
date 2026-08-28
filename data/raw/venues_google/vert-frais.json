@@ -1,0 +1,19 @@
+{
+ "slug": "vert-frais",
+ "query_name": "Vert Frais",
+ "matched": {
+  "place_id": "ChIJnelMReNZwokRXqa1GK4myCk",
+  "name": "Vert Frais",
+  "address": "43-10 Crescent St, Long Island City, NY 11101, USA",
+  "rating": 4.2,
+  "user_ratings_total": 502,
+  "business_status": "OPERATIONAL",
+  "lat": 40.74884850000001,
+  "lng": -73.9423915
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "43-10 Crescent St., Long Island City, NY 11101"
+}

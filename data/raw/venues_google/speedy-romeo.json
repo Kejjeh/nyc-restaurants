@@ -1,0 +1,19 @@
+{
+ "slug": "speedy-romeo",
+ "query_name": "Speedy Romeo",
+ "matched": {
+  "place_id": "ChIJOTob_r1bwokRtUoNNbcmw_g",
+  "name": "Speedy Romeo",
+  "address": "376 Classon Ave, Brooklyn, NY 11238, USA",
+  "rating": 4.3,
+  "user_ratings_total": 1455,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6875,
+  "lng": -73.96
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "376 Classon Ave., Brooklyn, NY 11238"
+}

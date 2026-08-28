@@ -1,0 +1,19 @@
+{
+ "slug": "lilia",
+ "query_name": "Lilia",
+ "matched": {
+  "place_id": "ChIJJXCD6ltZwokRJ_cwjKQH63c",
+  "name": "Lilia",
+  "address": "567 Union Ave, Brooklyn, NY 11211, USA",
+  "rating": 4.3,
+  "user_ratings_total": 2318,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7175365,
+  "lng": -73.9524225
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

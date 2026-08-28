@@ -1,0 +1,19 @@
+{
+ "slug": "foxface-natural",
+ "query_name": "Foxface Natural",
+ "matched": {
+  "place_id": "ChIJ-9FmcbhZwokR_2n_KX31fUI",
+  "name": "Foxface Natural",
+  "address": "189 Avenue A, New York, NY 10009, USA",
+  "rating": 4.6,
+  "user_ratings_total": 214,
+  "business_status": "CLOSED_TEMPORARILY",
+  "lat": 40.7289789,
+  "lng": -73.9816763
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

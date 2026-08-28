@@ -1,0 +1,19 @@
+{
+ "slug": "blt-market",
+ "query_name": "BLT Market",
+ "matched": {
+  "place_id": "ChIJOcHIt_BYwokR3iMall0fIjg",
+  "name": "BLT Market",
+  "address": "1420 6th Ave, New York, NY 10019, USA",
+  "rating": 3.3,
+  "user_ratings_total": 3,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.7650038,
+  "lng": -73.97639459999999
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

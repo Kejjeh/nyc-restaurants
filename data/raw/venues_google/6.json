@@ -1,0 +1,19 @@
+{
+ "slug": "6",
+ "query_name": "6 Restaurant",
+ "matched": {
+  "place_id": "ChIJDfRavFtbwokRijMBw1NobfM",
+  "name": "6 Restaurant - NYC",
+  "address": "481 Court St, Brooklyn, NY 11231, USA",
+  "rating": 4.9,
+  "user_ratings_total": 117,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6763496,
+  "lng": -73.998542
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "481 Court St., Brooklyn, NY 11231"
+}

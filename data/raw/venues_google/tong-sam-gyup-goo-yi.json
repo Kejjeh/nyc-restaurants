@@ -1,0 +1,19 @@
+{
+ "slug": "tong-sam-gyup-goo-yi",
+ "query_name": "Tong Sam Gyup Goo Yi",
+ "matched": {
+  "place_id": "ChIJoWa5-i5gwokR8v_bTyLmO6I",
+  "name": "Tong Sam Gyup Goo Yi",
+  "address": "162-23 Depot Rd, Flushing, NY 11358, USA",
+  "rating": 4.2,
+  "user_ratings_total": 307,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7621369,
+  "lng": -73.8030132
+ },
+ "accepted": true,
+ "reason": "name 1.00, postal code agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "162-23 Depot Rd., Queens, NY 11358"
+}

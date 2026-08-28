@@ -1,0 +1,19 @@
+{
+ "slug": "labeille",
+ "query_name": "L’Abeille",
+ "matched": {
+  "place_id": "ChIJq75Ur-tZwokRo7I_F_PhlcU",
+  "name": "l’abeille",
+  "address": "412 Greenwich St, New York, NY 10013, USA",
+  "rating": 4.6,
+  "user_ratings_total": 325,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7220453,
+  "lng": -74.0099342
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "412 Greenwich St., New York, NY 10013"
+}

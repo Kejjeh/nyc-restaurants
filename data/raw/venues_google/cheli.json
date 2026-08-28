@@ -1,0 +1,19 @@
+{
+ "slug": "cheli",
+ "query_name": "CheLi",
+ "matched": {
+  "place_id": "ChIJn7k4jxlZwokRhDkNH9383-o",
+  "name": "CHELI MANHATTAN 浙里",
+  "address": "19 St Marks Pl, New York, NY 10003, USA",
+  "rating": 4.5,
+  "user_ratings_total": 1605,
+  "business_status": "OPERATIONAL",
+  "lat": 40.729187,
+  "lng": -73.988711
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "19 St. Marks Pl., New York, NY 10003"
+}

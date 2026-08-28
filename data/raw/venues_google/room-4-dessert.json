@@ -1,0 +1,19 @@
+{
+ "slug": "room-4-dessert",
+ "query_name": "Room 4 Dessert",
+ "matched": {
+  "place_id": "ChIJR2Om3ohZwokR5CJXUTtIsOM",
+  "name": "Room 4 Dessert",
+  "address": "17 Cleveland Pl, New York, NY 10012, USA",
+  "rating": null,
+  "user_ratings_total": null,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.72151270000001,
+  "lng": -73.9970289
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

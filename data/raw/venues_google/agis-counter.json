@@ -1,0 +1,19 @@
+{
+ "slug": "agis-counter",
+ "query_name": "Agi's Counter",
+ "matched": {
+  "place_id": "ChIJgbi06LFbwokRGr3pch2KH_A",
+  "name": "Agi's Counter",
+  "address": "818 Franklin Ave, Brooklyn, NY 11225, USA",
+  "rating": 4.6,
+  "user_ratings_total": 671,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.6700133,
+  "lng": -73.9583818
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "marta",
+ "query_name": "Marta",
+ "matched": {
+  "place_id": "ChIJK0fVw6dZwokRZuF-vAUC4II",
+  "name": "Marta",
+  "address": "29 E 29th St, New York, NY 10016, USA",
+  "rating": 4.5,
+  "user_ratings_total": 1878,
+  "business_status": "CLOSED_TEMPORARILY",
+  "lat": 40.7444764,
+  "lng": -73.9845825
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

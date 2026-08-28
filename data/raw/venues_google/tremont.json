@@ -1,0 +1,19 @@
+{
+ "slug": "tremont",
+ "query_name": "Tremont Restaurant",
+ "matched": {
+  "place_id": "ChIJkcEUNEyLwokRp_rC5sYe1A4",
+  "name": "Tremont Diner",
+  "address": "3007 E Tremont Ave, Bronx, NY 10461, USA",
+  "rating": 4.3,
+  "user_ratings_total": 2084,
+  "business_status": "OPERATIONAL",
+  "lat": 40.8402577,
+  "lng": -73.83720749999999
+ },
+ "accepted": false,
+ "reason": "name similarity 0.33 is too low to identify on its own",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

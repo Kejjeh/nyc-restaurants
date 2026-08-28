@@ -1,0 +1,19 @@
+{
+ "slug": "superbueno",
+ "query_name": "Superbueno",
+ "matched": {
+  "place_id": "ChIJbXN71WhZwokRNTk55-ScVWY",
+  "name": "Superbueno",
+  "address": "13 1st Ave, New York, NY 10003, USA",
+  "rating": 4.2,
+  "user_ratings_total": 765,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7234473,
+  "lng": -73.9885737
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

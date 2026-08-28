@@ -1,0 +1,19 @@
+{
+ "slug": "portale",
+ "query_name": "Portale",
+ "matched": {
+  "place_id": "ChIJ-TuoLitZwokRgQRHmUGEgyY",
+  "name": "Portale",
+  "address": "126 W 18th St, New York, NY 10011, USA",
+  "rating": 4.8,
+  "user_ratings_total": 804,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7402203,
+  "lng": -73.9962661
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "126 W. 18th St., New York, NY 10011"
+}

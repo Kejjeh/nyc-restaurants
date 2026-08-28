@@ -1,0 +1,19 @@
+{
+ "slug": "crevette",
+ "query_name": "Crevette",
+ "matched": {
+  "place_id": "ChIJ94LFiGZZwokRWfbAft9eBNo",
+  "name": "Crevette",
+  "address": "10 Downing St, New York, NY 10014, USA",
+  "rating": 4.2,
+  "user_ratings_total": 223,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7296321,
+  "lng": -74.0026661
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "10 Downing St., New York, NY 10014"
+}

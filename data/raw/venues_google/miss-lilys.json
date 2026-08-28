@@ -1,0 +1,19 @@
+{
+ "slug": "miss-lilys",
+ "query_name": "Miss Lily’s",
+ "matched": {
+  "place_id": "ChIJz8asT51ZwokRhNF8JQzaLqQ",
+  "name": "Miss Lily's 7A Cafe",
+  "address": "109 Avenue A, New York, NY 10009, USA",
+  "rating": 4.3,
+  "user_ratings_total": 1691,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7260534,
+  "lng": -73.9838523
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "109 Avenue A, New York, NY 10009"
+}

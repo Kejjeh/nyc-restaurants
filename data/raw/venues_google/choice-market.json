@@ -1,0 +1,19 @@
+{
+ "slug": "choice-market",
+ "query_name": "Choice Market",
+ "matched": {
+  "place_id": "ChIJaYcllU0N7ocR4lWiLngfEYg",
+  "name": "Choice Market",
+  "address": "318 Lafayette Ave, Brooklyn, NY 11238, USA",
+  "rating": 4.3,
+  "user_ratings_total": 660,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6884013,
+  "lng": -73.9629705
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

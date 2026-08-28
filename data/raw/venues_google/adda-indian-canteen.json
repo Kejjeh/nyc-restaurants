@@ -1,0 +1,19 @@
+{
+ "slug": "adda-indian-canteen",
+ "query_name": "Adda Indian Canteen",
+ "matched": {
+  "place_id": "ChIJKcCXHydZwokRNCwATmPZsgM",
+  "name": "Adda",
+  "address": "107 1st Ave, New York, NY 10003, USA",
+  "rating": 4.6,
+  "user_ratings_total": 1043,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7268627,
+  "lng": -73.9862514
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

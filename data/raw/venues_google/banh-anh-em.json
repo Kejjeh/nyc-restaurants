@@ -1,0 +1,19 @@
+{
+ "slug": "banh-anh-em",
+ "query_name": "Bánh Anh Em",
+ "matched": {
+  "place_id": "ChIJDyMGAgBZwokRggrgBWarG0o",
+  "name": "Bánh Anh Em",
+  "address": "99 3rd Ave, New York, NY 10003, USA",
+  "rating": 4.4,
+  "user_ratings_total": 504,
+  "business_status": "OPERATIONAL",
+  "lat": 40.73226349999999,
+  "lng": -73.9876172
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "99 3rd Ave., New York, NY 10003"
+}

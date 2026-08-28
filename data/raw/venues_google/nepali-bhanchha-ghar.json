@@ -1,0 +1,19 @@
+{
+ "slug": "nepali-bhanchha-ghar",
+ "query_name": "Nepali Bhanchha Ghar",
+ "matched": {
+  "place_id": "ChIJd06GLQdfwokRQunm5arxBcM",
+  "name": "Nepali Bhanchha Ghar",
+  "address": "74-15 Roosevelt Ave, Jackson Heights, NY 11372, USA",
+  "rating": 3.9,
+  "user_ratings_total": 1262,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7471014,
+  "lng": -73.8909012
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

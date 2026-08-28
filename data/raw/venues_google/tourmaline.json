@@ -1,0 +1,19 @@
+{
+ "slug": "tourmaline",
+ "query_name": "Tourmaline",
+ "matched": {
+  "place_id": "ChIJs51u3sNfwokReADwE3QBrME",
+  "name": "Tourmaline",
+  "address": "106-17 Metropolitan Ave, Forest Hills, NY 11375, USA",
+  "rating": 4.9,
+  "user_ratings_total": 104,
+  "business_status": "OPERATIONAL",
+  "lat": 40.70999,
+  "lng": -73.846392
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

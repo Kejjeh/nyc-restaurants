@@ -1,0 +1,19 @@
+{
+ "slug": "clover-club",
+ "query_name": "Clover Club",
+ "matched": {
+  "place_id": "ChIJD1nl_lBawokRmefauQpPr7Q",
+  "name": "Clover Club",
+  "address": "210 Smith St, Brooklyn, NY 11201, USA",
+  "rating": 4.6,
+  "user_ratings_total": 1099,
+  "business_status": "OPERATIONAL",
+  "lat": 40.684589,
+  "lng": -73.9921382
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

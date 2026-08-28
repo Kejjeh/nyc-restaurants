@@ -1,0 +1,19 @@
+{
+ "slug": "sripraphai",
+ "query_name": "SriPraPhai",
+ "matched": {
+  "place_id": "ChIJz9quPQNfwokR5mk_DCdguVc",
+  "name": "SriPraPhai",
+  "address": "64-13 39th Ave, Woodside, NY 11377, USA",
+  "rating": 4.5,
+  "user_ratings_total": 2298,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7464884,
+  "lng": -73.8992074
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

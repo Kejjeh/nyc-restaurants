@@ -1,0 +1,19 @@
+{
+ "slug": "wine-spectator-magazine",
+ "query_name": "Wine Spectator Magazine",
+ "matched": {
+  "place_id": "ChIJ_____1ZYwokRG6awZ7k21ls",
+  "name": "Wine Spectator",
+  "address": "825 8th Ave, New York, NY 10019, USA",
+  "rating": 3,
+  "user_ratings_total": 3,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7622053,
+  "lng": -73.9869585
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

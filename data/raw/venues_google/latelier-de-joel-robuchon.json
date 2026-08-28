@@ -1,0 +1,19 @@
+{
+ "slug": "latelier-de-joel-robuchon",
+ "query_name": "L'Atelier de Joel Robuchon",
+ "matched": {
+  "place_id": "ChIJJ3pnTr6x2YgRUcKI0-aDyJs",
+  "name": "L’Atelier de Joël Robuchon",
+  "address": "151 NE 41st St, Miami, FL 33137, USA",
+  "rating": 4.3,
+  "user_ratings_total": 716,
+  "business_status": "OPERATIONAL",
+  "lat": 25.8146854,
+  "lng": -80.19193539999999
+ },
+ "accepted": false,
+ "reason": "result is outside New York City",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "upland",
+ "query_name": "Upland",
+ "matched": {
+  "place_id": "ChIJWVD7FadZwokRs_pS6XY7VOU",
+  "name": "Upland",
+  "address": "345 Park Ave S, New York, NY 10010, USA",
+  "rating": 4.5,
+  "user_ratings_total": 2458,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7418515,
+  "lng": -73.98495539999999
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "345 Park Ave. South, New York, NY 10010"
+}

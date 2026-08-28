@@ -1,0 +1,19 @@
+{
+ "slug": "seoul-salon",
+ "query_name": "Seoul Salon",
+ "matched": {
+  "place_id": "ChIJqdwhvD5ZwokRMjq-dG4AVm4",
+  "name": "SEOUL SALON NYC",
+  "address": "28 W 33rd St, New York, NY 10001, USA",
+  "rating": 4.6,
+  "user_ratings_total": 710,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7483116,
+  "lng": -73.98662440000001
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "28 W. 33rd St., New York, NY 10001"
+}

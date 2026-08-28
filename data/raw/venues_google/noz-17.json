@@ -1,0 +1,19 @@
+{
+ "slug": "noz-17",
+ "query_name": "Noz 17",
+ "matched": {
+  "place_id": "ChIJT4q4QIFZwokRs1nRu7_ckVI",
+  "name": "Noz 17",
+  "address": "458 W 17th St, New York, NY 10011, USA",
+  "rating": 4.3,
+  "user_ratings_total": 131,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7438296,
+  "lng": -74.0065518
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "458 W. 17th St., New York, NY 10011"
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "fieldtrip",
+ "query_name": "FIELDTRIP",
+ "matched": {
+  "place_id": "ChIJHTUt_L73wokRBkywY68ePoY",
+  "name": "FIELDTRIP",
+  "address": "109 Lenox Ave, New York, NY 10026, USA",
+  "rating": 4.5,
+  "user_ratings_total": 590,
+  "business_status": "OPERATIONAL",
+  "lat": 40.801684,
+  "lng": -73.95027499999999
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

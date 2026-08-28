@@ -1,0 +1,19 @@
+{
+ "slug": "lungi",
+ "query_name": "Lungi",
+ "matched": {
+  "place_id": "ChIJsedB_edYwokRrxhc0jZb_Mk",
+  "name": "Lungi South Indian & Sri Lankan Restaurant",
+  "address": "1136 1st Ave, New York, NY 10065, USA",
+  "rating": 4.6,
+  "user_ratings_total": 1289,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7616823,
+  "lng": -73.9601642
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "1136 1st Ave., New York, NY 10065"
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "she-wolf-bakery",
+ "query_name": "She Wolf Bakery",
+ "matched": {
+  "place_id": "ChIJh_-S9zhZwokR0e67I8jsN1c",
+  "name": "She Wolf Bakery",
+  "address": "141 Flushing Ave, Brooklyn, NY 11205, USA",
+  "rating": 4.6,
+  "user_ratings_total": 65,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6980922,
+  "lng": -73.9710207
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

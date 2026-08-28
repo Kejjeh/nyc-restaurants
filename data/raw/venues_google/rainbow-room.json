@@ -1,0 +1,19 @@
+{
+ "slug": "rainbow-room",
+ "query_name": "Rainbow Room",
+ "matched": {
+  "place_id": "ChIJNZvR1v5YwokREi5MeFRjfJQ",
+  "name": "Rainbow Room",
+  "address": "30 Rockefeller Plaza 65th Floor, New York, NY 10112, USA",
+  "rating": 4.6,
+  "user_ratings_total": 904,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7593331,
+  "lng": -73.9795094
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

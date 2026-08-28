@@ -1,0 +1,19 @@
+{
+ "slug": "di-fara-pizza",
+ "query_name": "Di Fara Pizza",
+ "matched": {
+  "place_id": "ChIJM2mGRMhEwokRv1Fy6oFJ570",
+  "name": "Di Fara Pizza",
+  "address": "1424 Avenue J, Brooklyn, NY 11230, USA",
+  "rating": 4.2,
+  "user_ratings_total": 4714,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6250267,
+  "lng": -73.9615228
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

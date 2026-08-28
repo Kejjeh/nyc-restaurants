@@ -1,0 +1,19 @@
+{
+ "slug": "arizona-206",
+ "query_name": "Arizona 206",
+ "matched": {
+  "place_id": "ChIJr_EmT-P1wokRegi25Oslf3s",
+  "name": "P.S. 206 Jose Celso Barbosa",
+  "address": "508 E 120th St, New York, NY 10035, USA",
+  "rating": null,
+  "user_ratings_total": null,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7968547,
+  "lng": -73.9304506
+ },
+ "accepted": false,
+ "reason": "name similarity 0.14 is too low to identify on its own",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

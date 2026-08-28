@@ -1,0 +1,19 @@
+{
+ "slug": "dar-lbahja",
+ "query_name": "Dar Lbahja",
+ "matched": {
+  "place_id": "ChIJvSQnKgBfwokRh3-LDnkYgW4",
+  "name": "Dar Lbahja",
+  "address": "47-12 30th Ave., Astoria, NY 11103, USA",
+  "rating": 4.7,
+  "user_ratings_total": 328,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7609218,
+  "lng": -73.9090636
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

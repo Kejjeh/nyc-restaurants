@@ -1,0 +1,19 @@
+{
+ "slug": "legend-of-taste",
+ "query_name": "Legend of Taste",
+ "matched": {
+  "place_id": "ChIJRUDshWKKwokRKEDd6H2RAmE",
+  "name": "Legend of Taste",
+  "address": "20-02 Utopia Pkwy, Whitestone, NY 11357, USA",
+  "rating": 4.4,
+  "user_ratings_total": 393,
+  "business_status": "OPERATIONAL",
+  "lat": 40.779595,
+  "lng": -73.794179
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "2002 Utopia Pkwy., Queens, NY 11357"
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "xian-famous-foods",
+ "query_name": "Xi'an Famous Foods",
+ "matched": {
+  "place_id": "ChIJxyUrQwBZwokRKM-xy2N5ZQ8",
+  "name": "Xi'an Famous Foods",
+  "address": "129 2nd Ave, New York, NY 10003, USA",
+  "rating": 4.8,
+  "user_ratings_total": 83,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7285164,
+  "lng": -73.9880843
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

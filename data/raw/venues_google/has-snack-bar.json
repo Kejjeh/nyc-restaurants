@@ -1,0 +1,19 @@
+{
+ "slug": "has-snack-bar",
+ "query_name": "Ha's Snack Bar",
+ "matched": {
+  "place_id": "ChIJ--ORRABZwokRjpPKbOlCC1k",
+  "name": "Ha's Snack Bar",
+  "address": "297 Broome St, New York, NY 10002, USA",
+  "rating": 4.3,
+  "user_ratings_total": 200,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7185522,
+  "lng": -73.9921884
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

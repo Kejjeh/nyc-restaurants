@@ -1,0 +1,19 @@
+{
+ "slug": "kimika",
+ "query_name": "Kimika",
+ "matched": {
+  "place_id": "ChIJBTT9YW9ZwokRGNibieZGOTk",
+  "name": "Kimika",
+  "address": "40 Kenmare St, New York, NY 10012, USA",
+  "rating": 4.5,
+  "user_ratings_total": 837,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.72054989999999,
+  "lng": -73.9951805
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

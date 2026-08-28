@@ -1,0 +1,19 @@
+{
+ "slug": "sunday-in",
+ "query_name": "Sunday in Brooklyn",
+ "matched": {
+  "place_id": "ChIJkRWC9WFZwokRfa5Uzor3e-g",
+  "name": "Sunday In Brooklyn",
+  "address": "348 Wythe Ave, Brooklyn, NY 11249, USA",
+  "rating": 4.4,
+  "user_ratings_total": 4050,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7141992,
+  "lng": -73.9653462
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "348 Wythe Ave., Brooklyn, NY 11249"
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "bar-snack",
+ "query_name": "Bar Snack",
+ "matched": {
+  "place_id": "ChIJW5JA_yVZwokRrVVE7_Vb7CA",
+  "name": "Bar Snack",
+  "address": "92 2nd Ave, New York, NY 10003, USA",
+  "rating": 4.6,
+  "user_ratings_total": 191,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7269233,
+  "lng": -73.9885382
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

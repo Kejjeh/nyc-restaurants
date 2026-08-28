@@ -1,0 +1,19 @@
+{
+ "slug": "hungry-thirsty",
+ "query_name": "Hungry Thirsty",
+ "matched": {
+  "place_id": "ChIJMRzjDuVbwokRXPeo4rKGGjQ",
+  "name": "Hungry Thirsty",
+  "address": "407 Smith St, Brooklyn, NY 11231, USA",
+  "rating": 4.8,
+  "user_ratings_total": 419,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6779298,
+  "lng": -73.99605249999999
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "407 Smith St., Brooklyn, NY 11231"
+}

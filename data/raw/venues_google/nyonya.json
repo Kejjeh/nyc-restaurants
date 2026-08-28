@@ -1,0 +1,19 @@
+{
+ "slug": "nyonya",
+ "query_name": "Nyonya",
+ "matched": {
+  "place_id": "ChIJ0VKRSIhZwokRdCKH7vdxs2o",
+  "name": "Nyonya",
+  "address": "199 Grand St, New York, NY 10013, USA",
+  "rating": 4.3,
+  "user_ratings_total": 2225,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7190568,
+  "lng": -73.9969181
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "199 Grand St., New York, NY 10013"
+}

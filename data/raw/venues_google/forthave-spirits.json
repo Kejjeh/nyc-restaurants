@@ -1,0 +1,19 @@
+{
+ "slug": "forthave-spirits",
+ "query_name": "Forthave Spirits",
+ "matched": {
+  "place_id": "ChIJ____4O9bwokRTKr-haqn5Hw",
+  "name": "Forthave Spirits",
+  "address": "630 Flushing Ave, Brooklyn, NY 11206, USA",
+  "rating": 4.8,
+  "user_ratings_total": 6,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6996109,
+  "lng": -73.9479221
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

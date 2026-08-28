@@ -1,0 +1,19 @@
+{
+ "slug": "dirt-candy",
+ "query_name": "Dirt Candy",
+ "matched": {
+  "place_id": "ChIJBXlte51ZwokRXzXtdaBG9xM",
+  "name": "Dirt Candy",
+  "address": "86 Allen St, New York, NY 10002, USA",
+  "rating": 4.5,
+  "user_ratings_total": 1566,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7178611,
+  "lng": -73.9907054
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "86 Allen St., New York, NY 10002"
+}

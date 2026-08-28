@@ -1,0 +1,19 @@
+{
+ "slug": "robertas",
+ "query_name": "Roberta's",
+ "matched": {
+  "place_id": "ChIJzSOyOg1dwokRfQ-5htUfsRY",
+  "name": "Roberta's",
+  "address": "261 Moore St, Brooklyn, NY 11206, USA",
+  "rating": 4.4,
+  "user_ratings_total": 2207,
+  "business_status": "OPERATIONAL",
+  "lat": 40.705081,
+  "lng": -73.9335834
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "261 Moore St., Brooklyn, NY 11206"
+}

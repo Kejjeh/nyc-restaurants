@@ -1,0 +1,19 @@
+{
+ "slug": "esca",
+ "query_name": "Esca",
+ "matched": {
+  "place_id": "ChIJ5wbtWVJYwokR81uayeApva8",
+  "name": "Esca",
+  "address": "402 W 43rd St, New York, NY 10036, USA",
+  "rating": 4.2,
+  "user_ratings_total": 421,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.7592131,
+  "lng": -73.9927582
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

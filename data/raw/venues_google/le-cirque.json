@@ -1,0 +1,19 @@
+{
+ "slug": "le-cirque",
+ "query_name": "Le Cirque",
+ "matched": {
+  "place_id": "ChIJt2EnbZ9ZwokRqz0wUDdSWd0",
+  "name": "Cirque Central",
+  "address": "Suite #320, 37 W 26th St, New York, NY 10010, USA",
+  "rating": 5,
+  "user_ratings_total": 24,
+  "business_status": "OPERATIONAL",
+  "lat": 40.744581,
+  "lng": -73.99045149999999
+ },
+ "accepted": false,
+ "reason": "name similarity 0.33 is too low to identify on its own",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

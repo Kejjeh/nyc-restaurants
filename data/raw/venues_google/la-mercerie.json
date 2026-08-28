@@ -1,0 +1,19 @@
+{
+ "slug": "la-mercerie",
+ "query_name": "La Mercerie",
+ "matched": {
+  "place_id": "ChIJ22wiSIpZwokRUmlXovJnWDI",
+  "name": "La Mercerie",
+  "address": "53 Howard St, New York, NY 10013, USA",
+  "rating": 4.3,
+  "user_ratings_total": 1818,
+  "business_status": "OPERATIONAL",
+  "lat": 40.72014780000001,
+  "lng": -74.0021708
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "53 Howard St., New York, NY 10013"
+}

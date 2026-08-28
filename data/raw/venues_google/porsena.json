@@ -1,0 +1,19 @@
+{
+ "slug": "porsena",
+ "query_name": "Porsena",
+ "matched": {
+  "place_id": "ChIJC-foeZtZwokRzmlY3RfkDtk",
+  "name": "Porsena",
+  "address": "21 E 7th St, New York, NY 10003, USA",
+  "rating": 4.3,
+  "user_ratings_total": 186,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.7287174,
+  "lng": -73.989421
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

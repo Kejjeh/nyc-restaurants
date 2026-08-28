@@ -1,0 +1,19 @@
+{
+ "slug": "soothr",
+ "query_name": "Soothr",
+ "matched": {
+  "place_id": "ChIJ0aS81yNZwokRIk-S2YSuvls",
+  "name": "Soothr",
+  "address": "204 E 13th St, New York, NY 10003, USA",
+  "rating": 4.8,
+  "user_ratings_total": 7475,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7323017,
+  "lng": -73.9873417
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "204 E. 13th St., New York, NY 10003"
+}

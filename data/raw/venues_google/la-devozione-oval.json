@@ -1,0 +1,19 @@
+{
+ "slug": "la-devozione-oval",
+ "query_name": "La Devozione: The Oval",
+ "matched": {
+  "place_id": "ChIJd4gIXTlZwokR1A8bEjuem20",
+  "name": "La Devozione",
+  "address": "428 W 16th St, New York, NY 10011, USA",
+  "rating": 4,
+  "user_ratings_total": 787,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7426064,
+  "lng": -74.00576099999999
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "428 W. 16th St., New York, NY 10011"
+}

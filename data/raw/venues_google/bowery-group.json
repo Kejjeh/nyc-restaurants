@@ -1,0 +1,19 @@
+{
+ "slug": "bowery-group",
+ "query_name": "Bowery Group",
+ "matched": {
+  "place_id": "ChIJn8fJ_YRZwokRYiSB8y4Qneg",
+  "name": "Bowery Meat Company",
+  "address": "9 E 1st St, New York, NY 10003, USA",
+  "rating": 4.5,
+  "user_ratings_total": 1295,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7245665,
+  "lng": -73.9918409
+ },
+ "accepted": false,
+ "reason": "name similarity 0.25 is too low to identify on its own",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

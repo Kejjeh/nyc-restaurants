@@ -1,0 +1,19 @@
+{
+ "slug": "daphnes",
+ "query_name": "Daphne's",
+ "matched": {
+  "place_id": "ChIJhdx5XYZbwokRiPjDzj6xOQA",
+  "name": "Daphne's",
+  "address": "299 Halsey St, Brooklyn, NY 11216, USA",
+  "rating": 4.7,
+  "user_ratings_total": 202,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6830325,
+  "lng": -73.9411454
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "299 Halsey St., Brooklyn, NY 11216"
+}

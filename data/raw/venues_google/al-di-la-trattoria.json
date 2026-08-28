@@ -1,0 +1,19 @@
+{
+ "slug": "al-di-la-trattoria",
+ "query_name": "Al di LÃ  Trattoria",
+ "matched": {
+  "place_id": "ChIJpcjScgBbwokR8tFzxMCfFqM",
+  "name": "al di là Trattoria",
+  "address": "248 5th Ave, Brooklyn, NY 11215, USA",
+  "rating": 4.5,
+  "user_ratings_total": 1093,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6753101,
+  "lng": -73.9814311
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

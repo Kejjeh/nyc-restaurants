@@ -1,0 +1,19 @@
+{
+ "slug": "cardamom",
+ "query_name": "Cardamom",
+ "matched": {
+  "place_id": "ChIJ95V_CVNYwokRB6Xv7wRrQZw",
+  "name": "Cardamom Indian Cuisine",
+  "address": "43-45 43rd street, Queens Blvd, Sunnyside, NY 11104, USA",
+  "rating": 4.5,
+  "user_ratings_total": 532,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7438763,
+  "lng": -73.9212182
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "43-45 43rd St., Queens, NY 11104"
+}

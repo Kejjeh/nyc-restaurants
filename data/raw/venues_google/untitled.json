@@ -1,0 +1,19 @@
+{
+ "slug": "untitled",
+ "query_name": "Untitled",
+ "matched": {
+  "place_id": "ChIJew4ouUxZwokRwtT3MyqzKsw",
+  "name": "Untitled at 3 Freeman Alley",
+  "address": "3 Freeman Alley, New York, NY 10002, USA",
+  "rating": 4.6,
+  "user_ratings_total": 651,
+  "business_status": "OPERATIONAL",
+  "lat": 40.72188269999999,
+  "lng": -73.992806
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

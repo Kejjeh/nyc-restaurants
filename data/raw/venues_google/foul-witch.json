@@ -1,0 +1,19 @@
+{
+ "slug": "foul-witch",
+ "query_name": "Foul Witch",
+ "matched": {
+  "place_id": "ChIJq6oPsoNZwokR1hGiiD3wy8g",
+  "name": "Foul Witch",
+  "address": "15 Avenue A, New York, NY 10009, USA",
+  "rating": 4.3,
+  "user_ratings_total": 279,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.7227931,
+  "lng": -73.98625129999999
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

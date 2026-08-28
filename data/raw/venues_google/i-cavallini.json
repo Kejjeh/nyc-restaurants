@@ -1,0 +1,19 @@
+{
+ "slug": "i-cavallini",
+ "query_name": "I Cavallini",
+ "matched": {
+  "place_id": "ChIJsew68U5ZwokRrKT8K3848Zg",
+  "name": "I Cavallini",
+  "address": "284 Grand St, Brooklyn, NY 11211, USA",
+  "rating": 4.5,
+  "user_ratings_total": 178,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7129527,
+  "lng": -73.9578667
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "284 Grand St., Brooklyn, NY 11211"
+}

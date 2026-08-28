@@ -1,0 +1,19 @@
+{
+ "slug": "le-chene",
+ "query_name": "Le Chêne",
+ "matched": {
+  "place_id": "ChIJU27ERwBZwokRk3qhQhv3juo",
+  "name": "Le Chêne",
+  "address": "76 Carmine St, New York, NY 10014, USA",
+  "rating": 4.4,
+  "user_ratings_total": 182,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7295392,
+  "lng": -74.0046474
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "76 Carmine St., New York, NY 10014"
+}

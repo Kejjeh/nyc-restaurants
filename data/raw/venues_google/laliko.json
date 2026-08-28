@@ -1,0 +1,19 @@
+{
+ "slug": "laliko",
+ "query_name": "Laliko",
+ "matched": {
+  "place_id": "ChIJr15tlpJZwokRG4lyRntq3cw",
+  "name": "LALIKO",
+  "address": "80 Carmine St, New York, NY 10014, USA",
+  "rating": 4.8,
+  "user_ratings_total": 613,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7294493,
+  "lng": -74.00494379999999
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "80 Carmine St., New York, NY 10014"
+}

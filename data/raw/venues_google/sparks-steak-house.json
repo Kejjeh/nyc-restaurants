@@ -1,0 +1,19 @@
+{
+ "slug": "sparks-steak-house",
+ "query_name": "Sparks Steak House",
+ "matched": {
+  "place_id": "ChIJY8nVpQJZwokR1SyYE-gyalA",
+  "name": "Sparks Steak House",
+  "address": "210 E 46th St, New York, NY 10017, USA",
+  "rating": 4.5,
+  "user_ratings_total": 2589,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7529737,
+  "lng": -73.9720665
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

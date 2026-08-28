@@ -1,0 +1,19 @@
+{
+ "slug": "le-coucou",
+ "query_name": "Le Coucou",
+ "matched": {
+  "place_id": "ChIJyw5j84lZwokRnUI_UknPSNA",
+  "name": "Le Coucou",
+  "address": "138 Lafayette St, New York, NY 10013, USA",
+  "rating": 4.5,
+  "user_ratings_total": 2144,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7191167,
+  "lng": -74.0001861
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "11 Howard Hotel, 138 Lafayette St., New York, NY 10013"
+}

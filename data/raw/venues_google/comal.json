@@ -1,0 +1,19 @@
+{
+ "slug": "comal",
+ "query_name": "Comal",
+ "matched": {
+  "place_id": "ChIJ47moWdBZwokR2Ud_ilXR05E",
+  "name": "Comal",
+  "address": "116 Forsyth St, New York, NY 10002, USA",
+  "rating": 4.3,
+  "user_ratings_total": 226,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7191233,
+  "lng": -73.9921624
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "116 Forsyth St., New York, NY 10002"
+}

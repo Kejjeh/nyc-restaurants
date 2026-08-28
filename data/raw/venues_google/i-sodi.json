@@ -1,0 +1,19 @@
+{
+ "slug": "i-sodi",
+ "query_name": "I Sodi",
+ "matched": {
+  "place_id": "ChIJK2mBYJNZwokRIT4oANQ6OFY",
+  "name": "I Sodi",
+  "address": "314 Bleecker St, New York, NY 10014, USA",
+  "rating": 4.2,
+  "user_ratings_total": 1103,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7327893,
+  "lng": -74.0040532
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "314 Bleecker St., New York, NY 10014"
+}

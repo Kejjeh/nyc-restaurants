@@ -1,0 +1,19 @@
+{
+ "slug": "sullivan-street-bakery",
+ "query_name": "Sullivan Street Bakery",
+ "matched": {
+  "place_id": "ChIJ7W7211FYwokRW_UVZTqGVFw",
+  "name": "Sullivan Street Bakery",
+  "address": "533 W 47th St, New York, NY 10036, USA",
+  "rating": 4.6,
+  "user_ratings_total": 851,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7636385,
+  "lng": -73.9947182
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

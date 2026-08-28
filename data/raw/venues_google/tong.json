@@ -1,0 +1,19 @@
+{
+ "slug": "tong",
+ "query_name": "Tong",
+ "matched": {
+  "place_id": "ChIJC_7NeRJfwokRsy59UhNZLao",
+  "name": "Tong",
+  "address": "321 Starr St, Brooklyn, NY 11237, USA",
+  "rating": 4.5,
+  "user_ratings_total": 787,
+  "business_status": "OPERATIONAL",
+  "lat": 40.707976,
+  "lng": -73.9204821
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "321 Starr St., Brooklyn, NY 11237"
+}

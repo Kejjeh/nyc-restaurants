@@ -1,0 +1,19 @@
+{
+ "slug": "kisa",
+ "query_name": "Kisa",
+ "matched": {
+  "place_id": "ChIJ3YtkUgBZwokRMd5buqhS9ps",
+  "name": "Kisa",
+  "address": "205 Allen St, New York, NY 10002, USA",
+  "rating": 4.5,
+  "user_ratings_total": 751,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7228376,
+  "lng": -73.9889871
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

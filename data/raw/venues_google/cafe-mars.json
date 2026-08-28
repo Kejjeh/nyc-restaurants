@@ -1,0 +1,19 @@
+{
+ "slug": "cafe-mars",
+ "query_name": "Café Mars",
+ "matched": {
+  "place_id": "ChIJk6_emFpbwokReeza0hzar2c",
+  "name": "Café Mars",
+  "address": "272 3rd Ave, Brooklyn, NY 11215, USA",
+  "rating": 4.6,
+  "user_ratings_total": 192,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6778855,
+  "lng": -73.9859784
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "272 3rd Ave., Brooklyn, NY 11215"
+}

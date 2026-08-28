@@ -1,0 +1,19 @@
+{
+ "slug": "dominique-ansel-bakery",
+ "query_name": "Dominique Ansel Bakery",
+ "matched": {
+  "place_id": "ChIJP0KOWoxZwokRmvPiQAIaH1A",
+  "name": "Dominique Ansel Bakery",
+  "address": "189 Spring St, New York, NY 10012, USA",
+  "rating": 4.3,
+  "user_ratings_total": 9260,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7252509,
+  "lng": -74.0028734
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

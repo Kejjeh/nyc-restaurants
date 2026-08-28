@@ -774,18 +774,28 @@ def test_the_roster_never_publishes_a_coordinate_outside_new_york():
     assert not stray, f"plotted outside NYC: {stray}"
 
 
-def test_a_venue_the_listing_misplaces_is_seeded_without_coordinates():
-    """Dropped at the seed rather than at export, so the venue stays a
-    candidate for a Places lookup that could supply real coordinates."""
+def test_a_venue_the_listing_misplaces_never_carries_the_listings_coordinates():
+    """The listing geocodes these three Koreatown restaurants to Oakland CA and
+    San Angelo TX. build_venues drops those at the seed rather than at export,
+    so the venue stays a candidate for a Places lookup that could supply real
+    coordinates -- which is the whole point of dropping them.
+
+    That lookup has since run, so the assertion cannot be `lat IS NULL` any
+    more: all three now hold hand-verified Places coordinates. What must hold
+    either way is that the listing's own values never survive -- each venue is
+    unresolved, or it is somewhere in New York City."""
+    from config import in_nyc
     con = sqlite3.connect(f"file:{DB}?mode=ro", uri=True)
     try:
-        rows = dict(con.execute(
-            "SELECT venue_slug, lat FROM venues"
-            " WHERE venue_slug IN ('dubuhaus', 'musaek', 'the-kunjip')"))
+        rows = {r[0]: (r[1], r[2]) for r in con.execute(
+            "SELECT venue_slug, lat, lng FROM venues"
+            " WHERE venue_slug IN ('dubuhaus', 'musaek', 'the-kunjip')")}
     finally:
         con.close()
     assert rows, "the three misplaced restaurants are not on the roster at all"
-    assert all(lat is None for lat in rows.values()), rows
+    stray = {slug: ll for slug, (lat, lng) in rows.items()
+             if (ll := (lat, lng))[0] is not None and not in_nyc(lat, lng)}
+    assert not stray, f"the listing's bad coordinates survived: {stray}"
 
 
 def test_the_bounds_have_exactly_one_definition():

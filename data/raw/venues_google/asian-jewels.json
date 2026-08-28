@@ -1,0 +1,19 @@
+{
+ "slug": "asian-jewels",
+ "query_name": "Asian Jewels",
+ "matched": {
+  "place_id": "ChIJ2aw2iQ5gwokRDiwmsI9YhnE",
+  "name": "Asian Jewels",
+  "address": "133-30 39th Ave, Flushing, NY 11354, USA",
+  "rating": 4.2,
+  "user_ratings_total": 3137,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7591397,
+  "lng": -73.8333631
+ },
+ "accepted": true,
+ "reason": "name 1.00, postal code agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "133-30 39th Ave., Queens, NY 11354"
+}

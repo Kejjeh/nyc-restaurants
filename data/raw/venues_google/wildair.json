@@ -1,0 +1,19 @@
+{
+ "slug": "wildair",
+ "query_name": "Wildair",
+ "matched": {
+  "place_id": "ChIJfZsx0ClawokRCNMYMdZ_smg",
+  "name": "Wildair",
+  "address": "142 Orchard St, New York, NY 10002, USA",
+  "rating": 4.4,
+  "user_ratings_total": 599,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7200222,
+  "lng": -73.9891648
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

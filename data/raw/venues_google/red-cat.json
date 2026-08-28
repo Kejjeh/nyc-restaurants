@@ -1,0 +1,19 @@
+{
+ "slug": "red-cat",
+ "query_name": "The Red Cat",
+ "matched": {
+  "place_id": "ChIJZ9SAOhFZwokRM16MHbkd6E0",
+  "name": "The Red Cat",
+  "address": "227 10th Ave, New York, NY 10011, USA",
+  "rating": null,
+  "user_ratings_total": null,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.7481297,
+  "lng": -74.004196
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

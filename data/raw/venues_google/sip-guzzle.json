@@ -1,0 +1,19 @@
+{
+ "slug": "sip-guzzle",
+ "query_name": "Sip & Guzzle",
+ "matched": {
+  "place_id": "ChIJ49KsB19ZwokR8VwrMbECQr8",
+  "name": "Sip&Guzzle",
+  "address": "29 Cornelia St, New York, NY 10014, USA",
+  "rating": 4.2,
+  "user_ratings_total": 809,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7314775,
+  "lng": -74.0024921
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

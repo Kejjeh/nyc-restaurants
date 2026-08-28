@@ -1,0 +1,19 @@
+{
+ "slug": "kanyakumari",
+ "query_name": "Kanyakumari",
+ "matched": {
+  "place_id": "ChIJKbKvOwBZwokRE3mEbmx_F6g",
+  "name": "Kanyakumari",
+  "address": "20 E 17th St, New York, NY 10003, USA",
+  "rating": 4.4,
+  "user_ratings_total": 893,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7372719,
+  "lng": -73.9912396
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "20 E. 17th St., New York, NY 10003"
+}

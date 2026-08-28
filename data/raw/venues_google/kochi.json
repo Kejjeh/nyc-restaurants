@@ -1,0 +1,19 @@
+{
+ "slug": "kochi",
+ "query_name": "Kochi",
+ "matched": {
+  "place_id": "ChIJN8SzjFRZwokR-b5lqNXcg44",
+  "name": "Kochi - Korean Fine Dining",
+  "address": "652 10th Ave, New York, NY 10036, USA",
+  "rating": 4.6,
+  "user_ratings_total": 1022,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7619926,
+  "lng": -73.99346919999999
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "652 Tenth Ave., New York, NY 10036"
+}

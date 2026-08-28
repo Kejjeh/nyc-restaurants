@@ -1,0 +1,19 @@
+{
+ "slug": "french-culinary-institute",
+ "query_name": "French Culinary Institute",
+ "matched": {
+  "place_id": "ChIJ11TNe4lZwokRyRK4KmVoni4",
+  "name": "International Culinary Center",
+  "address": "225 Liberty St, New York, NY 10080, USA",
+  "rating": 4.5,
+  "user_ratings_total": 89,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7120627,
+  "lng": -74.0151624
+ },
+ "accepted": false,
+ "reason": "name similarity 0.20 is too low to identify on its own",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

@@ -1,0 +1,10 @@
+{
+ "slug": "king-cocktail",
+ "query_name": "King Cocktail",
+ "matched": null,
+ "accepted": false,
+ "reason": "hand ruling: Text Search returned the restaurant King at 18 King St, which is already resolved under the venue slug \"king\". One place_id cannot be two venues.",
+ "source": "hand",
+ "error": null,
+ "query_address": null
+}

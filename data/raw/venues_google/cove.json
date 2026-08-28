@@ -1,0 +1,19 @@
+{
+ "slug": "cove",
+ "query_name": "Cove",
+ "matched": {
+  "place_id": "ChIJJcBbLABZwokRoXSmVANVTkk",
+  "name": "Cove",
+  "address": "285 W Houston St, New York, NY 10014, USA",
+  "rating": 4.7,
+  "user_ratings_total": 77,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7286836,
+  "lng": -74.0077503
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "285 W. Houston St., New York, NY 10014"
+}

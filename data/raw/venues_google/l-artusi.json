@@ -1,0 +1,19 @@
+{
+ "slug": "l-artusi",
+ "query_name": "L' Artusi",
+ "matched": {
+  "place_id": "ChIJxwoiopRZwokRttz8Wb0-BLU",
+  "name": "L'Artusi",
+  "address": "228 W 10th St, New York, NY 10014, USA",
+  "rating": 4.6,
+  "user_ratings_total": 2675,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7337833,
+  "lng": -74.00513959999999
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

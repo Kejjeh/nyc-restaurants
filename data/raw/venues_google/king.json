@@ -1,0 +1,19 @@
+{
+ "slug": "king",
+ "query_name": "King",
+ "matched": {
+  "place_id": "ChIJmy2pnY1ZwokRvWDMouRmdl4",
+  "name": "King",
+  "address": "18 King St, New York, NY 10014, USA",
+  "rating": 4.3,
+  "user_ratings_total": 602,
+  "business_status": "OPERATIONAL",
+  "lat": 40.727565,
+  "lng": -74.003456
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "18 King St., New York, NY 10014"
+}

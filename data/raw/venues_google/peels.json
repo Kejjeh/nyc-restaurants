@@ -1,0 +1,19 @@
+{
+ "slug": "peels",
+ "query_name": "Peels",
+ "matched": {
+  "place_id": "ChIJX2Wo1zf3wokRC2YRl73lzh4",
+  "name": "NY Skin Experts in Microneedling TCA CROSS Chemical Peel CO2 Fotona 4D",
+  "address": "271 Madison Ave Ste 1407 Room #2, New York, NY 10016, USA",
+  "rating": 5,
+  "user_ratings_total": 226,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7512129,
+  "lng": -73.98011919999999
+ },
+ "accepted": false,
+ "reason": "name similarity 0.00 is too low to identify on its own",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

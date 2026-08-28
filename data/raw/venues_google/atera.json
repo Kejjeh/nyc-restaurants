@@ -1,0 +1,19 @@
+{
+ "slug": "atera",
+ "query_name": "Atera",
+ "matched": {
+  "place_id": "ChIJ_Y7rMCBawokR0mnRmN5kL2o",
+  "name": "Atera",
+  "address": "77 Worth St, New York, NY 10013, USA",
+  "rating": 4.6,
+  "user_ratings_total": 634,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7169003,
+  "lng": -74.0055631
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "77 Worth St., New York, NY 10013"
+}

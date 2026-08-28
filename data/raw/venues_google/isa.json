@@ -1,0 +1,19 @@
+{
+ "slug": "isa",
+ "query_name": "Isa",
+ "matched": {
+  "place_id": "ChIJMXhI9WFZwokRP5_8BLywciE",
+  "name": "Isa",
+  "address": "348 Wythe Ave, Brooklyn, NY 11211, USA",
+  "rating": 3.9,
+  "user_ratings_total": 21,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.7141333,
+  "lng": -73.96534369999999
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "dim-sum-go-go",
+ "query_name": "Dim Sum Go Go",
+ "matched": {
+  "place_id": "ChIJBQwbiCZawokRak_8KefFP7M",
+  "name": "Dim Sum Go Go",
+  "address": "5 E Broadway, New York, NY 10038, USA",
+  "rating": 4.1,
+  "user_ratings_total": 1753,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7132926,
+  "lng": -73.9977449
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "5 E. Broadway, New York, NY 10038"
+}

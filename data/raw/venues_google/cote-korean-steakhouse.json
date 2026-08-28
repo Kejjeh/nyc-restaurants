@@ -1,0 +1,19 @@
+{
+ "slug": "cote-korean-steakhouse",
+ "query_name": "COTE Korean Steakhouse",
+ "matched": {
+  "place_id": "ChIJQ1R3hKNZwokRQM4wbIrc00o",
+  "name": "COTE Flatiron",
+  "address": "16 W 22nd St, New York, NY 10010, USA",
+  "rating": 4.6,
+  "user_ratings_total": 4264,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7413041,
+  "lng": -73.99125269999999
+ },
+ "accepted": false,
+ "reason": "name similarity 0.25 is too low to identify on its own",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

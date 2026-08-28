@@ -1,0 +1,19 @@
+{
+ "slug": "evil-twin-brewing",
+ "query_name": "Evil Twin Brewing",
+ "matched": {
+  "place_id": "ChIJ-04l4vBbwokRHxrsv5Pf9kQ",
+  "name": "Evil Twin Brewing NYC - DUMBO",
+  "address": "43 Main St, Brooklyn, NY 11201, USA",
+  "rating": 4.6,
+  "user_ratings_total": 559,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7029376,
+  "lng": -73.99056759999999
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

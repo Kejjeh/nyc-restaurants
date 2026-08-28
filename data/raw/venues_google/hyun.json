@@ -1,0 +1,19 @@
+{
+ "slug": "hyun",
+ "query_name": "Hyun",
+ "matched": {
+  "place_id": "ChIJyVx4cR9ZwokRjVpmK-TnpM0",
+  "name": "HYUN",
+  "address": "10 E 33rd St, New York, NY 10016, USA",
+  "rating": 4.1,
+  "user_ratings_total": 803,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7474212,
+  "lng": -73.98445889999999
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "10 E. 33rd St., New York, NY 10016"
+}

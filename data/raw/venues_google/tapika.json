@@ -1,0 +1,19 @@
+{
+ "slug": "tapika",
+ "query_name": "Tapika",
+ "matched": {
+  "place_id": "ChIJqaJkRQBfwokRLXpCskwiw8Y",
+  "name": "Tapyorka",
+  "address": "31-05 36th Ave, Astoria, NY 11106, USA",
+  "rating": 4.8,
+  "user_ratings_total": 105,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7565371,
+  "lng": -73.9293277
+ },
+ "accepted": false,
+ "reason": "name similarity 0.00 is too low to identify on its own",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

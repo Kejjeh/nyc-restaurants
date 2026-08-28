@@ -1,0 +1,19 @@
+{
+ "slug": "sushi-akira",
+ "query_name": "Sushi Akira",
+ "matched": {
+  "place_id": "ChIJx32M-AZZwokRYXUV81ghelA",
+  "name": "Sushi Akira",
+  "address": "317 E 75th St, New York, NY 10021, USA",
+  "rating": 4.9,
+  "user_ratings_total": 83,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7705225,
+  "lng": -73.9558389
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "317 E. 75th St., New York, NY 10021"
+}

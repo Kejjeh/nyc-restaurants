@@ -1,0 +1,19 @@
+{
+ "slug": "arcadia",
+ "query_name": "Arcadia",
+ "matched": {
+  "place_id": "ChIJaY1Xsk5fwokRZltGYzlG-oU",
+  "name": "Arcadia Bar and Kitchen",
+  "address": "12-21 Astoria Blvd, Astoria, NY 11102, USA",
+  "rating": 4.6,
+  "user_ratings_total": 457,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7722622,
+  "lng": -73.9292409
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

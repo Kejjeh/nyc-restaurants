@@ -1,0 +1,19 @@
+{
+ "slug": "kebab-aur-sharab",
+ "query_name": "Kebab aur Sharab",
+ "matched": {
+  "place_id": "ChIJp5ZUdGlZwokR9QomdJsja7A",
+  "name": "Kebab aur Sharab",
+  "address": "247 W 72nd St, New York, NY 10023, USA",
+  "rating": 4.3,
+  "user_ratings_total": 983,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7795772,
+  "lng": -73.9832555
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "247 W. 72nd St., New York, NY 10023"
+}

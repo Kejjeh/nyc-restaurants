@@ -1,0 +1,19 @@
+{
+ "slug": "momofuku-milk-bar",
+ "query_name": "Momofuku Milk Bar",
+ "matched": {
+  "place_id": "ChIJIUWgkIVZwokRiHNp_gg3hX0",
+  "name": "Milk Bar",
+  "address": "1196 Broadway, New York, NY 10001, USA",
+  "rating": 4.6,
+  "user_ratings_total": 3613,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7458208,
+  "lng": -73.9883921
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

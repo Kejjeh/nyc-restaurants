@@ -1,0 +1,19 @@
+{
+ "slug": "ouest",
+ "query_name": "Ouest",
+ "matched": {
+  "place_id": "ChIJYeZuBI9YwokRjMDs_IEyCwo",
+  "name": "Manhattan",
+  "address": "Manhattan, New York, NY, USA",
+  "rating": null,
+  "user_ratings_total": null,
+  "business_status": null,
+  "lat": 40.7685167,
+  "lng": -73.98219379999999
+ },
+ "accepted": false,
+ "reason": "name similarity 0.00 is too low to identify on its own",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

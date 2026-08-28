@@ -1,0 +1,10 @@
+{
+ "slug": "empellon-cocina",
+ "query_name": "Empellon Cocina",
+ "matched": null,
+ "accepted": false,
+ "reason": "hand ruling: Text Search returned Empellón at 510 Madison Ave, which is already resolved under the venue slug \"empellon-midtown\". One place_id cannot be two venues.",
+ "source": "hand",
+ "error": null,
+ "query_address": null
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "rezdora-osteria-emiliana",
+ "query_name": "Rezdôra-Osteria Emiliana",
+ "matched": {
+  "place_id": "ChIJDdKSyCVZwokR-9svvc9YDFo",
+  "name": "Rezdôra",
+  "address": "27 E 20th St, New York, NY 10003, USA",
+  "rating": 4.3,
+  "user_ratings_total": 1877,
+  "business_status": "OPERATIONAL",
+  "lat": 40.739083,
+  "lng": -73.98904399999999
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "lei",
+ "query_name": "Lei",
+ "matched": {
+  "place_id": "ChIJX97UMwBbwokRIFRlD1YzSRc",
+  "name": "Lei",
+  "address": "15-17 Doyers St, New York, NY 10013, USA",
+  "rating": 4.7,
+  "user_ratings_total": 153,
+  "business_status": "OPERATIONAL",
+  "lat": 40.714595,
+  "lng": -73.998267
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "15-17 Doyers St., New York, NY 10013"
+}

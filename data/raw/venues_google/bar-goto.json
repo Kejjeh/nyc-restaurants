@@ -1,0 +1,19 @@
+{
+ "slug": "bar-goto",
+ "query_name": "Bar Goto",
+ "matched": {
+  "place_id": "ChIJYYa4bIRZwokRfF05m4Pogfw",
+  "name": "BAR GOTO",
+  "address": "245 Eldridge St, New York, NY 10002, USA",
+  "rating": 4.6,
+  "user_ratings_total": 708,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7227802,
+  "lng": -73.9898899
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

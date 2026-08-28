@@ -1,0 +1,19 @@
+{
+ "slug": "asian-bowl",
+ "query_name": "Asian Bowl",
+ "matched": {
+  "place_id": "ChIJlxMWYHtfwokRLXYiX2C_WrI",
+  "name": "Asian Bowl Restaurant",
+  "address": "57-11 49th Pl, Maspeth, NY 11378, USA",
+  "rating": 4.7,
+  "user_ratings_total": 7,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7201746,
+  "lng": -73.91945059999999
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

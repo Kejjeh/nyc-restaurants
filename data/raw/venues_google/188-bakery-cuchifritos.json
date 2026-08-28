@@ -1,0 +1,19 @@
+{
+ "slug": "188-bakery-cuchifritos",
+ "query_name": "188 Bakery Cuchifritos",
+ "matched": {
+  "place_id": "ChIJpxMVh4fzwokREgfgMcNN-x8",
+  "name": "188 Bakery Cuchifritos",
+  "address": "158 E 188th St, Bronx, NY 10468, USA",
+  "rating": 4.3,
+  "user_ratings_total": 1148,
+  "business_status": "OPERATIONAL",
+  "lat": 40.8615317,
+  "lng": -73.8984583
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

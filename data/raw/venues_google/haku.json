@@ -1,0 +1,19 @@
+{
+ "slug": "haku",
+ "query_name": "Haku",
+ "matched": {
+  "place_id": "ChIJGzmPD-RYwokR8KEUZFZQdOo",
+  "name": "Haku Sushi",
+  "address": "1047A 2nd Ave, New York, NY 10022, USA",
+  "rating": 3.5,
+  "user_ratings_total": 8,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.7582195,
+  "lng": -73.9663088
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

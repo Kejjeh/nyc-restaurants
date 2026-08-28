@@ -1,0 +1,19 @@
+{
+ "slug": "torrisi-italian-specialties",
+ "query_name": "Torrisi Italian Specialties",
+ "matched": {
+  "place_id": "ChIJWd7fRdZZwokRhru5tn4KsVM",
+  "name": "Torrisi",
+  "address": "275 Mulberry St, New York, NY 10012, USA",
+  "rating": 4.6,
+  "user_ratings_total": 985,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7242743,
+  "lng": -73.9954023
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "amdo-momo",
+ "query_name": "Amdo Momo",
+ "matched": {
+  "place_id": "ChIJSzz-UABfwokRv2jxN3KRNY0",
+  "name": "Amdo Momo",
+  "address": "73-73 37th Rd, Jackson Heights, NY 11372, USA",
+  "rating": 4.7,
+  "user_ratings_total": 25,
+  "business_status": "OPERATIONAL",
+  "lat": 40.747196,
+  "lng": -73.8913937
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

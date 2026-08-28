@@ -1,0 +1,19 @@
+{
+ "slug": "crane-club",
+ "query_name": "Crane Club",
+ "matched": {
+  "place_id": "ChIJQZCdItFZwokR81gO5l3lMKc",
+  "name": "Crane Club",
+  "address": "85 10th Ave, New York, NY 10011, USA",
+  "rating": 4.4,
+  "user_ratings_total": 293,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7434185,
+  "lng": -74.0075256
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "85 10th Ave., New York, NY 10011"
+}

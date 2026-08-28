@@ -1,0 +1,19 @@
+{
+ "slug": "mission-ceviche",
+ "query_name": "Mission Ceviche",
+ "matched": {
+  "place_id": "ChIJEXPLsaFZwokRggZzIVKeiPM",
+  "name": "Mission Ceviche",
+  "address": "1400 2nd Ave, New York, NY 10021, USA",
+  "rating": 4.6,
+  "user_ratings_total": 4635,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7691005,
+  "lng": -73.9578631
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "1400 Second Ave., New York, NY 10021"
+}

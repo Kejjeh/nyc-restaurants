@@ -1,0 +1,19 @@
+{
+ "slug": "mala-project",
+ "query_name": "MáLà Project",
+ "matched": {
+  "place_id": "ChIJM2NCGJ1ZwokRA2nCkZcz08g",
+  "name": "MáLà Project",
+  "address": "122 1st Ave, New York, NY 10009, USA",
+  "rating": 4.5,
+  "user_ratings_total": 1612,
+  "business_status": "OPERATIONAL",
+  "lat": 40.72714430000001,
+  "lng": -73.9854189
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "122 First Ave., New York, NY 10009"
+}

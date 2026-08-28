@@ -1,0 +1,19 @@
+{
+ "slug": "secchu-yokota",
+ "query_name": "Secchu Yokota",
+ "matched": {
+  "place_id": "ChIJ8-YKf4JZwokR8E9EvXIGnhI",
+  "name": "Secchu Yokota",
+  "address": "199 E 3rd St, New York, NY 10009, USA",
+  "rating": 4.9,
+  "user_ratings_total": 322,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7228463,
+  "lng": -73.9831229
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "199 E. 3rd St., New York, NY 10009"
+}

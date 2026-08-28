@@ -1,0 +1,19 @@
+{
+ "slug": "daily-provisions",
+ "query_name": "Daily Provisions",
+ "matched": {
+  "place_id": "ChIJTaOgPX5ZwokRJkr8Btv35uo",
+  "name": "Daily Provisions - Manhattan West",
+  "address": "440 W 33rd St Ste 90, New York, NY 10001, USA",
+  "rating": 4.1,
+  "user_ratings_total": 440,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7525786,
+  "lng": -73.998898
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

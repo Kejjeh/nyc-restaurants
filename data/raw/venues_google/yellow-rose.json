@@ -1,0 +1,19 @@
+{
+ "slug": "yellow-rose",
+ "query_name": "Yellow Rose",
+ "matched": {
+  "place_id": "ChIJ86Q39ndZwokRJTOUVW7RD-I",
+  "name": "Yellow Rose",
+  "address": "102 3rd Ave, New York, NY 10003, USA",
+  "rating": 4.3,
+  "user_ratings_total": 583,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7325214,
+  "lng": -73.9879752
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "102 Third Ave., New York, NY 10003"
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "cafe-commerce",
+ "query_name": "Cafe Commerce",
+ "matched": {
+  "place_id": "ChIJpRJxMZFZwokRuAIdqebbohg",
+  "name": "Cafe Commerce",
+  "address": "964 Lexington Ave, New York, NY 10021, USA",
+  "rating": 4.6,
+  "user_ratings_total": 386,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7694419,
+  "lng": -73.9632635
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "964 Lexington Ave., New York, NY 10021"
+}

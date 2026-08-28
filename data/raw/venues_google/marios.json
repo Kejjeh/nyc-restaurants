@@ -1,0 +1,19 @@
+{
+ "slug": "marios",
+ "query_name": "Mario's",
+ "matched": {
+  "place_id": "ChIJSVkYXIf0wokReeN2qJg8Nwc",
+  "name": "Mario's Restaurant of Arthur Avenue",
+  "address": "2342 Arthur Ave, Bronx, NY 10458, USA",
+  "rating": 4.4,
+  "user_ratings_total": 1062,
+  "business_status": "OPERATIONAL",
+  "lat": 40.85415649999999,
+  "lng": -73.8884583
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

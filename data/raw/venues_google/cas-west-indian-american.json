@@ -1,0 +1,19 @@
+{
+ "slug": "cas-west-indian-american",
+ "query_name": "Cas West Indian & American Restaurant",
+ "matched": {
+  "place_id": "ChIJBWhBrIZbwokRN3kXN_Gn1oY",
+  "name": "Cas",
+  "address": "135 Kingston Ave, Brooklyn, NY 11213, USA",
+  "rating": 4.3,
+  "user_ratings_total": 228,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6752534,
+  "lng": -73.9414251
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

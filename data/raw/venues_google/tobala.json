@@ -1,0 +1,19 @@
+{
+ "slug": "tobala",
+ "query_name": "Tobalá",
+ "matched": {
+  "place_id": "ChIJPbOOFvPzwokRttFt-acm5qo",
+  "name": "Tobala",
+  "address": "3732 Riverdale Ave, Bronx, NY 10463, USA",
+  "rating": 4.5,
+  "user_ratings_total": 407,
+  "business_status": "OPERATIONAL",
+  "lat": 40.88749,
+  "lng": -73.9068724
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "3732 Riverdale Ave., Bronx, NY 10463"
+}

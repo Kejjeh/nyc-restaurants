@@ -1,0 +1,19 @@
+{
+ "slug": "pranakhon",
+ "query_name": "Pranakhon",
+ "matched": {
+  "place_id": "ChIJeWk_ncJZwokR1QHfApa0dQo",
+  "name": "Pranakhon",
+  "address": "88 University Pl, New York, NY 10003, USA",
+  "rating": 4.7,
+  "user_ratings_total": 3324,
+  "business_status": "OPERATIONAL",
+  "lat": 40.733751,
+  "lng": -73.9932623
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "88 University Pl., New York, NY 10003"
+}

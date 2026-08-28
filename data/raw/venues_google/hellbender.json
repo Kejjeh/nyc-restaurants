@@ -1,0 +1,19 @@
+{
+ "slug": "hellbender",
+ "query_name": "Hellbender",
+ "matched": {
+  "place_id": "ChIJG4RMPa1dwokRBET-URZXZJU",
+  "name": "Hellbender",
+  "address": "68-22 Forest Ave, Ridgewood, NY 11385, USA",
+  "rating": 4.3,
+  "user_ratings_total": 511,
+  "business_status": "OPERATIONAL",
+  "lat": 40.70300719999999,
+  "lng": -73.901347
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

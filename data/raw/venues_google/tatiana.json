@@ -1,0 +1,19 @@
+{
+ "slug": "tatiana",
+ "query_name": "Tatiana",
+ "matched": {
+  "place_id": "ChIJxy0SM0xZwokR5vC0f4wVlP0",
+  "name": "Tatiana by Kwame Onwuachi",
+  "address": "10 Lincoln Center Plaza, New York, NY 10023, USA",
+  "rating": 4.4,
+  "user_ratings_total": 1206,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7726505,
+  "lng": -73.98335209999999
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "10 Lincoln Center Plz., New York, NY 10023"
+}

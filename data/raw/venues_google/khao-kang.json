@@ -1,0 +1,19 @@
+{
+ "slug": "khao-kang",
+ "query_name": "Khao Kang",
+ "matched": {
+  "place_id": "ChIJRUIkkKpfwokR4j1pp9Vom1A",
+  "name": "Khao Kang",
+  "address": "76-20 Woodside Ave, Elmhurst, NY 11373, USA",
+  "rating": 4.5,
+  "user_ratings_total": 497,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7433455,
+  "lng": -73.8880977
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

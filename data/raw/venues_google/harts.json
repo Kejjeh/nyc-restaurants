@@ -1,0 +1,19 @@
+{
+ "slug": "harts",
+ "query_name": "Hart's",
+ "matched": {
+  "place_id": "ChIJhYcE0JlbwokRVjovgUYR65M",
+  "name": "Hart's",
+  "address": "506 Franklin Ave, Brooklyn, NY 11238, USA",
+  "rating": 4.6,
+  "user_ratings_total": 425,
+  "business_status": "OPERATIONAL",
+  "lat": 40.68147159999999,
+  "lng": -73.95589269999999
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "506 Franklin Ave., Brooklyn, NY 11238"
+}

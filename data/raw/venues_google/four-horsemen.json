@@ -1,0 +1,19 @@
+{
+ "slug": "four-horsemen",
+ "query_name": "The Four Horsemen",
+ "matched": {
+  "place_id": "ChIJbTCMl19ZwokRUohF137p9cQ",
+  "name": "The Four Horsemen",
+  "address": "295 Grand St, Brooklyn, NY 11211, USA",
+  "rating": 4.6,
+  "user_ratings_total": 1160,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7130584,
+  "lng": -73.9573216
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "295 Grand St., Brooklyn, NY 11211"
+}

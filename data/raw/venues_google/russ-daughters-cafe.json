@@ -1,0 +1,19 @@
+{
+ "slug": "russ-daughters-cafe",
+ "query_name": "Russ & Daughters Cafe",
+ "matched": {
+  "place_id": "ChIJ53yq2oZZwokRqIHSP4qZT3o",
+  "name": "Russ & Daughters Cafe",
+  "address": "127 Orchard St, New York, NY 10002, USA",
+  "rating": 4.6,
+  "user_ratings_total": 3696,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7196181,
+  "lng": -73.9895779
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "127 Orchard St., New York, NY 10002"
+}

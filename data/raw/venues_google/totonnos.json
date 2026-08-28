@@ -1,0 +1,19 @@
+{
+ "slug": "totonnos",
+ "query_name": "Totonno's",
+ "matched": {
+  "place_id": "ChIJDb9hOrVFwokRkpRqzb71OdM",
+  "name": "Totonno's",
+  "address": "1524 Neptune Ave, Brooklyn, NY 11224, USA",
+  "rating": 4.1,
+  "user_ratings_total": 910,
+  "business_status": "OPERATIONAL",
+  "lat": 40.5789173,
+  "lng": -73.9838232
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "ajo-y-oregano",
+ "query_name": "Ajo y Oregano",
+ "matched": {
+  "place_id": "ChIJz_zvS770wokR2G-DXoskJP0",
+  "name": "Ajo y Oregano",
+  "address": "1556 White Plains Rd, Bronx, NY 10462, USA",
+  "rating": 4.2,
+  "user_ratings_total": 3011,
+  "business_status": "OPERATIONAL",
+  "lat": 40.8395622,
+  "lng": -73.8636238
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

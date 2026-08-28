@@ -1,0 +1,19 @@
+{
+ "slug": "sarabeths",
+ "query_name": "Sarabeth's",
+ "matched": {
+  "place_id": "ChIJAzVd6_BYwokRahMskpFCrFg",
+  "name": "Sarabeth's Central Park South",
+  "address": "40 Central Park S Located in: 40 West 59th Street Condominium, New York, NY 10019, USA",
+  "rating": 4.1,
+  "user_ratings_total": 4536,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7650765,
+  "lng": -73.975516
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

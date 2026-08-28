@@ -1,0 +1,19 @@
+{
+ "slug": "daniel",
+ "query_name": "Daniel",
+ "matched": {
+  "place_id": "ChIJ09ZGju5YwokRXOcNC23JRwk",
+  "name": "Daniel",
+  "address": "60 E 65th St, New York, NY 10065, USA",
+  "rating": 4.7,
+  "user_ratings_total": 2580,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7668083,
+  "lng": -73.9675769
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "60 E. 65th St., New York, NY 10065"
+}

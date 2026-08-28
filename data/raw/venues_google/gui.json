@@ -1,0 +1,19 @@
+{
+ "slug": "gui",
+ "query_name": "Gui",
+ "matched": {
+  "place_id": "ChIJp77YbQBZwokRtrv7Pca_IJE",
+  "name": "Gui Steakhouse & Prime Rib – NYC",
+  "address": "776 8th Ave, New York, NY 10036, USA",
+  "rating": 4.5,
+  "user_ratings_total": 520,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7605787,
+  "lng": -73.987102
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "776 Eighth Ave., New York, NY 10036"
+}

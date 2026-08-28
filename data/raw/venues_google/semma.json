@@ -1,0 +1,19 @@
+{
+ "slug": "semma",
+ "query_name": "Semma",
+ "matched": {
+  "place_id": "ChIJxZmzO7hZwokRx2fls4uU4YU",
+  "name": "Semma",
+  "address": "60 Greenwich Ave, New York, NY 10011, USA",
+  "rating": 4.2,
+  "user_ratings_total": 1680,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7360304,
+  "lng": -74.0005639
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "60 Greenwich Ave., New York, NY 10011"
+}

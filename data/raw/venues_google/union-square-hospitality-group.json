@@ -1,0 +1,19 @@
+{
+ "slug": "union-square-hospitality-group",
+ "query_name": "Union Square Hospitality Group",
+ "matched": {
+  "place_id": "ChIJEW1XrphZwokRENYVcOHxO_Q",
+  "name": "Union Square Hospitality Group",
+  "address": "853 Broadway 17th floor, New York, NY 10003, USA",
+  "rating": 3.6,
+  "user_ratings_total": 28,
+  "business_status": "OPERATIONAL",
+  "lat": 40.734582,
+  "lng": -73.9914715
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

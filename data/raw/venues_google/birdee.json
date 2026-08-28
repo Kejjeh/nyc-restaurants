@@ -1,0 +1,19 @@
+{
+ "slug": "birdee",
+ "query_name": "Birdee",
+ "matched": {
+  "place_id": "ChIJJbmnn01ZwokRRBmMCKIY8K8",
+  "name": "Birdee",
+  "address": "316 Kent Ave, Brooklyn, NY 11249, USA",
+  "rating": 4,
+  "user_ratings_total": 244,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7140879,
+  "lng": -73.9672392
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

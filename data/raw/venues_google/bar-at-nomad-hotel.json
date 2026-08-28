@@ -1,0 +1,19 @@
+{
+ "slug": "bar-at-nomad-hotel",
+ "query_name": "The Bar at the NoMad Hotel",
+ "matched": {
+  "place_id": "ChIJYTOcA95ZwokRMaxuZ4v95uQ",
+  "name": "a.lounge+bar at Hotel AKA NoMad",
+  "address": "131 Madison Ave, New York, NY 10016, USA",
+  "rating": 5,
+  "user_ratings_total": 41,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7456133,
+  "lng": -73.9841399
+ },
+ "accepted": false,
+ "reason": "name similarity 0.50 is too low to identify on its own",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

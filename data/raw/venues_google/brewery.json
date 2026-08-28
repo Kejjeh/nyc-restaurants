@@ -1,0 +1,19 @@
+{
+ "slug": "brewery",
+ "query_name": "Brooklyn Brewery",
+ "matched": {
+  "place_id": "ChIJUaAuMl1ZwokRt0-S_ynnRtc",
+  "name": "Brooklyn Brewery",
+  "address": "79 N 11th St, Brooklyn, NY 11249, USA",
+  "rating": 4.5,
+  "user_ratings_total": 1889,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7217625,
+  "lng": -73.9577086
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

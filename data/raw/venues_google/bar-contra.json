@@ -1,0 +1,19 @@
+{
+ "slug": "bar-contra",
+ "query_name": "Bar Contra",
+ "matched": {
+  "place_id": "ChIJ1XzYXwBZwokRCGsqhEDOMP8",
+  "name": "Bar Contra",
+  "address": "138 Orchard St, New York, NY 10002, USA",
+  "rating": 4.6,
+  "user_ratings_total": 147,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7198928,
+  "lng": -73.9892375
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

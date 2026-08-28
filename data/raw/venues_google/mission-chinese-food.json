@@ -1,0 +1,19 @@
+{
+ "slug": "mission-chinese-food",
+ "query_name": "Mission Chinese Food",
+ "matched": {
+  "place_id": "ChIJlbISTABbwokRZuW-jnctpWs",
+  "name": "Mission Chinese Food",
+  "address": "45 Mott St, New York, NY 10013, USA",
+  "rating": 4.1,
+  "user_ratings_total": 104,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7153147,
+  "lng": -73.99896900000002
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

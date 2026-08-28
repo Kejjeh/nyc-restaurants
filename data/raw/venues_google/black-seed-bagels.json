@@ -1,0 +1,19 @@
+{
+ "slug": "black-seed-bagels",
+ "query_name": "Black Seed Bagels",
+ "matched": {
+  "place_id": "ChIJV1BBkp1ZwokRpjqvV01uiqg",
+  "name": "Black Seed Bagels - Nolita",
+  "address": "170 Elizabeth St, New York, NY 10012, USA",
+  "rating": 4.2,
+  "user_ratings_total": 1169,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7209046,
+  "lng": -73.99467779999999
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

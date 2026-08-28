@@ -1,0 +1,10 @@
+{
+ "slug": "rubicon",
+ "query_name": "Rubicon",
+ "matched": null,
+ "accepted": false,
+ "reason": "hand ruling: Text Search returned Rubicon Capital Advisors, which is not a restaurant. The award record is old enough that the venue is gone and the name now belongs to something else.",
+ "source": "hand",
+ "error": null,
+ "query_address": null
+}

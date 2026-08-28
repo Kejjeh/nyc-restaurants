@@ -1,0 +1,19 @@
+{
+ "slug": "a-a-bake-double-roti-shop",
+ "query_name": "A&A Bake & Double Roti Shop",
+ "matched": {
+  "place_id": "ChIJhZ5AnJpbwokR8xu2jnQDqP0",
+  "name": "A&A Bake Doubles and Roti",
+  "address": "1337 Fulton St, Brooklyn, NY 11216, USA",
+  "rating": 4.3,
+  "user_ratings_total": 1179,
+  "business_status": "OPERATIONAL",
+  "lat": 40.680491,
+  "lng": -73.9479489
+ },
+ "accepted": false,
+ "reason": "name similarity 0.43 is too low to identify on its own",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

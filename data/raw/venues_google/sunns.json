@@ -1,0 +1,19 @@
+{
+ "slug": "sunns",
+ "query_name": "Sunn's",
+ "matched": {
+  "place_id": "ChIJJbrdCQBbwokR0msB9eFOzEE",
+  "name": "Sunn’s",
+  "address": "139 Division St, New York, NY 10002, USA",
+  "rating": 4.5,
+  "user_ratings_total": 161,
+  "business_status": "OPERATIONAL",
+  "lat": 40.714377,
+  "lng": -73.9909737
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

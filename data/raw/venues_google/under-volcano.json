@@ -1,0 +1,19 @@
+{
+ "slug": "under-volcano",
+ "query_name": "Under The Volcano",
+ "matched": {
+  "place_id": "ChIJRzwZY49ZwokRXX5_d6UP7Y4",
+  "name": "Under The Volcano",
+  "address": "12 E 36th St, New York, NY 10016, USA",
+  "rating": 4.6,
+  "user_ratings_total": 35,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.7492555,
+  "lng": -73.98284509999999
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

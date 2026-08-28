@@ -1,0 +1,19 @@
+{
+ "slug": "bungalow",
+ "query_name": "Bungalow",
+ "matched": {
+  "place_id": "ChIJxUPhRABZwokRWTa40zp_N10",
+  "name": "Bungalow",
+  "address": "24 1st Ave, New York, NY 10009, USA",
+  "rating": 4.4,
+  "user_ratings_total": 2813,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7236675,
+  "lng": -73.98797429999999
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "24 1st Ave., New York, NY 10009"
+}

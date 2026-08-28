@@ -1,0 +1,19 @@
+{
+ "slug": "boathouse-cafe",
+ "query_name": "The Boathouse Cafe",
+ "matched": {
+  "place_id": "ChIJD8X-EIJZwokRsEVRo28Zw8w",
+  "name": "Central Park Boathouse Café",
+  "address": "72 E 72nd St, New York, NY 10021, USA",
+  "rating": 3.5,
+  "user_ratings_total": 113,
+  "business_status": "OPERATIONAL",
+  "lat": 40.77530040000001,
+  "lng": -73.9686674
+ },
+ "accepted": false,
+ "reason": "name similarity 0.40 is too low to identify on its own",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "chalong",
+ "query_name": "Chalong",
+ "matched": {
+  "place_id": "ChIJhwCMNh5ZwokROomRErlMEpk",
+  "name": "Chalong Southern Thai",
+  "address": "749 9th Ave, New York, NY 10019, USA",
+  "rating": 4.9,
+  "user_ratings_total": 3998,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7639556,
+  "lng": -73.98899449999999
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "dante",
+ "query_name": "Dante",
+ "matched": {
+  "place_id": "ChIJUw68EZJZwokRJ15RD_T4OTw",
+  "name": "Dante NYC",
+  "address": "79-81 MacDougal St, New York, NY 10012, USA",
+  "rating": 4.5,
+  "user_ratings_total": 2805,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7288417,
+  "lng": -74.0016444
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

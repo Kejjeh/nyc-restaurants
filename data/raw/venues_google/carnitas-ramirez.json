@@ -1,0 +1,19 @@
+{
+ "slug": "carnitas-ramirez",
+ "query_name": "Carnitas Ramirez",
+ "matched": {
+  "place_id": "ChIJ41HSUABZwokRhbUqk4qDotA",
+  "name": "Carnitas Ramirez",
+  "address": "210 E 3rd St, New York, NY 10009, USA",
+  "rating": 4.8,
+  "user_ratings_total": 527,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7224688,
+  "lng": -73.9827999
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

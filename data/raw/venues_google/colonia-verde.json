@@ -1,0 +1,19 @@
+{
+ "slug": "colonia-verde",
+ "query_name": "Colonia Verde",
+ "matched": {
+  "place_id": "ChIJrXze-rlbwokRl3G4x1txJgk",
+  "name": "Colonia Verde",
+  "address": "219 Dekalb Ave, Brooklyn, NY 11205, USA",
+  "rating": 4.6,
+  "user_ratings_total": 1035,
+  "business_status": "OPERATIONAL",
+  "lat": 40.68969939999999,
+  "lng": -73.9707225
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

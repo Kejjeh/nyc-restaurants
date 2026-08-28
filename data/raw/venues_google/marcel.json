@@ -1,0 +1,19 @@
+{
+ "slug": "marcel",
+ "query_name": "Marcel",
+ "matched": {
+  "place_id": "ChIJ9bb04b9ZwokRJV5MdRSSNps",
+  "name": "Marcel 945 Madison",
+  "address": "945 Madison Ave, New York, NY 10021, USA",
+  "rating": 4.1,
+  "user_ratings_total": 91,
+  "business_status": "OPERATIONAL",
+  "lat": 40.773442,
+  "lng": -73.9638271
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "945 Madison Ave., New York, NY 10021"
+}

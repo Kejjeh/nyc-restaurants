@@ -1,0 +1,19 @@
+{
+ "slug": "adour-alain-ducasse-at-st-regis",
+ "query_name": "Adour Alain Ducasse at the St. Regis New York",
+ "matched": {
+  "place_id": "ChIJT_kaUvpYwokRfo3jEdYGePk",
+  "name": "Adour",
+  "address": "Regis Residence, 2 E 55th St, New York, NY 10022, USA",
+  "rating": 4.8,
+  "user_ratings_total": 17,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.7613979,
+  "lng": -73.9746128
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "papa-san",
+ "query_name": "Papa San",
+ "matched": {
+  "place_id": "ChIJ05xWLABZwokRKCsPbbMahzo",
+  "name": "Papa San",
+  "address": "501 W 34th St., New York, NY 10001, USA",
+  "rating": 4.5,
+  "user_ratings_total": 298,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7549205,
+  "lng": -73.9993893
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "501 W. 34th St., New York, NY 10001"
+}

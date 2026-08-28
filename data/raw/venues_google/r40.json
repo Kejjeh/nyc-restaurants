@@ -1,0 +1,19 @@
+{
+ "slug": "r40",
+ "query_name": "R40",
+ "matched": {
+  "place_id": "ChIJmfa2wdVZwokRQhZSfY9P4p0",
+  "name": "R40",
+  "address": "47-16 Vernon Blvd, Long Island City, NY 11101, USA",
+  "rating": 4.5,
+  "user_ratings_total": 439,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7450141,
+  "lng": -73.9534908
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "47-16 Vernon Blvd., Queens, NY 11101"
+}

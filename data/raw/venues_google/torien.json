@@ -1,0 +1,19 @@
+{
+ "slug": "torien",
+ "query_name": "Torien",
+ "matched": {
+  "place_id": "ChIJ00d8thlZwokRokFYn2wZy5E",
+  "name": "Torien",
+  "address": "292 Elizabeth St, New York, NY 10012, USA",
+  "rating": 4.6,
+  "user_ratings_total": 277,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7247436,
+  "lng": -73.9931265
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "292 Elizabeth St., New York, NY 10012"
+}

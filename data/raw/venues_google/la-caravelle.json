@@ -1,0 +1,19 @@
+{
+ "slug": "la-caravelle",
+ "query_name": "La Caravelle",
+ "matched": {
+  "place_id": "ChIJ22wiSIpZwokRUmlXovJnWDI",
+  "name": "La Mercerie",
+  "address": "53 Howard St, New York, NY 10013, USA",
+  "rating": 4.3,
+  "user_ratings_total": 1818,
+  "business_status": "OPERATIONAL",
+  "lat": 40.72014780000001,
+  "lng": -74.0021708
+ },
+ "accepted": false,
+ "reason": "name similarity 0.33 is too low to identify on its own",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

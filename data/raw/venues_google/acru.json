@@ -1,0 +1,19 @@
+{
+ "slug": "acru",
+ "query_name": "Acru",
+ "matched": {
+  "place_id": "ChIJ3bmAHghZwokRRXYO57yLuss",
+  "name": "ATOMIX",
+  "address": "104 E 30th St, New York, NY 10016, USA",
+  "rating": 4.6,
+  "user_ratings_total": 531,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7442317,
+  "lng": -73.9828502
+ },
+ "accepted": false,
+ "reason": "name similarity 0.00 is too low to identify on its own",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

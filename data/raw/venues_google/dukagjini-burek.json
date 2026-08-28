@@ -1,0 +1,19 @@
+{
+ "slug": "dukagjini-burek",
+ "query_name": "Dukagjini Burek",
+ "matched": {
+  "place_id": "ChIJ53KeKqD0wokRA9WzdrY4UGU",
+  "name": "Dukagjini Burek",
+  "address": "758 Lydig Ave, Bronx, NY 10462, USA",
+  "rating": 4.8,
+  "user_ratings_total": 613,
+  "business_status": "OPERATIONAL",
+  "lat": 40.8543404,
+  "lng": -73.8654543
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

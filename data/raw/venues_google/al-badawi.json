@@ -1,0 +1,19 @@
+{
+ "slug": "al-badawi",
+ "query_name": "Al Badawi",
+ "matched": {
+  "place_id": "ChIJL_1fstBbwokRVaeht7CPayA",
+  "name": "al Badawi",
+  "address": "151 Atlantic Ave, Brooklyn, NY 11201, USA",
+  "rating": 4.7,
+  "user_ratings_total": 2510,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6906407,
+  "lng": -73.99500259999999
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "151 Atlantic Ave., Brooklyn, NY 11201"
+}

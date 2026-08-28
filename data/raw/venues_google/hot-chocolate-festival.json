@@ -1,0 +1,19 @@
+{
+ "slug": "hot-chocolate-festival",
+ "query_name": "\"Hot Chocolate Festival\"",
+ "matched": {
+  "place_id": "ChIJFyq4ScFbwokRwMJWGE6ad1o",
+  "name": "Raaka Chocolate",
+  "address": "58 Seabring St, Brooklyn, NY 11231, USA",
+  "rating": 4.6,
+  "user_ratings_total": 210,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6811623,
+  "lng": -74.00712899999999
+ },
+ "accepted": false,
+ "reason": "name similarity 0.25 is too low to identify on its own",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

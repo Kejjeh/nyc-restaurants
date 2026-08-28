@@ -1,0 +1,19 @@
+{
+ "slug": "tone-cafe",
+ "query_name": "Toné Cafe",
+ "matched": {
+  "place_id": "ChIJXQvKp0NEwokRDPznkAq9UUI",
+  "name": "Toné Café",
+  "address": "265 Neptune Ave, Brooklyn, NY 11235, USA",
+  "rating": 4.5,
+  "user_ratings_total": 727,
+  "business_status": "OPERATIONAL",
+  "lat": 40.5814765,
+  "lng": -73.963291
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

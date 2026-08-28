@@ -1,0 +1,19 @@
+{
+ "slug": "spice-market",
+ "query_name": "Spice Market",
+ "matched": {
+  "place_id": "ChIJH8C4MAhZwokRCfFgM11EILA",
+  "name": "Spice and Sweets Corner",
+  "address": "133 Lexington Ave, New York, NY 10016, USA",
+  "rating": 4.3,
+  "user_ratings_total": 89,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7429741,
+  "lng": -73.9819431
+ },
+ "accepted": false,
+ "reason": "name similarity 0.20 is too low to identify on its own",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

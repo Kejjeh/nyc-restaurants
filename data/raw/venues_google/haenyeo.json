@@ -1,0 +1,19 @@
+{
+ "slug": "haenyeo",
+ "query_name": "Haenyeo",
+ "matched": {
+  "place_id": "ChIJVVXpcQBbwokRtKzSlyOoW1Y",
+  "name": "Haenyeo",
+  "address": "239 5th Ave, Brooklyn, NY 11215, USA",
+  "rating": 4.5,
+  "user_ratings_total": 680,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6751935,
+  "lng": -73.9811059
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "239 Fifth Ave., Brooklyn, NY 11215"
+}

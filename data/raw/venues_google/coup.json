@@ -1,0 +1,10 @@
+{
+ "slug": "coup",
+ "query_name": "Coup",
+ "matched": null,
+ "accepted": false,
+ "reason": "hand ruling: Text Search returned Coup 2 Main, a different business. name_sim() scores a token subset 1.00, so a short name reads as a perfect match against any longer name that contains it.",
+ "source": "hand",
+ "error": null,
+ "query_address": null
+}

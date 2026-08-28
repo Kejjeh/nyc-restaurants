@@ -1,0 +1,19 @@
+{
+ "slug": "white-bear",
+ "query_name": "White Bear",
+ "matched": {
+  "place_id": "ChIJZZBJcg5gwokROTWAGansSV4",
+  "name": "White Bear",
+  "address": "135-02 Roosevelt Ave, Flushing, NY 11354, USA",
+  "rating": 4.3,
+  "user_ratings_total": 951,
+  "business_status": "OPERATIONAL",
+  "lat": 40.758775,
+  "lng": -73.8316571
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

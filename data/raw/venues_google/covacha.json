@@ -1,0 +1,19 @@
+{
+ "slug": "covacha",
+ "query_name": "Covacha",
+ "matched": {
+  "place_id": "ChIJ-yUjn9JZwokR7Cq1cegFzZU",
+  "name": "Covacha",
+  "address": "368 Columbus Ave, New York, NY 10024, USA",
+  "rating": 4.3,
+  "user_ratings_total": 1836,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7809766,
+  "lng": -73.97646399999999
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "368 Columbus Ave., New York, NY 10024"
+}

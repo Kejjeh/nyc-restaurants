@@ -1,0 +1,19 @@
+{
+ "slug": "kono",
+ "query_name": "Kono",
+ "matched": {
+  "place_id": "ChIJ45qzIv9bwokRtdvAuQxHYrQ",
+  "name": "Kono",
+  "address": "46 Bowery, New York, NY 10013, USA",
+  "rating": 4.6,
+  "user_ratings_total": 227,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7157464,
+  "lng": -73.9969395
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

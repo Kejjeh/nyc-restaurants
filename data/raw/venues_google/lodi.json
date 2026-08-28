@@ -1,0 +1,19 @@
+{
+ "slug": "lodi",
+ "query_name": "Lodi",
+ "matched": {
+  "place_id": "ChIJtY_Cr9VZwokR86t_xHCuZjc",
+  "name": "Lodi",
+  "address": "1 Rockefeller Plaza, New York, NY 10020, USA",
+  "rating": 4,
+  "user_ratings_total": 569,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.758159,
+  "lng": -73.9789413
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

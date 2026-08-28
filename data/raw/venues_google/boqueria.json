@@ -1,0 +1,19 @@
+{
+ "slug": "boqueria",
+ "query_name": "Boqueria",
+ "matched": {
+  "place_id": "ChIJd9TytqxZwokRKgmBLz704JM",
+  "name": "Boqueria W40th",
+  "address": "260 W 40th St, New York, NY 10018, USA",
+  "rating": 4.6,
+  "user_ratings_total": 4324,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7554316,
+  "lng": -73.9900633
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

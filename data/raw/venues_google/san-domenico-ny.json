@@ -1,0 +1,19 @@
+{
+ "slug": "san-domenico-ny",
+ "query_name": "San Domenico NY",
+ "matched": {
+  "place_id": "ChIJvWSDS_ZYwokRGonxq_K8EDY",
+  "name": "San Domenico New York",
+  "address": "240 Central Park S, New York, NY 10019, USA",
+  "rating": null,
+  "user_ratings_total": null,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.7674524,
+  "lng": -73.9811142
+ },
+ "accepted": false,
+ "reason": "name similarity 0.40 is too low to identify on its own",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

@@ -1,0 +1,10 @@
+{
+ "slug": "masa",
+ "query_name": "Masa",
+ "matched": null,
+ "accepted": false,
+ "reason": "hand ruling: Text Search returned Bar Masa, a different restaurant in the same building (10 Columbus Circle). name_sim scores a token subset 1.00, so \"Masa\" vs \"Bar Masa\" read as a perfect name match and the shared street number corroborated it. Rating 4.2/591 belongs to Bar Masa, not Masa.",
+ "source": "hand",
+ "error": null,
+ "query_address": "10 Columbus Circle, Ste. 401, New York, NY 10019"
+}

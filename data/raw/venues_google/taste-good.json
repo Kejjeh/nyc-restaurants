@@ -1,0 +1,19 @@
+{
+ "slug": "taste-good",
+ "query_name": "Taste Good",
+ "matched": {
+  "place_id": "ChIJvbqGvKxfwokRWCm0QHlt99A",
+  "name": "Taste Good",
+  "address": "82-18 45th Ave, Elmhurst, NY 11373, USA",
+  "rating": 4.3,
+  "user_ratings_total": 930,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7416056,
+  "lng": -73.8821806
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

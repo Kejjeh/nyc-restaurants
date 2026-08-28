@@ -1,0 +1,19 @@
+{
+ "slug": "fifty-seven-fifty-seven",
+ "query_name": "Fifty Seven Fifty Seven Restaurant",
+ "matched": {
+  "place_id": "ChIJPX5iCfpYwokRACnACAf2pJw",
+  "name": "Nobu Fifty Seven",
+  "address": "40 W 57th St, New York, NY 10019, USA",
+  "rating": 4.4,
+  "user_ratings_total": 2751,
+  "business_status": "OPERATIONAL",
+  "lat": 40.763705,
+  "lng": -73.9762452
+ },
+ "accepted": false,
+ "reason": "name similarity 0.50 is too low to identify on its own",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

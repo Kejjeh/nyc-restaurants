@@ -1,0 +1,19 @@
+{
+ "slug": "mango-bay",
+ "query_name": "Mango Bay",
+ "matched": {
+  "place_id": "ChIJ43dNliVbwokR-PyxKlkJOXc",
+  "name": "Mango Bay",
+  "address": "271 Adelphi St, Brooklyn, NY 11205, USA",
+  "rating": 4.3,
+  "user_ratings_total": 499,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6894104,
+  "lng": -73.9708886
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "271 Adelphi St., Brooklyn, NY 11205"
+}

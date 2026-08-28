@@ -1,0 +1,19 @@
+{
+ "slug": "see-no-evil-pizza",
+ "query_name": "See No Evil Pizza",
+ "matched": {
+  "place_id": "ChIJH58NSAlZwokR9108aaP8cy8",
+  "name": "See No Evil Pizza",
+  "address": "210 W 50th St Concourse #1, New York, NY 10019, USA",
+  "rating": 4.6,
+  "user_ratings_total": 432,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7614519,
+  "lng": -73.98452309999999
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "210 W. 50th St., New York, NY 10019"
+}

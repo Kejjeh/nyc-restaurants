@@ -1,0 +1,19 @@
+{
+ "slug": "ballato",
+ "query_name": "Ballato",
+ "matched": {
+  "place_id": "ChIJRQqJgYVZwokRfJB16sxh1Pg",
+  "name": "Emilio's Ballato",
+  "address": "55 E Houston St, New York, NY 10012, USA",
+  "rating": 4.1,
+  "user_ratings_total": 1705,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7245528,
+  "lng": -73.99450379999999
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "55 E. Houston St., New York, NY 10012"
+}

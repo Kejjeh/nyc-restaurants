@@ -1,0 +1,19 @@
+{
+ "slug": "lords",
+ "query_name": "Lord's",
+ "matched": {
+  "place_id": "ChIJ-XcRtjdZwokRMcgZdhVjqYg",
+  "name": "Lord’s",
+  "address": "506 LaGuardia Pl, New York, NY 10012, USA",
+  "rating": 4.5,
+  "user_ratings_total": 481,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7277403,
+  "lng": -73.9995539
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "506 LaGuardia Pl., New York, NY 10012"
+}

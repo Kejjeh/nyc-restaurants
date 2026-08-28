@@ -1,0 +1,10 @@
+{
+ "slug": "nomad",
+ "query_name": "The NoMad",
+ "matched": null,
+ "accepted": false,
+ "reason": "hand ruling: Text Search returned the NoMad neighbourhood, not a venue. A neighbourhood or street has no premises to be open.",
+ "source": "hand",
+ "error": null,
+ "query_address": null
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "uncle-rays-chicken-rice",
+ "query_name": "Uncle Ray's Chicken Rice",
+ "matched": {
+  "place_id": "ChIJJUdD9NtZwokR_hv_n2I9ALQ",
+  "name": "Uncle Ray's Chicken Rice",
+  "address": "790 9th Ave, New York, NY 10019, USA",
+  "rating": 4.5,
+  "user_ratings_total": 208,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7649093,
+  "lng": -73.9875422
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

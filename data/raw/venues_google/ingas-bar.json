@@ -1,0 +1,19 @@
+{
+ "slug": "ingas-bar",
+ "query_name": "Inga's Bar",
+ "matched": {
+  "place_id": "ChIJP6l_znFbwokRpT1_G9i2i_Y",
+  "name": "Ingas Bar",
+  "address": "66 Hicks St, Brooklyn, NY 11201, USA",
+  "rating": 4.5,
+  "user_ratings_total": 286,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7000387,
+  "lng": -73.9937693
+ },
+ "accepted": true,
+ "reason": "name 0.25, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "66 Hicks St., Brooklyn, NY 11201"
+}

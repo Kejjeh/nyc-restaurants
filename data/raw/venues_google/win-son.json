@@ -1,0 +1,19 @@
+{
+ "slug": "win-son",
+ "query_name": "Win Son",
+ "matched": {
+  "place_id": "ChIJ4-bYSvxbwokRPhLlLQFzOEo",
+  "name": "Win Son",
+  "address": "159 Graham Ave, Brooklyn, NY 11206, USA",
+  "rating": 4.5,
+  "user_ratings_total": 1490,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7074661,
+  "lng": -73.9434952
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "159 Graham Ave., Brooklyn, NY 11206"
+}

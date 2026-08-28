@@ -1,0 +1,19 @@
+{
+ "slug": "15-east",
+ "query_name": "15 East",
+ "matched": {
+  "place_id": "ChIJa1m8dZhZwokRV_dmWc8FS_s",
+  "name": "15 EAST @ Tocqueville",
+  "address": "1 E 15th St, New York, NY 10003, USA",
+  "rating": 4.4,
+  "user_ratings_total": 607,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7366272,
+  "lng": -73.9926504
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

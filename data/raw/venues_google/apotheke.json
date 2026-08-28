@@ -1,0 +1,19 @@
+{
+ "slug": "apotheke",
+ "query_name": "Apotheke",
+ "matched": {
+  "place_id": "ChIJNxEu8SZawokRARkMLjXhyBY",
+  "name": "Apotheke Chinatown",
+  "address": "9 Doyers St, New York, NY 10013, USA",
+  "rating": 4.4,
+  "user_ratings_total": 2314,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7144,
+  "lng": -73.99817999999999
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

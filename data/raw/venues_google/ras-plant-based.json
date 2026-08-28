@@ -1,0 +1,19 @@
+{
+ "slug": "ras-plant-based",
+ "query_name": "Ras Plant Based",
+ "matched": {
+  "place_id": "ChIJC2cqQEhbwokRxC2JSiGx2Vw",
+  "name": "RAS Plant Based",
+  "address": "739 Franklin Ave, Brooklyn, NY 11238, USA",
+  "rating": 4.8,
+  "user_ratings_total": 1419,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6733958,
+  "lng": -73.95669029999999
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

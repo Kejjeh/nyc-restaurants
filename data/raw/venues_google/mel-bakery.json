@@ -1,0 +1,19 @@
+{
+ "slug": "mel-bakery",
+ "query_name": "Mel the Bakery",
+ "matched": {
+  "place_id": "ChIJc02IiFhbwokRdX1i0AMmWB0",
+  "name": "Mel The Bakery",
+  "address": "324 Warren St, Hudson, NY 12534, USA",
+  "rating": 4.8,
+  "user_ratings_total": 314,
+  "business_status": "OPERATIONAL",
+  "lat": 42.2526707,
+  "lng": -73.79002849999999
+ },
+ "accepted": false,
+ "reason": "result is outside New York City",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

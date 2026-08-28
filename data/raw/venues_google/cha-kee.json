@@ -1,0 +1,19 @@
+{
+ "slug": "cha-kee",
+ "query_name": "Cha Kee",
+ "matched": {
+  "place_id": "ChIJ60WL4SZawokRpCV_pGTfb1Y",
+  "name": "Cha Kee",
+  "address": "43 Mott St, New York, NY 10013, USA",
+  "rating": 3.9,
+  "user_ratings_total": 1171,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7153054,
+  "lng": -73.99896199999999
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "43 Mott St., New York, NY 10013"
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "shuka",
+ "query_name": "Shuka",
+ "matched": {
+  "place_id": "ChIJ3dbcl41ZwokRouIrXtQ5erk",
+  "name": "Shuka",
+  "address": "38 MacDougal St, New York, NY 10012, USA",
+  "rating": 4.7,
+  "user_ratings_total": 4661,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7270639,
+  "lng": -74.0027877
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

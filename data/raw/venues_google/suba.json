@@ -1,0 +1,19 @@
+{
+ "slug": "suba",
+ "query_name": "Suba Restaurant",
+ "matched": {
+  "place_id": "ChIJI9IK9IA0GQ0R0i3OaHLNWHc",
+  "name": "SUBA Restaurante",
+  "address": "Tv. da Portuguesa 53, 1200-401 Lisboa, Portugal",
+  "rating": 4.6,
+  "user_ratings_total": 417,
+  "business_status": "OPERATIONAL",
+  "lat": 38.7097881,
+  "lng": -9.1469215
+ },
+ "accepted": false,
+ "reason": "result is outside New York City",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "chalupas-poblanas-el-tlecuile",
+ "query_name": "Chalupas Poblanas El Tlecuile",
+ "matched": {
+  "place_id": "ChIJoeVtCBJfwokRI-cNa5uaOlY",
+  "name": "Chalupas Poblanas El Tlecuile",
+  "address": "96-20 37th Ave, Corona, NY 11368, USA",
+  "rating": 5,
+  "user_ratings_total": 32,
+  "business_status": "OPERATIONAL",
+  "lat": 40.751635,
+  "lng": -73.8699582
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

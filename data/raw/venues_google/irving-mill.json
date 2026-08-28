@@ -1,0 +1,19 @@
+{
+ "slug": "irving-mill",
+ "query_name": "Irving Mill",
+ "matched": {
+  "place_id": "ChIJK9yFTp9ZwokRv2NoomnIMcw",
+  "name": "Irving Mill",
+  "address": "116 E 16th St, New York, NY 10003, USA",
+  "rating": 1,
+  "user_ratings_total": 1,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.735318,
+  "lng": -73.988473
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

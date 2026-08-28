@@ -1,0 +1,19 @@
+{
+ "slug": "charles-country-pan-fried-chicken",
+ "query_name": "Charles' Country Pan Fried Chicken",
+ "matched": {
+  "place_id": "ChIJJ4MKaqP3wokRO-Z7EJaXyOk",
+  "name": "Charles Pan-Fried Chicken",
+  "address": "340 W 145th St, New York, NY 10039, USA",
+  "rating": 4.7,
+  "user_ratings_total": 2633,
+  "business_status": "OPERATIONAL",
+  "lat": 40.82350599999999,
+  "lng": -73.944122
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

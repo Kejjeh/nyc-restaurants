@@ -1,0 +1,19 @@
+{
+ "slug": "sailor",
+ "query_name": "Sailor",
+ "matched": {
+  "place_id": "ChIJ2xcAfQFbwokRSBBCp0svARQ",
+  "name": "Sailor",
+  "address": "228 Dekalb Ave, Brooklyn, NY 11205, USA",
+  "rating": 4.4,
+  "user_ratings_total": 487,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6893831,
+  "lng": -73.9703111
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "228 Dekalb Ave., Brooklyn, NY 11205"
+}

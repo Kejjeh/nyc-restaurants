@@ -1,0 +1,19 @@
+{
+ "slug": "potluck-club",
+ "query_name": "Potluck Club",
+ "matched": {
+  "place_id": "ChIJ7yN3d6tZwokRATR9U3lAqLg",
+  "name": "Potluck Club",
+  "address": "133 Chrystie St, New York, NY 10002, USA",
+  "rating": 4.6,
+  "user_ratings_total": 871,
+  "business_status": "OPERATIONAL",
+  "lat": 40.71960199999999,
+  "lng": -73.9935919
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "133 Chrystie St., New York, NY 10002"
+}

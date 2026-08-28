@@ -1,0 +1,19 @@
+{
+ "slug": "aquavit",
+ "query_name": "Aquavit",
+ "matched": {
+  "place_id": "ChIJWfonJ_tYwokRwIGb6Im403E",
+  "name": "Aquavit",
+  "address": "65 E 55th St, New York, NY 10022, USA",
+  "rating": 4.6,
+  "user_ratings_total": 1327,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7608694,
+  "lng": -73.97227769999999
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "65 E. 55th St., New York, NY 10022"
+}

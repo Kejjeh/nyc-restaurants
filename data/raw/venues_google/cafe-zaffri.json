@@ -1,0 +1,19 @@
+{
+ "slug": "cafe-zaffri",
+ "query_name": "Cafe Zaffri",
+ "matched": {
+  "place_id": "ChIJX49wBuNZwokRwOP_lHvjgdQ",
+  "name": "Cafe Zaffri",
+  "address": "16 E 16th St, New York, NY 10003, USA",
+  "rating": 4.3,
+  "user_ratings_total": 366,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7367625,
+  "lng": -73.9918868
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

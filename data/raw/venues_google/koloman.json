@@ -1,0 +1,19 @@
+{
+ "slug": "koloman",
+ "query_name": "Koloman",
+ "matched": {
+  "place_id": "ChIJUUBMchNZwokRwDOHIFhOIHA",
+  "name": "Koloman",
+  "address": "16 W 29th St, New York, NY 10001, USA",
+  "rating": 4.4,
+  "user_ratings_total": 445,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.7456687,
+  "lng": -73.9880941
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "simon-whale",
+ "query_name": "Simon & The Whale",
+ "matched": {
+  "place_id": "ChIJRy3WuaBZwokR5N2nQH6vFLE",
+  "name": "Simon & The Whale",
+  "address": "23 Lexington Ave, New York, NY 10010, USA",
+  "rating": 4.4,
+  "user_ratings_total": 372,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.7396083,
+  "lng": -73.9844715
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "dead-rabbit",
+ "query_name": "The Dead Rabbit",
+ "matched": {
+  "place_id": "ChIJIRiJaRRawokR2KyQ984qa-o",
+  "name": "The Dead Rabbit",
+  "address": "30 Water St, New York, NY 10004, USA",
+  "rating": 4.7,
+  "user_ratings_total": 8578,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7032685,
+  "lng": -74.0110218
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

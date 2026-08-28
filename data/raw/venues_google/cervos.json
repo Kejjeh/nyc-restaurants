@@ -1,0 +1,19 @@
+{
+ "slug": "cervos",
+ "query_name": "Cervo’s",
+ "matched": {
+  "place_id": "ChIJp_UkrilawokRtDAS5sls7jo",
+  "name": "Cervo's",
+  "address": "43 Canal St, New York, NY 10002, USA",
+  "rating": 4.5,
+  "user_ratings_total": 634,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7148624,
+  "lng": -73.99134459999999
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "43 Canal St., New York, NY 10002"
+}

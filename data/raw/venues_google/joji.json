@@ -1,0 +1,19 @@
+{
+ "slug": "joji",
+ "query_name": "Jōji",
+ "matched": {
+  "place_id": "ChIJBchQ93pZwokR5AtYEzo6p1o",
+  "name": "Jōji",
+  "address": "1 Vanderbilt Ave, New York, NY 10017, USA",
+  "rating": 4.5,
+  "user_ratings_total": 134,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7530825,
+  "lng": -73.9786543
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "1 Vanderbilt Ave., New York, NY 10017"
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "mesiba",
+ "query_name": "Mesiba",
+ "matched": {
+  "place_id": "ChIJv9ZXILdbwokRkAUmIvX8CvM",
+  "name": "Mesiba",
+  "address": "353 Bedford Ave, Brooklyn, NY 11211, USA",
+  "rating": 4.3,
+  "user_ratings_total": 337,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.7116901,
+  "lng": -73.9628749
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "353 Bedford Ave., Brooklyn, NY 11211"
+}

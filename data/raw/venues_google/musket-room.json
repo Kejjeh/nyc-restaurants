@@ -1,0 +1,19 @@
+{
+ "slug": "musket-room",
+ "query_name": "The Musket Room",
+ "matched": {
+  "place_id": "ChIJ3TJ4moVZwokRkyy0hZnv_RA",
+  "name": "The Musket Room",
+  "address": "265 Elizabeth St, New York, NY 10012, USA",
+  "rating": 4.5,
+  "user_ratings_total": 927,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7239263,
+  "lng": -73.99382179999999
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "265 Elizabeth St., New York, NY 10012"
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "eyval",
+ "query_name": "Eyval",
+ "matched": {
+  "place_id": "ChIJR9OEk_BdwokR9Qxlpi3I1ro",
+  "name": "Eyval",
+  "address": "25 Bogart St, Brooklyn, NY 11206, USA",
+  "rating": 4.6,
+  "user_ratings_total": 1039,
+  "business_status": "OPERATIONAL",
+  "lat": 40.70414239999999,
+  "lng": -73.9331596
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

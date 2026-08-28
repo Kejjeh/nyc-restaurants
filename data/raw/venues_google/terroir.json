@@ -1,0 +1,19 @@
+{
+ "slug": "terroir",
+ "query_name": "Terroir",
+ "matched": {
+  "place_id": "ChIJ1Z3-Oh5awokR6ReR4JZHAfA",
+  "name": "Terroir",
+  "address": "24 Harrison St, New York, NY 10013, USA",
+  "rating": 4.6,
+  "user_ratings_total": 573,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7189062,
+  "lng": -74.0099419
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

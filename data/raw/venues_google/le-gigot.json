@@ -1,0 +1,19 @@
+{
+ "slug": "le-gigot",
+ "query_name": "Le Gigot",
+ "matched": {
+  "place_id": "ChIJicZ4uJNZwokR_iq6h-BM3F0",
+  "name": "Le Gigot",
+  "address": "18 Cornelia St Apt 1, New York, NY 10014, USA",
+  "rating": 4.6,
+  "user_ratings_total": 308,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7313345,
+  "lng": -74.001914
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "18 Cornelia St., New York, NY 10014"
+}

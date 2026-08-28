@@ -1,0 +1,19 @@
+{
+ "slug": "bistrot-ha",
+ "query_name": "Bistrot Ha",
+ "matched": {
+  "place_id": "ChIJRa1UYABZwokR4LAQmEVhleI",
+  "name": "Bistrot Ha",
+  "address": "137 Eldridge St, New York, NY 10002, USA",
+  "rating": 4.3,
+  "user_ratings_total": 72,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7191186,
+  "lng": -73.99169309999999
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "137 Eldridge St., New York, NY 10002"
+}

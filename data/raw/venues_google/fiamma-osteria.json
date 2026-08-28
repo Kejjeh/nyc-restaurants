@@ -1,0 +1,19 @@
+{
+ "slug": "fiamma-osteria",
+ "query_name": "Fiamma Osteria",
+ "matched": {
+  "place_id": "ChIJu7ob94xZwokRNx6u47aOY28",
+  "name": "Fiamma Trattoria Las Vegas",
+  "address": "206 Spring St, New York, NY 10012, USA",
+  "rating": null,
+  "user_ratings_total": null,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.7252214,
+  "lng": -74.0037766
+ },
+ "accepted": false,
+ "reason": "name similarity 0.20 is too low to identify on its own",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

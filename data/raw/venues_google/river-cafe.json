@@ -1,0 +1,19 @@
+{
+ "slug": "river-cafe",
+ "query_name": "The River Café",
+ "matched": {
+  "place_id": "ChIJ2QZOdTpawokRU_eN_EPJaX8",
+  "name": "The River Café",
+  "address": "1 Water St, Brooklyn, NY 11201, USA",
+  "rating": 4.4,
+  "user_ratings_total": 2570,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7038342,
+  "lng": -73.9947936
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "1 Water St., Brooklyn, NY 11201"
+}

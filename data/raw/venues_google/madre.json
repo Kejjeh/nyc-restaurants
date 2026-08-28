@@ -1,0 +1,10 @@
+{
+ "slug": "madre",
+ "query_name": "Madre",
+ "matched": null,
+ "accepted": false,
+ "reason": "hand ruling: Text Search returned Franklin Guesthouse, the hotel the restaurant sits inside (so the rating is the hotel’s, not the restaurant’s), a different business. name_sim() scores a token subset 1.00, so a short name reads as a perfect match against any longer name that contains it.",
+ "source": "hand",
+ "error": null,
+ "query_address": "Franklin Guesthouse, 214 Franklin St., Brooklyn, NY 11222"
+}

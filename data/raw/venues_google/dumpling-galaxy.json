@@ -1,0 +1,19 @@
+{
+ "slug": "dumpling-galaxy",
+ "query_name": "Dumpling Galaxy",
+ "matched": {
+  "place_id": "ChIJmYBPXgBhwokRdDPA-2MFXR4",
+  "name": "Dumpling Xi",
+  "address": "37-02 Prince St, Flushing, NY 11354, USA",
+  "rating": 4.6,
+  "user_ratings_total": 320,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7607303,
+  "lng": -73.8330494
+ },
+ "accepted": false,
+ "reason": "name similarity 0.33 is too low to identify on its own",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

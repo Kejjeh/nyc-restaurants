@@ -1,0 +1,19 @@
+{
+ "slug": "wd-50",
+ "query_name": "wd~50",
+ "matched": {
+  "place_id": "ChIJS-P2K-NYwokReedP72Q0NlA",
+  "name": "The Fifty Sonesta Hotel New York",
+  "address": "155 E 50th St, New York, NY 10022, USA",
+  "rating": 4.1,
+  "user_ratings_total": 1604,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7560859,
+  "lng": -73.9710793
+ },
+ "accepted": false,
+ "reason": "name similarity 0.00 is too low to identify on its own",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

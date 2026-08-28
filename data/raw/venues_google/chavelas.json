@@ -1,0 +1,19 @@
+{
+ "slug": "chavelas",
+ "query_name": "Chavela’s",
+ "matched": {
+  "place_id": "ChIJJ5J8yJ9bwokRjpOkpYgii5k",
+  "name": "Chavela's",
+  "address": "736 Franklin Ave, Brooklyn, NY 11238, USA",
+  "rating": 4.5,
+  "user_ratings_total": 3190,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6734559,
+  "lng": -73.9572247
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "736 Franklin Ave., Brooklyn, NY 11238"
+}

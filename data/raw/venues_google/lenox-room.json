@@ -1,0 +1,19 @@
+{
+ "slug": "lenox-room",
+ "query_name": "Lenox Room",
+ "matched": {
+  "place_id": "ChIJ1754EA32wokRmmYk07-LUy0",
+  "name": "Lenox Lounge",
+  "address": "288 Malcolm X Blvd, New York, NY 10027, USA",
+  "rating": 4.5,
+  "user_ratings_total": 16,
+  "business_status": "CLOSED_TEMPORARILY",
+  "lat": 40.8072396,
+  "lng": -73.94540239999999
+ },
+ "accepted": false,
+ "reason": "name similarity 0.33 is too low to identify on its own",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

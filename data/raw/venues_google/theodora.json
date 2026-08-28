@@ -1,0 +1,19 @@
+{
+ "slug": "theodora",
+ "query_name": "Theodora",
+ "matched": {
+  "place_id": "ChIJJye7jZBbwokRtioAck7uEIg",
+  "name": "Theodora",
+  "address": "7 Greene Ave, Brooklyn, NY 11238, USA",
+  "rating": 4.6,
+  "user_ratings_total": 773,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6860572,
+  "lng": -73.9731084
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "7 Greene Ave., Brooklyn, NY 11238"
+}

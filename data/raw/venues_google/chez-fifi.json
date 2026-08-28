@@ -1,0 +1,19 @@
+{
+ "slug": "chez-fifi",
+ "query_name": "Chez Fifi",
+ "matched": {
+  "place_id": "ChIJCZ6-33tZwokRIika4HJVD-o",
+  "name": "Chez Fifi",
+  "address": "140 E 74th St, New York, NY 10021, USA",
+  "rating": 4.2,
+  "user_ratings_total": 195,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7716972,
+  "lng": -73.96156230000001
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "140 E. 74th St., New York, NY 10021"
+}

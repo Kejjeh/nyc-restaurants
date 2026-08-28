@@ -1,0 +1,19 @@
+{
+ "slug": "birria-landia",
+ "query_name": "Birria-Landia",
+ "matched": {
+  "place_id": "ChIJ0wbVyUhfwokRd2iTfd08w34",
+  "name": "Birria-Landia",
+  "address": "77-05 Roosevelt Ave, Jackson Heights, NY 11372, USA",
+  "rating": 4.7,
+  "user_ratings_total": 2551,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7474144,
+  "lng": -73.8884456
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "uzuki",
+ "query_name": "Uzuki",
+ "matched": {
+  "place_id": "ChIJN1M-dmVZwokRnicgNEGnFRY",
+  "name": "Uzuki",
+  "address": "95 Guernsey St, Brooklyn, NY 11222, USA",
+  "rating": 4.4,
+  "user_ratings_total": 343,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7245208,
+  "lng": -73.9534583
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "95 Guernsey St., Brooklyn, NY 11222"
+}

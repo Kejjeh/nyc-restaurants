@@ -1,0 +1,19 @@
+{
+ "slug": "lespinasse",
+ "query_name": "Lespinasse",
+ "matched": {
+  "place_id": "ChIJVf4aUvpYwokRSuL2H3EjxFo",
+  "name": "Lespinasse",
+  "address": "Regis Residence, 2 E 55th St, New York, NY 10022, USA",
+  "rating": null,
+  "user_ratings_total": null,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.7613979,
+  "lng": -73.9746128
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

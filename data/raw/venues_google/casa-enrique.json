@@ -1,0 +1,19 @@
+{
+ "slug": "casa-enrique",
+ "query_name": "Casa Enrique",
+ "matched": {
+  "place_id": "ChIJv4bbdSNZwokRCgKfDGF8az8",
+  "name": "Casa Enrique",
+  "address": "5-48 49th Ave, Long Island City, NY 11101, USA",
+  "rating": 4.5,
+  "user_ratings_total": 3076,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7434063,
+  "lng": -73.95438089999999
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "5-48 49th Ave., Queens, NY 11101"
+}

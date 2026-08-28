@@ -1,0 +1,19 @@
+{
+ "slug": "yugin",
+ "query_name": "YŪGIN",
+ "matched": {
+  "place_id": "ChIJ9wuzp1lZwokRMf_mNcelo0s",
+  "name": "YUGIN",
+  "address": "767 5th Ave 37th Floor, New York, NY 10153, USA",
+  "rating": 4.8,
+  "user_ratings_total": 81,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7636669,
+  "lng": -73.9719729
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "767 5th Ave., New York, NY 10153"
+}

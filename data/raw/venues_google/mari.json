@@ -1,0 +1,19 @@
+{
+ "slug": "mari",
+ "query_name": "Mari",
+ "matched": {
+  "place_id": "ChIJk_HUw2dZwokR_zqBwmFDHgo",
+  "name": "Mari - Korean Handroll",
+  "address": "679 9th Ave, New York, NY 10036, USA",
+  "rating": 4.5,
+  "user_ratings_total": 504,
+  "business_status": "OPERATIONAL",
+  "lat": 40.761534,
+  "lng": -73.9906541
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "679 Ninth Ave., New York, NY 10036"
+}

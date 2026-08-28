@@ -1,0 +1,19 @@
+{
+ "slug": "republic",
+ "query_name": "Republic",
+ "matched": {
+  "place_id": "ChIJMwW0i6pZwokRuuaJPFDRnMY",
+  "name": "Republic",
+  "address": "149 5th Ave, New York, NY 10010, USA",
+  "rating": 2.8,
+  "user_ratings_total": 9,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7403694,
+  "lng": -73.9902078
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

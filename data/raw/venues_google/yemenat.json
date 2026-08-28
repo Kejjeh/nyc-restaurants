@@ -1,0 +1,19 @@
+{
+ "slug": "yemenat",
+ "query_name": "Yemenat",
+ "matched": {
+  "place_id": "ChIJB14pRT9FwokRnMbBprTy7RI",
+  "name": "Yemenat",
+  "address": "7721 5th Ave, Brooklyn, NY 11209, USA",
+  "rating": 4.7,
+  "user_ratings_total": 1085,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6273279,
+  "lng": -74.0233464
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "7721 5th Ave., Brooklyn, NY 11209"
+}

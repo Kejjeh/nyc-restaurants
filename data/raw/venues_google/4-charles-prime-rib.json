@@ -1,0 +1,19 @@
+{
+ "slug": "4-charles-prime-rib",
+ "query_name": "4 Charles Prime Rib",
+ "matched": {
+  "place_id": "ChIJ-7AOKpRZwokRMq0XnG_eehU",
+  "name": "4 Charles Prime Rib",
+  "address": "4 Charles St, New York, NY 10014, USA",
+  "rating": 4.7,
+  "user_ratings_total": 1225,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7351398,
+  "lng": -74.0006547
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "4 Charles St., New York, NY 10014"
+}

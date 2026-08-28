@@ -1,0 +1,10 @@
+{
+ "slug": "ramona",
+ "query_name": "Ramona",
+ "matched": null,
+ "accepted": false,
+ "reason": "hand ruling: Text Search returned Ramona Vargas, LCSW (a social worker), which is not a restaurant. The award record is old enough that the venue is gone and the name now belongs to something else.",
+ "source": "hand",
+ "error": null,
+ "query_address": null
+}

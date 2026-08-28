@@ -1,0 +1,19 @@
+{
+ "slug": "ursula",
+ "query_name": "Ursula",
+ "matched": {
+  "place_id": "ChIJTf8taJRdwokRq3Bm3GY9lK4",
+  "name": "Ursula Brooklyn",
+  "address": "387A Nostrand Ave, Brooklyn, NY 11216, USA",
+  "rating": 4.5,
+  "user_ratings_total": 655,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6844653,
+  "lng": -73.9502516
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

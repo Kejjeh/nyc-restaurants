@@ -1,0 +1,19 @@
+{
+ "slug": "jupiter",
+ "query_name": "Jupiter",
+ "matched": {
+  "place_id": "ChIJyflTcS1ZwokRBWTy8tCgaDM",
+  "name": "Jupiter",
+  "address": "Rink Level, 20 W 50th St, New York, NY 10020, USA",
+  "rating": 4.1,
+  "user_ratings_total": 618,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7589067,
+  "lng": -73.9787849
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "20 W. 50th St., New York, NY 10020"
+}

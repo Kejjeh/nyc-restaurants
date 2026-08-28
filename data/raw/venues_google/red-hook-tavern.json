@@ -1,0 +1,19 @@
+{
+ "slug": "red-hook-tavern",
+ "query_name": "Red Hook Tavern",
+ "matched": {
+  "place_id": "ChIJv0LelZRbwokRrUvqWn_7o98",
+  "name": "Red Hook Tavern",
+  "address": "329 Van Brunt St, Brooklyn, NY 11231, USA",
+  "rating": 4.3,
+  "user_ratings_total": 1355,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6778606,
+  "lng": -74.0120649
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "329 Van Brunt St., Brooklyn, NY 11231"
+}

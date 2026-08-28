@@ -1,0 +1,19 @@
+{
+ "slug": "fan-fan-doughnuts",
+ "query_name": "Fan-Fan Doughnuts",
+ "matched": {
+  "place_id": "ChIJ-eBifR5bwokRgXeVyNhDBFg",
+  "name": "Fan Fan Doughnuts",
+  "address": "448 Lafayette Ave, Brooklyn, NY 11238, USA",
+  "rating": 4.7,
+  "user_ratings_total": 930,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6890824,
+  "lng": -73.9570607
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

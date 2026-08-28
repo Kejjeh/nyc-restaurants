@@ -1,0 +1,19 @@
+{
+ "slug": "frankies-457-spuntino",
+ "query_name": "Frankies 457 Spuntino",
+ "matched": {
+  "place_id": "ChIJm7uvMfZawokRNR0XRCotzWY",
+  "name": "Frankies 457 Spuntino",
+  "address": "457 Court St, Brooklyn, NY 11231, USA",
+  "rating": 4.5,
+  "user_ratings_total": 1496,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6773861,
+  "lng": -73.99815000000001
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "zaab-zaab",
+ "query_name": "Zaab Zaab",
+ "matched": {
+  "place_id": "ChIJSR84V9NfwokRqv7h7RV5z9k",
+  "name": "Zaab Zaab",
+  "address": "76-04 Woodside Ave, Elmhurst, NY 11373, USA",
+  "rating": 4.3,
+  "user_ratings_total": 333,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7432642,
+  "lng": -73.8886608
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "76-04 Woodside Ave., Queens, NY 11373"
+}

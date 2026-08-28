@@ -1,0 +1,19 @@
+{
+ "slug": "lever-house",
+ "query_name": "Lever House",
+ "matched": {
+  "place_id": "ChIJbxQQa_tYwokRtUNdi05Ajtk",
+  "name": "Lever House",
+  "address": "390 Park Ave, New York, NY 10022, USA",
+  "rating": 4.8,
+  "user_ratings_total": 31,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7596059,
+  "lng": -73.9727396
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

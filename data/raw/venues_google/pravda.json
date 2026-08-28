@@ -1,0 +1,19 @@
+{
+ "slug": "pravda",
+ "query_name": "Pravda",
+ "matched": {
+  "place_id": "ChIJNbSzbI9ZwokRKtnrCgCbj44",
+  "name": "Pravda New York",
+  "address": "281 Lafayette St, New York, NY 10012, USA",
+  "rating": 3.9,
+  "user_ratings_total": 60,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.723919,
+  "lng": -73.99597589999999
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

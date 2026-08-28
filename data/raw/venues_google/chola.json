@@ -1,0 +1,19 @@
+{
+ "slug": "chola",
+ "query_name": "Chola",
+ "matched": {
+  "place_id": "ChIJD8V01OVYwokRkOtJNMtnBEs",
+  "name": "Chola",
+  "address": "232 E 58th St, New York, NY 10022, USA",
+  "rating": 4.3,
+  "user_ratings_total": 802,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7602673,
+  "lng": -73.96575949999999
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "232 E. 58th St., New York, NY 10022"
+}

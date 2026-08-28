@@ -1,0 +1,19 @@
+{
+ "slug": "martinys",
+ "query_name": "Martiny’s",
+ "matched": {
+  "place_id": "ChIJ_xzMHNtZwokRdVig2X11Rvk",
+  "name": "Martiny’s",
+  "address": "121 E 17th St, New York, NY 10003, USA",
+  "rating": 4.2,
+  "user_ratings_total": 466,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7361286,
+  "lng": -73.9876467
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

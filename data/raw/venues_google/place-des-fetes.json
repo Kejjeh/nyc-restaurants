@@ -1,0 +1,19 @@
+{
+ "slug": "place-des-fetes",
+ "query_name": "Place des Fêtes",
+ "matched": {
+  "place_id": "ChIJtx7ymGVbwokRzDZBJ8NVJz0",
+  "name": "Place des Fêtes",
+  "address": "212 Greene Ave, Brooklyn, NY 11238, USA",
+  "rating": 4.5,
+  "user_ratings_total": 500,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6868258,
+  "lng": -73.9628829
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "212 Greene Ave., Brooklyn, NY 11238"
+}

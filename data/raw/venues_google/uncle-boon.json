@@ -1,0 +1,19 @@
+{
+ "slug": "uncle-boon",
+ "query_name": "Uncle Boons",
+ "matched": {
+  "place_id": "ChIJQyFr6-FZwokRr23JK7BC7_g",
+  "name": "Thai Diner",
+  "address": "186 Mott St, New York, NY 10012, USA",
+  "rating": 4.4,
+  "user_ratings_total": 3033,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7207143,
+  "lng": -73.99565
+ },
+ "accepted": false,
+ "reason": "name similarity 0.00 is too low to identify on its own",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "kingston-tropical",
+ "query_name": "Kingston Tropical",
+ "matched": {
+  "place_id": "ChIJw6NziCPzwokRD7sxSS9kjbk",
+  "name": "Kingston Tropical Bakery",
+  "address": "4000 White Plains Rd, Bronx, NY 10466, USA",
+  "rating": 4.7,
+  "user_ratings_total": 2295,
+  "business_status": "OPERATIONAL",
+  "lat": 40.8885385,
+  "lng": -73.85984979999999
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

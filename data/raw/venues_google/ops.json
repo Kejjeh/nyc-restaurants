@@ -1,0 +1,19 @@
+{
+ "slug": "ops",
+ "query_name": "Ops",
+ "matched": {
+  "place_id": "ChIJl3Fhlh5cwokRQEja9nTWRv4",
+  "name": "Ops",
+  "address": "346 Himrod St, Brooklyn, NY 11237, USA",
+  "rating": 4.6,
+  "user_ratings_total": 879,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7026149,
+  "lng": -73.9171894
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

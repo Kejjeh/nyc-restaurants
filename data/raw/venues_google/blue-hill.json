@@ -1,0 +1,19 @@
+{
+ "slug": "blue-hill",
+ "query_name": "Blue Hill",
+ "matched": {
+  "place_id": "ChIJi9BURJFZwokRDcqvIgxdXds",
+  "name": "Blue Hill",
+  "address": "75 W Washington Pl, New York, NY 10011, USA",
+  "rating": 4.6,
+  "user_ratings_total": 1362,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7320465,
+  "lng": -73.9996685
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

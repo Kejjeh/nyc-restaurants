@@ -1,0 +1,19 @@
+{
+ "slug": "claud",
+ "query_name": "Claud",
+ "matched": {
+  "place_id": "ChIJWRt4WAtZwokRDRClJ45Ohzg",
+  "name": "Claud",
+  "address": "90 E 10th St Ground Floor, New York, NY 10003, USA",
+  "rating": 4.3,
+  "user_ratings_total": 414,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7308579,
+  "lng": -73.9896832
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "90 E. 10th St., New York, NY 10003"
+}

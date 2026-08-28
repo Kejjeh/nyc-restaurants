@@ -1,0 +1,19 @@
+{
+ "slug": "danube",
+ "query_name": "Danube",
+ "matched": {
+  "place_id": "ChIJfRcbqh9awokR2QwMw__MG50",
+  "name": "Danube",
+  "address": "30 Hudson St, New York, NY 10013, USA",
+  "rating": null,
+  "user_ratings_total": null,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.7166553,
+  "lng": -74.0089421
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

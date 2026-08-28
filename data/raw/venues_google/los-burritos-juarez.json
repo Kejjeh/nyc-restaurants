@@ -1,0 +1,19 @@
+{
+ "slug": "los-burritos-juarez",
+ "query_name": "Los Burritos Juárez",
+ "matched": {
+  "place_id": "ChIJac57TDpbwokRBMnOuNySUk8",
+  "name": "Los Burritos Juarez",
+  "address": "354 Myrtle Ave, Brooklyn, NY 11205, USA",
+  "rating": 4.5,
+  "user_ratings_total": 284,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6930161,
+  "lng": -73.9721144
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "354 Myrtle Ave., Brooklyn, NY 11205"
+}

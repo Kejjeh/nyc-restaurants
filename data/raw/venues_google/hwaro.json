@@ -1,0 +1,19 @@
+{
+ "slug": "hwaro",
+ "query_name": "Hwaro",
+ "matched": {
+  "place_id": "ChIJr_sXTABZwokRrd0jcVJ9DSA",
+  "name": "HWARO - fine dining",
+  "address": "776 8th Ave Floor 2, New York, NY 10036, USA",
+  "rating": 4.8,
+  "user_ratings_total": 23,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7605436,
+  "lng": -73.9870459
+ },
+ "accepted": true,
+ "reason": "name 1.00, street number agrees",
+ "source": "textsearch",
+ "error": null,
+ "query_address": "776 8th Ave., New York, NY 10036"
+}
