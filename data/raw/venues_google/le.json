@@ -1,0 +1,10 @@
+{
+ "slug": "le",
+ "query_name": "Le Restaurant",
+ "matched": null,
+ "accepted": false,
+ "reason": "hand ruling: Text Search returned Restaurant Le B (283 W 12th St, 3.4 stars), a different business assembled from the same tokens. Le Restaurant, one star in 2014, is gone.",
+ "source": "hand",
+ "error": null,
+ "query_address": null
+}

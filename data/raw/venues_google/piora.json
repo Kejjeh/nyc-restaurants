@@ -1,0 +1,19 @@
+{
+ "slug": "piora",
+ "query_name": "Piora",
+ "matched": {
+  "place_id": "ChIJ68STMu1ZwokRZE3E0KQLG28",
+  "name": "Piora",
+  "address": "430 Hudson St, New York, NY 10014, USA",
+  "rating": 4.6,
+  "user_ratings_total": 47,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.7306191,
+  "lng": -74.0065321
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

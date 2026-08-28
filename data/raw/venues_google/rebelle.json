@@ -1,0 +1,10 @@
+{
+ "slug": "rebelle",
+ "query_name": "Rebelle",
+ "matched": null,
+ "accepted": false,
+ "reason": "hand ruling: Text Search returned Rebelle Theory, an agency in a Chelsea office suite. Rebelle the restaurant (218 Bowery) closed in 2018. name_sim() scores a token subset 1.00, so a short name reads as a perfect match against any longer name that contains it.",
+ "source": "hand",
+ "error": null,
+ "query_address": null
+}

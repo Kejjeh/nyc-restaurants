@@ -1,0 +1,19 @@
+{
+ "slug": "gilt",
+ "query_name": "Gilt",
+ "matched": {
+  "place_id": "ChIJ3zcwbPxYwokReZeJcivTD0w",
+  "name": "Gilt",
+  "address": "455 Madison Ave, New York, NY 10022, USA",
+  "rating": 4.4,
+  "user_ratings_total": 14,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.7578805,
+  "lng": -73.97515159999999
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "etats-unis",
+ "query_name": "Etats-Unis",
+ "matched": {
+  "place_id": "ChIJOwg_06VPwokRYv534QaPC8g",
+  "name": "New York",
+  "address": "New York, NY, USA",
+  "rating": null,
+  "user_ratings_total": null,
+  "business_status": null,
+  "lat": 40.7127753,
+  "lng": -74.0059728
+ },
+ "accepted": false,
+ "reason": "result has no ZIP: a neighbourhood or a street, not a premises",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

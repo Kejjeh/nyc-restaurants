@@ -1,0 +1,10 @@
+{
+ "slug": "shion-69-leonard-street",
+ "query_name": "Shion 69 Leonard Street",
+ "matched": null,
+ "accepted": false,
+ "reason": "hand ruling: Text Search returned a listing named \"69 Leonard Street\" (4.5, 240 reviews) -- almost certainly the event space at that address, not the 11-seat omakase named Shion 69 Leonard Street. A listing that drops the one distinguishing token and carries an event space's review volume cannot be verified as the restaurant, so it stays a visible gap.",
+ "source": "hand",
+ "error": null,
+ "query_address": null
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "sushi-amane",
+ "query_name": "Sushi Amane",
+ "matched": {
+  "place_id": "ChIJewzX0QJZwokRHPZtB-YYYxI",
+  "name": "sushi AMANE",
+  "address": "245 E 44th St, New York, NY 10017, USA",
+  "rating": 4.6,
+  "user_ratings_total": 212,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7516551,
+  "lng": -73.97176379999999
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

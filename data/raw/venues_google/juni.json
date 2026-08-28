@@ -1,0 +1,19 @@
+{
+ "slug": "juni",
+ "query_name": "Juni",
+ "matched": {
+  "place_id": "ChIJ90MUcKhZwokRrn9xnAzOh1s",
+  "name": "Juni",
+  "address": "12 E 31st St, New York, NY 10016, USA",
+  "rating": 4.8,
+  "user_ratings_total": 25,
+  "business_status": "CLOSED_TEMPORARILY",
+  "lat": 40.7460822,
+  "lng": -73.9852007
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

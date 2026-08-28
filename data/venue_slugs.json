@@ -143,6 +143,24 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "a-voce-columbus",
+   "norm": "a voce columbus",
+   "first_seen": "2026-08-28",
+   "name": "A Voce Columbus",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "a-voce-madison",
+   "norm": "a voce madison",
+   "first_seen": "2026-08-28",
+   "name": "A Voce Madison",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "abc-cocina",
    "norm": "abc cocina",
    "first_seen": "2026-08-28",
@@ -256,10 +274,28 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "adour",
+   "norm": "adour",
+   "first_seen": "2026-08-28",
+   "name": "Adour",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "adour-alain-ducasse-at-st-regis",
    "norm": "adour alain ducasse at st regis",
    "first_seen": "2026-08-28",
    "name": "Adour Alain Ducasse at the St. Regis New York",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "agern",
+   "norm": "agern",
+   "first_seen": "2026-08-28",
+   "name": "Agern",
    "street": null,
    "zip": null,
    "last_seen": "2026-08-28"
@@ -419,6 +455,15 @@
    "norm": "all night skate",
    "first_seen": "2026-08-28",
    "name": "All Night Skate",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "allen-delancey",
+   "norm": "allen delancey",
+   "first_seen": "2026-08-28",
+   "name": "Allen & Delancey",
    "street": null,
    "zip": null,
    "last_seen": "2026-08-28"
@@ -640,6 +685,15 @@
     "104"
    ],
    "zip": "10282",
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "andanada",
+   "norm": "andanada",
+   "first_seen": "2026-08-28",
+   "name": "Andanada",
+   "street": null,
+   "zip": null,
    "last_seen": "2026-08-28"
   },
   {
@@ -1353,6 +1407,15 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "bar-uchu",
+   "norm": "bar uchu",
+   "first_seen": "2026-08-28",
+   "name": "Bar Uchū",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "barano",
    "norm": "barano",
    "first_seen": "2026-08-28",
@@ -1552,6 +1615,15 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "benno",
+   "norm": "benno",
+   "first_seen": "2026-08-28",
+   "name": "Benno",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "benny-johns-bar-and-grill",
    "norm": "benny johns bar and grill",
    "first_seen": "2026-08-28",
@@ -1709,6 +1781,15 @@
    "norm": "blanca",
    "first_seen": "2026-08-28",
    "name": "Blanca",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "blt-fish",
+   "norm": "blt fish",
+   "first_seen": "2026-08-28",
+   "name": "BLT Fish",
    "street": null,
    "zip": null,
    "last_seen": "2026-08-28"
@@ -2013,6 +2094,15 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "bouley-at-home",
+   "norm": "bouley at home",
+   "first_seen": "2026-08-28",
+   "name": "Bouley at Home",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "bouley-bakery",
    "norm": "bouley bakery",
    "first_seen": "2026-08-28",
@@ -2137,6 +2227,15 @@
    "norm": "bruno",
    "first_seen": "2026-08-28",
    "name": "Bruno",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "brushstroke",
+   "norm": "brushstroke",
+   "first_seen": "2026-08-28",
+   "name": "Brushstroke",
    "street": null,
    "zip": null,
    "last_seen": "2026-08-28"
@@ -2282,6 +2381,15 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "cafe-china",
+   "norm": "cafe china",
+   "first_seen": "2026-08-28",
+   "name": "Café China",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "cafe-commerce",
    "norm": "cafe commerce",
    "first_seen": "2026-08-28",
@@ -2312,6 +2420,15 @@
     "109"
    ],
    "zip": "10006",
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "cafe-gray",
+   "norm": "cafe gray",
+   "first_seen": "2026-08-28",
+   "name": "Café Gray",
+   "street": null,
+   "zip": null,
    "last_seen": "2026-08-28"
   },
   {
@@ -2363,6 +2480,15 @@
    "norm": "cafe zaffri",
    "first_seen": "2026-08-28",
    "name": "Cafe Zaffri",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "cagen",
+   "norm": "cagen",
+   "first_seen": "2026-08-28",
+   "name": "Cagen",
    "street": null,
    "zip": null,
    "last_seen": "2026-08-28"
@@ -3092,6 +3218,15 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "claro",
+   "norm": "claro",
+   "first_seen": "2026-08-28",
+   "name": "Claro",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "claud",
    "norm": "claud",
    "first_seen": "2026-08-28",
@@ -3107,6 +3242,15 @@
    "norm": "clemente bar",
    "first_seen": "2026-08-28",
    "name": "Clemente Bar",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "clocktower",
+   "norm": "clocktower",
+   "first_seen": "2026-08-28",
+   "name": "The Clocktower",
    "street": null,
    "zip": null,
    "last_seen": "2026-08-28"
@@ -3225,6 +3369,15 @@
    "norm": "contra",
    "first_seen": "2026-08-28",
    "name": "Contra",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "convivio",
+   "norm": "convivio",
+   "first_seen": "2026-08-28",
+   "name": "Convivio",
    "street": null,
    "zip": null,
    "last_seen": "2026-08-28"
@@ -3620,6 +3773,15 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "danny-brown-wine-bar-kitchen",
+   "norm": "danny brown wine bar kitchen",
+   "first_seen": "2026-08-28",
+   "name": "Danny Brown Wine Bar & Kitchen",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "danny-meyer",
    "norm": "danny meyer",
    "first_seen": "2026-08-28",
@@ -3812,6 +3974,15 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "delaware-hudson",
+   "norm": "delaware hudson",
+   "first_seen": "2026-08-28",
+   "name": "Delaware & Hudson",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "delmonicos-restaurant",
    "norm": "delmonicos",
    "first_seen": "2026-08-28",
@@ -3827,6 +3998,15 @@
    "norm": "dept of culture",
    "first_seen": "2026-08-28",
    "name": "Dept of Culture",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "devi",
+   "norm": "devi",
+   "first_seen": "2026-08-28",
+   "name": "Devi",
    "street": null,
    "zip": null,
    "last_seen": "2026-08-28"
@@ -4201,6 +4381,15 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "eighty-one",
+   "norm": "eighty one",
+   "first_seen": "2026-08-28",
+   "name": "Eighty One",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "el-coco-chelsea",
    "norm": "el coco chelsea",
    "first_seen": "2026-08-28",
@@ -4471,6 +4660,15 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "etats-unis",
+   "norm": "etats unis",
+   "first_seen": "2026-08-28",
+   "name": "Etats-Unis",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "eterea",
    "norm": "eterea",
    "first_seen": "2026-08-28",
@@ -4555,6 +4753,15 @@
     "74"
    ],
    "zip": "11222",
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "faro",
+   "norm": "faro",
+   "first_seen": "2026-08-28",
+   "name": "Faro",
+   "street": null,
+   "zip": null,
    "last_seen": "2026-08-28"
   },
   {
@@ -4744,6 +4951,15 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "finch",
+   "norm": "finch",
+   "first_seen": "2026-08-28",
+   "name": "The Finch",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "fish-cheeks",
    "norm": "fish cheeks",
    "first_seen": "2026-08-28",
@@ -4785,6 +5001,15 @@
     "3114"
    ],
    "zip": "10451",
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "fleur-de-sel",
+   "norm": "fleur de sel",
+   "first_seen": "2026-08-28",
+   "name": "Fleur de Sel",
+   "street": null,
+   "zip": null,
    "last_seen": "2026-08-28"
   },
   {
@@ -5191,6 +5416,15 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "gilt",
+   "norm": "gilt",
+   "first_seen": "2026-08-28",
+   "name": "Gilt",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "ginger-ristoranti-new-york",
    "norm": "ginger ristoranti",
    "first_seen": "2026-08-28",
@@ -5271,6 +5505,15 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "gordon-ramsay-at-london",
+   "norm": "gordon ramsay at london",
+   "first_seen": "2026-08-28",
+   "name": "Gordon Ramsay at The London",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "gordos-cantina",
    "norm": "gordos cantina",
    "first_seen": "2026-08-28",
@@ -5286,6 +5529,15 @@
    "norm": "gotham",
    "first_seen": "2026-08-28",
    "name": "Gotham Restaurant",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "gotham-bar-and-grill",
+   "norm": "gotham bar and grill",
+   "first_seen": "2026-08-28",
+   "name": "Gotham Bar and Grill",
    "street": null,
    "zip": null,
    "last_seen": "2026-08-28"
@@ -5417,6 +5669,15 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "gunter-seeger",
+   "norm": "gunter seeger",
+   "first_seen": "2026-08-28",
+   "name": "Günter Seeger",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "gupshup",
    "norm": "gupshup",
    "first_seen": "2026-08-28",
@@ -5512,6 +5773,15 @@
    "name": "Haidilao Huoguo",
    "street": null,
    "zip": "11354",
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "hakkasan",
+   "norm": "hakkasan",
+   "first_seen": "2026-08-28",
+   "name": "Hakkasan",
+   "street": null,
+   "zip": null,
    "last_seen": "2026-08-28"
   },
   {
@@ -5661,6 +5931,15 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "heartbreak",
+   "norm": "heartbreak",
+   "first_seen": "2026-08-28",
+   "name": "Heartbreak",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "hearth",
    "norm": "hearth",
    "first_seen": "2026-08-28",
@@ -5709,6 +5988,15 @@
     "8"
    ],
    "zip": "10018",
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "hirohisa",
+   "norm": "hirohisa",
+   "first_seen": "2026-08-28",
+   "name": "Hirohisa",
+   "street": null,
+   "zip": null,
    "last_seen": "2026-08-28"
   },
   {
@@ -5908,6 +6196,24 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "ichimura-at-brushstroke",
+   "norm": "ichimura at brushstroke",
+   "first_seen": "2026-08-28",
+   "name": "Ichimura at Brushstroke",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "ichimura-at-uchu",
+   "norm": "ichimura at uchu",
+   "first_seen": "2026-08-28",
+   "name": "Ichimura at Uchū",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "ideya",
    "norm": "ideya",
    "first_seen": "2026-08-28",
@@ -6089,6 +6395,15 @@
    "norm": "insa",
    "first_seen": "2026-08-28",
    "name": "Insa",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "insieme",
+   "norm": "insieme",
+   "first_seen": "2026-08-28",
+   "name": "Insieme",
    "street": null,
    "zip": null,
    "last_seen": "2026-08-28"
@@ -6447,6 +6762,15 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "joomak-banjum",
+   "norm": "joomak banjum",
+   "first_seen": "2026-08-28",
+   "name": "Joomak Banjum",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "joseph-baum",
    "norm": "joseph baum",
    "first_seen": "2026-08-28",
@@ -6536,6 +6860,15 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "juni",
+   "norm": "juni",
+   "first_seen": "2026-08-28",
+   "name": "Juni",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "junoon",
    "norm": "junoon",
    "first_seen": "2026-08-28",
@@ -6575,6 +6908,15 @@
     "8"
    ],
    "zip": "10003",
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "kajitsu",
+   "norm": "kajitsu",
+   "first_seen": "2026-08-28",
+   "name": "Kajitsu",
+   "street": null,
+   "zip": null,
    "last_seen": "2026-08-28"
   },
   {
@@ -6873,6 +7215,15 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "kurumazushi",
+   "norm": "kurumazushi",
+   "first_seen": "2026-08-28",
+   "name": "Kurumazushi",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "kyma",
    "norm": "kyma",
    "first_seen": "2026-08-28",
@@ -6892,6 +7243,15 @@
     "445"
    ],
    "zip": "10001",
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "kyo-ya",
+   "norm": "kyo ya",
+   "first_seen": "2026-08-28",
+   "name": "Kyo Ya",
+   "street": null,
+   "zip": null,
    "last_seen": "2026-08-28"
   },
   {
@@ -6994,6 +7354,15 @@
     "226"
    ],
    "zip": "10022",
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "la-goulue",
+   "norm": "la goulue",
+   "first_seen": "2026-08-28",
+   "name": "La Goulue",
+   "street": null,
+   "zip": null,
    "last_seen": "2026-08-28"
   },
   {
@@ -7122,6 +7491,15 @@
     "359"
    ],
    "zip": "10024",
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "la-sirena",
+   "norm": "la sirena",
+   "first_seen": "2026-08-28",
+   "name": "La Sirena",
+   "street": null,
+   "zip": null,
    "last_seen": "2026-08-28"
   },
   {
@@ -7255,6 +7633,15 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "lan-sheng",
+   "norm": "lan sheng",
+   "first_seen": "2026-08-28",
+   "name": "Lan Sheng",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "langans",
    "norm": "langans",
    "first_seen": "2026-08-28",
@@ -7263,6 +7650,15 @@
     "114"
    ],
    "zip": "10036",
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "lappart",
+   "norm": "lappart",
+   "first_seen": "2026-08-28",
+   "name": "L'Appart",
+   "street": null,
+   "zip": null,
    "last_seen": "2026-08-28"
   },
   {
@@ -7280,7 +7676,7 @@
    "slug": "latelier-de-joel-robuchon",
    "norm": "latelier de joel robuchon",
    "first_seen": "2026-08-28",
-   "name": "L'Atelier de Joel Robuchon",
+   "name": "L'Atelier de Joël Robuchon",
    "street": null,
    "zip": null,
    "last_seen": "2026-08-28"
@@ -7305,6 +7701,15 @@
     "15"
    ],
    "zip": "10003",
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "le",
+   "norm": "le",
+   "first_seen": "2026-08-28",
+   "name": "Le Restaurant",
+   "street": null,
+   "zip": null,
    "last_seen": "2026-08-28"
   },
   {
@@ -7401,6 +7806,15 @@
     "5"
    ],
    "zip": "10038",
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "le-grill-de-joel-robuchon",
+   "norm": "le grill de joel robuchon",
+   "first_seen": "2026-08-28",
+   "name": "Le Grill de Joël Robuchon",
+   "street": null,
+   "zip": null,
    "last_seen": "2026-08-28"
   },
   {
@@ -7809,6 +8223,15 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "lo-scalco",
+   "norm": "lo scalco",
+   "first_seen": "2026-08-28",
+   "name": "Lo Scalco",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "lobster-club",
    "norm": "lobster club",
    "first_seen": "2026-08-28",
@@ -7936,6 +8359,15 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "luksus-at-torst",
+   "norm": "luksus at torst",
+   "first_seen": "2026-08-28",
+   "name": "Luksus at Torst",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "lungi",
    "norm": "lungi",
    "first_seen": "2026-08-28",
@@ -7991,6 +8423,15 @@
    "norm": "lysee",
    "first_seen": "2026-08-28",
    "name": "Lysée",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "m-wells-steakhouse",
+   "norm": "m wells steakhouse",
+   "first_seen": "2026-08-28",
+   "name": "M. Wells Steakhouse",
    "street": null,
    "zip": null,
    "last_seen": "2026-08-28"
@@ -8261,6 +8702,15 @@
    "norm": "manzo",
    "first_seen": "2026-08-28",
    "name": "Manzo",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "marc-forgione",
+   "norm": "marc forgione",
+   "first_seen": "2026-08-28",
+   "name": "Marc Forgione",
    "street": null,
    "zip": null,
    "last_seen": "2026-08-28"
@@ -9754,6 +10204,15 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "okuda",
+   "norm": "okuda",
+   "first_seen": "2026-08-28",
+   "name": "Okuda",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "olio-e-piu",
    "norm": "olio e piu",
    "first_seen": "2026-08-28",
@@ -9928,6 +10387,15 @@
    "norm": "ouest",
    "first_seen": "2026-08-28",
    "name": "Ouest",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "oxalis",
+   "norm": "oxalis",
+   "first_seen": "2026-08-28",
+   "name": "Oxalis",
    "street": null,
    "zip": null,
    "last_seen": "2026-08-28"
@@ -10464,6 +10932,15 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "piora",
+   "norm": "piora",
+   "first_seen": "2026-08-28",
+   "name": "Piora",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "place-des-fetes",
    "norm": "place des fetes",
    "first_seen": "2026-08-28",
@@ -10523,6 +11000,15 @@
     "200"
    ],
    "zip": "10017",
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "pok-pok-ny",
+   "norm": "pok pok ny",
+   "first_seen": "2026-08-28",
+   "name": "Pok Pok NY",
+   "street": null,
+   "zip": null,
    "last_seen": "2026-08-28"
   },
   {
@@ -10841,6 +11327,15 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "rebelle",
+   "norm": "rebelle",
+   "first_seen": "2026-08-28",
+   "name": "Rebelle",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "recette",
    "norm": "recette",
    "first_seen": "2026-08-28",
@@ -10987,6 +11482,15 @@
    "norm": "rezdora osteria emiliana",
    "first_seen": "2026-08-28",
    "name": "Rezdôra-Osteria Emiliana",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "rhong-tiam",
+   "norm": "rhong tiam",
+   "first_seen": "2026-08-28",
+   "name": "Rhong-Tiam",
    "street": null,
    "zip": null,
    "last_seen": "2026-08-28"
@@ -11155,6 +11659,15 @@
    "norm": "room 4 dessert",
    "first_seen": "2026-08-28",
    "name": "Room 4 Dessert",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "rosanjin",
+   "norm": "rosanjin",
+   "first_seen": "2026-08-28",
+   "name": "Rosanjin",
    "street": null,
    "zip": null,
    "last_seen": "2026-08-28"
@@ -11587,6 +12100,15 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "satsuki",
+   "norm": "satsuki",
+   "first_seen": "2026-08-28",
+   "name": "Satsuki",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "saul",
    "norm": "saul",
    "first_seen": "2026-08-28",
@@ -11604,6 +12126,15 @@
     "75"
    ],
    "zip": "11217",
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "scalini-fedeli",
+   "norm": "scalini fedeli",
+   "first_seen": "2026-08-28",
+   "name": "Scalini Fedeli",
+   "street": null,
+   "zip": null,
    "last_seen": "2026-08-28"
   },
   {
@@ -11655,6 +12186,15 @@
     "201"
    ],
    "zip": "10003",
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "seasonal",
+   "norm": "seasonal",
+   "first_seen": "2026-08-28",
+   "name": "Seäsonal",
+   "street": null,
+   "zip": null,
    "last_seen": "2026-08-28"
   },
   {
@@ -11804,6 +12344,15 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "shalezeh",
+   "norm": "shalezeh",
+   "first_seen": "2026-08-28",
+   "name": "Shalezeh",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "shalom-japan",
    "norm": "shalom japan",
    "first_seen": "2026-08-28",
@@ -11853,6 +12402,15 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "shion-69-leonard-street",
+   "norm": "shion 69 leonard street",
+   "first_seen": "2026-08-28",
+   "name": "Shion 69 Leonard Street",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "shmone",
    "norm": "shmone",
    "first_seen": "2026-08-28",
@@ -11861,6 +12419,15 @@
     "61"
    ],
    "zip": "10011",
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "sho-shaun-hergatt",
+   "norm": "sho shaun hergatt",
+   "first_seen": "2026-08-28",
+   "name": "SHO Shaun Hergatt",
+   "street": null,
+   "zip": null,
    "last_seen": "2026-08-28"
   },
   {
@@ -12148,6 +12715,15 @@
     "679"
    ],
    "zip": "10031",
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "somtum-der",
+   "norm": "somtum der",
+   "first_seen": "2026-08-28",
+   "name": "Somtum Der",
+   "street": null,
+   "zip": null,
    "last_seen": "2026-08-28"
   },
   {
@@ -12508,6 +13084,15 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "sushi-amane",
+   "norm": "sushi amane",
+   "first_seen": "2026-08-28",
+   "name": "Sushi Amane",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "sushi-ann",
    "norm": "sushi ann",
    "first_seen": "2026-08-28",
@@ -12519,6 +13104,33 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "sushi-azabu",
+   "norm": "sushi azabu",
+   "first_seen": "2026-08-28",
+   "name": "Sushi Azabu",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "sushi-ginza-onodera",
+   "norm": "sushi ginza onodera",
+   "first_seen": "2026-08-28",
+   "name": "Sushi Ginza Onodera",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "sushi-ichimura",
+   "norm": "sushi ichimura",
+   "first_seen": "2026-08-28",
+   "name": "Sushi Ichimura",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "sushi-ikumi",
    "norm": "sushi ikumi",
    "first_seen": "2026-08-28",
@@ -12527,6 +13139,15 @@
     "135"
    ],
    "zip": "10012",
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "sushi-inoue",
+   "norm": "sushi inoue",
+   "first_seen": "2026-08-28",
+   "name": "Sushi Inoue",
+   "street": null,
+   "zip": null,
    "last_seen": "2026-08-28"
   },
   {
@@ -12560,6 +13181,15 @@
     "181"
    ],
    "zip": "10075",
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "sushi-of-gari",
+   "norm": "sushi of gari",
+   "first_seen": "2026-08-28",
+   "name": "Sushi of Gari",
+   "street": null,
+   "zip": null,
    "last_seen": "2026-08-28"
   },
   {
@@ -12604,6 +13234,15 @@
     "204"
    ],
    "zip": "10017",
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "sushi-zo",
+   "norm": "sushi zo",
+   "first_seen": "2026-08-28",
+   "name": "Sushi Zo",
+   "street": null,
+   "zip": null,
    "last_seen": "2026-08-28"
   },
   {
@@ -13021,6 +13660,15 @@
    "norm": "tertulia",
    "first_seen": "2026-08-28",
    "name": "Tertulia",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "tetsu-basement",
+   "norm": "tetsu basement",
+   "first_seen": "2026-08-28",
+   "name": "Tetsu Basement",
    "street": null,
    "zip": null,
    "last_seen": "2026-08-28"
@@ -13535,6 +14183,15 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "torishin",
+   "norm": "torishin",
+   "first_seen": "2026-08-28",
+   "name": "Torishin",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "torrisi",
    "norm": "torrisi",
    "first_seen": "2026-08-28",
@@ -13697,6 +14354,15 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "tulsi",
+   "norm": "tulsi",
+   "first_seen": "2026-08-28",
+   "name": "Tulsi",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "tuome",
    "norm": "tuome",
    "first_seen": "2026-08-28",
@@ -13723,6 +14389,15 @@
    "norm": "txikito",
    "first_seen": "2026-08-28",
    "name": "Txikito",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "ukiyo",
+   "norm": "ukiyo",
+   "first_seen": "2026-08-28",
+   "name": "Ukiyo",
    "street": null,
    "zip": null,
    "last_seen": "2026-08-28"
@@ -13877,6 +14552,15 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "ushiwakamaru",
+   "norm": "ushiwakamaru",
+   "first_seen": "2026-08-28",
+   "name": "Ushiwakamaru",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "uva-next-door",
    "norm": "uva next door",
    "first_seen": "2026-08-28",
@@ -13983,6 +14667,15 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "vestry",
+   "norm": "vestry",
+   "first_seen": "2026-08-28",
+   "name": "Vestry",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "via-13",
    "norm": "via 13",
    "first_seen": "2026-08-28",
@@ -14055,6 +14748,15 @@
     "717"
    ],
    "zip": "10019",
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "vong",
+   "norm": "vong",
+   "first_seen": "2026-08-28",
+   "name": "Vong",
+   "street": null,
+   "zip": null,
    "last_seen": "2026-08-28"
   },
   {
@@ -14499,6 +15201,15 @@
    "last_seen": "2026-08-28"
   },
   {
+   "slug": "zabb-elee",
+   "norm": "zabb elee",
+   "first_seen": "2026-08-28",
+   "name": "Zabb Elee",
+   "street": null,
+   "zip": null,
+   "last_seen": "2026-08-28"
+  },
+  {
    "slug": "zalto-glass",
    "norm": "zalto glass",
    "first_seen": "2026-08-28",
@@ -14579,6 +15290,15 @@
     "261"
    ],
    "zip": "10016",
+   "last_seen": "2026-08-28"
+  },
+  {
+   "slug": "zzs-clam-bar",
+   "norm": "zzs clam bar",
+   "first_seen": "2026-08-28",
+   "name": "ZZ's Clam Bar",
+   "street": null,
+   "zip": null,
    "last_seen": "2026-08-28"
   }
  ]

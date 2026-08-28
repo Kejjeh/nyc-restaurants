@@ -1,0 +1,19 @@
+{
+ "slug": "blt-fish",
+ "query_name": "BLT Fish",
+ "matched": {
+  "place_id": "ChIJt-qwwqJZwokRf3H1tD64LYg",
+  "name": "BLT Fish Shack",
+  "address": "21 W 17th St, New York, NY 10011, USA",
+  "rating": 4.3,
+  "user_ratings_total": 54,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.738622,
+  "lng": -73.99334999999999
+ },
+ "accepted": true,
+ "reason": "name 1.00 (ours a subset of theirs) in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

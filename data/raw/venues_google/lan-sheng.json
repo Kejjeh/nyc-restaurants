@@ -1,0 +1,19 @@
+{
+ "slug": "lan-sheng",
+ "query_name": "Lan Sheng",
+ "matched": {
+  "place_id": "ChIJIRXBREpFwokRPLYhxQ_0X2w",
+  "name": "Lian Sheng",
+  "address": "5722 8th Ave b7, Brooklyn, NY 11220, USA",
+  "rating": 3.9,
+  "user_ratings_total": 33,
+  "business_status": "OPERATIONAL",
+  "lat": 40.6369132,
+  "lng": -74.0085857
+ },
+ "accepted": false,
+ "reason": "name similarity 0.33 is too low to identify on its own",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

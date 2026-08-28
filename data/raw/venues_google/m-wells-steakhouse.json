@@ -1,0 +1,19 @@
+{
+ "slug": "m-wells-steakhouse",
+ "query_name": "M. Wells Steakhouse",
+ "matched": {
+  "place_id": "ChIJGQFa8SlZwokRjkygUnetCuc",
+  "name": "M. Wells",
+  "address": "43-15 Crescent St, Long Island City, NY 11101, USA",
+  "rating": 4.4,
+  "user_ratings_total": 621,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.74830499999999,
+  "lng": -73.9424763
+ },
+ "accepted": true,
+ "reason": "name 1.00 (theirs a subset of ours) in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

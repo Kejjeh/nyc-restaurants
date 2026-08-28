@@ -1,0 +1,19 @@
+{
+ "slug": "le-grill-de-joel-robuchon",
+ "query_name": "Le Grill de Joël Robuchon",
+ "matched": {
+  "place_id": "ChIJJULcuqLFyIARupiJy1b4gWQ",
+  "name": "Joel Robuchon",
+  "address": "MGM Grand, 3799 S Las Vegas Blvd, Las Vegas, NV 89109, USA",
+  "rating": 4.6,
+  "user_ratings_total": 441,
+  "business_status": "OPERATIONAL",
+  "lat": 36.1019132,
+  "lng": -115.1688204
+ },
+ "accepted": false,
+ "reason": "result is outside New York City",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "luksus-at-torst",
+ "query_name": "Luksus at Torst",
+ "matched": {
+  "place_id": "ChIJlaFjTURZwokRvsN6V805OEk",
+  "name": "TØRST",
+  "address": "615 Manhattan Ave, Brooklyn, NY 11222, USA",
+  "rating": 4.7,
+  "user_ratings_total": 1608,
+  "business_status": "OPERATIONAL",
+  "lat": 40.723414,
+  "lng": -73.9507986
+ },
+ "accepted": false,
+ "reason": "name similarity 0.00 is too low to identify on its own",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

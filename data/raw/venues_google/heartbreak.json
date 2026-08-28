@@ -1,0 +1,19 @@
+{
+ "slug": "heartbreak",
+ "query_name": "Heartbreak",
+ "matched": {
+  "place_id": "ChIJVxaT7Z4V3IkR5fn-epmN0Kc",
+  "name": "Heartbreak Hotel",
+  "address": "149 Main St, Jefferson, NY 12093, USA",
+  "rating": 4.3,
+  "user_ratings_total": 217,
+  "business_status": "OPERATIONAL",
+  "lat": 42.4813694,
+  "lng": -74.6125014
+ },
+ "accepted": false,
+ "reason": "result is outside New York City",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

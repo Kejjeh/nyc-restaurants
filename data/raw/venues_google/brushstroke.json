@@ -1,0 +1,19 @@
+{
+ "slug": "brushstroke",
+ "query_name": "Brushstroke",
+ "matched": {
+  "place_id": "ChIJl2L0qJRZwokRqnah10WSPyI",
+  "name": "The Noodle Bar at Brushstroke",
+  "address": "30 Hudson St, New York, NY 10013, USA",
+  "rating": 4.4,
+  "user_ratings_total": 14,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.7166928,
+  "lng": -74.0089465
+ },
+ "accepted": true,
+ "reason": "name 1.00 (ours a subset of theirs) in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

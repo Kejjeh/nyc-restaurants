@@ -1,0 +1,19 @@
+{
+ "slug": "marc-forgione",
+ "query_name": "Marc Forgione",
+ "matched": {
+  "place_id": "ChIJhSLc_R5awokReYEI4dyODxA",
+  "name": "Forgione",
+  "address": "30 Hudson St, New York, NY 10013, USA",
+  "rating": 4.6,
+  "user_ratings_total": 806,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7166614,
+  "lng": -74.0089507
+ },
+ "accepted": true,
+ "reason": "name 1.00 (theirs a subset of ours) in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

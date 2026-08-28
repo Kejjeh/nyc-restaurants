@@ -1,0 +1,19 @@
+{
+ "slug": "a-voce-columbus",
+ "query_name": "A Voce Columbus",
+ "matched": {
+  "place_id": "ChIJp3PsL_ZYwokRBHjyPY7cIhc",
+  "name": "A Voce",
+  "address": "10 Columbus Cir, New York, NY 10019, USA",
+  "rating": 4.1,
+  "user_ratings_total": 87,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.767899,
+  "lng": -73.98293900000002
+ },
+ "accepted": true,
+ "reason": "name 1.00 (theirs a subset of ours) in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

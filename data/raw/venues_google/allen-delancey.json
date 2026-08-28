@@ -1,0 +1,10 @@
+{
+ "slug": "allen-delancey",
+ "query_name": "Allen & Delancey",
+ "matched": null,
+ "accepted": false,
+ "reason": "hand ruling: Text Search returned the intersection of Delancey Street and Allen Street, which carries a ZIP. Allen & Delancey the restaurant closed in 2010.",
+ "source": "hand",
+ "error": null,
+ "query_address": null
+}

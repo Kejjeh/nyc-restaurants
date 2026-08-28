@@ -1,0 +1,19 @@
+{
+ "slug": "fleur-de-sel",
+ "query_name": "Fleur de Sel",
+ "matched": {
+  "place_id": "ChIJ3TUUBAC5woARyM5TOmJ1P3M",
+  "name": "Fleurs et Sel | Bakery",
+  "address": "5300 W Adams Blvd Ste 100, Los Angeles, CA 90016, USA",
+  "rating": 5,
+  "user_ratings_total": 219,
+  "business_status": "OPERATIONAL",
+  "lat": 34.0321413,
+  "lng": -118.3588801
+ },
+ "accepted": false,
+ "reason": "result is outside New York City",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

@@ -1,0 +1,19 @@
+{
+ "slug": "hakkasan",
+ "query_name": "Hakkasan",
+ "matched": {
+  "place_id": "ChIJP_pgdFNYwokRMY0bfj249WE",
+  "name": "Hakkasan New York",
+  "address": "311 W 43rd St, New York, NY 10036, USA",
+  "rating": 4.3,
+  "user_ratings_total": 861,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.7584309,
+  "lng": -73.9900002
+ },
+ "accepted": true,
+ "reason": "name 1.00 (ours a subset of theirs) in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

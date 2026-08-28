@@ -1,0 +1,19 @@
+{
+ "slug": "claro",
+ "query_name": "Claro",
+ "matched": {
+  "place_id": "ChIJGVQqnFVawokRltzLtx5fMhM",
+  "name": "Claro",
+  "address": "284 3rd Ave, Brooklyn, NY 11215, USA",
+  "rating": 4.5,
+  "user_ratings_total": 1096,
+  "business_status": "CLOSED_TEMPORARILY",
+  "lat": 40.6774157,
+  "lng": -73.9862268
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

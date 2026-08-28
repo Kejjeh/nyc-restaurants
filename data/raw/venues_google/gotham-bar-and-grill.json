@@ -1,0 +1,19 @@
+{
+ "slug": "gotham-bar-and-grill",
+ "query_name": "Gotham Bar and Grill",
+ "matched": {
+  "place_id": "ChIJZ72FzplZwokRmcA7CQzDMj0",
+  "name": "Gotham Restaurant",
+  "address": "12 E 12th St, New York, NY 10003, USA",
+  "rating": 4.5,
+  "user_ratings_total": 1346,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.734199,
+  "lng": -73.9936942
+ },
+ "accepted": false,
+ "reason": "name similarity 0.20 is too low to identify on its own",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

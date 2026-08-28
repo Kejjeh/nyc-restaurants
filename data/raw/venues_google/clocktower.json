@@ -1,0 +1,19 @@
+{
+ "slug": "clocktower",
+ "query_name": "The Clocktower",
+ "matched": {
+  "place_id": "ChIJe_H4tKZZwokRIKL-M0_luB0",
+  "name": "The Clocktower",
+  "address": "5 Madison Ave, New York, NY 10010, USA",
+  "rating": 4.4,
+  "user_ratings_total": 826,
+  "business_status": "OPERATIONAL",
+  "lat": 40.741295,
+  "lng": -73.987368
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

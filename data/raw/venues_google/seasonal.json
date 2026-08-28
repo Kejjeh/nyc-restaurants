@@ -1,0 +1,10 @@
+{
+ "slug": "seasonal",
+ "query_name": "Seäsonal",
+ "matched": null,
+ "accepted": false,
+ "reason": "hand ruling: Text Search returned a point of interest named \"Seasonal\" in the Bronx with no street address and no business status. Seäsonal Restaurant & Weinbar (W 58th St) closed in 2016 and Google no longer lists it.",
+ "source": "hand",
+ "error": null,
+ "query_address": null
+}

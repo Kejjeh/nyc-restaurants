@@ -1,0 +1,19 @@
+{
+ "slug": "lo-scalco",
+ "query_name": "Lo Scalco",
+ "matched": {
+  "place_id": "ChIJL1jrJCtXKhMR8SQU3SDgIeY",
+  "name": "Lo Scalco Srl",
+  "address": "Via Dè Tommasi, 5, 50142 Firenze FI, Italy",
+  "rating": 4.6,
+  "user_ratings_total": 77,
+  "business_status": "OPERATIONAL",
+  "lat": 43.77346199999999,
+  "lng": 11.203792
+ },
+ "accepted": false,
+ "reason": "result is outside New York City",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

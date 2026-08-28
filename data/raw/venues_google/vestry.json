@@ -1,0 +1,10 @@
+{
+ "slug": "vestry",
+ "query_name": "Vestry",
+ "matched": null,
+ "accepted": false,
+ "reason": "hand ruling: Text Search returned Vestry Street, a street -- it carries a ZIP, so the no-ZIP gate cannot catch this one. Vestry the restaurant (Dominick Hotel) is gone.",
+ "source": "hand",
+ "error": null,
+ "query_address": null
+}

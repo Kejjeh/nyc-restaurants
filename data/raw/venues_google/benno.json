@@ -1,0 +1,10 @@
+{
+ "slug": "benno",
+ "query_name": "Benno",
+ "matched": null,
+ "accepted": false,
+ "reason": "hand ruling: Text Search returned Benno and Associates P.C., a law firm in the Trump Building. Benno the restaurant (Evangeline Hotel) is gone and Google no longer lists it. name_sim() scores a token subset 1.00, so a short name reads as a perfect match against any longer name that contains it.",
+ "source": "hand",
+ "error": null,
+ "query_address": null
+}

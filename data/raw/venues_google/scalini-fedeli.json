@@ -1,0 +1,19 @@
+{
+ "slug": "scalini-fedeli",
+ "query_name": "Scalini Fedeli",
+ "matched": {
+  "place_id": "ChIJRY0QrR9awokRtnCdmU4ijlM",
+  "name": "Scalini Fedeli",
+  "address": "165 Duane St, New York, NY 10013, USA",
+  "rating": 4.8,
+  "user_ratings_total": 541,
+  "business_status": "OPERATIONAL",
+  "lat": 40.71750249999999,
+  "lng": -74.0094518
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

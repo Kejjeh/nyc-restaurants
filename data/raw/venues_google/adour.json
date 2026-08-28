@@ -1,0 +1,19 @@
+{
+ "slug": "adour",
+ "query_name": "Adour",
+ "matched": {
+  "place_id": "ChIJB1DDmYhRwokR1vddWu6aVSs",
+  "name": "Adour Bistro",
+  "address": "715 Broadway, Bayonne, NJ 07002, USA",
+  "rating": 4.9,
+  "user_ratings_total": 144,
+  "business_status": "OPERATIONAL",
+  "lat": 40.67162099999999,
+  "lng": -74.1120212
+ },
+ "accepted": false,
+ "reason": "ZIP 07002 is not in the five boroughs (the bounds rectangle also contains slices of NJ, Westchester and Nassau)",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

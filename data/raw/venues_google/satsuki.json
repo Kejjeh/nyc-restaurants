@@ -1,0 +1,19 @@
+{
+ "slug": "satsuki",
+ "query_name": "Satsuki",
+ "matched": {
+  "place_id": "ChIJ-XDzh1VYwokRN-24C-tXMKk",
+  "name": "Satsuki (Omakase sushi bar in SUZUKI)",
+  "address": "114 W 47th St, New York, NY 10036, USA",
+  "rating": 4.6,
+  "user_ratings_total": 125,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.7580934,
+  "lng": -73.98314549999999
+ },
+ "accepted": true,
+ "reason": "name 1.00 (ours a subset of theirs) in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

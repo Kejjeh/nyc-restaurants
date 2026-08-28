@@ -1,0 +1,19 @@
+{
+ "slug": "eighty-one",
+ "query_name": "Eighty One",
+ "matched": {
+  "place_id": "ChIJxax4-YVYwokRaj-TfTdjy5g",
+  "name": "West 81st Street",
+  "address": "W 81st St, New York, NY 10024, USA",
+  "rating": null,
+  "user_ratings_total": null,
+  "business_status": null,
+  "lat": 40.7841264,
+  "lng": -73.9765445
+ },
+ "accepted": false,
+ "reason": "name similarity 0.00 is too low to identify on its own",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

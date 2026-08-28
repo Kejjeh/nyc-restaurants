@@ -1,0 +1,19 @@
+{
+ "slug": "sushi-azabu",
+ "query_name": "Sushi Azabu",
+ "matched": {
+  "place_id": "ChIJPVxLV_RZwokRAVu37ml9Vwo",
+  "name": "Azabu New York",
+  "address": "428 Greenwich St, New York, NY 10013, USA",
+  "rating": 4.5,
+  "user_ratings_total": 412,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.7224321,
+  "lng": -74.0098933
+ },
+ "accepted": false,
+ "reason": "name similarity 0.25 is too low to identify on its own",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

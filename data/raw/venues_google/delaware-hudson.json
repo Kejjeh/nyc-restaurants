@@ -1,0 +1,19 @@
+{
+ "slug": "delaware-hudson",
+ "query_name": "Delaware & Hudson",
+ "matched": {
+  "place_id": "ChIJb0cXsG6U3YkRlhXj-AWNtl8",
+  "name": "Delaware Avenue",
+  "address": "Delaware Ave, Lorenz Park, NY 12534, USA",
+  "rating": null,
+  "user_ratings_total": null,
+  "business_status": null,
+  "lat": 42.268927,
+  "lng": -73.7647
+ },
+ "accepted": false,
+ "reason": "result is outside New York City",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

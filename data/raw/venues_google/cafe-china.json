@@ -1,0 +1,19 @@
+{
+ "slug": "cafe-china",
+ "query_name": "Café China",
+ "matched": {
+  "place_id": "ChIJhXTKrQBZwokRDA7Vijnq1AE",
+  "name": "Café China",
+  "address": "59 W 37th St, New York, NY 10018, USA",
+  "rating": 4.3,
+  "user_ratings_total": 3135,
+  "business_status": "OPERATIONAL",
+  "lat": 40.75157129999999,
+  "lng": -73.9858221
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

@@ -46,9 +46,13 @@ repo hard-codes a season, a year or a deadline. See "Season changeover" below.
 - Outdoor dining: NYC DOT licensed setups from NY Open Data (`fpeh-f7ci`).
 - Google ratings: Places API, keyed (never committed). Restaurants' own sites are
   crawled for prices (`price_sweep`) and menu terms (`menu_term_sweep`).
-- Awards: `data/raw/recognition/` — the Michelin 2025 NYC selection (362, all with
-  addresses), James Beard Foundation awards 1991–2026 (1,440 records, NYC only,
-  **no addresses at all**), and the NYT Top 100 for 2026 plus one starred review.
+- Awards: `data/raw/recognition/` — Michelin: the 2025 NYC selection (362, all
+  with addresses) plus a **stars-only** back-fill of every earlier NYC edition,
+  2006–2024, parsed from Wikipedia's per-restaurant tables by
+  `src/backfill_michelin_stars.py` (1,195 records, no addresses; Bib Gourmand
+  and "recommended" have no historical source anywhere and stay 2025-only).
+  James Beard Foundation awards 1991–2026 (1,440 records, NYC only, **no
+  addresses at all**), and the NYT Top 100 for 2026 plus one starred review.
   `config/awards.json` registers the three sources and prices every honour.
 - Politeness: global ≤1 req/sec throttle (`config.throttle()`), browser UA.
   robots.txt allows everything used (`/*.json$` is disallowed; the pipeline
@@ -1338,9 +1342,16 @@ Every figure printed beside another is derived so the two reconcile.
   carries the chef, sommelier or restaurateur, and the site prints it, because a
   roster that quietly credits the restaurant with its chef's Rising Star is
   lying by omission.
-- **Michelin here is the 2025 selection only.** There is no historical Michelin
-  data in this repo, so a restaurant that held a star in 2016 and lost it shows
-  no Michelin recognition at all.
+- **Michelin history is stars only, and its shape is uneven on purpose.** The
+  2025 file is the full selection — stars, Bib Gourmand, and "recommended". The
+  2006–2024 back-fill (`src/backfill_michelin_stars.py`, from Wikipedia's
+  per-restaurant tables) covers **stars and nothing else**, because no
+  structured historical source exists for the two tiers that make up 81% of
+  the 2025 file. So a restaurant that held a star in 2016 and lost it now
+  shows that star with its year — but a restaurant that was Bib Gourmand in
+  2016 still shows nothing, and a pre-2025 "recommended" was never recorded
+  anywhere this repo can reach. An absent pre-2025 Bib is missing data, not a
+  fact about the restaurant.
 - **No venue on the roster is a list of restaurants or an award-body entity**,
   and a test checks that against the database rather than a fixture. The three
   that survived the automatic rules are settled by hand in

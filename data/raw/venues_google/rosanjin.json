@@ -1,0 +1,19 @@
+{
+ "slug": "rosanjin",
+ "query_name": "Rosanjin",
+ "matched": {
+  "place_id": "ChIJke1YdB9awokRHCS1J9Zf3gE",
+  "name": "Rosanjin",
+  "address": "141 Duane St, New York, NY 10013, USA",
+  "rating": 4.4,
+  "user_ratings_total": 15,
+  "business_status": "CLOSED_PERMANENTLY",
+  "lat": 40.7165454,
+  "lng": -74.0076857
+ },
+ "accepted": true,
+ "reason": "name 1.00 in NYC, no address on either side to check",
+ "source": "textsearch",
+ "error": null,
+ "query_address": null
+}

@@ -12,7 +12,7 @@
       "file": "michelin.json",
       "has_addresses": true,
       "name_field": "name",
-      "note": "2025 NYC selection. Every record carries a street address, so these merge on name AND address and are the safest rows in the set."
+      "note": "The 2025 NYC selection (every record with a street address, merging on name AND address), plus a stars-only 2006-2024 back-fill from Wikipedia via src/backfill_michelin_stars.py (no addresses, merging on name alone). Bib Gourmand and recommended have no pre-2025 source and are 2025-only."
     },
     "james_beard": {
       "label": "James Beard",
