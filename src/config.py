@@ -69,6 +69,24 @@ def sane_coords(lat, lng):
     return (lat, lng) if in_nyc(lat, lng) else (None, None)
 
 
+# A rectangle cannot say "the five boroughs". NYC_BOUNDS reaches far enough
+# west for Staten Island, so it also contains north-east New Jersey -- the
+# first Places run accepted Montrachet in Bayonne and Paladar in Passaic on
+# coordinates in_nyc() passed -- and it reaches Yonkers and western Nassau
+# too. ZIP prefixes can say it: Manhattan is 100-102, Staten Island 103, the
+# Bronx 104, Queens 111/113/114/116, Brooklyn 112. The 110 block is Nassau
+# except Glen Oaks and New Hyde Park's Queens sliver, 11004-11005.
+NYC_ZIP3 = {"100", "101", "102", "103", "104", "111", "112", "113", "114", "116"}
+NYC_ZIP5_EXTRA = {"11004", "11005"}
+
+
+def in_nyc_zip(zip5):
+    """Is this 5-digit ZIP one of the five boroughs'?"""
+    if not zip5:
+        return False
+    return zip5[:3] in NYC_ZIP3 or zip5 in NYC_ZIP5_EXTRA
+
+
 API_URL = "https://program-api.nyctourism.com/restaurant-week"
 SITE = "https://www.nyctourism.com"
 LISTING_PAGE = f"{SITE}/restaurant-week/"

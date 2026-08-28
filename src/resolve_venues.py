@@ -39,10 +39,10 @@ import time
 from pathlib import Path
 
 from build_venues import postal_key
-from config import in_nyc
+from config import in_nyc, in_nyc_zip
 from enrich_recognition import street_key
 from fetch_google_ratings import (DETAIL_FIELDS, DETAILS_URL, TEXT_URL, api_key,
-                                  flatten, get, name_sim)
+                                  flatten, get, name_sim, norm)
 
 ROOT = Path(__file__).resolve().parents[1]
 DB = ROOT / "data" / "processed" / "restaurant_week.sqlite"
@@ -82,20 +82,66 @@ def judge_no_coords(cand, name, address):
     Deliberately refuses more than it accepts. An unresolved venue is a visible
     gap someone can go and fix; a wrongly resolved one silently attaches a
     rating, a location and an OPEN badge to the wrong restaurant.
+
+    The candidate's ZIP is checked before anything else, including our own
+    address. The first Places run showed why the bounds rectangle alone is not
+    a city test (it passed Bayonne and Passaic, NJ), and why the ZIP gate must
+    precede the street-number check rather than back it up: "151 Avenue C"
+    exists in Manhattan and in Bayonne, and street_key would call that
+    agreement. It also showed what a result with no ZIP at all is: Google
+    answering a name query with a neighbourhood or a street ("NoMad",
+    "Jefferson Street") -- a place, not a premises, with nothing to be open.
     """
     if not in_nyc(cand.get("lat"), cand.get("lng")):
         return False, "result is outside New York City"
+    zip5 = postal_key(cand.get("address"))
+    if not zip5:
+        return False, "result has no ZIP: a neighbourhood or a street, not a premises"
+    if not in_nyc_zip(zip5):
+        return False, (f"ZIP {zip5} is not in the five boroughs (the bounds "
+                       "rectangle also contains slices of NJ, Westchester and Nassau)")
     sim = name_sim(name, cand.get("name"))
+    # A subset scores 1.00 by design ("Dante" IS "Dante NYC"), but the first
+    # run showed it is also how Masa took Bar Masa's rating and Craft took an
+    # arts-and-crafts class's. The score stays -- most subset matches are the
+    # same restaurant with a suffix -- but the reason now says which kind of
+    # 1.00 it was, so the person reading the fetch output knows which lines
+    # need their judgement.
+    ours, theirs = set(norm(name).split()), set(norm(cand.get("name")).split())
+    tag = " (ours a subset of theirs)" if ours < theirs else           " (theirs a subset of ours)" if theirs < ours else ""
     if address:
-        ours, theirs = street_key(address), street_key(cand.get("address"))
-        if ours and theirs and ours & theirs:
-            return True, f"name {sim:.2f}, street number agrees"
-        if postal_key(address) and postal_key(address) == postal_key(cand.get("address")):
-            return True, f"name {sim:.2f}, postal code agrees"
+        our_streets, their_streets = street_key(address), street_key(cand.get("address"))
+        if our_streets and their_streets and our_streets & their_streets:
+            return True, f"name {sim:.2f}{tag}, street number agrees"
+        if postal_key(address) and postal_key(address) == zip5:
+            return True, f"name {sim:.2f}{tag}, postal code agrees"
         return False, f"we hold an address and it disagrees (name {sim:.2f})"
     if sim >= NAME_MIN_NO_COORDS:
-        return True, f"name {sim:.2f} in NYC, no address on either side to check"
+        return True, f"name {sim:.2f}{tag} in NYC, no address on either side to check"
     return False, f"name similarity {sim:.2f} is too low to identify on its own"
+
+
+def best_no_coords(results, name, address):
+    """Best of the top few Text Search hits -> (candidate, accepted, reason),
+    or None when none of them carried coordinates. The no-coordinates twin of
+    fetch_google_ratings.best_candidate, extracted for the same reason that
+    one exists: the ranking is where a wrong restaurant wins, so it has to be
+    testable without a network.
+
+    An exact name outranks a subset. Both score 1.00 in name_sim -- "Masa" IS
+    a subset of "Bar Masa" -- and on the first run Bar Masa ranked first, so
+    the ranker never preferred the exact "Masa" sitting lower in the results.
+    Same building, so the street number agreed and corroborated the wrong one.
+    """
+    best = None
+    for res in results[:5]:
+        c = flatten(res)
+        ok, why = judge_no_coords(c, name, address)
+        exact = norm(name) == norm(c.get("name"))
+        score = (ok, exact, name_sim(name, c.get("name")))
+        if best is None or score > best[0]:
+            best = (score, (c, ok, why))
+    return best[1] if best else None
 
 
 # Anything that already places the query in the city, so "New York" is not
@@ -179,17 +225,11 @@ def fetch_one(venue, key):
         if d.get("status") != "OK":
             rec["error"] = f"{d.get('status')}: {d.get('error_message', '')[:120]}"
             return rec
-        best = None
-        for res in d["results"][:5]:
-            c = flatten(res)
-            ok, why = judge_no_coords(c, name, venue.get("address"))
-            score = (ok, name_sim(name, c.get("name")))
-            if best is None or score > best[0]:
-                best = (score, (c, ok, why))
+        best = best_no_coords(d["results"], name, venue.get("address"))
         if best is None:
             rec["reason"] = "no usable result"
             return rec
-        c, ok, why = best[1]
+        c, ok, why = best
         rec.update(matched=c, accepted=ok, reason=why)
     except Exception as e:
         rec["error"] = f"{type(e).__name__}: {str(e)[:120]}"

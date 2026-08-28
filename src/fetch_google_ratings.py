@@ -147,7 +147,10 @@ def best_candidate(results, name, lat, lng):
         if c["lat"] is None:
             continue
         ok, why = judge(c, name, lat, lng)
-        score = (ok, name_sim(name, c["name"]))
+        # An exact name outranks a subset: both score 1.00 ("Masa" is a subset
+        # of "Bar Masa"), and when a chain's other branch ranks first in the
+        # results, the tie used to go to whichever Google listed first.
+        score = (ok, norm(name) == norm(c["name"]), name_sim(name, c["name"]))
         if best is None or score > best[0]:
             best = (score, (c, ok, why))
     return best[1] if best else None

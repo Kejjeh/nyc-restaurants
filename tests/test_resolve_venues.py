@@ -7,10 +7,12 @@ tests pin what it will and will not accept without ever making a request.
 """
 import pytest
 
-from resolve_venues import STATUS_FROM_GOOGLE, in_nyc, judge_no_coords
+from resolve_venues import (STATUS_FROM_GOOGLE, best_no_coords, in_nyc,
+                            judge_no_coords)
 
 
-def cand(name, address=None, lat=40.72, lng=-73.99):
+def cand(name, address="1 Main St, New York, NY 10012, USA",
+         lat=40.72, lng=-73.99):
     return {"name": name, "address": address, "lat": lat, "lng": lng}
 
 
@@ -18,6 +20,53 @@ def test_a_result_outside_the_five_boroughs_is_never_accepted():
     # There is a Balthazar in London and one in Miami; neither is ours.
     ok, why = judge_no_coords(cand("Balthazar", lat=51.51, lng=-0.12), "Balthazar", None)
     assert not ok and "outside New York" in why
+
+
+def test_new_jersey_inside_the_bounds_rectangle_is_still_refused():
+    """The first Places run accepted Montrachet in Bayonne and Paladar in
+    Passaic. Both points pass in_nyc() -- the rectangle reaches far enough
+    west for Staten Island, so it contains north-east New Jersey too -- and
+    the ZIP is what actually says "not this city"."""
+    bayonne = cand("Montrachet", "151 Avenue C, Bayonne, NJ 07002, USA",
+                   lat=40.6687, lng=-74.1143)
+    assert in_nyc(bayonne["lat"], bayonne["lng"]), (
+        "if this stops passing, the rectangle got fixed and this test should "
+        "shrink to the ZIP assertion")
+    ok, why = judge_no_coords(bayonne, "Montrachet", None)
+    assert not ok and "07002" in why
+
+
+def test_the_zip_gate_outranks_a_street_number_agreement():
+    """151 Avenue C exists in Manhattan and in Bayonne. If the ZIP check ran
+    after the address check, street_key would call that agreement and accept
+    the wrong state on our own evidence."""
+    ok, why = judge_no_coords(
+        cand("Montrachet", "151 Avenue C, Bayonne, NJ 07002, USA",
+             lat=40.6687, lng=-74.1143),
+        "Montrachet", "151 Avenue C, New York, NY 10009")
+    assert not ok and "07002" in why
+
+
+def test_yonkers_and_nassau_are_not_the_five_boroughs():
+    ok, why = judge_no_coords(
+        cand("Balthazar", "1 Main St, Yonkers, NY 10701, USA",
+             lat=40.94, lng=-73.89), "Balthazar", None)
+    assert not ok and "10701" in why
+    # ...but the two Queens codes stranded in the Nassau 110 block are ours.
+    ok, _ = judge_no_coords(
+        cand("Balthazar", "260-15 Hillside Ave, Glen Oaks, NY 11004, USA",
+             lat=40.75, lng=-73.71), "Balthazar", None)
+    assert ok
+
+
+def test_a_result_with_no_zip_is_a_place_not_a_premises():
+    """Google answers a bare-name query for a defunct restaurant with whatever
+    holds the name now -- for "Village", "NoMad" and "Jefferson" that was a
+    neighbourhood or a street. None of those carries a ZIP, and none of the
+    606 real establishments the first run matched lacked one."""
+    ok, why = judge_no_coords(
+        cand("NoMad", "NoMad, New York, NY, USA"), "The NoMad", None)
+    assert not ok and "no ZIP" in why
 
 
 def test_an_address_we_hold_must_agree_not_merely_coexist():
@@ -63,6 +112,46 @@ def test_business_status_maps_to_our_three_states(google, ours):
 def test_an_unknown_business_status_leaves_the_venue_unverified():
     """Google inventing a fourth value must not silently mark a venue open."""
     assert STATUS_FROM_GOOGLE.get("SOMETHING_NEW") is None
+
+
+# --------------------------------------------------------------------------
+# picking among the candidates
+# --------------------------------------------------------------------------
+
+def result(name, address, lat=40.7685, lng=-73.9832):
+    return {"name": name, "formatted_address": address,
+            "geometry": {"location": {"lat": lat, "lng": lng}},
+            "place_id": f"pid-{name}", "business_status": "OPERATIONAL"}
+
+
+def test_an_exact_name_outranks_a_subset_wherever_google_ranks_it():
+    """How Masa took Bar Masa's rating: both names score 1.00 -- "Masa" is a
+    subset of "Bar Masa" -- both sit in the same building so both judged
+    acceptable, and Bar Masa came first in the results, so first-wins tie
+    breaking kept it."""
+    got = best_no_coords(
+        [result("Bar Masa", "10 Columbus Cir Suite 401A, New York, NY 10019, USA"),
+         result("Masa", "10 Columbus Cir 4th floor, New York, NY 10019, USA")],
+        "Masa", "10 Columbus Circle, Ste. 401, New York, NY 10019")
+    c, ok, why = got
+    assert ok and c["name"] == "Masa"
+
+
+def test_a_subset_still_wins_when_no_exact_name_is_on_offer():
+    # "Dante" IS "Dante NYC"; the subset rule exists for branch suffixes.
+    got = best_no_coords(
+        [result("Dante NYC", "79-81 MacDougal St, New York, NY 10012, USA")],
+        "Dante", None)
+    c, ok, why = got
+    assert ok and "subset" in why
+
+
+def test_a_rejected_best_is_still_returned_with_its_reason():
+    got = best_no_coords(
+        [result("Joe's Pizza", "7 Carmine St, New York, NY 10014, USA")],
+        "Le Bernardin", None)
+    c, ok, why = got
+    assert not ok and "too low" in why
 
 
 # --------------------------------------------------------------------------
