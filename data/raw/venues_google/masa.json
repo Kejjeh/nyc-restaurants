@@ -3,7 +3,7 @@
  "query_name": "Masa",
  "matched": null,
  "accepted": false,
- "reason": "hand ruling: Text Search returned Bar Masa, a different restaurant in the same building (10 Columbus Circle). name_sim scores a token subset 1.00, so \"Masa\" vs \"Bar Masa\" read as a perfect name match and the shared street number corroborated it. Rating 4.2/591 belongs to Bar Masa, not Masa.",
+ "reason": "hand ruling: Google Places holds no distinct listing for Masa. Every query phrasing -- the pipeline's own, plus \"Masa Takayama restaurant Time Warner Center\", \"Masa sushi 10 Columbus Circle\" and \"Masa NYC omakase\" -- returns only Bar Masa (ChIJM26HnlhYwokR4IfXFz-AuCA), the adjacent sister restaurant, whose 4.2/591 rating is not Masa's. Checked 2026-08-28, after the exact-name-outranks-subset fix: the right candidate is not ranked low, it is absent.",
  "source": "hand",
  "error": null,
  "query_address": "10 Columbus Circle, Ste. 401, New York, NY 10019"

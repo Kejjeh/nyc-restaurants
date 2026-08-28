@@ -11,9 +11,9 @@
   "lat": 40.680491,
   "lng": -73.9479489
  },
- "accepted": false,
- "reason": "name similarity 0.43 is too low to identify on its own",
- "source": "textsearch",
+ "accepted": true,
+ "reason": "hand-verified place_id",
+ "source": "place_id",
  "error": null,
  "query_address": null
 }

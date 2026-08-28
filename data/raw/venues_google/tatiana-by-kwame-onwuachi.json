@@ -11,9 +11,9 @@
   "lat": 40.7726505,
   "lng": -73.98335209999999
  },
- "accepted": false,
- "reason": "we hold an address and it disagrees (name 1.00)",
- "source": "textsearch",
+ "accepted": true,
+ "reason": "hand-verified place_id",
+ "source": "place_id",
  "error": null,
  "query_address": "David Geffen Hall, Lincoln Center, New York, NY"
 }

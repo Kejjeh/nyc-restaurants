@@ -191,7 +191,11 @@ def dry_run(con, limit=None):
           f"billed once — results cache per slug.\n")
     for v in shown:
         flag = " " if v.get("address") else "!"
-        print(f" {flag} {v['venue_slug'][:30]:31} {query_for(v)}")
+        if v.get("place_id"):
+            print(f" {flag} {v['venue_slug'][:30]:31} "
+                  f"(Details for hand-verified {v['place_id']}, no Text Search)")
+        else:
+            print(f" {flag} {v['venue_slug'][:30]:31} {query_for(v)}")
     if limit and total > len(shown):
         print(f"\n… and {total - len(shown)} more not listed "
               f"(drop --limit to see them all)")
@@ -243,12 +247,28 @@ def write_cache(rec):
     shutil.copyfile(tmp, CACHE / f"{rec['slug']}.json")
 
 
+OVERRIDES = ROOT / "config" / "google_place_ids.json"
+
+
 def unresolved(con):
     """Venues with no coordinates of their own. Restaurant Week rows already
-    have them from the listing, so this is the award-sourced roster."""
-    return [dict(r) for r in con.execute(
+    have them from the listing, so this is the award-sourced roster.
+
+    config/google_place_ids.json is consulted here, the same override the
+    participants' fetch honours: a hand-verified place_id turns the venue's
+    lookup into a Place Details call and skips the name-matching entirely,
+    because a pinned place_id IS the verification. Resolved here rather than
+    in the fetch loop so --dry-run and --report see the venue exactly as the
+    billed run will.
+    """
+    overrides = (json.loads(OVERRIDES.read_text(encoding="utf-8")).get("place_ids", {})
+                 if OVERRIDES.exists() else {})
+    rows = [dict(r) for r in con.execute(
         "SELECT venue_slug, name, address, borough, place_id FROM venues"
         " WHERE lat IS NULL OR lng IS NULL ORDER BY prestige DESC, venue_slug")]
+    for r in rows:
+        r["place_id"] = r["place_id"] or overrides.get(r["venue_slug"])
+    return rows
 
 
 def apply_cache(con, quiet=False):
