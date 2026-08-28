@@ -488,6 +488,33 @@ def merge_spelling_variants(roster):
             # coordinates, a neighborhood and a live listing; an award-created
             # row carries a name and maybe an address.
             keep, drop = (va, vb) if _row_rank(va) <= _row_rank(vb) else (vb, va)
+            # Which ROW survives and which IDENTITY survives are separate
+            # questions too, like the name below. _row_rank picks the row with
+            # more to lose; but if the row it drops holds a slug from an
+            # earlier build and the row it keeps was minted THIS build, then
+            # letting the mint survive retires a ledgered identity into a
+            # slug that never shipped -- the exact churn the ledger exists to
+            # prevent. (Observed: the Michelin back-fill's "Torrisi Italian
+            # Specialities" out-ranked the ledgered torrisi-italian-
+            # specialties and took its identity.) The rows keep their roles;
+            # they trade slugs, and every reference trades with them.
+            claimed = roster.ledger.claimed if roster.ledger else {}
+            kept_slug_from_ledger = False
+            if drop["venue_slug"] in claimed and keep["venue_slug"] not in claimed:
+                fresh, held = keep["venue_slug"], drop["venue_slug"]
+                for aw in roster.awards:
+                    if aw["venue_slug"] == fresh:
+                        aw["venue_slug"] = held
+                    elif aw["venue_slug"] == held:
+                        aw["venue_slug"] = fresh
+                keep["venue_slug"], drop["venue_slug"] = held, fresh
+                roster.venues[held], roster.venues[fresh] = keep, drop
+                nk, nd = norm_name(keep["name"]), norm_name(drop["name"])
+                roster.by_norm[nk].remove(fresh)
+                roster.by_norm[nk].append(held)
+                roster.by_norm[nd].remove(held)
+                roster.by_norm[nd].append(fresh)
+                kept_slug_from_ledger = True
             for field in ("address", "lat", "lng", "borough", "neighborhood"):
                 if keep.get(field) is None and drop.get(field) is not None:
                     keep[field] = drop[field]
@@ -508,6 +535,7 @@ def merge_spelling_variants(roster):
                            "folded": drop["venue_slug"],
                            "folded_name": drop["name"] if display != drop["name"] else was,
                            "name_was_a_tie": tie,
+                           "kept_slug_from_ledger": kept_slug_from_ledger,
                            "reason": "one differing token, same first letter, "
                                      f"similarity >= {TOKEN_SIM}"})
             absorbed.add(drop["venue_slug"])

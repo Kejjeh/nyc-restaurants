@@ -99,6 +99,31 @@ def test_a_folded_venue_retires_its_slug_and_it_is_never_reissued():
     assert led.claim("Uncle Boon", None) is None, "a retired slug was reissued"
 
 
+def test_a_fold_against_a_fresh_mint_leaves_the_ledgered_entry_live():
+    """merge_spelling_variants used to call retire() on whichever row
+    _row_rank dropped -- including a ledgered slug losing to a mint from the
+    current build. After the fold the ledgered entry must still be live and
+    the surviving venue must hold its slug, so the next build's claim() finds
+    it exactly where every earlier build left it."""
+    from build_venues import Roster, merge_spelling_variants
+    led = ledger_of({"slug": "torrisi-italian-specialties",
+                     "norm": "torrisi italian specialties",
+                     "street": None, "zip": None})
+    r = Roster(led)
+    r.add("Torrisi Italian Specialties", "james_beard")
+    r.add("Torrisi Italian Specialities", "michelin")
+    r.awards = []
+    merge_spelling_variants(r)
+    entry = next(e for e in led.entries
+                 if e["slug"] == "torrisi-italian-specialties")
+    assert not entry.get("merged_into")
+    assert "torrisi-italian-specialties" in r.venues
+    assert "torrisi-italian-specialties" in led.claimed
+    # and the mint's slug is free for nothing: retired or never entered,
+    # it must not be claimable by a different restaurant next build
+    assert not led.reserved("torrisi-italian-specialities")
+
+
 def test_the_committed_ledger_covers_the_committed_roster():
     """A ledger missing a venue is a venue whose identity is not actually held."""
     doc = json.loads(LEDGER.read_text(encoding="utf-8"))

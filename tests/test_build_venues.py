@@ -80,6 +80,65 @@ def test_fold_keeps_the_spelling_the_sources_use_most():
     assert {a["venue_slug"] for a in r.awards} == {merges[0]["kept"]}
 
 
+def test_fold_never_retires_a_ledgered_slug_into_a_fresh_mint():
+    """The Michelin back-fill's "Torrisi Italian Specialities" (Wikipedia's
+    British spelling) minted a fresh venue; michelin outranks james_beard in
+    _row_rank, so the fold kept the mint and retired the ledgered
+    torrisi-italian-specialties into it -- reversing an identity the ledger
+    exists to keep stable. Which row carries the data and which slug names the
+    venue are separate questions: the out-ranking row may survive, but it must
+    survive UNDER the slug an earlier build already shipped."""
+    from build_venues import Ledger
+    led = Ledger([{"slug": "torrisi-italian-specialties",
+                   "norm": "torrisi italian specialties",
+                   "street": None, "zip": None}], today="2026-01-01")
+    r = Roster(led)
+    # james_beard adds first and claims the ledgered slug; the back-fill's
+    # variant spelling cannot claim (different norm) and mints fresh.
+    r.add("Torrisi Italian Specialties", "james_beard")
+    v2 = r.add("Torrisi Italian Specialities", "michelin")
+    assert v2["venue_slug"] == "torrisi-italian-specialities", (
+        "the scenario needs the variant to mint; if claim() learned to bridge "
+        "spellings, this test wants rewriting, not deleting")
+    r.awards = [{"venue_slug": "torrisi-italian-specialties",
+                 "matched_name": "Torrisi Italian Specialties"},
+                {"venue_slug": "torrisi-italian-specialities",
+                 "matched_name": "Torrisi Italian Specialities"}]
+    merges = merge_spelling_variants(r)
+    assert len(merges) == 1
+    assert merges[0]["kept"] == "torrisi-italian-specialties"
+    assert merges[0]["folded"] == "torrisi-italian-specialities"
+    assert merges[0]["kept_slug_from_ledger"] is True
+    assert set(r.venues) == {"torrisi-italian-specialties"}
+    # every award follows the surviving identity
+    assert {a["venue_slug"] for a in r.awards} == {"torrisi-italian-specialties"}
+    # the ledgered entry is still live; only the mint's slug was retired
+    entry = next(e for e in led.entries if e["slug"] == "torrisi-italian-specialties")
+    assert not entry.get("merged_into")
+    # by_norm still finds the survivor under the surviving row's name
+    assert r.candidates("Torrisi Italian Specialities")[0]["venue_slug"] ==         "torrisi-italian-specialties"
+
+
+def test_fold_still_ranks_rows_when_both_slugs_are_ledgered():
+    """Two venues that both shipped in earlier builds are a REAL merge of two
+    identities, and _row_rank stays the policy for those -- the ledger only
+    breaks the tie against a mint from the current build."""
+    from build_venues import Ledger
+    led = Ledger([{"slug": "uncle-boons", "norm": "uncle boons",
+                   "street": None, "zip": None},
+                  {"slug": "uncle-boon", "norm": "uncle boon",
+                   "street": None, "zip": None}], today="2026-01-01")
+    r = Roster(led)
+    r.add("Uncle Boons", "james_beard")
+    r.add("Uncle Boon", "michelin")
+    r.awards = [{"venue_slug": "uncle-boons", "matched_name": "Uncle Boons"}] * 2
+    merges = merge_spelling_variants(r)
+    assert len(merges) == 1
+    # michelin outranks james_beard, so its ROW survives, exactly as before
+    assert merges[0]["kept"] == "uncle-boon"
+    assert merges[0]["kept_slug_from_ledger"] is False
+
+
 def test_fold_refuses_when_the_two_addresses_disagree():
     r = roster_with(
         ("Uncle Boons", {"seeded_from": "james_beard",

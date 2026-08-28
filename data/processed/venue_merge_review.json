@@ -78,6 +78,7 @@
    "folded": "locande-verde",
    "folded_name": "Locande Verde",
    "name_was_a_tie": false,
+   "kept_slug_from_ledger": false,
    "reason": "one differing token, same first letter, similarity >= 0.85"
   },
   {
@@ -86,6 +87,7 @@
    "folded": "momfuku-ssam-bar-2",
    "folded_name": "Momfuku Ssam Bar",
    "name_was_a_tie": false,
+   "kept_slug_from_ledger": false,
    "reason": "one differing token, same first letter, similarity >= 0.85"
   },
   {
@@ -94,6 +96,7 @@
    "folded": "saint-ambroeus-2",
    "folded_name": "Saint Ambroeus",
    "name_was_a_tie": true,
+   "kept_slug_from_ledger": false,
    "reason": "one differing token, same first letter, similarity >= 0.85"
   },
   {
@@ -102,6 +105,7 @@
    "folded": "uncle-boon-2",
    "folded_name": "Uncle Boon",
    "name_was_a_tie": false,
+   "kept_slug_from_ledger": false,
    "reason": "one differing token, same first letter, similarity >= 0.85"
   }
  ],
