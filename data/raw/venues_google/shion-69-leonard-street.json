@@ -1,10 +1,19 @@
 {
  "slug": "shion-69-leonard-street",
  "query_name": "Shion 69 Leonard Street",
- "matched": null,
- "accepted": false,
- "reason": "hand ruling: Text Search returned a listing named \"69 Leonard Street\" (4.5, 240 reviews) -- almost certainly the event space at that address, not the 11-seat omakase named Shion 69 Leonard Street. A listing that drops the one distinguishing token and carries an event space's review volume cannot be verified as the restaurant, so it stays a visible gap.",
- "source": "hand",
+ "matched": {
+  "place_id": "ChIJnbEEPiBawokRN3BGCWpw2nE",
+  "name": "69 Leonard Street",
+  "address": "69 Leonard St, New York, NY 10013, USA",
+  "rating": 4.5,
+  "user_ratings_total": 240,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7176901,
+  "lng": -74.0053795
+ },
+ "accepted": true,
+ "reason": "hand-verified place_id",
+ "source": "place_id",
  "error": null,
- "query_address": null
+ "query_address": "69 Leonard St., New York, NY 10013"
 }

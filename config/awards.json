@@ -12,7 +12,7 @@
       "file": "michelin.json",
       "has_addresses": true,
       "name_field": "name",
-      "note": "The 2025 NYC selection (every record with a street address, merging on name AND address), plus a stars-only 2006-2024 back-fill from Wikipedia via src/backfill_michelin_stars.py (no addresses, merging on name alone). Bib Gourmand and recommended have no pre-2025 source and are 2025-only."
+      "note": "The 2025 NYC selection (every record with a street address, merging on name AND address), plus a stars-only 2006-2024 back-fill from Wikipedia via src/backfill_michelin_stars.py (no addresses, merging on name alone). Bib Gourmand and recommended have no pre-2025 source and are 2025-only. Caveat: the 2025 rows come from a snapshot of the LIVE guide, which silently drops restaurants it has since delisted -- Shion 69 Leonard Street held two stars in the 2025 selection, was delisted before the snapshot, and had to be restored by hand from Wikipedia."
     },
     "james_beard": {
       "label": "James Beard",

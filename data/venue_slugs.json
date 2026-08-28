@@ -12406,8 +12406,10 @@
    "norm": "shion 69 leonard street",
    "first_seen": "2026-08-28",
    "name": "Shion 69 Leonard Street",
-   "street": null,
-   "zip": null,
+   "street": [
+    "69"
+   ],
+   "zip": "10013",
    "last_seen": "2026-08-28"
   },
   {
