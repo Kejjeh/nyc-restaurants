@@ -60,6 +60,7 @@ const STATE = {
   sort: 'prestige',
   filters: new Map(),   // facet -> Set(values)
   shown: PAGE,
+  view: 'list',         // 'list' | 'map'
 };
 
 /* ---------- scoring helpers -------------------------------------------- */
@@ -507,14 +508,18 @@ function apply() {
 
   const box = $('#rows');
   box.textContent = '';
-  for (const v of hits.slice(0, STATE.shown)) box.append(renderRow(v));
+  if (STATE.view === 'list') {
+    for (const v of hits.slice(0, STATE.shown)) box.append(renderRow(v));
+  } else {
+    renderMap(hits);
+  }
 
   $('#shown').textContent = String(Math.min(STATE.shown, hits.length));
   $('#total').textContent = String(hits.length);
   $('#empty').hidden = hits.length !== 0;
   if (!hits.length) emptyMessage();
   const more = $('#showMore');
-  more.hidden = hits.length <= STATE.shown;
+  more.hidden = STATE.view !== 'list' || hits.length <= STATE.shown;
   more.textContent = `Show ${Math.min(PAGE, hits.length - STATE.shown)} more`;
   renderActive();
   /* Always, now that the counts depend on the filters. Re-rendering steals
@@ -525,6 +530,145 @@ function apply() {
     const again = document.getElementById(focused);
     if (again) again.focus();
   }
+}
+
+/* ---------- map ---------------------------------------------------------
+
+   The roster page allows no third-party origin at all -- no tile server, no
+   CDN -- which rules out Leaflet and the dashboard's CARTO tiles. What a dot
+   map of one city actually needs from a basemap is a single recognisable
+   shape, so the base layer is the five boroughs' shoreline from
+   docs/data/boroughs.json (NYC Planning geometry, simplified by
+   src/fetch_borough_outlines.py), drawn as plain SVG paths. Everything on
+   the map is also in the list -- the map is the picture, the list is the
+   record, and keyboard and screen-reader users lose nothing to it. */
+
+const BOROUGHS_URL = 'data/boroughs.json';
+const svgEl = (tag, attrs) => {
+  const n = document.createElementNS('http://www.w3.org/2000/svg', tag);
+  for (const [k, val] of Object.entries(attrs || {})) n.setAttribute(k, val);
+  return n;
+};
+
+let MAP = null;           // { svg, dots, project } once the geometry is in
+let MAP_LOADING = false;
+
+async function timedFetch(url) {
+  /* Same deadline treatment as the payload fetch below, for the same reason:
+     a request that is accepted and never answered would otherwise hang the
+     map forever with no error to catch. */
+  const ctl = new AbortController();
+  const timer = setTimeout(() => ctl.abort(), FETCH_TIMEOUT_MS);
+  try {
+    const res = await fetch(url, { cache: 'no-cache', signal: ctl.signal });
+    if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+    return await res.json();
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+function buildMap(geo) {
+  const pts = geo.boroughs.flatMap((b) => b.rings.flat());
+  const lngs = pts.map((p) => p[0]);
+  const lats = pts.map((p) => p[1]);
+  const lng0 = Math.min(...lngs); const lng1 = Math.max(...lngs);
+  const lat0 = Math.min(...lats); const lat1 = Math.max(...lats);
+  /* Equirectangular with the east-west axis shrunk by cos(mid-latitude), so
+     a mile north and a mile east are the same length on screen. */
+  const K = Math.cos(((lat0 + lat1) / 2) * Math.PI / 180);
+  const W = 700;
+  const scale = W / ((lng1 - lng0) * K);
+  const H = Math.round((lat1 - lat0) * scale);
+  const PAD = 8;
+  const project = (lat, lng) => [
+    PAD + (lng - lng0) * K * scale,
+    PAD + (lat1 - lat) * scale,
+  ];
+  const svg = svgEl('svg', {
+    viewBox: `0 0 ${W + 2 * PAD} ${H + 2 * PAD}`,
+    role: 'img',
+    'aria-label': 'Dot map of the current selection across the five boroughs. '
+      + 'The list view carries the same restaurants with full details.',
+  });
+  const land = svgEl('g', { class: 'mapLand' });
+  for (const b of geo.boroughs) {
+    for (const ring of b.rings) {
+      land.append(svgEl('path', {
+        d: 'M' + ring.map(([x, y]) => project(y, x).map((n) => n.toFixed(1)).join(' ')).join('L') + 'Z',
+      }));
+    }
+  }
+  svg.append(land);
+  const dots = svgEl('g', { class: 'mapDots' });
+  svg.append(dots);
+  return { svg, dots, project };
+}
+
+function renderMap(hits) {
+  if (!MAP) return;
+  MAP.dots.textContent = '';
+  let placed = 0;
+  /* Painted in reverse sort order so the top of the CURRENT sort -- highest
+     prestige, best rating, whatever is chosen -- is painted last and sits on
+     top of the pile-ups in midtown. */
+  for (const v of [...hits].reverse()) {
+    if (v.lat == null || v.lng == null) continue;
+    placed += 1;
+    const [x, y] = MAP.project(v.lat, v.lng);
+    const dot = svgEl('circle', {
+      cx: x.toFixed(1), cy: y.toFixed(1), r: 2.6,
+      class: `dot ${v.status}`, 'data-slug': v.slug,
+    });
+    const label = svgEl('title');
+    label.textContent = v.top_honor_label
+      ? `${v.name} — ${v.top_honor_label}` : v.name;
+    dot.append(label);
+    MAP.dots.append(dot);
+  }
+  const off = hits.length - placed;
+  $('#mapGaps').textContent = off
+    ? `${placed.toLocaleString()} of the ${hits.length.toLocaleString()} shown are on the map; `
+      + `${off.toLocaleString()} have no confirmed location yet and appear only in the list.`
+    : `All ${placed.toLocaleString()} shown are on the map.`;
+}
+
+function setView(view) {
+  STATE.view = view;
+  $('#viewList').setAttribute('aria-pressed', String(view === 'list'));
+  $('#viewMap').setAttribute('aria-pressed', String(view === 'map'));
+  const list = view === 'list';
+  $('#rows').hidden = !list;
+  $('#mapView').hidden = list;
+  if (list || MAP) { apply(); return; }
+  if (MAP_LOADING) return;
+  MAP_LOADING = true;
+  $('#mapGaps').textContent = 'Loading the map…';
+  timedFetch(BOROUGHS_URL).then((geo) => {
+    MAP = buildMap(geo);
+    $('#mapWrap').append(MAP.svg);
+    apply();
+  }).catch((err) => {
+    const why = err.name === 'AbortError'
+      ? 'it did not answer within fifteen seconds' : err.message;
+    $('#mapGaps').textContent =
+      `Could not load the map outlines (${why}). The list view has everything.`;
+  }).finally(() => { MAP_LOADING = false; });
+}
+
+function wireMapDetail() {
+  /* One listener on the dot layer; a dot click swaps the detail card under
+     the map for the same row the list would render. */
+  $('#mapWrap').addEventListener('click', (e) => {
+    const hit = e.target.closest ? e.target.closest('.dot') : null;
+    const slug = hit && hit.getAttribute('data-slug');
+    if (!slug) return;
+    const v = STATE.bySlug.get(slug);
+    if (!v) return;
+    const box = $('#mapDetail');
+    box.textContent = '';
+    box.append(renderRow(v));
+  });
 }
 
 function renderCoverage() {
@@ -566,6 +710,9 @@ function wire() {
     $('#filterBtn').setAttribute('aria-expanded', String(!panel.hidden));
   });
   $('#showMore').addEventListener('click', () => { STATE.shown += PAGE; apply(); });
+  $('#viewList').addEventListener('click', () => setView('list'));
+  $('#viewMap').addEventListener('click', () => setView('map'));
+  wireMapDetail();
   for (const id of ['#clearBtn', '#clearBtn2']) {
     $(id).addEventListener('click', () => {
       clearFilters();

@@ -25,14 +25,16 @@ APP = (ROOT / "docs" / "app.js").read_text(encoding="utf-8")
 VENUES = (ROOT / "docs" / "venues.js").read_text(encoding="utf-8")
 
 
-@pytest.mark.parametrize("src,name", [(APP, "app.js"), (VENUES, "venues.js")])
+@pytest.mark.parametrize("src,name", [(APP, "app.js"), (VENUES, "venues.js")],
+                         ids=["app.js", "venues.js"])
 def test_the_payload_fetch_has_a_deadline(src, name):
     assert "FETCH_TIMEOUT_MS" in src, f"{name} fetches the payload without a deadline"
     assert "AbortController" in src
     assert "ctl.abort()" in src
 
 
-@pytest.mark.parametrize("src,name", [(APP, "app.js"), (VENUES, "venues.js")])
+@pytest.mark.parametrize("src,name", [(APP, "app.js"), (VENUES, "venues.js")],
+                         ids=["app.js", "venues.js"])
 def test_the_deadline_is_named_and_plausible(src, name):
     import re
     m = re.search(r"const FETCH_TIMEOUT_MS = (\d+);", src)
@@ -41,7 +43,8 @@ def test_the_deadline_is_named_and_plausible(src, name):
     assert 5000 <= ms <= 60000, f"{name}: {ms}ms is not a plausible wait for a payload"
 
 
-@pytest.mark.parametrize("src,name", [(APP, "app.js"), (VENUES, "venues.js")])
+@pytest.mark.parametrize("src,name", [(APP, "app.js"), (VENUES, "venues.js")],
+                         ids=["app.js", "venues.js"])
 def test_the_timer_is_always_cleared(src, name):
     """A pending timer that fires after a successful load would abort nothing,
     but leaving one per fetch is how a page accumulates them."""
@@ -49,7 +52,8 @@ def test_the_timer_is_always_cleared(src, name):
     assert "finally" in src
 
 
-@pytest.mark.parametrize("src,name", [(APP, "app.js"), (VENUES, "venues.js")])
+@pytest.mark.parametrize("src,name", [(APP, "app.js"), (VENUES, "venues.js")],
+                         ids=["app.js", "venues.js"])
 def test_a_timeout_reads_as_a_timeout_not_as_an_abort(src, name):
     """"AbortError" is the browser's word for it, not a reader's."""
     assert "AbortError" in src

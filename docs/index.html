@@ -22,7 +22,7 @@
 <meta name="theme-color" content="#0d6a5f" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#151d1c" media="(prefers-color-scheme: dark)">
 <link rel="stylesheet" href="styles.css?v=5">
-<link rel="stylesheet" href="venues.css?v=10">
+<link rel="stylesheet" href="venues.css?v=11">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230d6a5f'/%3E%3Ctext x='8' y='12' font-family='monospace' font-size='10' font-weight='bold' fill='%23fff' text-anchor='middle'%3E%E2%98%85%3C/text%3E%3C/svg%3E">
 </head>
 <body>
@@ -76,6 +76,10 @@
 
 <div class="subbar">
   <div class="wrap">
+    <div class="viewToggle" role="group" aria-label="View">
+      <button type="button" class="btn" id="viewList" aria-pressed="true">List</button>
+      <button type="button" class="btn" id="viewMap" aria-pressed="false">Map</button>
+    </div>
     <div class="presets" id="presets" role="group" aria-label="Quick views"></div>
     <div class="activeFilters" id="activeFilters" hidden aria-label="Active filters"></div>
     <div class="statusbar" role="status" aria-live="polite" aria-atomic="true">
@@ -87,6 +91,11 @@
 
 <main class="wrap results">
   <div class="banner quiet" id="coverage" hidden></div>
+  <section id="mapView" hidden aria-label="Map of the current selection">
+    <div id="mapWrap" class="mapWrap"></div>
+    <p id="mapGaps" class="mapGaps"></p>
+    <div id="mapDetail" class="venueRows"></div>
+  </section>
   <div id="rows" class="venueRows"></div>
   <button type="button" class="showMore" id="showMore" hidden></button>
   <div class="empty" id="empty" hidden>
@@ -112,6 +121,6 @@
 
 <!-- ?v= is bumped whenever venues.js or venues.css changes, for the same
      cached-document reason the dashboard's script tag carries one. -->
-<script src="venues.js?v=13"></script>
+<script src="venues.js?v=14"></script>
 </body>
 </html>

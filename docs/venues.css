@@ -252,3 +252,47 @@ a.awardWhat:hover { text-decoration: underline; }
   .awardWho { grid-column: 2; text-align: left; }
   .crosslink { display: none; }   /* the footer links back; the bar is full */
 }
+
+/* ---------- map view ----------------------------------------------------
+   No tile server and no map library: the borough shoreline is local SVG and
+   the dots are the same rows the list renders, colored by the same three
+   statuses the pills use. */
+.viewToggle { display: inline-flex; gap: 0; margin-right: 0.75rem; }
+.viewToggle .btn { border-radius: 0; }
+.viewToggle .btn:first-child { border-radius: 6px 0 0 6px; }
+.viewToggle .btn:last-child { border-radius: 0 6px 6px 0; margin-left: -1px; }
+.viewToggle .btn[aria-pressed="true"] {
+  background: var(--accent-sub);
+  color: var(--accent);
+  border-color: var(--accent);
+  position: relative;         /* keep the shared edge's accent on top */
+}
+
+.mapWrap svg {
+  display: block;
+  width: 100%;
+  max-width: 46rem;
+  height: auto;
+  margin: 0 auto;
+  background: var(--surface-2);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+}
+.mapLand path {
+  fill: var(--surface);
+  stroke: var(--ink-3);
+  stroke-width: 0.7;
+  stroke-linejoin: round;
+}
+.mapDots .dot { cursor: pointer; }
+.mapDots .dot.open    { fill: var(--accent); fill-opacity: 0.85; }
+.mapDots .dot.closed  { fill: var(--crit);   fill-opacity: 0.55; }
+.mapDots .dot.unknown { fill: var(--ink-3);  fill-opacity: 0.45; }
+.mapDots .dot:hover { stroke: var(--ink); stroke-width: 1.2; }
+
+.mapGaps {
+  margin: 0.6rem 0 0.9rem;
+  font-size: 0.85rem;
+  color: var(--ink-3);
+  text-align: center;
+}
