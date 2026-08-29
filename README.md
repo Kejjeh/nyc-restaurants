@@ -1,8 +1,13 @@
 # NYC dining — award roster + Restaurant Week tracker
 
 **PUBLIC REPO as of 2026-08-02.** Site:
-<https://kejjeh.github.io/nyc-restaurant-week/> (roster) ·
-<https://kejjeh.github.io/nyc-restaurant-week/restaurant-week.html> (value dashboard)
+<https://kejjeh.github.io/nyc-restaurants/> (roster) ·
+<https://kejjeh.github.io/nyc-restaurants/restaurant-week.html> (value dashboard)
+
+This repo was `nyc-restaurant-week` until 2026-08-29. It was renamed because the
+roster, not one summer's guest list, is the spine (see `0e9af3b`). The last
+Restaurant-Week-only state lives on as its own repo, unchanged since `caf08f6`:
+<https://github.com/Kejjeh/nyc-restaurant-week>
 
 This repo was private until 2026-08-02. It was opened after the owner spoke to
 NYC Tourism, who said the only violation would be **hosting the exact PDFs** —

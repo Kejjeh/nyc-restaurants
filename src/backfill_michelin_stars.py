@@ -134,7 +134,7 @@ def main():
     else:
         req = urllib.request.Request(WIKI_URL, headers={
             "User-Agent": "nyc-restaurant-week-roster/1.0 "
-                          "(github.com/Kejjeh/nyc-restaurant-week)"})
+                          "(github.com/Kejjeh/nyc-restaurants)"})
         html = urllib.request.urlopen(req, timeout=30).read().decode("utf-8")
 
     history = parse(html)

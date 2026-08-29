@@ -71,7 +71,7 @@ def main():
     else:
         req = urllib.request.Request(URL, headers={
             "User-Agent": "nyc-restaurant-week-roster/1.0 "
-                          "(github.com/Kejjeh/nyc-restaurant-week)"})
+                          "(github.com/Kejjeh/nyc-restaurants)"})
         raw = urllib.request.urlopen(req, timeout=60).read()
     src = json.loads(raw)
 

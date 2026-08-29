@@ -24,7 +24,7 @@ not do the work.
 
 - To close an issue: `Closes #2`.
 - To mention one without closing it: write `issue 2`, or link it as
-  `https://github.com/Kejjeh/nyc-restaurant-week/issues/2` — never a closing
+  `https://github.com/Kejjeh/nyc-restaurants/issues/2` — never a closing
   keyword anywhere near the number.
 - To say a PR deliberately stops short: `Leaves issue 2 open — it still needs
   the Places run.`
