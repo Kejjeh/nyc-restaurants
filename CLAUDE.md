@@ -26,7 +26,10 @@ Needs Playwright with browsers (`npx playwright install chromium`); not in CI; r
 touching `app.js`/`venues.js`. `python src/diff_report.py` is NOT read-only: it writes
 `data/raw/menus/manifest_history.json`, so a second run reports zero menu changes.
 
-## Architecture map (detail: docs/ARCHITECTURE.md)
+Runbooks in `.claude/commands/`: `/smoke` (post-change checks), `/weekly-refresh`,
+`/places-fetch` (the billed procedure). Prefer them over re-deriving the steps.
+
+## Architecture map (detail: ARCHITECTURE.md; settled choices: DECISIONS.md)
 
 - `src/config.py` — season constants, paths, 1 req/s HTTP throttle, NYC bounds/ZIP gates, `GOOGLE_PRIOR`.
 - `src/refresh.py` — the orchestrator. **Its inline comments are the authoritative pipeline order.**
@@ -57,7 +60,7 @@ touching `app.js`/`venues.js`. `python src/diff_report.py` is NOT read-only: it 
   — never commit or print it. Without a key, refresh skips ratings (that's normal; CI has no key).
 - **Don't Read/Glob large data files into context.** `data/raw/` has ~8,000 JSON files;
   `docs/data/*.json` run 1.2–1.6 MB. Inspect with a targeted `python -c` one-liner instead.
-  `.claude/settings.json` denies Read on these paths on purpose.
+  `.claudeignore` lists these paths on purpose.
 - **Frontend:** bump the `?v=N` query on any changed `.js`/`.css` reference in both HTML files
   (stale-cache crashes are a solved bug — keep it solved). No `innerHTML` for data — `el()` +
   `textContent`. Every href goes through `isHttpURL()`. Facet counts must be computed with
