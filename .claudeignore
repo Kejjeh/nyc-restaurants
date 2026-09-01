@@ -1,0 +1,9 @@
+# Keep large/generated content out of agent context. These are data, not code:
+# read specific files deliberately if a task requires, never bulk-scan.
+data/raw/
+data/cache/
+data/processed/restaurant_week.sqlite
+docs/data/
+config/__pycache__/
+__pycache__/
+refresh.log

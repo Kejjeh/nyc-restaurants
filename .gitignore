@@ -6,8 +6,10 @@ venv/
 .venv/
 data/raw/pricesweep/*.tmp
 
-# local preview tooling, not part of the site
-.claude/
+# local preview tooling, not part of the site — EXCEPT .claude/commands/,
+# which is committed: it holds the agent runbooks for recurring procedures.
+.claude/*
+!.claude/commands/
 refresh.log
 
 # Google Places API key — never commit. Read from env GOOGLE_PLACES_KEY, or
