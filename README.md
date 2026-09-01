@@ -22,7 +22,7 @@ it is ever contradicted, revert to private and re-read "ToS rules" below.
 `data/raw/menus/*.pdf` is gitignored and 0 PDFs are tracked — keep it that way.
 Menus are linked to the official S3 URL, never copied.
 
-Local dataset + pipeline over **1,414 NYC restaurants**: every one named by
+Local dataset + pipeline over **1,420 NYC restaurants**: every one named by
 Michelin, the James Beard Foundation or the New York Times, plus all **636**
 participants in NYC Restaurant Week Summer 2026 (Jul 20–Aug 16, extension weeks
 through Sep 6; Saturdays excluded, Sundays optional per restaurant). Built to
@@ -684,7 +684,7 @@ participants
   overstates casual formats. Hand-verified findings live in `reports/`, not here.
 
 
-### `venues` — the roster (1,414 rows)
+### `venues` — the roster (1,420 rows)
 
 ```sql
 venue_slug TEXT PRIMARY KEY      -- equals rw_slug where the restaurant is in the programme
@@ -737,7 +737,7 @@ controls; both pages read it, and the theme toggle writes the same `rw-theme`
 key, so a viewer's choice survives the hop between them.
 
 - **`index.html` + `venues.js` + `venues.css` — the roster.** The front door.
-  All 1,414 venues, searchable and filterable by highest honour, honours held,
+  All 1,420 venues, searchable and filterable by highest honour, honours held,
   jury, borough, trading status, Restaurant Week participation and cuisine;
   sortable by standing, recency, award count, weighted rating, name or how long
   the restaurant has been recognised.
@@ -822,8 +822,8 @@ key, so a viewer's choice survives the hop between them.
 ## Dashboard details (`app.js`)
 
 Static sort/filter dashboard over the 636 participants. No backend, no build
-step: `docs/index.html` + `docs/app.js` + `docs/styles.css`. Preview locally with
-`python -m http.server 8137 --directory docs` (a `file://` open will NOT work —
+step: `docs/restaurant-week.html` + `docs/app.js` + `docs/styles.css`. Preview locally with
+`python -m http.server 8741 --directory docs` (a `file://` open will NOT work —
 the payload is fetched).
 
 **Assets are versioned** — `index.html` loads `app.js?v=N` and `styles.css?v=N`.
@@ -1346,7 +1346,7 @@ Every figure printed beside another is derived so the two reconcile.
 - **The Beard file goes back to 1991**, so the roster deliberately includes
   restaurants that closed decades ago. That is the archive working as intended —
   they keep their awards and score below anywhere still trading — but it means
-  "1,414 restaurants" is not "1,414 places you can book tonight".
+  "1,420 restaurants" is not "1,420 places you can book tonight".
 - **A Beard award is often to a person, not a room.** `venue_awards.person`
   carries the chef, sommelier or restaurateur, and the site prints it, because a
   roster that quietly credits the restaurant with its chef's Rising Star is

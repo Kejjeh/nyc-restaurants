@@ -124,6 +124,7 @@ def slugify(name):
 
 
 def unique_slug(base, taken):
+    """Mint the -2/-3 collision suffix the Ledger docstring refers to."""
     if base not in taken:
         return base
     n = 2

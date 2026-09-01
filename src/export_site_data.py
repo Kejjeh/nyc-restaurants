@@ -120,6 +120,8 @@ def _haversine_m(a_lat, a_lng, b_lat, b_lng):
 
 
 def load_stations():
+    """Station list in the exact shape subway_for() walks. Also imported by
+    export_places, so the return shape is a cross-module contract."""
     if not SUBWAY.exists():
         return []
     return json.loads(SUBWAY.read_text(encoding="utf-8"))

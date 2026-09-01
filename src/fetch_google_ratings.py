@@ -65,12 +65,15 @@ def api_key():
 
 
 def norm(s):
+    """Fold a name for comparison. Also shapes place slugs via places_cli.slugify."""
     s = unicodedata.normalize("NFKD", s or "")
     s = "".join(c for c in s if not unicodedata.combining(c)).lower()
     return re.sub(r"\s+", " ", re.sub(r"[^a-z0-9 ]+", " ", s)).strip()
 
 
 def name_sim(a, b):
+    """Token-set similarity in [0,1]. Either side being a subset scores 1.0 --
+    which is why callers need an exact-name tiebreak on top."""
     A, B = set(norm(a).split()), set(norm(b).split())
     if not A or not B:
         return 0.0
@@ -87,6 +90,8 @@ def haversine_m(a_lat, a_lng, b_lat, b_lng):
 
 
 def get(url, params, tries=3):
+    """GET with backoff on OVER_QUERY_LIMIT; returns {"status": "UNKNOWN_ERROR"}
+    on exhaustion rather than raising -- every caller branches on "status"."""
     u = f"{url}?{urllib.parse.urlencode(params)}"
     for i in range(tries):
         try:
@@ -118,6 +123,8 @@ def judge(cand, name, lat, lng):
 
 
 def flatten(res):
+    """Canonical "matched" record shape. A cross-module contract: resolve_venues,
+    places_cli, export_places and export_site_data all read these exact keys."""
     loc = (res.get("geometry") or {}).get("location") or {}
     return {
         "place_id": res.get("place_id"),

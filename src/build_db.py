@@ -49,6 +49,10 @@ CREATE INDEX IF NOT EXISTS idx_items_menu ON menu_items(menu_id);
 
 
 def derive(meal_types):
+    """Free-text listing strings ("$45 Three-Course Sunday Dinner") ->
+    (price_tiers, meal_periods, sunday). The brunch/lunch elif is deliberate:
+    "lunch" is a substring of "brunch". dinner stays a plain if so
+    "Brunch & Dinner" yields both periods."""
     tiers, periods, sunday = set(), set(), False
     for mt in meal_types:
         m = re.search(r"\$(\d+)", mt)
@@ -67,6 +71,8 @@ def derive(meal_types):
 
 
 def reservation(ec):
+    """-> (partner, partner_id, link). Only OpenTable gets a deep link built;
+    other partners return link=None and the exporter falls back."""
     if not ec:
         return None, None, None
     partner, pid = ec.get("partnerName"), ec.get("partnerId")

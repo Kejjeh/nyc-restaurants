@@ -38,6 +38,8 @@ CREATE INDEX IF NOT EXISTS idx_tags_rest ON menu_item_tags(restaurant_slug);
 
 
 def load_rules():
+    """Compile config/dish_tags.json. Keys starting with "_" are comments --
+    the repo-wide convention for annotating JSON config files."""
     cfg = json.loads(CONFIG.read_text())
     rules = {}
     for tag, rlist in cfg.items():

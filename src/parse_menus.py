@@ -59,6 +59,9 @@ def extract_text(path):
 
 
 def parse_structure(text):
+    """Menu text -> courses/dishes/supplements. Intent: lines over 90 chars are
+    prose not dishes; lines before the first course heading are skipped; a
+    "Dish -- description" line splits at the dash. grade() scores the result."""
     courses, current, items = [], None, []
     for raw in text.splitlines():
         line = raw.strip()
