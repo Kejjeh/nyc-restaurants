@@ -39,8 +39,11 @@ def previous_payload(path=VENUES):
     try:
         raw = subprocess.run(
             ["git", "show", f"HEAD:{path.relative_to(ROOT).as_posix()}"],
-            cwd=ROOT, capture_output=True, text=True, timeout=30, check=True).stdout
-        return json.loads(raw)
+            cwd=ROOT, capture_output=True, text=True, encoding="utf-8",
+            timeout=30, check=True).stdout
+        # raw is None if a capture thread died (seen on Windows before the
+        # explicit utf-8 above); that is "nothing to compare", not a crash.
+        return None if raw is None else json.loads(raw)
     except (subprocess.SubprocessError, OSError, ValueError):
         return None
 
