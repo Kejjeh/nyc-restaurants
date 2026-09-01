@@ -1,5 +1,9 @@
 # NYC dining — award roster + Restaurant Week tracker
 
+> Agents: start with `CLAUDE.md` (commands, gotchas), `ARCHITECTURE.md`,
+> `DECISIONS.md`, and `HANDOFF.md` (current state). This README is the full
+> human reference; where counts drift, those files win.
+
 **PUBLIC REPO as of 2026-08-02.** Site:
 <https://kejjeh.github.io/nyc-restaurants/> (roster) ·
 <https://kejjeh.github.io/nyc-restaurants/restaurant-week.html> (value dashboard)
@@ -67,7 +71,7 @@ repo hard-codes a season, a year or a deadline. See "Season changeover" below.
 
 ```
 pip install -r requirements.txt        # pdfplumber, playwright, pytest
-python -m pytest -q tests/             # 289 tests, ~0.5s, no network
+python -m pytest -q tests/             # full suite, no network (count/timing: see CLAUDE.md)
 python src/refresh.py                  # weekly refresh + diff report
 python src/refresh.py --force-menus    # also re-download PDFs (catches in-place edits)
 ```
@@ -133,7 +137,7 @@ Everything else needed to rebuild the DB is committed.
 
 ### Tests
 
-`python -m pytest -q tests/` — 289 tests, no network, run in CI *before* the
+`python -m pytest -q tests/` — the full suite, no network, run in CI *before* the
 crawl so a broken guard fails in seconds instead of after ten minutes of polite
 fetching. They cover the things that only bite at a season boundary and would
 otherwise be discovered live: season config validation, the listing guards, the
@@ -603,7 +607,7 @@ cron the following Monday.
 `checks.yml` is the fast half, on `pull_request` and on pushes to `main`. It
 never crawls, never fetches and never commits:
 
-1. the 289 tests
+1. the full test suite
 2. **no menu PDFs are tracked** — the same guard the refresh runs before it
    commits, moved to before a branch can be merged
 3. **both payloads still validate** — `export_site_data.py --check` and
@@ -1411,7 +1415,7 @@ src/        pipeline (config, fetch_listing, fetch_details, download_menus,
             export_places, diff_report, refresh)
             one-off / on-demand (fetch_subway, hours_lookup, price_sweep,
             price_rescue, menu_term_sweep, places_cli, job_summary)
-tests/      289 pytest tests, no network; run in CI before the crawl
+tests/      pytest suite (474 tests as of 2026-08-29), no network; runs in CI before the crawl
 config/     season.json      THE ONLY FILE A CHANGEOVER EDITS
             rubric.json      composite-grade weights + cut-points
             awards.json      award sources, honour points, standing weights
