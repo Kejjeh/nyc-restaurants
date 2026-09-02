@@ -10,7 +10,9 @@ A bot (`github-actions[bot]`) commits a weekly refresh to `main` every Monday �
 - Live site: <https://kejjeh.github.io/nyc-restaurants/> (roster, 1,420 venues incl.
   2006–2024 Michelin back-fill, ~1,941 award records, local SVG map) and
   `/restaurant-week.html` (srw26 dashboard, 636 participants: planner, compare, Leaflet map).
-- Weekly cron refresh (Mon 11:00 UTC) that commits data; PR checks incl. payload-staleness guard.
+- PR checks (checks.yml) incl. the payload-staleness guard: green.
+- Google Places resolution COMPLETE (see P0 below) — do not re-run the billed fetch.
+- The weekly cron is NOT working: it has failed every week since Aug 10. See P0.
 - No code work is mid-stream. Sister repo `Kejjeh/nyc-restaurant-week` is the frozen
   pre-roster season tracker — don't confuse the two.
 
@@ -46,16 +48,36 @@ A bot (`github-actions[bot]`) commits a weekly refresh to `main` every Monday �
 
 ## Prioritized next steps
 
-**P0 — merge this branch** (`prep/handoff-20260901`) after human review.
-Accept when: checks.yml green; suite green on Windows too.
+**P0 — the weekly refresh has failed 3 weeks running; published season data is stale
+since Aug 10. NEEDS A HUMAN DECISION, not a code fix.** Both guards that fired are
+working exactly as designed; the shrink they refused is real (the season is ending, so
+participants are genuinely leaving the listing). Nothing was committed by those runs.
 
-**P0 — season close-out (time-boxed: Sep 5–6, 2026).** README "Automation" (~line 575) plans a
-final refresh once extensions end Sep 6, then pausing the Monday cron.
-Steps: on Sep 5 or 6 run the Weekly refresh workflow (or `/weekly-refresh` locally), commit;
-then disable the `schedule` trigger in `.github/workflows/refresh.yml` (comment it out, keep
-`workflow_dispatch`). Accept when: final data committed; cron disabled; both pages load and show
-the season as ended (`seasonPhase()` flips to archive by dates alone — verify, don't assume).
-Note: GitHub auto-disables the cron after 60 days of repo inactivity anyway.
+| Run | Where it stopped | Numbers |
+|---|---|---|
+| Aug 10 | succeeded | 636 published (this is what the site still shows) |
+| Aug 17 | `export_site_data` | REFUSING TO SHRINK 636 → 459 (72%) |
+| Aug 24 | `export_site_data` | REFUSING TO SHRINK 636 → 440 (69%) |
+| Aug 31 | `fetch_listing`, earlier in the chain | "Only 308 unique records vs floor 400" (`min_rows` in `config/season.json`) |
+
+Consequence: the dashboard claims 636 participants when roughly 308 remain, and the
+**Sep 5–6 close-out below cannot run** — it will hit the `min_rows: 400` floor before it
+reaches the exporter.
+
+The decision (owner's, not an agent's): to publish the true tail of the season you must
+BOTH lower `min_rows` in `config/season.json` and pass `--allow-shrink` to the exporters.
+That is a deliberate override of two safety guards, and it permanently replaces a 636-row
+payload with a ~308-row one. The alternative is to accept Aug 10 as the final published
+snapshot and let the season close on it. Do not flip either guard without that call being made.
+
+**P0 — season close-out (time-boxed: Sep 5–6, 2026), BLOCKED on the decision above.**
+README "Automation" (~line 575) plans a final refresh once extensions end Sep 6, then
+pausing the Monday cron. Steps once unblocked: run the Weekly refresh workflow (or
+`/weekly-refresh` locally) with whatever overrides the decision authorises, commit; then
+disable the `schedule` trigger in `.github/workflows/refresh.yml` (comment it out, keep
+`workflow_dispatch`). Accept when: final data committed; cron disabled; both pages load and
+show the season as ended (`seasonPhase()` flips to archive by dates alone — verify, don't
+assume). Note: GitHub auto-disables the cron after 60 days of repo inactivity anyway.
 
 **P1 — fix `isHttpURL` in venues.js** (bug 1). One function + one test + bump `?v=`.
 Accept when: bare-hostname URLs are dropped on the roster page, new test passes, suite green.
@@ -86,6 +108,13 @@ Accept when: checks.yml runs it headless and green.
 - **`GOOGLE_PLACES_KEY` in CI?** Ratings fetch is skipped in Actions (no secret wired). Either
   add a restricted key as an Actions secret or keep the fetch local-only. README flags this;
   no decision recorded. Until decided: run rating fetches locally (`/places-fetch`).
+  NOTE the venue-resolution half is already paid for and DONE — 789 cached records committed
+  in `data/raw/venues_google/`, unresolved 709 → 174, mappable 631 → 1,246, 125 venues found
+  permanently closed. `python src/resolve_venues.py --dry-run` now reports **0 venues, $0.00**,
+  so there is nothing left to buy. The 174 still unresolved were FETCHED AND REFUSED by
+  `judge_no_coords` (no address our side, name similarity < 0.62, or an address that
+  disagreed) — they are not un-fetched, and re-running `--fetch` will neither cost nor
+  change anything. Resolving them further needs better source addresses, not more API calls.
 - **Is the local Places key restricted & unrotated?** `config/secrets.py` (gitignored) holds a
   key. Confirm in Cloud Console it's restricted to the Places API; rotate if it ever left this
   machine. (Never commit, print, or copy it.)

@@ -75,6 +75,14 @@ Runbooks in `.claude/commands/`: `/smoke` (post-change checks), `/weekly-refresh
 - Tests open with a docstring naming the bug they prevent — they are the incident log. Read the
   docstring before "fixing" a test.
 
+## Two guards you will meet, and must not silently disable
+
+`fetch_listing` refuses a listing below `min_rows` (`config/season.json`); the exporters
+refuse a payload that shrank >20% without `--allow-shrink`. Both are currently REFUSING a
+real shrink as the season ends, so the weekly refresh has failed since Aug 10 (see
+HANDOFF.md P0). Overriding either one republishes the site with far fewer rows. That is an
+owner decision — surface it, never take it yourself.
+
 ## Before you finish any task
 
 1. `python -m pytest -q tests/` — must be 474+ passed, 0 failed.
