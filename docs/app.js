@@ -92,6 +92,10 @@ const isISODate = (s) => {
   return !Number.isNaN(d.getTime()) && d.toISOString().slice(0, 10) === s;
 };
 
+/** Whole days from `a` to `b`, both ISO. Negative when `b` precedes `a`. */
+const daysBetween = (a, b) =>
+  Math.round((new Date(`${b}T12:00:00Z`) - new Date(`${a}T12:00:00Z`)) / 86400000);
+
 /** Format an ISO date as "Aug 16" without touching timezones. */
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const fmtDate = (iso) => {
@@ -2582,10 +2586,37 @@ function renderSeasonChrome() {
   p.append(document.createTextNode(DATA.season_start
     ? ` The programme ran ${fmtDate(DATA.season_start)} – ${fmtDate(DATA.program_end)}.`
     : ` The last windows closed ${fmtDate(DATA.program_end)}.`));
-  p.append(document.createTextNode(
-    ' This is the full-season archive: every participant is listed, none is still bookable.'));
+  p.append(document.createTextNode(` ${archiveNote(DATA)}`));
   over.append(p);
   over.hidden = false;
+}
+
+/* What the archive can honestly claim to be.
+ *
+ * This said "This is the full-season archive: every participant is listed"
+ * unconditionally, and on 17 September 2026 that was false: the last listing
+ * snapshot the pipeline managed to publish was 10 August, 27 days before the
+ * season closed, because the three refreshes after it were refused by the
+ * shrink guard and the min_rows floor as participants left the listing. The
+ * page asserted completeness while its own footer printed the 10 August
+ * snapshot date — the one number that disproved the sentence above it.
+ *
+ * A payload cannot be complete for a season that outlived its own snapshot, so
+ * the claim is now made only when the snapshot actually reaches program_end.
+ * Otherwise the banner says when the listing was last seen and what that
+ * leaves out, because "we stopped looking on 10 August" is a fact about the
+ * data and "every participant is listed" is a promise about the season. */
+function archiveNote(d) {
+  const snap = d.snapshot_date;
+  const end = d.program_end;
+  if (!snap || !end || !(snap < end)) {
+    return 'This is the full-season archive: every participant is listed, none is still bookable.';
+  }
+  const short = daysBetween(snap, end);
+  return `Nothing here is still bookable. This is the last listing snapshot, taken `
+    + `${fmtDate(snap)} — ${short} day${short === 1 ? '' : 's'} before the season closed — so a `
+    + `restaurant that joined or left the listing after that date is not reflected here. `
+    + `It is the final published snapshot, not a final tally of who took part.`;
 }
 
 function seasonSelect() {

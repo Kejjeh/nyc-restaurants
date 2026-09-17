@@ -1564,10 +1564,52 @@ def update_registry(existing, facts, today):
     return sorted([*others, entry], key=lambda e: (e["end"], e["code"]), reverse=True)
 
 
+def registry_only(check, quiet):
+    """Rewrite docs/data/seasons.json alone, and touch no payload.
+
+    The registry entry is derived from `config/season.json` and today's date —
+    `update_registry` needs nothing from the database — but the only way to
+    rewrite it used to be a full export, which is not a neutral act once a
+    season has closed. `scoring_day()` clamps the rubric's window component to
+    `program_end`, so post-season exports agree with each OTHER; they do not
+    agree with a snapshot taken mid-season. Re-exporting the summer 2026
+    payload on 17 September moved the window component's mean from 21.7 to 2.1
+    and the rubric mean from 35.3 to 33.1, restating all 636 published grades —
+    for a season whose listing can no longer be re-crawled to check them.
+
+    So the one fact that legitimately goes stale on the shelf — "is this season
+    still live?" — gets a way to be corrected that cannot rewrite the history
+    beside it. `status` flips to `archived` the day after `end`, which is the
+    direction a stale stamp cannot be wrong in: a season never un-ends.
+
+    This is the supported alternative to hand-editing docs/data/, which is
+    generated and must not be typed into.
+    """
+    _, registry_out = season_paths()
+    before = (jfile(registry_out) or {}).get("seasons")
+    registry = update_registry(before, SEASON_FACTS, date.today())
+    reg_obj = {"seasons": registry}
+    reg_text = json.dumps(reg_obj, ensure_ascii=False, indent=1) + "\n"
+    wrote = False if check else write_if_changed(registry_out, reg_obj, reg_text)
+    if not quiet:
+        mine = next(s for s in registry if s["code"] == SEASON)
+        where = ("  (not written: --check)" if check
+                 else "  (already correct, not rewritten)" if not wrote
+                 else "  (rewritten)")
+        print(f"registry      {rel(registry_out)}  ({len(registry)} season(s)){where}")
+        print(f"  {SEASON}       {mine['status']} (ends {mine['end']})")
+        print("  no payload touched -- season files and the legacy copy are untouched")
+    return 0
+
+
 def main():
     check = "--check" in sys.argv
     quiet = "--quiet" in sys.argv
     allow_shrink = "--allow-shrink" in sys.argv
+
+    # Before build_payload(), because the whole point is not to build one.
+    if "--registry-only" in sys.argv:
+        return registry_only(check, quiet)
 
     payload, stats, tags_dropped, recog_dropped = build_payload()
     assert_tos_clean(payload)
