@@ -13,9 +13,14 @@ A bot (`github-actions[bot]`) commits a weekly refresh to `main` every Monday �
   `/restaurant-week.html` (srw26 dashboard, 636 participants: planner, compare, Leaflet map).
 - PR checks (checks.yml) incl. the payload-staleness guard: green.
 - Google Places resolution COMPLETE (see P0 below) — do not re-run the billed fetch.
-- **Branch `claude/confident-wright-m8h5rz` is open and unmerged**: season-archive
-  honesty, the four known bugs below, a staged cron pause, and
-  `DECISION-season-tail.md`. Reviewed, not deployed.
+- **PR #46 is OPEN and AWAITING INDEPENDENT REVIEW — do not merge it.**
+  <https://github.com/Kejjeh/nyc-restaurants/pull/46>, branch
+  `claude/confident-wright-m8h5rz`: season-archive honesty, the four known bugs
+  below, a staged cron pause, and `DECISION-season-tail.md`.
+  Checkpoint at `f4d9ec0` (2026-09-17): **CI green** (Checks run #88 — 516 tests,
+  no-PDF guard, both exporter `--check`s, and the payload-staleness guard),
+  `mergeable_state: clean`, no review threads. **CI passing is not approval.**
+  Nothing is deployed: the site still serves `main`.
 - The weekly cron is NOT working: it has failed every week since Aug 10. The pause is
   STAGED on that branch and is not in effect until it merges. See P0.
 - Sister repo `Kejjeh/nyc-restaurant-week` is the frozen
