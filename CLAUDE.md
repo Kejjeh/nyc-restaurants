@@ -11,7 +11,7 @@ Summer 2026 season (srw26) ends 2026-09-06. See `HANDOFF.md` for what to do next
 
 ```bash
 pip install -r requirements.txt          # pdfplumber, playwright, pytest
-python -m pytest -q tests/               # 515 tests, ~22s. A PermissionError in an
+python -m pytest -q tests/               # 545 tests, ~24s. A PermissionError in an
                                          # atexit callback after the summary is Windows
                                          # temp-dir noise — exit code is what counts.
 python src/export_site_data.py --check --quiet   # validate dashboard payload, writes nothing
@@ -92,7 +92,7 @@ season ends silently restates every published grade.
 
 ## Before you finish any task
 
-1. `python -m pytest -q tests/` — must be 515+ passed, 0 failed.
+1. `python -m pytest -q tests/` — must be 545+ passed, 0 failed.
 2. `python src/export_site_data.py --check --quiet && python src/export_venues.py --check --quiet`
 3. If you touched `docs/`: bump `?v=N`, reload both pages locally, and run
    `node tools/verify_ui_counts.mjs` if anything feeds a count.

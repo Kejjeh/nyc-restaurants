@@ -6,7 +6,7 @@ A bot (`github-actions[bot]`) commits a weekly refresh to `main` every Monday â€
 
 ## Done and working
 
-- Full pipeline (`python src/refresh.py`) end-to-end; **515 tests green** (474 + 41 on the
+- Full pipeline (`python src/refresh.py`) end-to-end; **545 tests green** (474 + 71 on the
   branch below); CI green.
 - Live site: <https://kejjeh.github.io/nyc-restaurants/> (roster, 1,420 venues incl.
   2006â€“2024 Michelin back-fill, ~1,941 award records, local SVG map) and
@@ -21,6 +21,13 @@ A bot (`github-actions[bot]`) commits a weekly refresh to `main` every Monday â€
   no-PDF guard, both exporter `--check`s, and the payload-staleness guard),
   `mergeable_state: clean`, no review threads. **CI passing is not approval.**
   Nothing is deployed: the site still serves `main`.
+  One correction since, from independent review â€” **545 tests**, `app.js?v=22`:
+  `archiveNote` put the missing-date cases on the same branch as a snapshot that
+  reached `program_end`, so `archiveNote({})` claimed "every participant is
+  listed". Unknown now reads as unknown. The browser check for it turned up the
+  same defect in the clause above it (`The programme ran Jul 20 â€“ null`, reachable
+  because `seasonPhase()` archives on the registry's `status` alone) and that is
+  fixed with it. The 636-row payload is untouched; nothing in `docs/data/` changed.
 - The weekly cron is NOT working: it has failed every week since Aug 10. The pause is
   STAGED on that branch and is not in effect until it merges. See P0.
 - Sister repo `Kejjeh/nyc-restaurant-week` is the frozen

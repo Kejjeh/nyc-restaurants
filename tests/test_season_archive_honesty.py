@@ -43,6 +43,8 @@ is the one that matters.
 """
 import json
 import re
+import shutil
+import subprocess
 from pathlib import Path
 
 import pytest
@@ -85,10 +87,16 @@ def test_the_incomplete_branch_names_the_date_and_the_gap():
 
 
 def test_the_incomplete_branch_makes_no_completeness_claim():
-    tail = archive_note()
-    tail = tail[tail.index("const short"):]
+    """Sliced to the `snap < end` block, not to the end of the function. This
+    read `body[body.index("const short"):]` while the completeness claim was
+    the early return; once the branches were separated and it moved to the
+    bottom, "everything after const short" swept it back in. The boundary the
+    test means is the branch, so it says so."""
+    body = archive_note()
+    branch = body[body.index("const short"):]
+    branch = branch[:branch.index("\n  }")]
     for forbidden in ("every participant is listed", "full-season"):
-        assert forbidden not in tail, (
+        assert forbidden not in branch, (
             f"the short-snapshot branch must not claim {forbidden!r}")
 
 
@@ -182,3 +190,201 @@ def test_the_registry_does_not_call_a_finished_season_live():
             assert e["status"] == "archived", (
                 f"{e['code']} ended {e['end']} but the registry still says "
                 f"{e['status']!r} — re-run export_site_data.py --registry-only")
+
+
+# ------------------------------------- what the function actually returns
+#
+# Everything above reads the source text. That is enough to pin the shape of a
+# branch, and it is not enough to pin which branch a payload lands on: the
+# first cut of this guard read `!snap || !end || !(snap < end)`, which satisfies
+# every source-text test in this file and still answered archiveNote({}) with
+# "This is the full-season archive: every participant is listed". Three payload
+# shapes -- no dates, end only, snapshot only -- took the completeness branch by
+# falling through it, which is the repo's "null means unknown" rule inverted:
+# absence resolved to the strongest sentence on the page rather than to an
+# admission that the extent is unknown.
+#
+# So these call it. app.js is a browser script with no exports, so the harness
+# loads the whole file with DOM globals stubbed and the trailing boot() removed,
+# which is also a check worth having on its own: a top-level statement that
+# cannot survive without a real DOM fails here.
+
+NODE = shutil.which("node")
+
+HARNESS = r"""
+const fs = require('fs');
+const src = fs.readFileSync(process.argv[2], 'utf8');
+const cut = src.replace(/\nboot\(\);\s*$/, '\n');
+if (cut === src) { console.error('boot() call not found at the end of app.js'); process.exit(2); }
+const stub = new Proxy(function () {}, {
+  get: () => stub, set: () => true, apply: () => stub, construct: () => stub, has: () => true,
+});
+const load = new Function('document', 'window', 'location', 'fetch', 'localStorage',
+  'requestAnimationFrame', 'navigator', cut + '\nreturn { archiveNote };');
+const { archiveNote } = load(stub, stub, { search: '', hash: '' }, stub, stub, stub, stub);
+const cases = JSON.parse(process.argv[3]);
+const out = {};
+for (const [name, payload] of Object.entries(cases)) out[name] = archiveNote(payload);
+console.log(JSON.stringify(out));
+"""
+
+CASES = {
+    "nothing":        {},
+    "end_only":       {"program_end": "2026-09-06"},
+    "snapshot_only":  {"snapshot_date": "2026-08-10"},
+    "snapshot_null":  {"snapshot_date": None, "program_end": "2026-09-06"},
+    "end_null":       {"snapshot_date": "2026-08-10", "program_end": None},
+    "snapshot_junk":  {"snapshot_date": "not a date", "program_end": "2026-09-06"},
+    "snapshot_absurd": {"snapshot_date": "2026-13-40", "program_end": "2026-09-06"},
+    "short":          {"snapshot_date": "2026-08-10", "program_end": "2026-09-06"},
+    "short_by_one":   {"snapshot_date": "2026-09-05", "program_end": "2026-09-06"},
+    "on_the_day":     {"snapshot_date": "2026-09-06", "program_end": "2026-09-06"},
+    "after_the_end":  {"snapshot_date": "2026-09-07", "program_end": "2026-09-06"},
+}
+
+UNDATABLE = ("nothing", "end_only", "snapshot_only", "snapshot_null", "end_null",
+             "snapshot_junk", "snapshot_absurd")
+
+
+@pytest.fixture(scope="module")
+def notes():
+    """One node run for the whole file: load app.js, call archiveNote on every
+    shape, hand back what it said."""
+    if not NODE:
+        pytest.skip("node is not installed; the source-text tests above still run")
+    harness = ROOT / "tests" / "_archive_note_harness.js"
+    harness.write_text(HARNESS, encoding="utf-8")
+    try:
+        r = subprocess.run(
+            [NODE, str(harness), str(ROOT / "docs" / "app.js"), json.dumps(CASES)],
+            capture_output=True, text=True, timeout=60)
+    finally:
+        harness.unlink(missing_ok=True)
+    assert r.returncode == 0, f"harness failed:\n{r.stderr}"
+    return json.loads(r.stdout)
+
+
+COMPLETE = "every participant is listed"
+
+
+@pytest.mark.parametrize("case", UNDATABLE)
+def test_an_undatable_payload_claims_no_completeness(notes, case):
+    """The reported defect, one payload shape per id. Each of these returned
+    the full-season sentence before the branches were separated."""
+    said = notes[case]
+    assert COMPLETE not in said, f"{case}: claimed completeness it cannot know"
+    assert "full-season" not in said, f"{case}: called itself a full-season archive"
+
+
+@pytest.mark.parametrize("case", UNDATABLE)
+def test_an_undatable_payload_says_the_extent_is_unknown(notes, case):
+    """Not claiming completeness is not the same as saying so. Silence reads as
+    a complete archive to anyone who does not know the field exists."""
+    said = notes[case]
+    assert "unknown" in said, f"{case}: must name the uncertainty, not omit the claim"
+    assert "partial record" in said, f"{case}: must say what to treat it as"
+
+
+@pytest.mark.parametrize("case", UNDATABLE)
+def test_an_undatable_payload_prints_no_date_and_no_gap(notes, case):
+    """`fmtDate(undefined)` is null and `daysBetween` of a missing date is NaN.
+    Neither may reach the page as "taken null" or "NaN days before"."""
+    said = notes[case]
+    assert "null" not in said and "NaN" not in said and "undefined" not in said, said
+
+
+def test_a_short_snapshot_still_names_its_date_and_gap(notes):
+    """The branch this file was written for is unchanged."""
+    said = notes["short"]
+    assert "Aug 10" in said and "27 days before the season closed" in said
+    assert COMPLETE not in said
+
+
+def test_the_gap_is_singular_at_one_day(notes):
+    assert "1 day before" in notes["short_by_one"]
+    assert "1 days" not in notes["short_by_one"]
+
+
+def test_a_snapshot_that_reaches_the_end_is_still_a_full_season_archive(notes):
+    """The true case must survive. `snap < end` is false on the closing day, and
+    a season whose snapshot reaches its end really is complete."""
+    assert COMPLETE in notes["on_the_day"]
+
+
+def test_a_snapshot_taken_after_the_end_is_complete_too(notes):
+    assert COMPLETE in notes["after_the_end"]
+
+
+def test_the_published_payload_gets_the_short_snapshot_sentence(notes, request):
+    """End to end on the real file, not a fixture: whatever docs/data carries
+    today, the page's sentence must match it."""
+    p = ROOT / "docs" / "data" / "seasons" / "srw26.json"
+    if not p.exists():
+        pytest.skip("payload not built")
+    d = json.loads(p.read_text(encoding="utf-8"))
+    if not NODE:
+        pytest.skip("node is not installed")
+    live = notes  # module fixture already ran; re-run for the real payload
+    harness = ROOT / "tests" / "_archive_note_harness.js"
+    harness.write_text(HARNESS, encoding="utf-8")
+    try:
+        r = subprocess.run(
+            [NODE, str(harness), str(ROOT / "docs" / "app.js"),
+             json.dumps({"live": {"snapshot_date": d.get("snapshot_date"),
+                                  "program_end": d.get("program_end")}})],
+            capture_output=True, text=True, timeout=60)
+    finally:
+        harness.unlink(missing_ok=True)
+    assert r.returncode == 0, r.stderr
+    said = json.loads(r.stdout)["live"]
+    assert COMPLETE not in said, (
+        "the published payload stops short of program_end, so the dashboard "
+        "must not call it a full-season archive")
+    assert "Aug 10" in said and live["short"] == said
+
+
+# --------------------------------------- the sentence beside the claim
+#
+# Found by loading the page in a browser with `program_end` stripped from the
+# payload in flight, which is the only way it shows: the unit harness above
+# calls archiveNote directly and never reaches the clause before it.
+#
+#     "Summer 2026 has ended. The programme ran Jul 20 – null. ..."
+#
+# Both halves of that sentence assumed program_end was printable, and
+# fmtDate(undefined) returns null, which a template literal stringifies. It is
+# reachable on the published site rather than hypothetical: seasonPhase()
+# returns 'archive' on the registry's `status` alone -- deliberately, because a
+# stale stamp cannot wrongly un-end a season -- so the banner is drawn whether
+# or not the payload carries the date it wants to print.
+
+def season_over_banner():
+    i = APP_JS.index("const over = $opt('#seasonOver')")
+    return APP_JS[i:APP_JS.index("archiveNote(DATA)", i)]
+
+
+def test_the_banner_does_not_print_a_date_it_does_not_have():
+    """Guarded on isISODate, not on truthiness: `fmtDate` hands back its input
+    unchanged for anything that is not an ISO date, so a truthy check would
+    print "Jul 20 – not a date" instead of "Jul 20 – null"."""
+    body = season_over_banner()
+    assert "isISODate(DATA.program_end)" in body, (
+        "the closing date must be checked before it is formatted")
+    assert "isISODate(DATA.season_start)" in body
+
+
+def test_the_banner_has_a_clause_for_a_start_without_an_end():
+    """The case that produced "Jul 20 – null": a start date and no end. The
+    start is real and still worth printing; the range is not."""
+    body = season_over_banner()
+    assert "The programme opened" in body
+
+
+def test_no_branch_of_the_banner_interpolates_an_unguarded_end_date():
+    """The defect was two template literals that both reached for
+    program_end. Every remaining mention of it in this block is inside a
+    branch that has already established it is a date."""
+    body = season_over_banner()
+    ran = body.index("const ran = isISODate")
+    assert "fmtDate(DATA.program_end)" not in body[:ran], (
+        "program_end is formatted before it is checked")
