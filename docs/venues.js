@@ -24,6 +24,20 @@ const PAGE = 120;
 const FACET_LIMIT = 14;
 
 const $ = (sel) => document.querySelector(sel);
+/* Chrome lookups go through this, not `$`.
+ *
+ * index.html and venues.js are two files a browser caches independently, so a
+ * returning visitor can hold yesterday's HTML against today's JS. Every
+ * `$('#thing').textContent = ...` against an element that only exists in the
+ * newer HTML throws at boot — and because boot is one call chain, the throw
+ * takes the whole roster with it and the visitor gets a blank page until they
+ * hard-reload. The `?v=` on the script tag stops the reverse pairing (new HTML,
+ * old JS) and cannot help with this one.
+ *
+ * The dashboard has had this guard for as long as it has had chrome to miss;
+ * the roster never got it. A detached span absorbs the write, that one piece
+ * of furniture is silently missing, and the 1,420 rows still render. */
+const $opt = (sel) => document.querySelector(sel) || el('span');
 const el = (tag, cls, text) => {
   const n = document.createElement(tag);
   if (cls) n.className = cls;
@@ -45,11 +59,53 @@ const fold = (s) =>
    listing API — which is re-pulled weekly and reaches the payload without a
    human reading it. A `javascript:` or `data:` value arriving in either would
    become a live link on a Book button. The dashboard checks this in eight
-   places and this file checked it in none, on the same data. */
+   places and this file checked it in none, on the same data.
+
+   No base is passed to URL() on purpose, and this file used to pass
+   location.href. With a base, a bare "www.joesbar.com" resolves RELATIVE to
+   this page: it comes back with an http: protocol, passes the very check meant
+   to stop it, and renders a Book button that navigates to
+   docs/www.joesbar.com — a 404 on our own origin, under a link that says it
+   goes to the restaurant. Without a base a relative string throws, which is
+   the answer we want. The dashboard's copy of this function has always been
+   the no-base one; this is the same implementation, for the same data. */
 const isHttpURL = (u) => {
   if (!u) return false;
-  try { return /^https?:$/.test(new URL(u, location.href).protocol); }
-  catch { return false; }
+  try { return /^https?:$/.test(new URL(u).protocol); } catch { return false; }
+};
+
+/* Debug-only: ?today=YYYY-MM-DD freezes "today", as on the dashboard — the
+   roster now has date-dependent copy of its own, and it must be checkable at
+   any date without waiting for one. */
+const TODAY_OVERRIDE = (/[?&]today=(\d{4}-\d{2}-\d{2})\b/.exec(location.search) || [])[1] || null;
+const todayISO = () => {
+  if (TODAY_OVERRIDE) return TODAY_OVERRIDE;
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+};
+
+/** Format an ISO date as "Sep 6, 2026". The roster outlives its seasons, so
+    unlike the dashboard's same-year copy this one keeps the year. */
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const fmtDate = (iso) => {
+  if (!iso) return null;
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
+  return m ? `${MONTHS[+m[2] - 1]} ${+m[3]}, ${m[1]}` : iso;
+};
+
+/* Has the Restaurant Week season the payload describes finished?
+ *
+ * The roster is the year-round product and the season is one nullable column
+ * on it, so this page had no notion of a season ending at all: on 17 September
+ * 2026 it still read "636 of them in Summer 2026 Restaurant Week", present
+ * tense, eleven days after the programme closed. `program_end` was already in
+ * venues.json and simply unused.
+ *
+ * Unknown end date -> false: the roster's own copy stays in the present tense
+ * rather than announcing an ending it cannot date. */
+const seasonEnded = () => {
+  const end = STATE.data && STATE.data.program_end;
+  return !!end && todayISO() > end;
 };
 
 const STATE = {
@@ -673,13 +729,24 @@ function wireMapDetail() {
 
 function renderCoverage() {
   const c = STATE.data.counts;
-  const box = $('#coverage');
+  const box = $opt('#coverage');
   box.hidden = false;
   const p = el('p');
   p.append(el('strong', null, `${c.with_recognition.toLocaleString()} recognised restaurants`));
-  p.append(document.createTextNode(
-    `, ${c.in_restaurant_week} of them in ${STATE.data.season_label} Restaurant Week `
-    + `(${c.both} are both). `));
+  // Past tense once the programme has closed. The count is a historical fact
+  // about who took part, and the present tense made it read as a list of
+  // places you could still book under the Restaurant Week price.
+  const label = STATE.data.season_label;
+  p.append(document.createTextNode(seasonEnded()
+    ? `, ${c.in_restaurant_week} of which took part in ${label} Restaurant Week `
+      + `(${c.both} are both). `
+    : `, ${c.in_restaurant_week} of them in ${label} Restaurant Week `
+      + `(${c.both} are both). `));
+  if (seasonEnded()) {
+    p.append(document.createTextNode(
+      `That programme ended ${fmtDate(STATE.data.program_end)}; its prices and menus are over. `
+      + `Everything else on this page is year-round. `));
+  }
   if (c.unverified) {
     p.append(document.createTextNode(
       `${c.unverified.toLocaleString()} have no confirmed open/closed status yet — `
@@ -787,8 +854,12 @@ async function boot() {
     }
   }
 
-  $('#rosterCount').textContent = `${payload.counts.venues.toLocaleString()} restaurants`;
-  $('#footProvenance').textContent =
+  // Chrome, not content: $opt so a cached index.html without one of these
+  // costs that line rather than the whole roster. #rows stays on $ — if the
+  // row host is missing there is no page to degrade into, and a thrown error
+  // is more honest than a silent blank.
+  $opt('#rosterCount').textContent = `${payload.counts.venues.toLocaleString()} restaurants`;
+  $opt('#footProvenance').textContent =
     `Built ${payload.generated_at.slice(0, 10)} from the Michelin 2025 NYC selection, `
     + `James Beard Foundation awards 1991–2026, and the New York Times Top 100. `
     + `${payload.counts.mappable.toLocaleString()} of ${payload.counts.venues.toLocaleString()} `

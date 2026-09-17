@@ -130,6 +130,65 @@ def test_check_names_both_targets_and_writes_nothing(tmp_path, monkeypatch, caps
     assert "seasons.json" in printed
 
 
+def test_registry_only_corrects_the_status_and_writes_no_payload(
+    tmp_path, monkeypatch
+):
+    """The one fact that goes stale on the shelf, with a way to fix it that
+    cannot rewrite the history beside it.
+
+    `status` is derived from the build date, so a season that ends after its
+    last successful build stays marked `live` — summer 2026 did, for eleven
+    days. A full re-export would correct it and restate every published grade
+    on the way past: the rubric's window component is measured from
+    `scoring_day()`, which agrees with other post-season runs but not with the
+    mid-season snapshot actually on the shelf.
+
+    So this asserts the two halves separately: the status moves, and nothing
+    else is written at all.
+    """
+    state = {"p": payload_of(100)}
+    e = exporter(monkeypatch, tmp_path, state, "--quiet")
+    e.main()
+    season = (tmp_path / "seasons" / "srw26.json").read_bytes()
+    legacy = (tmp_path / "restaurants.json").read_bytes()
+
+    # The season has since ended; build_payload must not even be consulted.
+    reg = json.loads((tmp_path / "seasons.json").read_text(encoding="utf-8"))["seasons"]
+    reg[0]["status"] = "live"
+    (tmp_path / "seasons.json").write_text(json.dumps({"seasons": reg}), encoding="utf-8")
+
+    def boom():
+        raise AssertionError("--registry-only must not build a payload")
+
+    e2 = exporter(monkeypatch, tmp_path, state, "--registry-only", "--quiet")
+    monkeypatch.setattr(e2, "build_payload", boom)
+    monkeypatch.setattr(e2, "date", _FrozenDate)
+    e2.main()
+
+    reg = json.loads((tmp_path / "seasons.json").read_text(encoding="utf-8"))["seasons"]
+    assert reg[0]["status"] == "archived"
+    assert (tmp_path / "seasons" / "srw26.json").read_bytes() == season
+    assert (tmp_path / "restaurants.json").read_bytes() == legacy
+
+
+class _FrozenDate(date):
+    """A day after srw26's end, so the status has something to move to."""
+    @classmethod
+    def today(cls):
+        return date(2026, 9, 17)
+
+
+def test_registry_only_check_writes_nothing(tmp_path, monkeypatch, capsys):
+    e = exporter(monkeypatch, tmp_path, {"p": payload_of(100)},
+                 "--registry-only", "--check")
+    monkeypatch.setattr(e, "date", _FrozenDate)
+    e.main()
+    assert not (tmp_path / "seasons.json").exists()
+    assert not (tmp_path / "seasons").exists()
+    assert not (tmp_path / "restaurants.json").exists()
+    assert "archived" in capsys.readouterr().out
+
+
 def test_shrink_guard_measures_against_the_season_file_not_the_legacy_copy(
     tmp_path, monkeypatch
 ):

@@ -11,7 +11,7 @@ Summer 2026 season (srw26) ends 2026-09-06. See `HANDOFF.md` for what to do next
 
 ```bash
 pip install -r requirements.txt          # pdfplumber, playwright, pytest
-python -m pytest -q tests/               # 474 tests, ~20s. A PermissionError in an
+python -m pytest -q tests/               # 545 tests, ~24s. A PermissionError in an
                                          # atexit callback after the summary is Windows
                                          # temp-dir noise — exit code is what counts.
 python src/export_site_data.py --check --quiet   # validate dashboard payload, writes nothing
@@ -78,14 +78,21 @@ Runbooks in `.claude/commands/`: `/smoke` (post-change checks), `/weekly-refresh
 ## Two guards you will meet, and must not silently disable
 
 `fetch_listing` refuses a listing below `min_rows` (`config/season.json`); the exporters
-refuse a payload that shrank >20% without `--allow-shrink`. Both are currently REFUSING a
-real shrink as the season ends, so the weekly refresh has failed since Aug 10 (see
-HANDOFF.md P0). Overriding either one republishes the site with far fewer rows. That is an
-owner decision — surface it, never take it yourself.
+refuse a payload that shrank >20% without `--allow-shrink`. The weekly refresh has failed
+since Aug 10 because of them. **As of Sep 14 only the SHRINK guard is firing** (636 → 406,
+64%); `min_rows` fired once, on Aug 31, and both September runs cleared it — so do not
+lower a floor that is not in the way. Overriding the shrink guard republishes the site with
+far fewer rows AND re-grades every surviving one (the rubric's window component is measured
+from `scoring_day()`). That is an owner decision — surface it, never take it yourself.
+The options, numbers and recommendation are in `DECISION-season-tail.md`.
+
+To correct a stale season `status` in `docs/data/seasons.json` WITHOUT rebuilding a
+payload, use `python src/export_site_data.py --registry-only`. A full re-export after a
+season ends silently restates every published grade.
 
 ## Before you finish any task
 
-1. `python -m pytest -q tests/` — must be 474+ passed, 0 failed.
+1. `python -m pytest -q tests/` — must be 545+ passed, 0 failed.
 2. `python src/export_site_data.py --check --quiet && python src/export_venues.py --check --quiet`
 3. If you touched `docs/`: bump `?v=N`, reload both pages locally, and run
    `node tools/verify_ui_counts.mjs` if anything feeds a count.

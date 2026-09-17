@@ -92,6 +92,10 @@ const isISODate = (s) => {
   return !Number.isNaN(d.getTime()) && d.toISOString().slice(0, 10) === s;
 };
 
+/** Whole days from `a` to `b`, both ISO. Negative when `b` precedes `a`. */
+const daysBetween = (a, b) =>
+  Math.round((new Date(`${b}T12:00:00Z`) - new Date(`${a}T12:00:00Z`)) / 86400000);
+
 /** Format an ISO date as "Aug 16" without touching timezones. */
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const fmtDate = (iso) => {
@@ -2579,13 +2583,68 @@ function renderSeasonChrome() {
   if (seasonPhase() !== 'archive') return;
   const p = el('p');
   p.append(el('strong', null, `${DATA.season_label || 'The season'} has ended.`));
-  p.append(document.createTextNode(DATA.season_start
-    ? ` The programme ran ${fmtDate(DATA.season_start)} – ${fmtDate(DATA.program_end)}.`
-    : ` The last windows closed ${fmtDate(DATA.program_end)}.`));
-  p.append(document.createTextNode(
-    ' This is the full-season archive: every participant is listed, none is still bookable.'));
+  /* Both halves of this sentence used to assume program_end was printable, and
+     fmtDate(undefined) is null, so a payload without one rendered "The
+     programme ran Jul 20 – null." Reachable, not hypothetical: seasonPhase()
+     returns 'archive' on the registry's status alone, so the banner is drawn
+     whether or not the payload carries the date. A date we do not have is a
+     clause we do not write. */
+  const ran = isISODate(DATA.season_start);
+  const closed = isISODate(DATA.program_end);
+  if (ran && closed) {
+    p.append(document.createTextNode(
+      ` The programme ran ${fmtDate(DATA.season_start)} – ${fmtDate(DATA.program_end)}.`));
+  } else if (closed) {
+    p.append(document.createTextNode(` The last windows closed ${fmtDate(DATA.program_end)}.`));
+  } else if (ran) {
+    p.append(document.createTextNode(` The programme opened ${fmtDate(DATA.season_start)}.`));
+  }
+  p.append(document.createTextNode(` ${archiveNote(DATA)}`));
   over.append(p);
   over.hidden = false;
+}
+
+/* What the archive can honestly claim to be.
+ *
+ * This said "This is the full-season archive: every participant is listed"
+ * unconditionally, and on 17 September 2026 that was false: the last listing
+ * snapshot the pipeline managed to publish was 10 August, 27 days before the
+ * season closed, because the three refreshes after it were refused by the
+ * shrink guard and the min_rows floor as participants left the listing. The
+ * page asserted completeness while its own footer printed the 10 August
+ * snapshot date — the one number that disproved the sentence above it.
+ *
+ * A payload cannot be complete for a season that outlived its own snapshot, so
+ * the claim is now made only when the snapshot actually reaches program_end.
+ * Otherwise the banner says when the listing was last seen and what that
+ * leaves out, because "we stopped looking on 10 August" is a fact about the
+ * data and "every participant is listed" is a promise about the season.
+ *
+ * The first cut of that guard was `!snap || !end || !(snap < end)`, which put
+ * the missing-date cases on the SAME branch as a snapshot that reached the
+ * end: archiveNote({}) claimed a full-season archive, and so did a payload
+ * carrying only one of the two dates. That is the repo's "null means unknown"
+ * rule inverted — absence was resolving to the single strongest sentence on
+ * the page. The three cases are now separate, and an undatable snapshot says
+ * so. `isISODate` rather than a truthiness check because the comparison is
+ * what the claim rests on: "2026-13-40" is truthy, sorts as a string against
+ * anything, and would pick a branch by accident. */
+function archiveNote(d) {
+  const snap = d.snapshot_date;
+  const end = d.program_end;
+  if (!isISODate(snap) || !isISODate(end)) {
+    return `Nothing here is still bookable. How much of the season this listing covers `
+      + `is unknown: the payload does not carry both a usable snapshot date and a usable `
+      + `season end date, so treat it as a partial record rather than a complete one.`;
+  }
+  if (snap < end) {
+    const short = daysBetween(snap, end);
+    return `Nothing here is still bookable. This is the last listing snapshot, taken `
+      + `${fmtDate(snap)} — ${short} day${short === 1 ? '' : 's'} before the season closed — so a `
+      + `restaurant that joined or left the listing after that date is not reflected here. `
+      + `It is the final published snapshot, not a final tally of who took part.`;
+  }
+  return 'This is the full-season archive: every participant is listed, none is still bookable.';
 }
 
 function seasonSelect() {

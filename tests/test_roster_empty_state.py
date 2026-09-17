@@ -92,3 +92,32 @@ def test_both_pages_answer_the_same_question():
     for src, name in ((app, "app.js"), (JS, "venues.js")):
         assert "Check the spelling" in src, f"{name} does not name a bad term"
         assert "the filters remove them all" in src, f"{name} does not name the filters"
+
+
+# --------------------------------------------------------------------- $opt
+
+def test_roster_chrome_lookups_degrade_instead_of_dying():
+    """A cached index.html against a fresh venues.js rendered a blank page.
+
+    index.html and venues.js are cached independently, so a returning visitor
+    can hold yesterday's HTML against today's JS. Boot is one call chain, so
+    the first `$('#thing').textContent = ...` against an element only the newer
+    HTML has threw and took the whole roster with it. The `?v=` on the script
+    tag prevents the opposite pairing and cannot help with this one.
+
+    Reproduced in Chromium by serving an index.html with `#coverage` and
+    `#footProvenance` stripped out:
+
+        with $   ->  0 rows, "Cannot set properties of null (setting 'textContent')"
+        with $opt -> 120 rows, no page errors
+
+    The dashboard has had this guard since it had chrome to miss. #rows stays
+    on `$` deliberately: with no row host there is no page to degrade into, and
+    a thrown error beats a silent blank.
+    """
+    src = (ROOT / "docs" / "venues.js").read_text(encoding="utf-8")
+    assert "const $opt = (sel) => document.querySelector(sel) || el('span');" in src
+    for sel in ("#coverage", "#rosterCount", "#footProvenance"):
+        assert f"$opt('{sel}')" in src, f"{sel} is chrome and must use $opt"
+        assert f"$('{sel}')" not in src, f"{sel} still has a bare $ lookup"
+    assert "$('#rows')" in src, "#rows is essential and must stay on $"

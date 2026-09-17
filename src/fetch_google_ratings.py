@@ -17,6 +17,7 @@ search with a hand-verified place_id, which is the only truly stable key.
 
 Output: data/raw/google/{slug}.json
 """
+import importlib.util
 import json
 import os
 import re
@@ -50,18 +51,68 @@ NAME_MIN = 0.55
 PAUSE = 0.12
 
 
+SECRETS_FILE = ROOT / "config" / "secrets.py"
+NO_KEY = ("No API key. Set GOOGLE_PLACES_KEY, or copy config/secrets.example.py "
+          "to config/secrets.py and fill it in.")
+
+
+def load_secrets_module():
+    """config/secrets.py as a module, loaded by path. None when there is no file.
+
+    It used to be `sys.path.insert(0, ROOT/"config")` followed by
+    `from secrets import GOOGLE_PLACES_KEY`, which had two problems.
+
+    The insert put `config/` FIRST on `sys.path`, for the rest of the process,
+    so every module name in there outranks the standard library. `secrets` IS a
+    standard library module — the one `token_urlsafe`, `compare_digest` and
+    friends live in — so after one call to `api_key()` any later `import
+    secrets`, ours or a dependency's, got the key file instead. Nothing in this
+    repo imports it today; that is luck, not design, and the failure would be
+    silent and remote from here.
+
+    So: load the file by its path under a private name, register nothing
+    importable as `secrets`, and leave `sys.path` alone.
+    """
+    if not SECRETS_FILE.exists():
+        return None
+    spec = importlib.util.spec_from_file_location(
+        "_nycr_secrets", SECRETS_FILE)          # not "secrets": see above
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)                # may raise; the caller decides
+    return mod
+
+
 def api_key():
+    """The Places key, from the environment or config/secrets.py.
+
+    The old version wrapped the whole load in `except Exception` and reported
+    every outcome as "No API key" — including a `SyntaxError` in secrets.py, a
+    file that raises on import, and a file that simply spells the name wrong.
+    All three read as "you have not set one up", so the advice was to do the
+    thing already done, and a typo could be chased for a long time. A key that
+    is present and broken is a different fact from a key that is absent.
+
+    Never printed, never logged, never included in a message: this returns it
+    and says nothing about its value.
+    """
     k = os.environ.get("GOOGLE_PLACES_KEY")
     if k:
         return k
-    sys.path.insert(0, str(ROOT / "config"))
     try:
-        from secrets import GOOGLE_PLACES_KEY  # noqa: F401
-        return GOOGLE_PLACES_KEY
-    except Exception:
+        mod = load_secrets_module()
+    except Exception as e:
         raise SystemExit(
-            "No API key. Set GOOGLE_PLACES_KEY, or copy config/secrets.example.py "
-            "to config/secrets.py and fill it in.")
+            f"config/secrets.py exists but could not be loaded: "
+            f"{type(e).__name__}: {e}\n"
+            f"Fix the file, or unset it and use GOOGLE_PLACES_KEY instead.")
+    if mod is None:
+        raise SystemExit(NO_KEY)
+    key = getattr(mod, "GOOGLE_PLACES_KEY", None)
+    if not key:
+        raise SystemExit(
+            "config/secrets.py loaded, but GOOGLE_PLACES_KEY is missing or empty. "
+            "config/secrets.example.py shows the expected shape.")
+    return key
 
 
 def norm(s):

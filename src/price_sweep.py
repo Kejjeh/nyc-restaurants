@@ -24,6 +24,7 @@ import sys
 import urllib.error
 import urllib.parse
 import urllib.request
+from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -35,18 +36,31 @@ UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
       "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"}
 MENU_WORDS = re.compile(r"(menu|dine|food|lunch|dinner|brunch|carte|prix)", re.I)
 PRICE = re.compile(r"\$\s?(\d{1,3})(?:\.\d{2})?\b")
-ALREADY_ANALYZED = {  # covered by the manual value research; skip
- 'manhatta','the-dining-room-at-gramercy-tavern','crown-shy','union-square-cafe',
- 'nougatine-at-jean-georges','cafe-boulud','hawksmoor','quality-meats','quality-italian',
- 'quality-bistro','smith-wollensky','frenchette','ai-fiori','gage-tollner','estiatorio-milos',
- 'the-bar-room-at-the-modern','perry-street','oceana','zuma','benoit-restaurant-wine-bar',
- 'scarpetta','casa-lever','tao-uptown','catch-nyc','mr-chow-new-york-57th-street',
- 'empire-steak-house-east-50th-street','benjamin-steakhouse','mortons-the-steakhouse-manhattan',
- 'ocean-prime','riverpark','lure-fishbar','naro','meadowsweet-williamsburg','mito-fort-greene',
- 'mito-forest-hills','park-ave-kitchen-by-david-burke','kubeh','pera-soho','sant-ambroeus-brookfield',
- 'french-louie','jacobs-pickles-upper-west-side','industry-kitchen','the-terrace-and-outdoor-gardens',
- 'la-baraka','anassa-taverna-astoria','jade-eatery-and-lounge','flava-of-the-bronx',
- 'the-bronx-beer-hall','mae-mae-cafe-plant-shop','code-red-restaurant-lounge'}
+DONE_FILE = ROOT / "config" / "price_sweep_done.json"
+
+
+def already_analyzed():
+    """Slugs the manual value research already covers; the sweep skips them.
+
+    This was a set literal in this file, hand-typed from restaurant NAMES, and
+    three of its fifty entries had never matched anything:
+
+        the-bronx-beer-hall         -> bronx-beer-hall            ("The" is dropped)
+        mae-mae-cafe-plant-shop     -> mae-mae-cafe-and-plant-shop ("&" -> "and")
+        code-red-restaurant-lounge  -> code-red-restaurant-and-lounge
+
+    A skip entry that matches no slug is silent: it does not raise, it just
+    fails to skip. So all three venues were re-crawled on every sweep, against
+    a 1 req/sec budget, for exactly the work the list exists to prevent.
+
+    It lives in config/ now because it is hand-maintained curation and that is
+    where CLAUDE.md says curation lives. `tests/test_price_sweep_skiplist.py`
+    fails on any entry that is a near-miss of a live slug, which is the shape
+    all three of these had. Keys starting with `_` are comments, per the
+    convention every other config loader here follows.
+    """
+    d = json.loads(DONE_FILE.read_text(encoding="utf-8"))
+    return {s for s in d["slugs"] if not s.startswith("_")}
 
 
 
@@ -139,8 +153,14 @@ def menu_links(html, base):
 
 
 def sweep_one(slug, website, tiers):
+    # A sweep record carries the day it was taken. It did not, and `build_db`
+    # filled the gap with a literal "2026-08-01" for every record it loaded --
+    # a date the data never held, stamped identically onto results swept weeks
+    # apart. Records written before this stamp have no date and now read NULL,
+    # which is what "we do not know when this was swept" is supposed to look
+    # like here.
     rec = {"slug": slug, "website": website, "pages_fetched": 0, "prices": [],
-           "error": None}
+           "error": None, "swept_date": date.today().isoformat()}
     try:
         data, ctype = fetch(website)
         html = data.decode("utf-8", "replace")
@@ -191,7 +211,8 @@ def targets():
     rows = con.execute(
         "SELECT slug, website, price_tiers FROM restaurants"
         " WHERE website IS NOT NULL AND website != ''").fetchall()
-    return [(s, w, json.loads(t)) for s, w, t in rows if s not in ALREADY_ANALYZED]
+    done = already_analyzed()
+    return [(s, w, json.loads(t)) for s, w, t in rows if s not in done]
 
 
 def report():

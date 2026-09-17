@@ -1,4 +1,4 @@
-# HANDOFF — state of play (2026-09-01)
+# HANDOFF — state of play (2026-09-17)
 
 Read `CLAUDE.md` first. This file says what's done, what's broken, and what to do next.
 A bot (`github-actions[bot]`) commits a weekly refresh to `main` every Monday —
@@ -6,14 +6,31 @@ A bot (`github-actions[bot]`) commits a weekly refresh to `main` every Monday �
 
 ## Done and working
 
-- Full pipeline (`python src/refresh.py`) end-to-end; 474 tests green; CI green.
+- Full pipeline (`python src/refresh.py`) end-to-end; **545 tests green** (474 + 71 on the
+  branch below); CI green.
 - Live site: <https://kejjeh.github.io/nyc-restaurants/> (roster, 1,420 venues incl.
   2006–2024 Michelin back-fill, ~1,941 award records, local SVG map) and
   `/restaurant-week.html` (srw26 dashboard, 636 participants: planner, compare, Leaflet map).
 - PR checks (checks.yml) incl. the payload-staleness guard: green.
 - Google Places resolution COMPLETE (see P0 below) — do not re-run the billed fetch.
-- The weekly cron is NOT working: it has failed every week since Aug 10. See P0.
-- No code work is mid-stream. Sister repo `Kejjeh/nyc-restaurant-week` is the frozen
+- **PR #46 is OPEN and AWAITING INDEPENDENT REVIEW — do not merge it.**
+  <https://github.com/Kejjeh/nyc-restaurants/pull/46>, branch
+  `claude/confident-wright-m8h5rz`: season-archive honesty, the four known bugs
+  below, a staged cron pause, and `DECISION-season-tail.md`.
+  Checkpoint at `f4d9ec0` (2026-09-17): **CI green** (Checks run #88 — 516 tests,
+  no-PDF guard, both exporter `--check`s, and the payload-staleness guard),
+  `mergeable_state: clean`, no review threads. **CI passing is not approval.**
+  Nothing is deployed: the site still serves `main`.
+  One correction since, from independent review — **545 tests**, `app.js?v=22`:
+  `archiveNote` put the missing-date cases on the same branch as a snapshot that
+  reached `program_end`, so `archiveNote({})` claimed "every participant is
+  listed". Unknown now reads as unknown. The browser check for it turned up the
+  same defect in the clause above it (`The programme ran Jul 20 – null`, reachable
+  because `seasonPhase()` archives on the registry's `status` alone) and that is
+  fixed with it. The 636-row payload is untouched; nothing in `docs/data/` changed.
+- The weekly cron is NOT working: it has failed every week since Aug 10. The pause is
+  STAGED on that branch and is not in effect until it merges. See P0.
+- Sister repo `Kejjeh/nyc-restaurant-week` is the frozen
   pre-roster season tracker — don't confuse the two.
 
 ## Waiting on a human (not code)
@@ -27,50 +44,87 @@ A bot (`github-actions[bot]`) commits a weekly refresh to `main` every Monday �
 - **Parked issue-#3 design questions:** should the recency factor apply per-source, and
   should `top_honor` be best-ever? Human decisions; implementation is small after.
 
-## Known bugs (none block normal work)
+## Known bugs
 
-1. **`docs/venues.js:49` — `isHttpURL` accepts bare hostnames.** It passes `location.href` as
-   base to `new URL`, so a listing value like `"www.joesbar.com"` resolves relative and renders
-   a Book link that 404s into `docs/www.joesbar.com`. `docs/app.js:440` documents the correct
-   no-base version. Not XSS (`javascript:`/`data:` still blocked). Repro: any roster row whose
-   `rw.reserve` lacks a scheme. Fix = copy app.js's implementation + extend `tests/test_roster_links.py`.
-2. **`src/price_sweep.py:38` — `ALREADY_ANALYZED`** is a hardcoded set of srw26 slugs; it goes
-   stale at changeover, and it contains `code-red-restaurant-lounge` while
-   `config/shortlist.json` has `code-red-restaurant-and-lounge` — one of the two is wrong.
-3. **`src/build_db.py:163`** hardcodes `swept_date = "2026-08-01"` when reloading the sweep cache.
-4. **`src/fetch_google_ratings.py:57-60`** — `from secrets import GOOGLE_PLACES_KEY` shadows the
-   stdlib `secrets` module and a bare `except Exception` makes any error in `config/secrets.py`
-   read as "no key".
-5. Fixed on this branch (`7b6ab40`): `diff_report.previous_payload()` crashed on Windows/cp1252
-   (missing `encoding="utf-8"` on `git show`); 2 tests failed there. Suite now 474-green on Windows.
-6. Windows pytest prints a `PermissionError` in an atexit callback after the summary — cosmetic,
-   exit code unaffected.
+**Fixed on branch `claude/confident-wright-m8h5rz` (2026-09-17), not yet merged:**
+
+1. ~~`docs/venues.js:49` — `isHttpURL` accepts bare hostnames.~~ Fixed: the base
+   argument is gone, both pages now carry the identical implementation, and
+   `tests/test_roster_links.py` fails if either regains a base.
+2. ~~`src/price_sweep.py:38` — `ALREADY_ANALYZED` hardcodes srw26 slugs.~~ Moved to
+   `config/price_sweep_done.json`. **THREE entries were wrong, not one**: the
+   handoff spotted `code-red-restaurant-lounge`, and the same defect had also hit
+   `the-bronx-beer-hall` (real slug `bronx-beer-hall`) and `mae-mae-cafe-plant-shop`
+   (`mae-mae-cafe-and-plant-shop`). One cause: slugs typed from restaurant names,
+   so `&` was not folded to `and` and a leading `The` was not dropped. All three
+   venues were re-crawled on every sweep. `catch-nyc` is left alone — that
+   restaurant is genuinely not in the listing, so it is a departure, not a typo.
+   Guarded by `tests/test_price_sweep_skiplist.py`, which fails on any entry that
+   matches nothing while a near-twin slug is live.
+3. ~~`src/build_db.py:163` hardcodes `swept_date`.~~ Fixed: `price_sweep` stamps each
+   record with the day it was taken and `build_db` reads it. Records written before
+   the stamp read NULL. Nothing consumes the column, so no published number moved.
+4. ~~`src/fetch_google_ratings.py:57-60` — stdlib `secrets` shadowing.~~ Fixed:
+   `config/secrets.py` is loaded by path under a private module name, `sys.path` is
+   untouched, and the four outcomes (no file / unloadable / name missing / present)
+   are four messages instead of one. `resolve_venues.py` and `places_cli.py` share
+   this loader, so all three billed callers get the fix.
+5. Also fixed on that branch: the dashboard claimed a full-season archive over a
+   10 August snapshot, and the roster named an ended season in the present tense.
+   The roster gained `$opt`, so a cached `index.html` against fresh JS no longer
+   renders a blank page.
+
+**Still open:**
+
+6. Fixed earlier (`7b6ab40`): `diff_report.previous_payload()` crashed on
+   Windows/cp1252 (missing `encoding="utf-8"` on `git show`).
+7. Windows pytest prints a `PermissionError` in an atexit callback after the
+   summary — cosmetic, exit code unaffected.
 
 ## Prioritized next steps
 
-**P0 — the weekly refresh has failed 3 weeks running; published season data is stale
-since Aug 10. NEEDS A HUMAN DECISION, not a code fix.** Both guards that fired are
-working exactly as designed; the shrink they refused is real (the season is ending, so
-participants are genuinely leaving the listing). Nothing was committed by those runs.
+**P0 — the refresh has failed every week since Aug 10; published season data is
+still the Aug 10 snapshot. NEEDS AN OWNER DECISION — see `DECISION-season-tail.md`,
+which has the options, the numbers and a recommendation.** Both guards that fired
+are working as designed; nothing was committed by any failed run.
 
 | Run | Where it stopped | Numbers |
 |---|---|---|
 | Aug 10 | succeeded | 636 published (this is what the site still shows) |
-| Aug 17 | `export_site_data` | REFUSING TO SHRINK 636 → 459 (72%) |
-| Aug 24 | `export_site_data` | REFUSING TO SHRINK 636 → 440 (69%) |
-| Aug 31 | `fetch_listing`, earlier in the chain | "Only 308 unique records vs floor 400" (`min_rows` in `config/season.json`) |
+| Aug 17 | `export_site_data` | 636 → 459 (72%) |
+| Aug 24 | `export_site_data` | 636 → 440 (69%) |
+| Aug 31 | `fetch_listing` | 308 unique records vs floor 400 |
+| Sep 7 | `export_site_data` | 636 → **406** (64%) |
+| Sep 14 | `export_site_data` | 636 → **406** (64%) |
 
-Consequence: the dashboard claims 636 participants when roughly 308 remain, and the
-**Sep 5–6 close-out below cannot run** — it will hit the `min_rows: 400` floor before it
-reaches the exporter.
+**Corrected 2026-09-17 from the Actions logs — the 2026-09-01 version of this
+file got two things wrong, because the September runs had not happened yet:**
 
-The decision (owner's, not an agent's): to publish the true tail of the season you must
-BOTH lower `min_rows` in `config/season.json` and pass `--allow-shrink` to the exporters.
-That is a deliberate override of two safety guards, and it permanently replaces a 636-row
-payload with a ~308-row one. The alternative is to accept Aug 10 as the final published
-snapshot and let the season close on it. Do not flip either guard without that call being made.
+* **`min_rows` is NOT blocking.** It fired once, on Aug 31. Both September runs
+  cleared the 400 floor. Publishing the tail needs ONE override, `--allow-shrink`,
+  not two. Do not lower `min_rows`: it is not in the way, and lowering a floor
+  that is not firing only removes cover for the next real collapse.
+* **The listing is stable, not draining.** 406 on Sep 7 and 406 again on Sep 14,
+  eleven days after the programme closed. The Aug 31 dip to 308 was transient.
+  That flatness is unexplained by "the season is ending", and `DECISION-season-tail.md`
+  gives a one-request check for whether those 406 rows are still srw26 or a
+  winter season starting to populate. **If it is a winter code, `--allow-shrink`
+  would publish next season's restaurants under this season's dates.** Answer
+  that before touching the flag.
 
-**P0 — season close-out (time-boxed: Sep 5–6, 2026), BLOCKED on the decision above.**
+The other thing that makes this not a runbook step: `--allow-shrink` does not
+merely drop rows. Every surviving row is re-graded, because the rubric's window
+component is measured from `scoring_day()`, which agrees with other post-season
+exports but not with a mid-season snapshot. Measured: window component mean
+21.7 → 2.1, rubric mean 35.3 → 33.1. The 636-row payload has no second copy.
+
+**The site is no longer misleading while this sits open.** As of the branch
+below, the dashboard names the Aug 10 as-of date and the 27-day gap instead of
+calling itself a full-season archive, and the roster writes the season in the
+past tense. Leaving the decision open now costs coverage, not honesty.
+
+**P0 — season close-out (was time-boxed Sep 5–6, 2026; that window has PASSED).**
+Still blocked on the decision above.
 README "Automation" (~line 575) plans a final refresh once extensions end Sep 6, then
 pausing the Monday cron. Steps once unblocked: run the Weekly refresh workflow (or
 `/weekly-refresh` locally) with whatever overrides the decision authorises, commit; then
@@ -79,15 +133,13 @@ disable the `schedule` trigger in `.github/workflows/refresh.yml` (comment it ou
 show the season as ended (`seasonPhase()` flips to archive by dates alone — verify, don't
 assume). Note: GitHub auto-disables the cron after 60 days of repo inactivity anyway.
 
-**P1 — fix `isHttpURL` in venues.js** (bug 1). One function + one test + bump `?v=`.
-Accept when: bare-hostname URLs are dropped on the roster page, new test passes, suite green.
-
 **P1 — present the review queues to the human** (one session: read both files, research each
 pending record, write a short recommendation per record; make NO ruling).
 Accept when: a markdown summary the human can approve line-by-line.
 
 **P1 — winter 2027 changeover (when announced, ~Dec/Jan).** Follow README "Season changeover
-(winter 2027)" exactly — it is a 9-step ordered runbook. Fix bug 2 as part of it. Escalate to
+(winter 2027)" exactly — it is a 9-step ordered runbook. Re-enable the `schedule`
+trigger in `refresh.yml` as part of it (staged commented-out on the branch above). Escalate to
 Opus. Accept when: new `config/season.json`; listing validates; new `docs/data/seasons/<code>.json`
 exists; srw26 archive entry untouched; suite green.
 
@@ -96,9 +148,6 @@ exists; srw26 archive entry untouched; suite green.
 by the `LEGACY_URL` fallback in `app.js`. Drop the write and the fallback together, in one change.
 Accept when: dashboard still boots with the file deleted, and a `seasons.json` 404 shows the
 actionable error message instead of silently falling back.
-
-**P2 — small fixes:** bugs 3 and 4; add an `$opt`-style guard to `venues.js` (a cached
-`index.html` against fresh JS currently renders nothing).
 
 **P2 — wire `tools/verify_ui_counts.mjs` into CI** (needs Playwright + browser in the runner).
 Accept when: checks.yml runs it headless and green.
@@ -118,9 +167,13 @@ Accept when: checks.yml runs it headless and green.
 - **Is the local Places key restricted & unrotated?** `config/secrets.py` (gitignored) holds a
   key. Confirm in Cloud Console it's restricted to the Places API; rotate if it ever left this
   machine. (Never commit, print, or copy it.)
-- **Pause vs. delete the cron** after Sep 6 (P0 assumes pause/comment-out).
+- **Pause vs. delete the cron** after Sep 6. A pause (schedule commented out,
+  `workflow_dispatch` kept) is STAGED on branch `claude/confident-wright-m8h5rz`
+  for review; merging that branch is what puts it into effect. Nothing was changed
+  in GitHub's workflow settings.
 - **Doc placement:** the prep spec asked for `docs/ARCHITECTURE.md` / `docs/DECISIONS.md`, but
   `docs/` is the published Pages site, so they sit at repo root instead. Confirm or move.
+  `DECISION-season-tail.md` follows the same rule, for the same reason.
 - **The two parked issue-#3 questions** (per-source recency; best-ever top_honor).
 - Local folder name ("NYC Restaurant Week") doesn't match the repo name (`nyc-restaurants`);
   rename was blocked by a process lock — do it from an external terminal when convenient.
