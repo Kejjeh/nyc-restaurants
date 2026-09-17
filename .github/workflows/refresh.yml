@@ -3,9 +3,48 @@ name: Weekly refresh
 # Monday 07:00 America/New_York. GitHub cron is UTC-only and does not observe
 # DST, so 11:00 UTC is 07:00 EDT during the season (and 06:00 EST after
 # November). The Restaurant Week season ends 2026-09-06, well inside EDT.
+#
+# ---------------------------------------------------------------------------
+# PAUSED after the summer 2026 season. STAGED FOR REVIEW -- see HANDOFF.md.
+#
+# The season closed 2026-09-06, and every run since 2026-08-10 has failed on
+# the same unresolved question. Read from the Actions logs, not from memory:
+#
+#   Aug 10  succeeded, 636 published (still what the site shows)
+#   Aug 17  refused by the exporter:  636 -> 459  (72%)
+#   Aug 24  refused by the exporter:  636 -> 440  (69%)
+#   Aug 31  refused by fetch_listing: 308 unique records, floor is 400
+#   Sep  7  refused by the exporter:  636 -> 406  (64%)
+#   Sep 14  refused by the exporter:  636 -> 406  (64%)
+#
+# Note what the last two say, because the handoff predates them and gets this
+# wrong: min_rows is NOT currently blocking anything. The Aug 31 dip to 308
+# was transient; the listing has cleared the 400 floor on both September runs
+# and returned exactly 406 twice. Only ONE guard is refusing now, the
+# exporter's >20% shrink check, so the close-out no longer needs both
+# overrides -- see DECISION-season-tail.md, which also records the question
+# that 406 raises and how to answer it for one request.
+#
+# Nothing was committed by any of these runs; the guards did their job. But a
+# job that can only fail is noise that trains everyone to ignore a red Monday,
+# and the one that eventually matters would look the same.
+#
+# Commenting out the SCHEDULE only. workflow_dispatch stays, so the close-out
+# refresh can still be run by hand the moment the owner rules on the shrink
+# question, and so can any ad-hoc run.
+#
+# UNCOMMENT at the winter 2027 changeover. It is step 9 of the README's
+# "Season changeover" runbook, after config/season.json names the new season
+# and its listing validates -- restoring the cron before then just moves the
+# failures to a different season's name.
+#
+# Note: GitHub disables a schedule after 60 days without repository activity
+# anyway. This makes the pause deliberate and dated rather than something that
+# happens quietly and is discovered later.
+# ---------------------------------------------------------------------------
 on:
-  schedule:
-    - cron: '0 11 * * 1'
+  # schedule:
+  #   - cron: '0 11 * * 1'
   workflow_dispatch:
     inputs:
       force_menus:
