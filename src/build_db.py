@@ -163,10 +163,16 @@ def main():
             r = json.loads(f.read_text())
             con.execute(
                 "INSERT OR REPLACE INTO price_sweep VALUES (?,?,?,?,?,?,?,?,?)",
+                # swept_date comes from the record, not from a literal. This
+                # read "2026-08-01" for every row, so ~600 sweeps taken on
+                # whatever days they were taken all claimed one date the data
+                # never carried. price_sweep stamps its records now; the ones
+                # written before it did are NULL, because unknown is what they
+                # are and this project does not render absence as a value.
                 (r["slug"], r.get("comparable_3course"),
                  json.dumps(reconciled_gaps(r)),
                  r.get("confidence"), r.get("pages_fetched", 0),
-                 len(r.get("prices", [])), r.get("error"), "2026-08-01",
+                 len(r.get("prices", [])), r.get("error"), r.get("swept_date"),
                  "heuristic"),
             )
     con.commit()
