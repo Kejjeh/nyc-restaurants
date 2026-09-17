@@ -71,6 +71,53 @@ def test_both_pages_use_the_same_rule():
         assert "https?:" in src[i:i + 400]
 
 
+def _url_call(src):
+    """The `new URL(...)` argument list inside isHttpURL."""
+    i = src.index("const isHttpURL")
+    m = re.search(r"new URL\(([^)]*)\)", src[i:i + 600])
+    assert m, "isHttpURL must parse the value with new URL()"
+    return m.group(1)
+
+
+# ids= is not cosmetic: the source text IS the param, and pytest writes each
+# test id into an environment variable Windows caps at 32,767 characters. Both
+# files cross it, which is what produced the phantom Windows errors PR #45
+# chased out of test_payload_fetch.py. Same shape here, same remedy.
+@pytest.mark.parametrize("src", [VENUES_JS, APP_JS], ids=["venues.js", "app.js"])
+def test_no_base_is_passed_to_url(src):
+    """A bare hostname must be refused, and only a base-less URL() refuses it.
+
+    `venues.js` passed `location.href` as the base. `new URL("www.joesbar.com",
+    location.href)` does not throw — it RESOLVES, relative to the page, and
+    comes back with an `http:` protocol, so the scheme test passed and the Book
+    button got an href pointing at `docs/www.joesbar.com`: a 404 on our own
+    origin, under a link whose text promises the restaurant.
+
+    `rw.reserve` is `reservation_link or website or listing_url`, and `website`
+    arrives from the listing API unreviewed, so a scheme-less value there is an
+    ordinary thing to receive rather than a poisoned one. This was never the
+    XSS hole — `javascript:` and `data:` were refused throughout — it was a
+    link that lied about where it went.
+
+    Pinned as "exactly one argument" because that IS the behaviour: with a base
+    every relative string resolves, and there is no base that makes a bare
+    hostname fail.
+    """
+    assert "," not in _url_call(src), (
+        "isHttpURL must call new URL(u) with no base — a base makes "
+        "'www.joesbar.com' resolve against the page and pass the check")
+
+
+def test_the_two_pages_now_agree_character_for_character():
+    """The dashboard's implementation was correct all along and documented why.
+    Divergence between two copies of one rule is how this survived; equality is
+    the cheapest way to keep them honest."""
+    def body(src):
+        i = src.index("const isHttpURL")
+        return re.sub(r"\s+", " ", src[i:src.index("};", i) + 2])
+    assert body(VENUES_JS) == body(APP_JS)
+
+
 def test_the_award_keeps_its_text_when_the_url_is_refused():
     """A refused link must not take the award record with it — the row already
     knows how to render one with no URL."""
