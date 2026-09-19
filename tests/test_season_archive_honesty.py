@@ -112,24 +112,40 @@ def test_days_between_is_whole_days_and_noon_anchored():
 # ------------------------------------------------------------------- roster
 
 def test_the_roster_knows_the_season_can_end():
-    assert "seasonEnded" in VENUES_JS
-    i = VENUES_JS.index("const seasonEnded")
-    body = VENUES_JS[i:i + 300]
+    assert "seasonState" in VENUES_JS
+    i = VENUES_JS.index("const seasonState")
+    body = VENUES_JS[i:i + 400]
     assert "program_end" in body, "the roster must read the field it already ships"
     assert "todayISO()" in body
 
 
-def test_an_undated_season_stays_in_the_present_tense():
-    """No end date is not an ending. The roster outlives its seasons and must
-    not announce one it cannot date."""
-    i = VENUES_JS.index("const seasonEnded")
-    assert "!!end &&" in VENUES_JS[i:i + 300]
+def test_an_undated_season_is_not_announced_as_an_ending_or_as_current():
+    """Was `test_an_undated_season_stays_in_the_present_tense`, asserting
+    `!!end &&` — and the half of it that was right is still right: no end date
+    is not an ending, and the roster must not announce one it cannot date.
+
+    What was wrong was the other half. `seasonEnded` was a BOOLEAN, so "we
+    cannot date this season" had to be filed under one of its two answers, and
+    it was filed under `false` — the present tense, which on this page is the
+    claim that these prices are ones you can still get. A payload with no
+    `program_end` sent the roster back to "636 of them in Summer 2026
+    Restaurant Week", which is the same shape of defect as the archiveNote one
+    at the top of this file: unknown falling through to the strongest claim.
+
+    So the answer has three values now and unknown is its own. The behaviour is
+    pinned in tests/test_roster_availability.py, which drives the real function
+    in node over every date shape; this keeps the source-level invariant that
+    an undatable season is never simply asserted to have ended."""
+    i = VENUES_JS.index("const seasonState")
+    body = VENUES_JS[i:i + 400]
+    assert "isISODate(end)" in body, "an unreadable date must not pick a branch"
+    assert "'unknown'" in body
 
 
 def test_the_roster_switches_tense_on_that_answer():
     i = VENUES_JS.index("function renderCoverage")
     body = VENUES_JS[i:VENUES_JS.index("\n}\n", i)]
-    assert "seasonEnded()" in body
+    assert "seasonState()" in body
     assert "took part in" in body, "past tense once the programme has closed"
     assert "of them in" in body, "present tense while it is running"
 
@@ -155,8 +171,8 @@ def test_both_pages_treat_the_last_day_as_still_running():
     inclusive — hasEnded, isUrgent, the planner and the countdown all do — and
     this page's own comment records the one place that did not and the 401
     restaurants it misread on the last day of the season."""
-    i = VENUES_JS.index("const seasonEnded")
-    assert re.search(r"todayISO\(\)\s*>\s*end", VENUES_JS[i:i + 300])
+    i = VENUES_JS.index("const seasonState")
+    assert re.search(r"todayISO\(\)\s*>\s*end", VENUES_JS[i:i + 700])
     j = APP_JS.index("function seasonPhase")
     assert re.search(r"t\s*>\s*DATA\.program_end", APP_JS[j:j + 500])
 
