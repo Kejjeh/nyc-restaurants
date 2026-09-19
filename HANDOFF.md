@@ -1,4 +1,4 @@
-# HANDOFF — state of play (2026-09-17)
+# HANDOFF — state of play (2026-09-19)
 
 Read `CLAUDE.md` first. This file says what's done, what's broken, and what to do next.
 A bot (`github-actions[bot]`) commits a weekly refresh to `main` every Monday —
@@ -6,30 +6,57 @@ A bot (`github-actions[bot]`) commits a weekly refresh to `main` every Monday �
 
 ## Done and working
 
-- Full pipeline (`python src/refresh.py`) end-to-end; **545 tests green** (474 + 71 on the
-  branch below); CI green.
+- Full pipeline (`python src/refresh.py`) end-to-end; **574 tests green** (545 on `main`
+  + 29 on the branch below); CI green.
 - Live site: <https://kejjeh.github.io/nyc-restaurants/> (roster, 1,420 venues incl.
   2006–2024 Michelin back-fill, ~1,941 award records, local SVG map) and
   `/restaurant-week.html` (srw26 dashboard, 636 participants: planner, compare, Leaflet map).
 - PR checks (checks.yml) incl. the payload-staleness guard: green.
 - Google Places resolution COMPLETE (see P0 below) — do not re-run the billed fetch.
-- **PR #46 is OPEN and AWAITING INDEPENDENT REVIEW — do not merge it.**
-  <https://github.com/Kejjeh/nyc-restaurants/pull/46>, branch
-  `claude/confident-wright-m8h5rz`: season-archive honesty, the four known bugs
-  below, a staged cron pause, and `DECISION-season-tail.md`.
-  Checkpoint at `f4d9ec0` (2026-09-17): **CI green** (Checks run #88 — 516 tests,
-  no-PDF guard, both exporter `--check`s, and the payload-staleness guard),
-  `mergeable_state: clean`, no review threads. **CI passing is not approval.**
-  Nothing is deployed: the site still serves `main`.
-  One correction since, from independent review — **545 tests**, `app.js?v=22`:
-  `archiveNote` put the missing-date cases on the same branch as a snapshot that
-  reached `program_end`, so `archiveNote({})` claimed "every participant is
-  listed". Unknown now reads as unknown. The browser check for it turned up the
-  same defect in the clause above it (`The programme ran Jul 20 – null`, reachable
-  because `seasonPhase()` archives on the registry's `status` alone) and that is
-  fixed with it. The 636-row payload is untouched; nothing in `docs/data/` changed.
-- The weekly cron is NOT working: it has failed every week since Aug 10. The pause is
-  STAGED on that branch and is not in effect until it merges. See P0.
+- **PR #46 is MERGED** (merge commit `6af7f95`, 2026-09-18): season-archive honesty,
+  the four known bugs below, a staged cron pause, and `DECISION-season-tail.md`.
+  Its last correction was `archiveNote` treating a missing `snapshot_date` OR
+  `program_end` as proof of a full-season archive; unknown now reads as unknown
+  on the dashboard, and the `The programme ran Jul 20 – null` banner clause found
+  alongside it is fixed too. **Merged is not deployed by itself** — Pages serves
+  `/docs` on `main`, so that work is live; the cron pause it staged is therefore
+  now in effect.
+- **A SECOND PR IS OPEN ON THE SAME BRANCH NAME and awaits independent review —
+  do not merge it.** Branch `claude/confident-wright-m8h5rz`, restarted from
+  `6af7f95` (a merged PR cannot carry new work). It is the roster's half of the
+  same archive-honesty problem, found by walking the real UI rather than by
+  reading it: **574 tests**, `venues.js?v=16`, `venues.css?v=12`.
+  Nothing in `docs/data/` changed — the 636-row snapshot is byte-identical.
+  What it fixes, each reproduced in a browser first:
+  1. Every Restaurant Week row rendered `Restaurant Week $60` in the dashboard's
+     value green, present tense, thirteen days after the season closed — and
+     rendered identically against a payload still running and against one with
+     no dates at all. The pill keeps the price and now carries the season's
+     state (`· ended`, `· dates unconfirmed`), so the row stops reading as an
+     offer; the Book link keeps its word and says which prices are behind it.
+  2. `seasonEnded()` was a boolean, so an undatable season fell through to the
+     present tense — the same "unknown takes the strongest claim" defect PR #46
+     fixed on the dashboard. `seasonState()` returns `ended | running | unknown`
+     and `unknown` says so. A junk date (`2026-13-40`) used to read as running,
+     because the check was a string comparison.
+  3. A payload without `season_label` printed "undefined Restaurant Week".
+  4. The roster kept its state nowhere but memory: filter, open a restaurant on
+     the dashboard, press Back — and the work was gone. Filters, search, sort,
+     view and how far you had read now live in the URL, in the same
+     URLSearchParams-in-the-hash shape `app.js` uses, with the same defensive
+     read-back (unknown facet values ignored, `Object.hasOwn` for the sort key)
+     and the same `hashchange` handler.
+  5. The detail card under the map outlived the selection it belonged to.
+  Known and deliberately left alone: the Restaurant Week facet still offers
+  **"In this season"**, which is present tense on a closed season. Its value is
+  the URL token and the preset's argument, so renaming it would break shared
+  links to buy very little — the chip names participation, and the row and the
+  banner both carry the availability fact now. Worth revisiting at the winter
+  changeover, when the tokens change anyway.
+- The weekly cron is PAUSED as of PR #46 merging: the `schedule:` block in
+  `.github/workflows/refresh.yml` is commented out and `workflow_dispatch` stays, so
+  the close-out refresh can still be run by hand. It had failed every week since
+  Aug 10 — see P0, which is still an owner decision.
 - Sister repo `Kejjeh/nyc-restaurant-week` is the frozen
   pre-roster season tracker — don't confuse the two.
 
@@ -46,7 +73,7 @@ A bot (`github-actions[bot]`) commits a weekly refresh to `main` every Monday �
 
 ## Known bugs
 
-**Fixed on branch `claude/confident-wright-m8h5rz` (2026-09-17), not yet merged:**
+**Fixed and merged in PR #46 (2026-09-18):**
 
 1. ~~`docs/venues.js:49` — `isHttpURL` accepts bare hostnames.~~ Fixed: the base
    argument is gone, both pages now carry the identical implementation, and
@@ -139,7 +166,8 @@ Accept when: a markdown summary the human can approve line-by-line.
 
 **P1 — winter 2027 changeover (when announced, ~Dec/Jan).** Follow README "Season changeover
 (winter 2027)" exactly — it is a 9-step ordered runbook. Re-enable the `schedule`
-trigger in `refresh.yml` as part of it (staged commented-out on the branch above). Escalate to
+trigger in `refresh.yml` as part of it (it is commented out on `main` now).
+Re-read the roster's "In this season" facet value at the same time (see above). Escalate to
 Opus. Accept when: new `config/season.json`; listing validates; new `docs/data/seasons/<code>.json`
 exists; srw26 archive entry untouched; suite green.
 
@@ -167,10 +195,9 @@ Accept when: checks.yml runs it headless and green.
 - **Is the local Places key restricted & unrotated?** `config/secrets.py` (gitignored) holds a
   key. Confirm in Cloud Console it's restricted to the Places API; rotate if it ever left this
   machine. (Never commit, print, or copy it.)
-- **Pause vs. delete the cron** after Sep 6. A pause (schedule commented out,
-  `workflow_dispatch` kept) is STAGED on branch `claude/confident-wright-m8h5rz`
-  for review; merging that branch is what puts it into effect. Nothing was changed
-  in GitHub's workflow settings.
+- ~~**Pause vs. delete the cron** after Sep 6.~~ Settled by PR #46: paused, not
+  deleted — the `schedule:` block is commented out and `workflow_dispatch` is kept.
+  Nothing was changed in GitHub's workflow settings; the file is the record.
 - **Doc placement:** the prep spec asked for `docs/ARCHITECTURE.md` / `docs/DECISIONS.md`, but
   `docs/` is the published Pages site, so they sit at repo root instead. Confirm or move.
   `DECISION-season-tail.md` follows the same rule, for the same reason.
