@@ -83,9 +83,11 @@ A bot (`github-actions[bot]`) commits a weekly refresh to `main` every Monday �
 
 ## Prioritized next steps
 
-**P0 — the refresh has failed every week since Aug 10; published season data is
-still the Aug 10 snapshot. NEEDS AN OWNER DECISION — see `DECISION-season-tail.md`,
-which has the options, the numbers and a recommendation.** Both guards that fired
+**~~P0 — the refresh has failed every week since Aug 10; published season data is
+still the Aug 10 snapshot. NEEDS AN OWNER DECISION.~~ Resolved by events 2026-11-07:**
+the listing API now returns zero entries, so the tail cannot be published and the
+10 August snapshot is the final srw26 archive (option A). See the Resolution section of
+`DECISION-season-tail.md`. The schedule stays paused until the winter 2027 changeover. Both guards that fired
 are working as designed; nothing was committed by any failed run.
 
 | Run | Where it stopped | Numbers |

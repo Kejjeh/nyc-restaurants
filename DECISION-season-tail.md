@@ -1,6 +1,7 @@
 # Decision needed: what to publish for the tail of Summer 2026
 
-**Status:** open, waiting on the owner. Nothing in this file has been acted on.
+**Status:** resolved by events, 2026-11-07 (see Resolution at the end). Until then:
+open, waiting on the owner. Nothing in this file has been acted on.
 **Written:** 2026-09-17, against Actions run logs, not against the handoff.
 **Scope:** one decision, three options, a recommendation, and one cheap fact
 worth having before you choose.
@@ -172,3 +173,28 @@ column is now correctly written in the past tense.
 
 None of that pre-empts the decision. All of it is reversible, and none of it
 touches the 636 rows.
+
+---
+
+## Resolution (2026-11-07): the tail no longer exists to publish
+
+The one-request check was run on 2026-11-07. `python src/fetch_listing.py`
+stopped with `RuntimeError: API total=0: empty listing, refusing to overwrite`:
+the listing endpoint now returns **no entries at all**. Its guard held, so
+`data/raw/listing/` is unchanged.
+
+That settles the question this file left open, and narrows the choice to one:
+
+- **The 406 rows were summer leftovers that have since drained to zero**, not a
+  winter season populating. No winter code is present yet.
+- **Options B and C can no longer be carried out.** The tail was never saved:
+  every September run was refused before it wrote anything, and the source has
+  now emptied. There is nothing to pass `--allow-shrink` over.
+- **Option A is therefore the outcome**, not by preference but because it is
+  the only one left: the 10 August snapshot (636 rows) is the final srw26
+  archive. The site already presents it that way, so nothing changes.
+
+The refresh schedule stays paused in `.github/workflows/refresh.yml`. Restore it
+at the winter 2027 changeover (README runbook, step 9), once the winter listing
+appears and `config/season.json` names the new season. Run the refresh by hand
+before then only to test the changeover, never with `--allow-shrink` against srw26.
