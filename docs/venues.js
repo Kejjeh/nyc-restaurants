@@ -93,7 +93,16 @@ const fmtDate = (iso) => {
   return m ? `${MONTHS[+m[2] - 1]} ${+m[3]}, ${m[1]}` : iso;
 };
 
-/* Has the Restaurant Week season the payload describes finished?
+/* Round-trip, not just a shape match: Date.parse accepts "2026-02-30" and
+   quietly rolls it to March 2, so the regex alone would pass a day that does
+   not exist. The same implementation app.js carries, over the same field. */
+const isISODate = (s) => {
+  if (typeof s !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(s)) return false;
+  const d = new Date(`${s}T12:00:00Z`);
+  return !Number.isNaN(d.getTime()) && d.toISOString().slice(0, 10) === s;
+};
+
+/* What is the Restaurant Week season the payload describes doing today?
  *
  * The roster is the year-round product and the season is one nullable column
  * on it, so this page had no notion of a season ending at all: on 17 September
@@ -101,11 +110,35 @@ const fmtDate = (iso) => {
  * tense, eleven days after the programme closed. `program_end` was already in
  * venues.json and simply unused.
  *
- * Unknown end date -> false: the roster's own copy stays in the present tense
- * rather than announcing an ending it cannot date. */
-const seasonEnded = () => {
+ * Three answers, because there are three. The first fix for the above returned
+ * a BOOLEAN, and a boolean has to put "we do not know when it ends" somewhere:
+ * it put it on `false`, which is the present tense, which is the claim that
+ * the prices on this page are ones you can still get. Reproduced on 19
+ * September 2026, thirteen days after the programme closed, by serving a
+ * payload with `program_end` deleted: the page went back to "636 of them in
+ * Summer 2026 Restaurant Week". Deleted, null and "2026-13-40" all did it —
+ * the junk date because "2026-09-19" > "2026-13-40" is false as a string
+ * comparison, so an unparseable date read as a season still running.
+ *
+ * That is the dashboard's archiveNote defect, in the same repo, on the same
+ * kind of missing date: unknown fell through to the strongest claim. The rule
+ * this repo works to is that null means unknown, so unknown gets its own
+ * answer and the copy that reads it says so out loud. */
+const seasonState = () => {
   const end = STATE.data && STATE.data.program_end;
-  return !!end && todayISO() > end;
+  if (!isISODate(end)) return 'unknown';
+  /* `>` not `>=`: the end date is inclusive everywhere else in this codebase
+     (hasEnded, isUrgent, the planner, the countdown), and on the last day of
+     the season the programme is still running. */
+  return todayISO() > end ? 'ended' : 'running';
+};
+
+/* The season's name, or nothing. A payload without `season_label` used to
+   render the literal string "undefined Restaurant Week" — the same absence
+   the rest of this file is careful to leave blank. */
+const seasonLabel = () => {
+  const s = STATE.data && STATE.data.season_label;
+  return typeof s === 'string' && s.trim() ? s.trim() : null;
 };
 
 const STATE = {
@@ -117,6 +150,7 @@ const STATE = {
   filters: new Map(),   // facet -> Set(values)
   shown: PAGE,
   view: 'list',         // 'list' | 'map'
+  pinned: null,         // slug of the venue whose card sits under the map
 };
 
 /* ---------- scoring helpers -------------------------------------------- */
@@ -211,6 +245,83 @@ function setFilter(key, values) {
 function clearFilters() {
   STATE.filters.clear();
   STATE.threeWay = false;
+}
+
+/* ---------- the URL is the state ---------------------------------------- *
+
+   Everything above lived in memory and nowhere else, so the roster had no way
+   to be returned to. The walk that found it: filter to the Michelin-starred
+   rooms, search "brooklyn", get 21 of 1,420 — then open one of them on the
+   value dashboard, which is what the Restaurant Week pill is for and which
+   navigates in this same tab — then press Back. The roster boots from scratch:
+   120 of 1,420, no chips, the search box empty. Thirteen clicks of work, and
+   the one gesture every browser promises will undo a navigation is what throws
+   it away. The same goes for a reload, and for sending someone "look at this".
+
+   The dashboard next door has had this since it had filters, in exactly this
+   shape — URLSearchParams inside the hash, `~` between multiple values,
+   replaceState so the URL tracks the page without filling the Back button with
+   one entry per keystroke. This is the roster catching up, and the two files
+   are deliberately readable side by side.
+
+   Read back defensively: a hash is user-editable text — a forwarded link, a
+   truncated paste, last season's URL — so a token that cannot be read is
+   ignored rather than coerced. The dashboard learned each of these the hard
+   way and the comments there name the damage; the two that matter here are an
+   unknown facet value (it adds a chip that can match nothing, and the page
+   then reads "0 of 1,420", blaming a filter for a value that does not exist)
+   and `sort=constructor`, which is inherited from Object.prototype, passes a
+   truthy check, and is then called as a comparator. */
+
+function writeHash() {
+  const p = new URLSearchParams();
+  for (const [key, set] of STATE.filters) if (set.size) p.set(key, [...set].join('~'));
+  if (STATE.threeWay) p.set('juries', '3');
+  if (STATE.q) p.set('q', $('#q') ? $('#q').value.trim() : STATE.q);
+  if (STATE.sort !== 'prestige') p.set('sort', STATE.sort);
+  if (STATE.view !== 'list') p.set('view', STATE.view);
+  // How far down the list you had read is part of where you were: without it,
+  // Back from row 600 lands you at row 120 with no way to tell what happened.
+  if (STATE.shown > PAGE) p.set('n', String(STATE.shown));
+  const s = p.toString();
+  history.replaceState(null, '', s ? `#${s}` : location.pathname + location.search);
+}
+
+/** Every value a facet can legitimately produce from the loaded roster. */
+function knownFacetValues(f) {
+  const out = new Set();
+  for (const v of STATE.rows) for (const val of f.get(v)) if (val) out.add(val);
+  return out;
+}
+
+function readHash() {
+  const raw = location.hash.replace(/^#/, '');
+  if (!raw) return;
+  const p = new URLSearchParams(raw);
+  for (const f of FACETS) {
+    const v = p.get(f.key);
+    if (!v) continue;
+    const known = knownFacetValues(f);
+    const set = new Set(v.split('~').filter((x) => known.has(x)));
+    if (set.size) STATE.filters.set(f.key, set);
+  }
+  if (p.get('juries') === '3') STATE.threeWay = true;
+  const q = p.get('q');
+  if (q) {
+    STATE.q = fold(q.trim());
+    if ($('#q')) $('#q').value = q;
+  }
+  // Object.hasOwn, not truthiness — see above.
+  const s = p.get('sort');
+  if (s && Object.hasOwn(SORTS, s)) {
+    STATE.sort = s;
+    if ($('#sort')) $('#sort').value = s;
+  }
+  if (p.get('view') === 'map') STATE.view = 'map';
+  // A count that is not a count leaves the page at its first page of rows,
+  // which is the same place a visitor with no hash at all starts from.
+  const n = Number(p.get('n'));
+  if (Number.isInteger(n) && n > PAGE) STATE.shown = Math.min(n, STATE.rows.length);
 }
 
 /* ---------- filtering + sorting ----------------------------------------- */
@@ -348,15 +459,42 @@ function renderRow(v) {
   }
   head.append(statusPill(v));
   if (v.rw) {
+    /* The row is where somebody actually decides, and it was the one part of
+       this page that never mentioned the season at all. On 19 September 2026,
+       thirteen days after Summer 2026 closed, every one of the 636 rows still
+       read "Restaurant Week $60" in the dashboard's value green — the same
+       pill, the same colour, the same tense it had in July. Driven against a
+       payload whose season was still running, and against one with no end date
+       at all, it rendered identically in all three.
+
+       The coverage banner did say the programme had ended, but it says it once,
+       at the top of a page that runs to 1,420 rows, and it is the ROW that
+       carries a price. A price with no tense on it is read as a price.
+
+       The pill keeps the money — what the prix fixe was is a true fact and it
+       is why the row is interesting — and stops implying you can pay it. */
+    const state = seasonState();
     const tiers = v.rw.price_tiers.join(' / ') || 'Restaurant Week';
-    const rw = el('a', 'pill rw', `Restaurant Week ${tiers}`);
+    const suffix = state === 'ended' ? ' · ended'
+      : state === 'unknown' ? ' · dates unconfirmed' : '';
+    const rw = el('a', `pill rw${state === 'running' ? '' : ` ${state}`}`,
+                  `Restaurant Week ${tiers}${suffix}`);
     /* Straight to this restaurant on the dashboard, not to the top of it. The
        dashboard reads `#r=<slug>` and openRestaurant() clears whatever was
        filtered so the link wins -- landing someone on a 636-row list and
        leaving them to find the name again is not a link, it is a hint. */
     rw.href = `restaurant-week.html#r=${encodeURIComponent(v.rw.slug)}`;
-    rw.title = 'Open this restaurant on the value dashboard — its prix fixe, '
-             + 'menu, gap against à la carte and subway walk.';
+    const programme = seasonLabel() ? `${seasonLabel()} Restaurant Week` : 'Restaurant Week';
+    rw.title = state === 'ended'
+      ? `${programme} ended ${fmtDate(STATE.data.program_end)}. This was its prix fixe. `
+        + 'Open the archived listing on the value dashboard — menu, gap against '
+        + 'à la carte and subway walk.'
+      : state === 'unknown'
+        ? `This was ${v.name}'s ${programme} prix fixe. Whether that programme is `
+          + 'still running is unknown — the payload carries no usable end date. '
+          + 'Open its listing on the value dashboard.'
+        : 'Open this restaurant on the value dashboard — its prix fixe, '
+          + 'menu, gap against à la carte and subway walk.';
     head.append(rw);
   }
   row.append(head);
@@ -406,7 +544,20 @@ function renderRow(v) {
     book.href = v.rw.reserve;
     book.rel = 'noreferrer noopener';
     book.target = '_blank';
-    book.title = `Reservations or website for ${v.name}`;
+    /* The word stays "Book": this link is the restaurant's own reservations
+       page or website, it works year-round, and calling it something vaguer
+       once the season is over would cost a reader a working control without
+       making anything truer. What it must not do is let the pill above it be
+       read as the thing being booked — so out of season the name says which
+       prices you are about to be offered. The pill carries the same fact
+       visibly, for the phone, where nothing has a tooltip. */
+    const state = seasonState();
+    book.title = state === 'running'
+      ? `Reservations or website for ${v.name}`
+      : `Reservations or website for ${v.name}, at its normal prices — `
+        + (state === 'ended'
+          ? `the Restaurant Week menu ended ${fmtDate(STATE.data.program_end)}.`
+          : 'the Restaurant Week menu may no longer be offered.');
     meta.append(book);
   }
   row.append(meta);
@@ -586,6 +737,9 @@ function apply() {
     const again = document.getElementById(focused);
     if (again) again.focus();
   }
+  // Last, and on every path: apply() is the one funnel every control goes
+  // through, so recording the state here is what makes "every control" true.
+  writeHash();
 }
 
 /* ---------- map ---------------------------------------------------------
@@ -682,6 +836,18 @@ function renderMap(hits) {
     dot.append(label);
     MAP.dots.append(dot);
   }
+  /* The detail card under the map is inside a region the markup labels "Map of
+     the current selection", and it outlived the selection. Tap a dot, then
+     search for something that matches nothing: the map empties to zero dots,
+     the page says nothing matches, and the card goes on showing the restaurant
+     you tapped — with its Book link — as though it were the one thing left.
+     Reproduced on a phone, which is where a stray tap is easiest.
+     A pinned venue the current filters exclude is no longer part of this
+     selection, so it stops being displayed as part of it. */
+  if (STATE.pinned && !hits.some((v) => v.slug === STATE.pinned)) {
+    STATE.pinned = null;
+    $opt('#mapDetail').textContent = '';
+  }
   const off = hits.length - placed;
   $('#mapGaps').textContent = off
     ? `${placed.toLocaleString()} of the ${hits.length.toLocaleString()} shown are on the map; `
@@ -721,6 +887,7 @@ function wireMapDetail() {
     if (!slug) return;
     const v = STATE.bySlug.get(slug);
     if (!v) return;
+    STATE.pinned = slug;
     const box = $('#mapDetail');
     box.textContent = '';
     box.append(renderRow(v));
@@ -736,15 +903,27 @@ function renderCoverage() {
   // Past tense once the programme has closed. The count is a historical fact
   // about who took part, and the present tense made it read as a list of
   // places you could still book under the Restaurant Week price.
-  const label = STATE.data.season_label;
-  p.append(document.createTextNode(seasonEnded()
-    ? `, ${c.in_restaurant_week} of which took part in ${label} Restaurant Week `
+  const state = seasonState();
+  const label = seasonLabel();
+  const programme = label ? `${label} Restaurant Week` : 'Restaurant Week';
+  p.append(document.createTextNode(state === 'running'
+    ? `, ${c.in_restaurant_week} of them in ${programme} `
       + `(${c.both} are both). `
-    : `, ${c.in_restaurant_week} of them in ${label} Restaurant Week `
+    : `, ${c.in_restaurant_week} of which took part in ${programme} `
       + `(${c.both} are both). `));
-  if (seasonEnded()) {
+  if (state === 'ended') {
     p.append(document.createTextNode(
       `That programme ended ${fmtDate(STATE.data.program_end)}; its prices and menus are over. `
+      + `Everything else on this page is year-round. `));
+  }
+  // Unknown is not "still running", and it is not an ending either. It is the
+  // one case where the page cannot tell a reader whether these prices are
+  // buyable, so it says exactly that instead of picking the flattering half.
+  if (state === 'unknown') {
+    p.append(document.createTextNode(
+      `Whether that programme is still running is unknown: the payload carries no `
+      + `usable end date for it, so treat its prices and menus as a record of what `
+      + `was offered rather than as something you can book. `
       + `Everything else on this page is year-round. `));
   }
   if (c.unverified) {
@@ -789,6 +968,28 @@ function wire() {
       apply();
     });
   }
+  /* Changing only the hash is a same-document navigation, so boot() does not
+     re-run: without this, pasting or editing a filter URL in the bar of an
+     already-open roster silently does nothing, and the page goes on showing
+     the selection it had while its own URL describes a different one. The
+     dashboard has carried this since it had filters and its comment says the
+     same thing — the roster's URL is new, so it inherits the lesson rather
+     than rediscovering it. Found the same way, by pasting one.
+
+     replaceState does not fire hashchange, so the writeHash() at the end of
+     apply() cannot re-enter this. */
+  addEventListener('hashchange', () => {
+    clearFilters();
+    STATE.q = '';
+    $('#q').value = '';
+    STATE.sort = 'prestige';
+    $('#sort').value = 'prestige';
+    STATE.shown = PAGE;
+    STATE.view = 'list';
+    readHash();
+    setView(STATE.view);
+  });
+
   const toTop = $('#toTop');
   toTop.addEventListener('click', () => window.scrollTo({ top: 0 }));
   window.addEventListener('scroll', () => { toTop.hidden = window.scrollY < 800; },
@@ -868,7 +1069,11 @@ async function boot() {
   renderCoverage();
   renderPresets();
   wire();
-  apply();
+  // After the rows are in STATE (readHash validates values against them) and
+  // after the controls exist (it writes the search box and the sort select),
+  // but before the first render, so a restored page draws once.
+  readHash();
+  if (STATE.view === 'map') setView('map'); else apply();
 }
 
 boot();

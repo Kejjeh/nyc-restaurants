@@ -92,6 +92,24 @@
 .pill.rw:hover { filter: brightness(1.04); text-decoration: underline; }
 .pill.rw:focus-visible { outline: 2px solid var(--value); outline-offset: 2px; }
 
+/* A programme that has finished is not an offer. The live pill borrows the
+   dashboard's "value" green — the loudest colour either page has for "this is
+   worth money" — and over a season that closed thirteen days ago that green is
+   advertising something nobody can buy. Ended keeps the price and drops the
+   green, into the same quiet ink the status pills use for "you cannot eat here
+   now"; unknown takes the dashed border this page already uses for "we do not
+   know", the same grammar as the Unverified pill two rules up. Both stay
+   links, because the archived listing behind them is still worth reading. */
+.pill.rw.ended {
+  background: var(--surface-2); color: var(--ink-3); border-color: var(--rule-strong);
+}
+.pill.rw.unknown {
+  background: transparent; color: var(--ink-3);
+  border: 1px dashed var(--rule-strong);
+}
+.pill.rw.ended:focus-visible,
+.pill.rw.unknown:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
 .venueMeta {
   display: flex;
   flex-wrap: wrap;
