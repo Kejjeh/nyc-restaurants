@@ -8,6 +8,8 @@ Usage: python src/resolve_venues.py [--fetch] [--force] [--report] [--dry-run] [
   --force    re-fetch venues that are already cached; this re-bills
   --report   print the cache's state and stop
   --limit N  fetch (or dry-run) at most N venues this run
+  An unknown argument is an error, raised before the key is read or anything
+  is sent.
 
 Why this is a separate script from fetch_google_ratings.py, which does a very
 similar thing: that one resolves Restaurant Week participants, and every one of
@@ -29,11 +31,11 @@ and changes nothing else, rather than failing or silently skipping the step.
 Cache: data/raw/venues_google/{venue_slug}.json, in the same record shape
 data/raw/google/ uses, so a venue and a participant read through one code path.
 """
+import argparse
 import json
 import re
 import shutil
 import sqlite3
-import sys
 import tempfile
 import time
 from pathlib import Path
@@ -41,7 +43,8 @@ from pathlib import Path
 from build_venues import postal_key
 from config import in_nyc, in_nyc_zip
 from enrich_recognition import street_key
-from fetch_google_ratings import (DETAIL_FIELDS, DETAILS_URL, TEXT_URL, api_key,
+from fetch_google_ratings import (DETAIL_FIELDS, DETAILS_URL, TEXT_URL,
+                                  TEXT_SEARCH_USD_PER_1000, api_key,
                                   flatten, get, name_sim, norm)
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -56,10 +59,8 @@ PARTICIPANTS = ROOT / "data" / "raw" / "google"
 NAME_MIN_NO_COORDS = 0.62
 PAUSE = 0.12
 
-# Places Text Search, US list price at the time of writing, per 1,000 calls.
-# Only ever used to print an estimate before spending anything; nothing in the
-# pipeline depends on it being current.
-TEXT_SEARCH_USD_PER_1000 = 32.0
+# TEXT_SEARCH_USD_PER_1000 (the estimate --dry-run prints) lives in
+# fetch_google_ratings.py, shared with that script's own dry run.
 
 # The roster has three states and Google has three answers, but they are not
 # the same three. A temporary closure is not "still trading" and is not a
@@ -372,23 +373,45 @@ def report(con):
             print(f"  {v['venue_slug'][:34]:35} {(v['address'] or '(no address)')[:40]}")
 
 
-def main():
+def parse_args(argv=None):
+    """Strict: an unknown or mistyped flag exits 2 here, before main() touches
+    the DB, reads a key or sends a request. The old hand-rolled sys.argv checks
+    ignored any flag they did not know."""
+    ap = argparse.ArgumentParser(
+        prog="resolve_venues.py",
+        description="Resolve award venues against Google Places "
+                    "(--fetch is billed; no flag applies the cache).")
+    ap.add_argument("--fetch", action="store_true",
+                    help="look up unresolved venues (billed; needs GOOGLE_PLACES_KEY)")
+    ap.add_argument("--force", action="store_true",
+                    help="with --fetch, re-fetch cached venues; this re-bills")
+    ap.add_argument("--report", action="store_true",
+                    help="print the cache's state and stop")
+    ap.add_argument("--dry-run", action="store_true",
+                    help="print the queries --fetch would send and the cost; "
+                         "no key, no network")
+    ap.add_argument("--limit", type=int, default=None, metavar="N",
+                    help="fetch (or dry-run) at most N venues this run")
+    return ap.parse_args(argv)
+
+
+def main(argv=None):
+    args = parse_args(argv)
     tmp = Path(tempfile.mkdtemp()) / DB.name
     shutil.copyfile(DB, tmp)
     con = sqlite3.connect(tmp)
     con.row_factory = sqlite3.Row
 
-    limit = (int(sys.argv[sys.argv.index("--limit") + 1])
-             if "--limit" in sys.argv else None)
+    limit = args.limit
 
-    if "--report" in sys.argv:
+    if args.report:
         return report(con)
-    if "--dry-run" in sys.argv:
+    if args.dry_run:
         return dry_run(con, limit)
 
-    if "--fetch" in sys.argv:
+    if args.fetch:
         key = api_key()
-        force = "--force" in sys.argv
+        force = args.force
         todo = [v for v in unresolved(con)
                 if force or not (CACHE / f"{v['venue_slug']}.json").exists()]
         if limit:

@@ -126,7 +126,7 @@ def test_it_runs_in_the_no_key_path():
     import inspect
     src = inspect.getsource(resolve_venues.main)
     assert "apply_participant_cache(con)" in src
-    body = src[:src.index('if "--fetch" in sys.argv')]
+    body = src[:src.index("if args.fetch:")]
     assert "api_key" not in body
 
 
