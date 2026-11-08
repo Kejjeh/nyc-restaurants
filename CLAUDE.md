@@ -90,6 +90,37 @@ To correct a stale season `status` in `docs/data/seasons.json` WITHOUT rebuildin
 payload, use `python src/export_site_data.py --registry-only`. A full re-export after a
 season ends silently restates every published grade.
 
+## Skills for this repo
+
+Load these with the Skill tool when the situation comes up; the user does not need to ask.
+
+| Situation in this repo | Skill |
+|---|---|
+| After any change; after a `docs/` frontend change, also see it in the served page | `smoke` (project command) / `run` |
+| Running the weekly refresh locally | `weekly-refresh` (project command) |
+| Anything that calls Google Places (`--fetch`, ratings, `places_cli.py add`) — it bills | `places-fetch` (project command) |
+| A guard fires (shrink, `min_rows`), an ambiguous match needs a ruling, a season changeover, or anything that re-grades published rows | `sop-owner-decision` |
+| A facet count, grade, gap or roster row looks wrong; the Monday refresh failed | `diagnosing-bugs` |
+| Writing crawler, parser, matcher or exporter code — null must stay unknown, no guessed matches | `sop-fail-loud` |
+| A code change that alters the committed `docs/data/` payloads | `sop-regenerate-outputs` |
+| Fixing a bug: failing test first, docstring naming the bug | `tdd` |
+| Filing, triaging or splitting GitHub issues | `triage` / `to-tickets` |
+| Any commit; opening or merging a PR | `safe-commit` / `sop-ship-pr` |
+
+## Agent skills
+
+### Issue tracker
+
+Issues live in GitHub Issues on `Kejjeh/nyc-restaurants`, via the `gh` CLI. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+The five default triage roles, each label string equal to its name. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context: `GLOSSARY.md` + `docs/adr/` at the root (neither exists yet; decisions live in `DECISIONS.md`). See `docs/agents/domain.md`.
+
 ## Before you finish any task
 
 1. `python -m pytest -q tests/` — must be 574+ passed, 0 failed.
