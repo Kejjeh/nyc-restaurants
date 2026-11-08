@@ -1,9 +1,14 @@
 """Weekly refresh: re-pull listing, fetch new details/menus, rebuild DB, diff.
 
-Usage: python src/refresh.py [--force-menus]
+Usage: python src/refresh.py [--force-menus] [--dry-run]
   --force-menus  re-download every PDF (detects in-place menu content changes;
                  otherwise only new/missing PDFs are fetched)
+  --dry-run      run nothing but `fetch_google_ratings.py --dry-run`: the one
+                 billed step's count and cost, with no key and no network
+  An unknown argument is an error, raised before anything runs: this script
+  bills Google Places whenever GOOGLE_PLACES_KEY is set.
 """
+import argparse
 import os
 import subprocess
 import sys
@@ -17,8 +22,27 @@ def run(script, *args):
     subprocess.run([sys.executable, str(SRC / script), *args], check=True)
 
 
-def main():
-    force = "--force-menus" in sys.argv
+def parse_args(argv=None):
+    ap = argparse.ArgumentParser(
+        prog="refresh.py",
+        description="Weekly refresh (crawls; bills Google Places when "
+                    "GOOGLE_PLACES_KEY is set).")
+    ap.add_argument("--force-menus", action="store_true",
+                    help="re-download every PDF and force a full re-parse")
+    ap.add_argument("--dry-run", action="store_true",
+                    help="preview only the billed ratings step; runs nothing else")
+    return ap.parse_args(argv)
+
+
+def main(argv=None):
+    args = parse_args(argv)
+    if args.dry_run:
+        # Against the CURRENT database: a real refresh rebuilds it first, so
+        # restaurants new this week are not in this count yet.
+        print("dry run: previewing the billed step only, against the current DB "
+              "(a real refresh rebuilds it first). Nothing else runs.", flush=True)
+        return run("fetch_google_ratings.py", "--dry-run")
+    force = args.force_menus
     if force:
         menus = SRC.parent / "data" / "raw" / "menus"
         for f in menus.glob("*.pdf"):

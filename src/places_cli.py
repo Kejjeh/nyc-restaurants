@@ -1,13 +1,15 @@
 """Track restaurants I want to try that are NOT in Restaurant Week.
 
 Usage:
-  python src/places_cli.py add "Le Bernardin" ["155 W 51st St"]
+  python src/places_cli.py add "Le Bernardin" ["155 W 51st St"] [--dry-run]
   python src/places_cli.py list
   python src/places_cli.py remove <slug>
 
 `add` resolves the name through the same Text Search machinery the roster uses
 (src/fetch_google_ratings.py) and prints the top candidate for a y/n before
-anything is written. There is no coordinate of our own to corroborate against
+anything is written. `add` bills one Text Search; `add ... --dry-run` prints
+the query it would send and its cost, without the key or the network. An
+unknown argument is an error, raised before the key is read. There is no coordinate of our own to corroborate against
 here, so the human confirmation IS the verification -- the same rule that lets
 a hand-pinned place_id skip the geometry test.
 
@@ -18,15 +20,16 @@ Writes config/places.json (tracked: the list itself) and, per place,
 data/cache/places/<slug>.json in exactly the record shape data/raw/google/ uses,
 so the exporter reads a place and a participant through one code path.
 """
+import argparse
 import json
 import re
 import shutil
 import sqlite3
-import sys
 import tempfile
 from pathlib import Path
 
-from fetch_google_ratings import TEXT_URL, api_key, best_candidate, get, norm
+from fetch_google_ratings import (TEXT_SEARCH_USD_PER_1000, TEXT_URL, api_key,
+                                  best_candidate, get, norm)
 
 ROOT = Path(__file__).resolve().parents[1]
 PLACES = ROOT / "config" / "places.json"
@@ -88,6 +91,11 @@ def remove_place(doc, slug):
     return {**doc, "places": kept}
 
 
+def query_for(name, hint):
+    """The exact Text Search string resolve() sends; shared with --dry-run."""
+    return " ".join(x for x in (name, hint, "New York") if x)
+
+
 def resolve(name, hint, key):
     """Top Text Search candidate for a name -> the flattened match block.
 
@@ -95,7 +103,7 @@ def resolve(name, hint, key):
     corroborate, it falls back to ranking by name similarity, which is the most
     a machine can honestly do here.
     """
-    q = " ".join(x for x in (name, hint, "New York") if x)
+    q = query_for(name, hint)
     d = get(TEXT_URL, {"query": q, "key": key})
     if d.get("status") != "OK":
         raise SystemExit(f"search {d.get('status')}: "
@@ -117,12 +125,18 @@ def cache_record(slug, name, cand):
     return rec
 
 
-def cmd_add(name, hint):
+def cmd_add(name, hint, dry_run=False):
     slug = slugify(name)
     doc = load_places()
     bad = reject_reason(slug, doc["places"], roster_slugs())
     if bad:
         raise SystemExit(f"not added: {bad}")
+    if dry_run:
+        print(f"1 Text Search would be sent for {slug}: {query_for(name, hint)}")
+        print(f"estimated cost: ${TEXT_SEARCH_USD_PER_1000 / 1000:.3f} "
+              f"at ${TEXT_SEARCH_USD_PER_1000:.0f}/1000 Text Search calls. "
+              f"Dry run: no key read, nothing sent, nothing written.")
+        return
     cand = resolve(name, hint, api_key())
     print(f"  {cand['name']}\n  {cand['address']}\n"
           f"  {cand['rating']}* ({cand['user_ratings_total']} reviews)"
@@ -150,16 +164,32 @@ def cmd_remove(slug):
     print(f"removed {slug} (data/cache/places/{slug}.json left alone)")
 
 
-def main():
-    argv = sys.argv[1:]
-    cmd = argv[0] if argv else "list"
-    if cmd == "list":
+def parse_args(argv=None):
+    """Strict: an unknown flag or a surplus argument exits 2 here, before a key
+    is read. The old positional parsing took `add "X" --dry-run` as an address
+    hint of "--dry-run" and sent a billed search with it."""
+    ap = argparse.ArgumentParser(
+        prog="places_cli.py",
+        description="Track restaurants I want to try that are NOT in Restaurant Week.")
+    sub = ap.add_subparsers(dest="cmd")
+    add = sub.add_parser("add", help="resolve a name via Text Search (billed) and add it")
+    add.add_argument("name")
+    add.add_argument("hint", nargs="?", default=None, help="address hint")
+    add.add_argument("--dry-run", action="store_true",
+                     help="print the query and its cost; no key, no network")
+    sub.add_parser("list", help="show the list (the default)")
+    rm = sub.add_parser("remove", help="drop a slug from the list")
+    rm.add_argument("slug")
+    return ap.parse_args(argv)
+
+
+def main(argv=None):
+    args = parse_args(argv)
+    if args.cmd in (None, "list"):
         return cmd_list()
-    if cmd == "add" and len(argv) >= 2:
-        return cmd_add(argv[1], argv[2] if len(argv) > 2 else None)
-    if cmd == "remove" and len(argv) == 2:
-        return cmd_remove(argv[1])
-    raise SystemExit(__doc__.split("\n\n")[1])
+    if args.cmd == "add":
+        return cmd_add(args.name, args.hint, dry_run=args.dry_run)
+    return cmd_remove(args.slug)
 
 
 if __name__ == "__main__":

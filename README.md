@@ -223,13 +223,13 @@ succeeds, the payload is well-formed, and the site is wrong.
   `playwright install chromium`). Results cache per slug in `data/raw/pricesweep/`.
 - `python src/menu_term_sweep.py [--shard i/k] [--report]` — see "Off-site menu
   terms" below.
-- `python src/fetch_google_ratings.py [--shard i/k] [--force] [--report]` — see
+- `python src/fetch_google_ratings.py [--shard i/k] [--force] [--report] [--dry-run]` — see
   "Google ratings".
 - `python src/fetch_subway.py` — one-time MTA station pull; NOT re-run by
   `refresh.py`.
 - `python src/fetch_outdoor_dining.py --refresh` — DOT licence register; IS
   re-run weekly, because licences are issued and expire continuously.
-- `python src/places_cli.py add "Name" ["address hint"] | list | remove <slug>` —
+- `python src/places_cli.py add "Name" ["address hint"] [--dry-run] | list | remove <slug>` —
   see "My list".
 
 ### Dish tags

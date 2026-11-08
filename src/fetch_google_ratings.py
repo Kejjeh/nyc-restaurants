@@ -1,6 +1,10 @@
 """Fetch Google Places ratings for each restaurant.
 
-Usage: python src/fetch_google_ratings.py [--shard i/k] [--force] [--report]
+Usage: python src/fetch_google_ratings.py [--shard i/k] [--force] [--report] [--dry-run]
+  --dry-run  print what would be fetched and what it would cost, without
+             reading the key or sending anything
+  An unknown argument is an error, raised before the key is read or anything
+  is sent: a mistyped --dry-run once ran a real, billed fetch.
 
 Key: env GOOGLE_PLACES_KEY, else config/secrets.py (both gitignored). It is
 never written into the cache, the payload, or any tracked file.
@@ -17,12 +21,12 @@ search with a hand-verified place_id, which is the only truly stable key.
 
 Output: data/raw/google/{slug}.json
 """
+import argparse
 import importlib.util
 import json
 import os
 import re
 import shutil
-import sys
 import tempfile
 import time
 import unicodedata
@@ -49,6 +53,11 @@ NEAR_M = 150
 FAR_M = 400
 NAME_MIN = 0.55
 PAUSE = 0.12
+
+# Places Text Search, US list price at the time of writing, per 1,000 calls.
+# Only ever used to print an estimate before spending anything; nothing in the
+# pipeline depends on it being current. (resolve_venues.py imports it from here.)
+TEXT_SEARCH_USD_PER_1000 = 32.0
 
 
 SECRETS_FILE = ROOT / "config" / "secrets.py"
@@ -214,6 +223,12 @@ def best_candidate(results, name, lat, lng):
     return best[1] if best else None
 
 
+def query_for(name, hood, boro):
+    """The exact Text Search string fetch_one() sends. Shared with --dry-run so
+    the preview shows what the billed run would send, not a reimplementation."""
+    return " ".join(x for x in (name, hood, boro, "New York") if x)
+
+
 def fetch_one(slug, name, hood, boro, lat, lng, key, place_id=None):
     rec = {"slug": slug, "query_name": name, "matched": None,
            "accepted": False, "reason": None, "source": None, "error": None}
@@ -228,7 +243,7 @@ def fetch_one(slug, name, hood, boro, lat, lng, key, place_id=None):
             rec.update(matched=flatten(d["result"]), accepted=True,
                        reason="hand-verified place_id", source="place_id")
             return rec
-        q = " ".join(x for x in (name, hood, boro, "New York") if x)
+        q = query_for(name, hood, boro)
         d = get(TEXT_URL, {"query": q, "key": key})
         rec["source"] = "textsearch"
         if d.get("status") == "ZERO_RESULTS":
@@ -287,21 +302,79 @@ def report():
             print(f"  {a['slug'][:30]:30} {a['error']}")
 
 
-def main():
-    if "--report" in sys.argv:
-        return report()
-    key = api_key()
-    force = "--force" in sys.argv
-    overrides = (json.loads(OVERRIDES.read_text(encoding="utf-8")).get("place_ids", {})
-                 if OVERRIDES.exists() else {})
-    shard_i, shard_k = 0, 1
-    if "--shard" in sys.argv:
-        shard_i, shard_k = (int(x) for x in sys.argv[sys.argv.index("--shard") + 1].split("/"))
+def shard_arg(text):
+    """"i/k" -> (i, k), refusing anything that would silently select nothing."""
+    try:
+        i, k = (int(x) for x in text.split("/"))
+    except ValueError:
+        raise argparse.ArgumentTypeError(f"expected i/k, e.g. 0/4; got {text!r}")
+    if k < 1 or not 0 <= i < k:
+        raise argparse.ArgumentTypeError(f"need 0 <= i < k; got {text!r}")
+    return i, k
 
+
+def parse_args(argv=None):
+    """Strict: an unknown or mistyped flag exits 2 here, before main() reads a
+    key or sends a request. The old hand-rolled sys.argv checks ignored any flag
+    they did not know, so `--dry-run` (which did not exist) ran a billed fetch."""
+    ap = argparse.ArgumentParser(
+        prog="fetch_google_ratings.py",
+        description="Fetch Google Places ratings for each restaurant (billed).")
+    ap.add_argument("--shard", type=shard_arg, default=(0, 1), metavar="i/k",
+                    help="only every k-th restaurant, starting at i")
+    ap.add_argument("--force", action="store_true",
+                    help="re-fetch slugs that are already cached; this re-bills")
+    ap.add_argument("--report", action="store_true",
+                    help="summarise the cache and stop; no key, no network")
+    ap.add_argument("--dry-run", action="store_true",
+                    help="print what would be fetched and the estimated cost; "
+                         "no key, no network")
+    return ap.parse_args(argv)
+
+
+def load_overrides():
+    return (json.loads(OVERRIDES.read_text(encoding="utf-8")).get("place_ids", {})
+            if OVERRIDES.exists() else {})
+
+
+def plan(force, shard_i, shard_k):
+    """-> (rows, todo): every target, and the ones this run would fetch."""
     rows = targets()
     todo = [r for n, r in enumerate(rows)
             if n % shard_k == shard_i
             and (force or not (OUT / f"{r[0]}.json").exists())]
+    return rows, todo
+
+
+def dry_run(force, shard_i, shard_k):
+    """What a real run would fetch and cost, without the key or the network."""
+    overrides = load_overrides()
+    rows, todo = plan(force, shard_i, shard_k)
+    pinned = sum(1 for r in todo if overrides.get(r[0]))
+    print(f"shard {shard_i}/{shard_k}: {len(todo)} would be fetched "
+          f"({len(rows)} total, {len(list(OUT.glob('*.json')))} cached) -- "
+          f"{len(todo) - pinned} by Text Search, {pinned} by Details on a "
+          f"hand-verified place_id.")
+    print(f"estimated cost: ${len(todo) * TEXT_SEARCH_USD_PER_1000 / 1000:.2f} "
+          f"at ${TEXT_SEARCH_USD_PER_1000:.0f}/1000 calls, billed once -- results "
+          f"cache per slug. Dry run: no key read, nothing sent.")
+    for slug, name, hood, boro, _lat, _lng in todo:
+        pid = overrides.get(slug)
+        print(f"  {slug[:30]:31} "
+              + (f"(Details for hand-verified {pid})" if pid
+                 else query_for(name, hood, boro)))
+
+
+def main(argv=None):
+    args = parse_args(argv)
+    if args.report:
+        return report()
+    shard_i, shard_k = args.shard
+    if args.dry_run:
+        return dry_run(args.force, shard_i, shard_k)
+    key = api_key()
+    overrides = load_overrides()
+    rows, todo = plan(args.force, shard_i, shard_k)
     print(f"shard {shard_i}/{shard_k}: {len(todo)} to fetch "
           f"({len(rows)} total, {len(list(OUT.glob('*.json')))} cached)", flush=True)
     for n, (slug, name, hood, boro, lat, lng) in enumerate(todo, 1):
