@@ -1,0 +1,18 @@
+{
+ "slug": "stk-chelsea",
+ "query_name": "STK Chelsea",
+ "matched": {
+  "place_id": "ChIJQ-3nEsBZwokRZq2rpFsBSP0",
+  "name": "STK Steakhouse",
+  "address": "412 W 15th St, New York, NY 10011, USA",
+  "rating": 4.8,
+  "user_ratings_total": 21490,
+  "business_status": "OPERATIONAL",
+  "lat": 40.7418783,
+  "lng": -74.0060041
+ },
+ "accepted": true,
+ "reason": "0m away",
+ "source": "textsearch",
+ "error": null
+}
